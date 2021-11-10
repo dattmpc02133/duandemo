@@ -125,9 +125,6 @@
     width: 29px;
     top: -35px;
 }
-.promotional_productss{
-    padding: 50px 0px 20px 0px;
-}
 /* end */
 /* tin tức news */
 .news_tintuc {
@@ -186,5 +183,67 @@
 }
 .address {
     padding-right: 10px;
+}
+/* end */
+/* hover */
+.header_cart-list {
+    background: #fff;
+    width: 400px;
+    position: absolute;
+    right: 94px;
+    top: 55px;
+    z-index: 2;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 10px;
+    box-shadow: 0 0 5px  #ccc;
+
+}
+.header_cart-textt {
+    font-size: 1.2rem;
+    text-align: left;
+    color: #0975f5;
+}
+.header_cart-no-cart-img {
+    font-size: 100px;
+}
+.header_cart-hanghoa {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+    border-top: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+}
+.header_cart-price {
+    display: flex;
+    justify-content: space-between;
+}
+.cart_pay {
+    display: flex;
+    justify-content: space-between;
+}
+.PayPay {
+    padding: 20px;
+    background: #0056b3;
+    color: white;
+}
+.header_cart-list::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    cursor: pointer;
+    right: 9px;
+    z-index: 999;
+    border-width: 20px 22px;
+    border-style: solid;
+    border-color: transparent transparent #f0f0f0cc transparent;
+}
+.header_cart-list {
+    display: none;
+    cursor: pointer;
+}
+.cart:hover .header_cart-list {
+    display: block;
+    cursor: pointer;
 }
 /* end */
