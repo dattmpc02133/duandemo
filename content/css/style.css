@@ -130,4 +130,58 @@
 .news_tintuc {
     width: 100%;
 }
+.news_tintuc-tiile {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+/* end */
+/* contact */
+.contact_product {
+    padding: 45px 0;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 525px;
+}
+.contact-form_email {
+    display: flex;
+}
+.contact-input {
+    flex: 1;
+    line-height: 40px;
+    padding: 0 14px;
+    border-radius: 2px;
+    outline: none;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+.content-icon_img {
+    font-size: 40px;
+    color: #0975f5;
+    text-align: center;
+    /* padding: 40px; */
+
+}
+.policy_title {
+    margin: 0;
+    font-size: 1.2rem;
+}
+.policy_content {
+    padding: 50px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+/* end */
+/* footet */
+.footer_content-itemm {
+    list-style: none;
+}
+.footer_content-itemm > a {
+    color: #333;
+}
+.address {
+    padding-right: 10px;
+}
 /* end */
