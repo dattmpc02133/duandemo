@@ -4,6 +4,9 @@
     font-size: 1rem;
     box-sizing: border-box;
 }
+.h1,h2,h3,h4,h5,h6 {
+    color: #0975f5;
+}
 .riverdungchung {
     display: flex;
     align-items: center;
@@ -315,3 +318,18 @@
     padding: 20px;
 }
 /* end */
+/* Liên Hệ */
+.contact-box_lish li {
+    list-style: none;
+    padding: 15px 0;
+}
+.contact-box_lish li p {
+    margin: 0;
+}
+.contact-box_right {
+    padding: 0 20px;
+}
+.controller {
+    margin: 10px 0;
+}
+/* end Liên Hệ */
