@@ -47,18 +47,27 @@
     padding: 12px 60px;
     display: flex;
     list-style: none;
+    margin: 0;
 }
-/* .navbar_header-link {
-    padding: 20px;
-} */
-.header_chill-link {
-    display: grid;
-    line-height: 40px;
-    list-style: none;
+.header_chill-product {
     position: absolute;
     z-index: 1;
-    background: #ccc;
+    left: 206px;
+    margin-top: 12px;
+    box-shadow: 0 0 5px 0 #eee;
+}
+.header_chill-link {
+    list-style: none;
+    background: #fff;
+    border: 1px solid #eee;
     display: none;
+}
+.header-link_chilll {
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    font-size: 0.9rem;
 }
 .navbar_header-link > a {
     text-decoration: none;
