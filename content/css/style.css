@@ -27,6 +27,7 @@
 }
 .cart_gio{
     position: relative;
+    cursor: pointer;
 }
 .header_cart-notice{
     position: absolute;
@@ -221,6 +222,9 @@
     display: flex;
     justify-content: space-between;
 }
+.user__active{
+    display: flex;
+}
 .cart_pay {
     display: flex;
     justify-content: space-between;
@@ -245,14 +249,17 @@
     display: none;
     cursor: pointer;
 }
-.cart:hover .header_cart-list {
+.header_cart-list.active{
     display: block;
-    cursor: pointer;
 }
 /* end */
 /* hover click đăng nhập */
 .header-dropdown_content {
     position: relative;
+    display: none;
+}
+.header-dropdown_content.active{
+    display: block;
 }
 .site_account_panel_list {
     position: absolute;
