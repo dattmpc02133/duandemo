@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm phòng khách</title>
+    <link rel="stylesheet" href="./content/css/style.css">
+    <link rel="stylesheet" href="./content/font/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="containermax-width">
+        <section class="header">
+            <div class="col-sm-12" style="padding: 0;">
+                <h3 style="background: #1fb5d4; color: white; text-align: center; padding: 10px; font-size: 1.2rem;">Trang
+                    mua hàng nội thất trực tuyến chính hãng!</h3>
+            </div>
+            <div class="grid">
+                <div class="row" style="padding: 0 25px; text-align: center; align-items: center;">
+                    <div class="col-sm-2">
+                        <img src="./content/images/Removal-195.png" style="width:70%" alt="Hình" class="header_img">
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="search">
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2 header_seachr" type="search"
+                                    placeholder="Tìm Kiếm Sản Phẩm" aria-label="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0 btn_seachr" type="submit"><i
+                                        class="fas fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="header_box-right">
+                            <div class="hotline riverdungchung">
+                                <i class="incon_size fas fa-phone-alt"></i>
+                                <span>Hotline:<p style="margin: 0;"> <a href="tel:1900150063">1900.1500.63</a></p></span>
+                            </div>
+                            <div class="account riverdungchung">
+                                <div class="user__active" id="account_dangnhap">
+                                    <i class="incon_size fas fa-user-circle"></i>
+                                    <div class="account_dangnhap">
+                                        <a href="#">Đăng Nhập /</a>
+                                        <a href="#">Đăng Ký</a><br>
+                                        <a href="#" style="margin: 0; text-align: center;">Tài Khoản Của Tôi</a>
+                                    </div>
+                                </div>
+                                <div class="header-dropdown_content" id="header-dropdown_content">
+                                    <div class="site_account_panel_list">
+                                        <h3 class="site_account-title">
+                                            Đăng Nhập Tài Khoản
+                                            <p style="color:#677297; font-size:0.9rem;margin: 0;padding-top: 5px;">Nhập
+                                                email và mật khẩu của bạn:</p>
+                                        </h3>
+                                        <form action="#" method="post" class="customer_login">
+                                            <div class="customer_account">
+                                                <input type="text" placeholder="Email" class="site_account-input">
+                                                <input type="password" placeholder="Mật Khẩu" class="site_account-input">
+                                            </div>
+                                            <span>
+                                                <p style="font-size: 0.9rem;text-align: justify; color: #677297;">This site
+                                                    is protected by reCAPTCHA and the Google Privacy Policy and
+                                                    Terms of Service apply.
+                                                </p>
+                                            </span>
+                                            <button type="submit" name="" class="btn btn-primary account-dangnhap">Đăng
+                                                Nhập</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart riverdungchung" id="cart">
+                                <div class="cart_gio">
+                                    <i class="incon_size fas fa-shopping-cart"></i>
+                                    <span class="header_cart-notice">3</span>
+                                </div>
+                                <span style="cursor: pointer;">Giỏ Hàng</span>
+                                <div class="header_cart-list" id="header_cart-list">
+                                    <h3 class="header_cart-textt">Giỏ Hàng</h3>
+                                    <div class="header_cart-hanghoa">
+                                        <i class="header_cart-no-cart-img fab fa-shopify"></i>
+                                        <span class="header_cart-list-no-cart-msg">Chưa Có Sản Phẩm Nào..!!</span>
+                                    </div>
+                                    <div class="header_cart-price">
+                                        <span class="cart-text_left">Tổng Tiền: </span>
+                                        <span class="cart-text_right">0<sup>đ</sup></span>
+                                    </div>
+                                    <div class="cart_pay">
+                                        <a href="" class="PayPay">Xem Giỏ Hàng</a>
+                                        <a href="" class="PayPay">Thanh Toán</a>
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav class="navbar_header">
+                    <ul class="navbar_header-product">
+                        <li class="navbar_header-link"><a href="./index.html" class="header-linkk">TRANG CHỦ</a></li>
+                        <li class="navbar_header-link header--ative">
+                            <a href="san-pham.html" class="header-linkk">SẢN PHẨM</a>
+                            <ul class="header_chill-product">
+                                <li class="header_chill-link">
+                                    <a href="san-pham-khuyen-mai.html" class="header-link_chilll">Sản Phẩm Khuyến Mãi</a>
+                                </li>
+                                <li class="header_chill-link">
+                                    <a href="#" class="header-link_chilll">Nội Thất Phòng Khách</a>
+                                </li>
+                                <li class="header_chill-link">
+                                    <a href="#" class="header-link_chilll">Nội Thất Phòng Ngủ</a>
+                                </li>
+                                <li class="header_chill-link">
+                                    <a href="#" class="header-link_chilll">Phụ Kiện Trang Trí</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navbar_header-link"><a href="#" class="header-linkk">PRODUCT VIEW</a></li>
+                        <li class="navbar_header-link"><a href="#" class="header-linkk">BLOG</a></li>
+                        <li class="navbar_header-link"><a href="./gioi-thieu.html" class="header-linkk">GIỚI THIỆU</a></li>
+                        <li class="navbar_header-link"><a href="./lien-he.html" class="header-linkk">LIÊN HỆ</a></li>
+                    </ul>
+                </nav>
+            </div>
+           </section>
+           <section class="mainn">
+                <div class="page-about">
+                    <div class="container-fluid">
+                        <!-- row banner -->
+                        <div class="banner">
+                            <div class="row">
+                                <div class="col-sm-1-12">
+                                    <img src="./content/images/banner-sp-phong-khach.jpg" alt="banner-sp-phong-khach" style="width:100%;">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row bannner -->
+                        <!-- container -->
+                        <div class="container-allproducts">
+                             <!-- row title -->
+                            <div class="row_title">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="fillter">
+                                        <a href="#"><i class="bi bi-sliders"></i> Bộ lọc</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="main-title">
+                                            <h1>Sản Phẩm Phòng Khách</h1>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="fill2">
+                                            <select name="" id="">
+                                                <option value="1">Bán chạy</option>
+                                                <option value="2">Tên: A-Z</option>
+                                                <option value="3">Tên: Z-A</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end row title -->
+                            <!-- row products -->
+                            <div class="row-products">
+                                <div class="row">
+
+                                    <div class="col-default">
+                                        <div class="block-products">
+                                            <a href="#">
+                                                <div class="block-image">
+                                                    <img src="./content/images/sofa-giuong-keo.jpg" alt="sofa-giuong-keo">
+                                                </div>
+                                                <div class="block-body">
+                                                    <div class="product-name">
+                                                        <p>Sofa Giường Kéo Roots<span></span></p>
+                                                    </div>
+                                                    <div class="product-price">
+                                                        <p>7,800,000<sup>đ</sup> <del><sup></sup></del></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-default">
+                                        <div class="block-products">
+                                            <a href="#" class="products-item_link">
+                                                <div class="block-image">
+                                                    <img src="./content/images/sofa-phong-khach.jpg" alt="sofa-phong-khach">
+                                                    <div class="products-item-sale">
+                                                        <span class="sale-val">-14%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="block-body">
+                                                    <div class="product-name">
+                                                        <p>Sofa Phòng Khách <span>S003</span></p>
+                                                    </div>
+                                                    <div class="product-price">
+                                                        <p>6,800,000<sup>đ</sup> <del>7,900,000<sup>đ</sup></del></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-default">
+                                        <div class="block-products">
+                                            <a href="#">
+                                                <div class="block-image">
+                                                    <img src="./content/images/sofa-giuong-keo.jpg" alt="sofa-giuong-keo">
+                                                </div>
+                                                <div class="block-body">
+                                                    <div class="product-name">
+                                                        <p>Sofa Giường Kéo Roots<span></span></p>
+                                                    </div>
+                                                    <div class="product-price">
+                                                        <p>7,800,000<sup>đ</sup> <del><sup></sup></del></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-default">
+                                        <div class="block-products">
+                                            <a href="#">
+                                                <div class="block-image">
+                                                    <img src="./content/images/sofa-giuong-keo.jpg" alt="sofa-giuong-keo">
+                                                </div>
+                                                <div class="block-body">
+                                                    <div class="product-name">
+                                                        <p>Sofa Giường Kéo Roots<span></span></p>
+                                                    </div>
+                                                    <div class="product-price">
+                                                        <p>7,800,000<sup>đ</sup> <del><sup></sup></del></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-default">
+                                        <div class="block-products">
+                                            <a href="#">
+                                                <div class="block-image">
+                                                    <img src="./content/images/sofa-giuong-keo.jpg" alt="sofa-giuong-keo">
+                                                </div>
+                                                <div class="block-body">
+                                                    <div class="product-name">
+                                                        <p>Sofa Giường Kéo Roots<span></span></p>
+                                                    </div>
+                                                    <div class="product-price">
+                                                        <p>7,800,000<sup>đ</sup> <del><sup></sup></del></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-default">
+                                        <div class="block-products">
+                                            <a href="#" class="products-item_link">
+                                                <div class="block-image">
+                                                    <img src="./content/images/sofa-phong-khach.jpg" alt="sofa-phong-khach">
+                                                    <div class="products-item-sale">
+                                                        <span class="sale-val">-14%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="block-body">
+                                                    <div class="product-name">
+                                                        <p>Sofa Phòng Khách <span>S003</span></p>
+                                                    </div>
+                                                    <div class="product-price">
+                                                        <p>6,800,000<sup>đ</sup> <del>7,900,000<sup>đ</sup></del></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-default">
+                                        <div class="block-products">
+                                            <a href="#" class="products-item_link">
+                                                <div class="block-image">
+                                                    <img src="./content/images/sofa-phong-khach.jpg" alt="sofa-phong-khach">
+                                                    <div class="products-item-sale">
+                                                        <span class="sale-val">-14%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="block-body">
+                                                    <div class="product-name">
+                                                        <p>Sofa Phòng Khách <span>S003</span></p>
+                                                    </div>
+                                                    <div class="product-price">
+                                                        <p>6,800,000<sup>đ</sup> <del>7,900,000<sup>đ</sup></del></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-default">
+                                        <div class="block-products">
+                                            <a href="#" class="products-item_link">
+                                                <div class="block-image">
+                                                    <img src="./content/images/sofa-phong-khach.jpg" alt="sofa-phong-khach">
+                                                    <div class="products-item-sale">
+                                                        <span class="sale-val">-14%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="block-body">
+                                                    <div class="product-name">
+                                                        <p>Sofa Phòng Khách <span>S003</span></p>
+                                                    </div>
+                                                    <div class="product-price">
+                                                        <p>6,800,000<sup>đ</sup> <del>7,900,000<sup>đ</sup></del></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-default">
+                                        <div class="block-products">
+                                            <a href="#">
+                                                <div class="block-image">
+                                                    <img src="./content/images/sofa-giuong-keo.jpg" alt="sofa-giuong-keo">
+                                                </div>
+                                                <div class="block-body">
+                                                    <div class="product-name">
+                                                        <p>Sofa Giường Kéo Roots<span></span></p>
+                                                    </div>
+                                                    <div class="product-price">
+                                                        <p>7,800,000<sup>đ</sup> <del><sup></sup></del></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-default">
+                                        <div class="block-products">
+                                            <a href="#">
+                                                <div class="block-image">
+                                                    <img src="./content/images/sofa-giuong-keo.jpg" alt="sofa-giuong-keo">
+                                                </div>
+                                                <div class="block-body">
+                                                    <div class="product-name">
+                                                        <p>Sofa Giường Kéo Roots<span></span></p>
+                                                    </div>
+                                                    <div class="product-price">
+                                                        <p>7,800,000<sup>đ</sup> <del><sup></sup></del></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- end row products -->
+                            <!-- button page -->
+                            <div class="button-page">
+                                <button type="button" name="" id="" class="btn btn-light" btn-lg btn-block">1</button>
+                            </div>
+                            <!-- end button page -->
+                        </div>
+                       <!-- end container -->
+                    </div>
+                </div>
+           </section>
+           <section class="container contact_product-LH">
+            <div class="contact_product">
+                <h2 style="color: #0975f5;">HÃY LIÊN HỆ VỚI CHÚNG TÔI!</h2>
+                <p>Luôn sẵn sáng hỗ trợ và tư vấn cho bạn để có sản phẩm tốt nhất.</p>
+                <div class="contact-form">
+                    <form action="#" method="post" class="contact-form_email">
+                        <input type="email" name="email" class="contact-input" placeholder="Nhập Email Của Bạn..!">
+                        <input type="button" value="Gửi" class="btn btn-primary" style="padding: 0 25px;">
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="policy_content">
+            <div class="container-fluid" style="padding: 0 80px;">
+                <div class="policy_content-lish">
+                    <div class="row">
+                        <div class="policy_content-items col-md-4 col-sm-4 col-xs-12">
+                            <div class="row">
+                                <div class="policy_content-icon col-sm-2">
+                                    <i class="content-icon_img fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="policy_content-description col-sm-10">
+                                    <h2 class="policy_title">Giao Hàng Nhanh Chóng</h2>
+                                    <p style="margin: 0;">Miễn phí với đơn hàng trên 3 triệu.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="policy_content-items col-md-4 col-sm-4 col-xs-12">
+                            <div class="row">
+                                <div class="policy_content-icon col-sm-2">
+                                    <i class="content-icon_img fas fa-shield-alt"></i>
+                                </div>
+                                <div class="policy_content-description col-sm-10">
+                                    <h2 class="policy_title">Chính Sách Bảo Hành</h2>
+                                    <p style="margin: 0;">Bảo Hành 12 Tháng,Đổi Trả 15 Ngày.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="policy_content-items col-md-4 col-sm-4 col-xs-12">
+                            <div class="row">
+                                <div class="policy_content-icon col-sm-2">
+                                    <i class="content-icon_img fas fa-info-circle"></i>
+                                </div>
+                                <div class="policy_content-description col-sm-10">
+                                    <h2 class="policy_title">Hổ Trợ 24/7</h2>
+                                    <p style="margin: 0;">Với các kênh chat, email & phone.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <footer class="container-fluid footer_content" style="padding: 40px 80px;">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="footer_content-1">
+                        <h4 class="footer_content-title">
+                            Giới Thiệu
+                        </h4>
+                        <div class="footer_content-logo">
+                            <p style="font-size: 0.9rem; text-align: justify; margin: 0;">trang mua sắm trực tuyến nội
+                                thất mang phong cách việt, giúp bạn cập nhập và nắm bắt xu hướng mới</p>
+                            <img src="./content/images/logo_bct.png" style="width:50%" alt="logo"
+                                class="footer_content-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="footer_content-2">
+                        <h4 class="footer_content-title">
+                            Liên Kết
+                        </h4>
+                        <ul>
+                            <li class="footer_content-itemm"><a href="">- Tìm Kiếm</a></li>
+                            <li class="footer_content-itemm"><a href="">- Giới Thiệu</a></li>
+                            <li class="footer_content-itemm"><a href="">- Chính Sách Đổi Trả</a></li>
+                            <li class="footer_content-itemm"><a href="">- Chính Sách Bảo Mật</a></li>
+                            <li class="footer_content-itemm"><a href="">- Điều Khoản Dịch Vụ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="footer_content-2">
+                        <h4 class="footer_content-title">
+                            Thông Tin Liên Hệ
+                        </h4>
+                        <ul>
+                            <li class="footer_content-itemm"><i class="address fas fa-map-marker-alt"></i>Tầng 4, tòa
+                                nhà Flemington, số 182, đường Lê Đại Hành, phường 15, quận 11, Tp. Hồ Chí Minh.</li>
+                            <li class="footer_content-itemm"><i class="address fas fa-phone-alt"></i>1900.636.099</li>
+                            <li class="footer_content-itemm"><i class="address fas fa-envelope"></i>hi@haravan.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="footer_content-2">
+                        <h4 class="footer_content-title">
+                            Fanpage
+                            <iframe
+                                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDattmpc2002&tabs=timeline&width=340&height=80px&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=3492134550897147"
+                                width="340" height="300px" style="border:none;overflow:hidden" scrolling="no"
+                                frameborder="0" allowfullscreen="true"
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom_footer">
+                <p style="text-align: center;">Copyright © 2021 Urban Home. Powered by Haravan</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
