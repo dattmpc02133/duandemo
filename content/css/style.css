@@ -415,3 +415,12 @@
     padding-top: 20px;
 }
 /* end Sản phẩm */
+/* sản phẩm khuyến mãi */
+.products-item-sale .sale-val{
+    background-color: red;
+    position: absolute;
+    top: 5px;
+    color: #ffffff;
+    padding: 2px;
+}
+/* end sản phẩm khuyến mãi */
