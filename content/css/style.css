@@ -4,6 +4,9 @@
     font-size: 1rem;
     box-sizing: border-box;
 }
+ul li {
+    list-style: none;
+}
 .h1,h2,h3,h4,h5,h6 {
     color: #0975f5;
 }
@@ -333,3 +336,27 @@
     margin: 10px 0;
 }
 /* end Liên Hệ */
+/* Giới Thiệu */
+.wraper_heading-h3 {
+    border-bottom: 1px solid #eee;
+}
+.wraper_page {
+    border: 1px solid #eee;
+    padding: 10px;
+}
+.menu_ground {
+    padding: 10px;
+    border: 1px solid #eee;
+    line-height: 50px;
+}
+.menu_ground-links {
+    display: block;
+    border-bottom: 1px dotted #eee;
+}
+.menu_ground-links:hover {
+    text-decoration: none;
+}
+.menu_boximg-img {
+    width: 100%;
+}
+/* end Giới Thiệu */
