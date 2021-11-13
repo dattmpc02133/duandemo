@@ -490,3 +490,99 @@ ul li {
 /* end sản phẩm khuyến mãi */
 
 /* end */
+/* mobie_nav */
+.navbar_icon {
+    font-size: 37px;
+}
+.navbar_overplay-product {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+.nav__iput:checked ~ .navbar_overplay-product {
+    display: block;
+}
+.nav__iput:checked ~ .navbar_overplay-list {
+    transform: translateX(0%);
+    opacity: 1;
+}
+.navbar_overplay-list {
+    position: fixed;
+    top: 170px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    background-color: #fff;
+    z-index: 2;
+    box-shadow: 0 0 5px 0 #88817d;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform linear 0.2s, opacity linear 0.2s;
+}
+.navbar_bar-lish {
+    margin-top: 24px;
+    border-bottom: 1px solid #eee;
+}
+.header-linkk_items  {
+    display: block;
+    color: #333;
+    padding: 8px 20px;
+    font-size: 1rem;
+    text-align: left;
+    
+}
+.header_nabv3::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    cursor: pointer;
+    left: 20px;
+    z-index: 999;
+    border-width: 20px 22px;
+    border-style: solid;
+    border-color: transparent transparent #f0f0f0cc transparent;
+}
+.navbar_iconx {
+    font-size: 37px;
+    padding: 0 20px;
+}
+.navbar_bar-close {
+    display: flex;
+    justify-content: flex-end;
+}
+.navbar_header-mobie3 {
+    display: none;
+}
+@media (max-width: 1023px) {
+    .navbar_header-product {
+        display: none;
+    }
+    .navbar_baricon {
+        display: flex;
+    }
+    
+    .header_box-right {
+        justify-content: flex-end;
+    }
+    .hotline {
+        display: none;
+    }
+    .account_dangnhap {
+        display: none;
+    }
+    .header_cart-mobie {
+        display: none;
+    }
+    .navbar_header-pc {
+        display: none;
+    }
+    .navbar_header-mobie3 {
+        display: block;
+    }
+}
+/* end */
