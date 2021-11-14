@@ -16,6 +16,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
+        <!--repónive css-->
+        <link rel="stylesheet" href="./content/css/responsive.css">
 </head>
 
 <body>
@@ -41,7 +43,7 @@
                         </div>
                     </div>
                     <div class="col-sm-5">
-                        <div class="header_box-right">
+                        <!-- <div class="header_box-right">
                             <div class="hotline riverdungchung">
                                 <i class="incon_size fas fa-phone-alt"></i>
                                 <span>Hotline:<p style="margin: 0;">1900.1500.63</p></span>
@@ -93,11 +95,70 @@
                                     <div class="cart_pay">
                                         <a href="" class="PayPay">Xem Giỏ Hàng</a>
                                         <a href="" class="PayPay">Thanh Toán</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="header_box-right">
+                            <div class="hotline riverdungchung">
+                                <i class="incon_size fas fa-phone-alt"></i>
+                                <span>Hotline:<p style="margin: 0;"> <a href="tel:1900150063">1900.1500.63</a></p></span>
+                            </div>
+                            <div class="account riverdungchung">
+                               <div class="user__active" id= "account_dangnhap">
+                                <i class="incon_size fas fa-user-circle"></i>
+                                <div class="account_dangnhap" >
+                                    <a href="#">Đăng Nhập /</a>
+                                    <a href="#">Đăng Ký</a><br>
+                                    <a href="#" style="margin: 0; text-align: center;">Tài Khoản Của Tôi</a>
+                                </div>
+                               </div>
+                                <div class="header-dropdown_content" id="header-dropdown_content">
+                                    <div class="site_account_panel_list">
+                                        <h3 class="site_account-title">
+                                            Đăng Nhập Tài Khoản
+                                            <p style="color:#677297; font-size:0.9rem;margin: 0;padding-top: 5px;">Nhập email và mật khẩu của bạn:</p>
+                                        </h3>
+                                        <form action="#" method="post" class="customer_login">
+                                            <div class="customer_account">
+                                                <input type="text" placeholder="Email" class="site_account-input">
+                                            <input type="password" placeholder="Mật Khẩu" class="site_account-input">
+                                            </div>
+                                            <span>
+                                                <p style="font-size: 0.9rem;text-align: justify; color: #677297;">This site is protected by reCAPTCHA and the Google Privacy Policy and
+                                                    Terms of Service apply.
+                                                </p>
+                                            </span>
+                                            <button type="submit" name="" class="btn btn-primary account-dangnhap">Đăng Nhập</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart riverdungchung" id="cart">
+                                <div class="cart_gio">
+                                    <i class="incon_size fas fa-shopping-cart"></i>
+                                    <span class="header_cart-notice">0</span>
+                                </div>
+                                <span style="cursor: pointer;">Giỏ Hàng</span>
+                                <div class="header_cart-list" id="header_cart-list">
+                                    <h3 class="header_cart-textt">Giỏ Hàng</h3>
+                                    <div class="header_cart-hanghoa">
+                                        <i class="header_cart-no-cart-img fab fa-shopify"></i>
+                                        <span class="header_cart-list-no-cart-msg">Chưa Có Sản Phẩm Nào..!!</span>
+                                    </div>
+                                    <div class="header_cart-price">
+                                        <span class="cart-text_left">Tổng Tiền: </span>
+                                        <span class="cart-text_right">0<sup>đ</sup></span>
+                                    </div>
+                                    <div class="cart_pay">
+                                        <a href="" class="PayPay">Xem Giỏ Hàng</a>
+                                        <a href="" class="PayPay">Thanh Toán</a>
     
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <nav class="navbar_header">
@@ -128,7 +189,7 @@
                     mua hàng nội thất trực tuyến chính hãng!</h3>
             </div>
             <div class="grid">
-                <div class="row" style="padding: 0 25px; text-align: center; align-items: center;">
+                <div class="row" style="padding: 0 25px; text-align: center; width: 100% ;align-items: center;">
                     
                     <div class="col-4">
                         <div class="navbar_baricon">
@@ -228,8 +289,8 @@
                 </div>
                 <nav class="navbar navbar-light bg-light">
                     <form class="form-inline" style="width:100%">
-                      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width:88%;">
-                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="width:10%">Search</button>
+                      <input class="form-control mr-sm-2 search__mobile" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success my-2 my-sm-0 btn__responsive" type="submit">Search</button>
                     </form>
                   </nav>
                 <nav class="navbar_header">
@@ -315,79 +376,205 @@
         <main class="main" style="padding-top: 10px;">
             <h2 style="text-align: center; padding: 50px 0px 20px 0px;">Sản Phẩm Mới</h2>
             <section class="container-fluid" style="padding:0 80px;">
-                <div class="grid row">
-                    <div class="col" style="-ms-flex: 0 0 20%;
-        flex: 0 0 20%;
-        max-width: 20%;">
-                        <div class="home_product-item">
-                            <img src="./content/images/hinhghe.png" alt="hình ghế" class="product-item_img">
-                            <div class="home-product-item__text">
-                                <h4 class="home-product-item__name">Ghế Nhựa Cao Cấp</h4>
-                                <span class="home-product-item__price-old"
-                                    style="color: red;">890,000<sup>đ</sup></span>
-                                <del class="home-product-item__price-curren"
-                                    style="color: silver;">600,000<sup>đ</sup></del>
-                            </div>
+              <!-- row products -->
+              <div class="row-products">
+                <div class="row">
+
+                    <div class="col-default">
+                        <div class="block-products">
+                            <a href="#">
+                                <div class="block-image">
+                                    <img src="./content/images/ban-xep.jpg" alt="ban-xep">
+                                </div>
+                                <div class="block-body">
+                                    <div class="product-name">
+                                        <p>Bàn Xếp Gọn Nhẹ <span>TB01</span></p>
+                                    </div>
+                                    <div class="product-price">
+                                        <p>1,000,000<sup>đ</sup> <del>1,300,000<sup>đ</sup></del></p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                    <div class="col" style="-ms-flex: 0 0 20%;
-        flex: 0 0 20%;
-        max-width: 20%;">
-                        <div class="home_product-item">
-                            <img src="./content/images/hinhghe.png" alt="hình ghế" class="product-item_img">
-                            <div class="home-product-item__text">
-                                <h4 class="home-product-item__name">Ghế Nhựa Cao Cấp</h4>
-                                <span class="home-product-item__price-old"
-                                    style="color: red;">890,000<sup>đ</sup></span>
-                                <del class="home-product-item__price-curren"
-                                    style="color: silver;">600,000<sup>đ</sup></del>
-                            </div>
+
+                    <div class="col-default">
+                        <div class="block-products">
+                            <a href="#" class="products-item_link">
+                                <div class="block-image">
+                                    <img src="./content/images/ghe-tua-phong-khach.jpg" alt="ghe-tua-phong-khach">
+                                    <div class="products-item-sale">
+                                        <span class="sale-val">-25%</span>
+                                    </div>
+                                </div>
+                                <div class="block-body">
+                                    <div class="product-name">
+                                        <p>Ghế tựa lưng phòng khách <span>S004</span></p>
+                                    </div>
+                                    <div class="product-price">
+                                        <p>2,400,000<sup>đ</sup> <del>3,200,000<sup>đ</sup></del></p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                    <div class="col" style="-ms-flex: 0 0 20%;
-        flex: 0 0 20%;
-        max-width: 20%;">
-                        <div class="home_product-item">
-                            <img src="./content/images/hinhghe.png" alt="hình ghế" class="product-item_img">
-                            <div class="home-product-item__text">
-                                <h4 class="home-product-item__name">Ghế Nhựa Cao Cấp</h4>
-                                <span class="home-product-item__price-old"
-                                    style="color: red;">890,000<sup>đ</sup></span>
-                                <del class="home-product-item__price-curren"
-                                    style="color: silver;">600,000<sup>đ</sup></del>
-                            </div>
+
+                    <div class="col-default">
+                        <div class="block-products">
+                            <a href="#">
+                                <div class="block-image">
+                                    <img src="./content/images/ban-xep.jpg" alt="ban-xep">
+                                </div>
+                                <div class="block-body">
+                                    <div class="product-name">
+                                        <p>Bàn Xếp Gọn Nhẹ <span>TB01</span></p>
+                                    </div>
+                                    <div class="product-price">
+                                        <p>1,000,000<sup>đ</sup> <del>1,300,000<sup>đ</sup></del></p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                    <div class="col" style="-ms-flex: 0 0 20%;
-        flex: 0 0 20%;
-        max-width: 20%;">
-                        <div class="home_product-item">
-                            <img src="./content/images/hinhghe.png" alt="hình ghế" class="product-item_img">
-                            <div class="home-product-item__text">
-                                <h4 class="home-product-item__name">Ghế Nhựa Cao Cấp</h4>
-                                <span class="home-product-item__price-old"
-                                    style="color: red;">890,000<sup>đ</sup></span>
-                                <del class="home-product-item__price-curren"
-                                    style="color: silver;">600,000<sup>đ</sup></del>
-                            </div>
+
+                    <div class="col-default">
+                        <div class="block-products">
+                            <a href="#" class="products-item_link">
+                                <div class="block-image">
+                                    <img src="./content/images/ghe-tua-phong-khach.jpg" alt="ghe-tua-phong-khach">
+                                    <div class="products-item-sale">
+                                        <span class="sale-val">-25%</span>
+                                    </div>
+                                </div>
+                                <div class="block-body">
+                                    <div class="product-name">
+                                        <p>Ghế tựa lưng phòng khách <span>S004</span></p>
+                                    </div>
+                                    <div class="product-price">
+                                        <p>2,400,000<sup>đ</sup> <del>3,200,000<sup>đ</sup></del></p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                    <div class="col" style="-ms-flex: 0 0 20%;
-        flex: 0 0 20%;
-        max-width: 20%;">
-                        <div class="home_product-item">
-                            <img src="./content/images/hinhghe.png" alt="hình ghế" class="product-item_img">
-                            <div class="home-product-item__text">
-                                <h4 class="home-product-item__name">Ghế Nhựa Cao Cấp</h4>
-                                <span class="home-product-item__price-old"
-                                    style="color: red;">890,000<sup>đ</sup></span>
-                                <del class="home-product-item__price-curren"
-                                    style="color: silver;">600,000<sup>đ</sup></del>
-                            </div>
+
+                    <div class="col-default">
+                        <div class="block-products">
+                            <a href="#">
+                                <div class="block-image">
+                                    <img src="./content/images/ban-xep.jpg" alt="ban-xep">
+                                </div>
+                                <div class="block-body">
+                                    <div class="product-name">
+                                        <p>Bàn Xếp Gọn Nhẹ <span>TB01</span></p>
+                                    </div>
+                                    <div class="product-price">
+                                        <p>1,000,000<sup>đ</sup> <del>1,300,000<sup>đ</sup></del></p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-default">
+                        <div class="block-products">
+                            <a href="#" class="products-item_link">
+                                <div class="block-image">
+                                    <img src="./content/images/ghe-tua-phong-khach.jpg" alt="ghe-tua-phong-khach">
+                                    <div class="products-item-sale">
+                                        <span class="sale-val">-25%</span>
+                                    </div>
+                                </div>
+                                <div class="block-body">
+                                    <div class="product-name">
+                                        <p>Ghế tựa lưng phòng khách <span>S004</span></p>
+                                    </div>
+                                    <div class="product-price">
+                                        <p>2,400,000<sup>đ</sup> <del>3,200,000<sup>đ</sup></del></p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-default">
+                        <div class="block-products">
+                            <a href="#">
+                                <div class="block-image">
+                                    <img src="./content/images/ban-xep.jpg" alt="ban-xep">
+                                </div>
+                                <div class="block-body">
+                                    <div class="product-name">
+                                        <p>Bàn Xếp Gọn Nhẹ <span>TB01</span></p>
+                                    </div>
+                                    <div class="product-price">
+                                        <p>1,000,000<sup>đ</sup> <del>1,300,000<sup>đ</sup></del></p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-default">
+                        <div class="block-products">
+                            <a href="#">
+                                <div class="block-image">
+                                    <img src="./content/images/ban-xep.jpg" alt="ban-xep">
+                                </div>
+                                <div class="block-body">
+                                    <div class="product-name">
+                                        <p>Bàn Xếp Gọn Nhẹ <span>TB01</span></p>
+                                    </div>
+                                    <div class="product-price">
+                                        <p>1,000,000<sup>đ</sup> <del>1,300,000<sup>đ</sup></del></p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-default">
+                        <div class="block-products">
+                            <a href="#" class="products-item_link">
+                                <div class="block-image">
+                                    <img src="./content/images/ghe-tua-phong-khach.jpg" alt="ghe-tua-phong-khach">
+                                    <div class="products-item-sale">
+                                        <span class="sale-val">-25%</span>
+                                    </div>
+                                </div>
+                                <div class="block-body">
+                                    <div class="product-name">
+                                        <p>Ghế tựa lưng phòng khách <span>S004</span></p>
+                                    </div>
+                                    <div class="product-price">
+                                        <p>2,400,000<sup>đ</sup> <del>3,200,000<sup>đ</sup></del></p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-default">
+                        <div class="block-products">
+                            <a href="#">
+                                <div class="block-image">
+                                    <img src="./content/images/ban-xep.jpg" alt="ban-xep">
+                                </div>
+                                <div class="block-body">
+                                    <div class="product-name">
+                                        <p>Bàn Xếp Gọn Nhẹeeeeeeeeeeeeeeeeeeeeeeeeeee <span>TB01</span></p>
+                                    </div>
+                                    <div class="product-price">
+                                        <p>1,000,000<sup>đ</sup> <del>1,300,000<sup>đ</sup></del></p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
 
                 </div>
+            </div>
+            <!-- end row products -->
                 <div class="grid row">
                     <div class="news_content">
                         <div class="col-md-6">
@@ -465,113 +652,222 @@
                 <h4 class="promotional_productss" style="text-align: center;">
                     Sản phẩm Khuyến mãi
                 </h4>
-                <div class="grid row">
-                    <div class="col-xs-12 col-sm-12 col-md-3">
-                        <div class="promotional_products">
-                            <div class="promotional_products-item">
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        <a href="" class="products-item_link">
-                                            <img src="./content/images/hinhghe.png" alt="" class="products-item_img">
-                                            <div class="products-item_sale">
-                                                <span class="products-itemm__giam">-29%</span>
-                                            </div>
-                                    </div>
-                                    </a>
-                                    <div class="col-sm-7">
-                                        <div class="products-item_detail">
-                                            <h3 class="pro-name"><a href="" class="pro-name_text">Đèn Lồng Gấp Gọn</a>
-                                            </h3>
-                                        </div>
-                                        <div class="pro-price">
-                                            <span style="color: red;">500,000 <sup>đ</sup></span>
-                                            <del>600,000 <sup>đ</sup></del>
+                <!-- row products -->
+                <div class="row-products">
+                    <div class="row">
+                        <div class="col-default">
+                            <div class="block-products">
+                                <a href="#" class="products-item_link">
+                                    <div class="block-image">
+                                        <img src="./content/images/ghe-tua-phong-khach.jpg" alt="ghe-tua-phong-khach">
+                                        <div class="products-item-sale">
+                                            <span class="sale-val">-25%</span>
                                         </div>
                                     </div>
-                                </div>
+                                    <div class="block-body">
+                                        <div class="product-name">
+                                            <p>Ghế tựa lưng phòng khách <span>S004</span></p>
+                                        </div>
+                                        <div class="product-price">
+                                            <p>2,400,000<sup>đ</sup> <del>3,200,000<sup>đ</sup></del></p>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-3">
-                        <div class="promotional_products">
-                            <div class="promotional_products-item">
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        <a href="" class="products-item_link">
-                                            <img src="./content/images/hinhghe.png" alt="" class="products-item_img">
-                                            <div class="products-item_sale">
-                                                <span class="products-itemm__giam">-29%</span>
-                                            </div>
-                                    </div>
-                                    </a>
-                                    <div class="col-sm-7">
-                                        <div class="products-item_detail">
-                                            <h3 class="pro-name"><a href="" class="pro-name_text">Đèn Lồng Gấp Gọn</a>
-                                            </h3>
-                                        </div>
-                                        <div class="pro-price">
-                                            <span style="color: red;">500,000 <sup>đ</sup></span>
-                                            <del>600,000 <sup>đ</sup></del>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-3">
-                        <div class="promotional_products">
-                            <div class="promotional_products-item">
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        <a href="" class="products-item_link">
-                                            <img src="./content/images/hinhghe.png" alt="" class="products-item_img">
-                                            <div class="products-item_sale">
-                                                <span class="products-itemm__giam">-29%</span>
-                                            </div>
-                                    </div>
-                                    </a>
-                                    <div class="col-sm-7">
-                                        <div class="products-item_detail">
-                                            <h3 class="pro-name"><a href="" class="pro-name_text">Đèn Lồng Gấp Gọn</a>
-                                            </h3>
-                                        </div>
-                                        <div class="pro-price">
-                                            <span style="color: red;">500,000 <sup>đ</sup></span>
-                                            <del>600,000 <sup>đ</sup></del>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-3">
-                        <div class="promotional_products">
-                            <div class="promotional_products-item">
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        <a href="" class="products-item_link">
-                                            <img src="./content/images/hinhghe.png" alt="" class="products-item_img">
-                                            <div class="products-item_sale">
-                                                <span class="products-itemm__giam">-29%</span>
-                                            </div>
-                                    </div>
-                                    </a>
-                                    <div class="col-sm-7">
-                                        <div class="products-item_detail">
-                                            <h3 class="pro-name"><a href="" class="pro-name_text">Đèn Lồng Gấp Gọn</a>
-                                            </h3>
-                                        </div>
-                                        <div class="pro-price">
-                                            <span style="color: red;">500,000 <sup>đ</sup></span>
-                                            <del>600,000 <sup>đ</sup></del>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
+                        <div class="col-default">
+                            <div class="block-products">
+                                <a href="#" class="products-item_link">
+                                    <div class="block-image">
+                                        <img src="./content/images/ghe-tua-phong-khach.jpg" alt="ghe-tua-phong-khach">
+                                        <div class="products-item-sale">
+                                            <span class="sale-val">-25%</span>
+                                        </div>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="product-name">
+                                            <p>Ghế tựa lưng phòng khách <span>S004</span></p>
+                                        </div>
+                                        <div class="product-price">
+                                            <p>2,400,000<sup>đ</sup> <del>3,200,000<sup>đ</sup></del></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-default">
+                            <div class="block-products">
+                                <a href="#" class="products-item_link">
+                                    <div class="block-image">
+                                        <img src="./content/images/ghe-tua-phong-khach.jpg" alt="ghe-tua-phong-khach">
+                                        <div class="products-item-sale">
+                                            <span class="sale-val">-25%</span>
+                                        </div>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="product-name">
+                                            <p>Ghế tựa lưng phòng khách <span>S004</span></p>
+                                        </div>
+                                        <div class="product-price">
+                                            <p>2,400,000<sup>đ</sup> <del>3,200,000<sup>đ</sup></del></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-default">
+                            <div class="block-products">
+                                <a href="#" class="products-item_link">
+                                    <div class="block-image">
+                                        <img src="./content/images/ghe-tua-phong-khach.jpg" alt="ghe-tua-phong-khach">
+                                        <div class="products-item-sale">
+                                            <span class="sale-val">-25%</span>
+                                        </div>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="product-name">
+                                            <p>Ghế tựa lưng phòng khách <span>S004</span></p>
+                                        </div>
+                                        <div class="product-price">
+                                            <p>2,400,000<sup>đ</sup> <del>3,200,000<sup>đ</sup></del></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-default">
+                            <div class="block-products">
+                                <a href="#" class="products-item_link">
+                                    <div class="block-image">
+                                        <img src="./content/images/ghe-tua-phong-khach.jpg" alt="ghe-tua-phong-khach">
+                                        <div class="products-item-sale">
+                                            <span class="sale-val">-25%</span>
+                                        </div>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="product-name">
+                                            <p>Ghế tựa lưng phòng khách <span>S004</span></p>
+                                        </div>
+                                        <div class="product-price">
+                                            <p>2,400,000<sup>đ</sup> <del>3,200,000<sup>đ</sup></del></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-default">
+                            <div class="block-products">
+                                <a href="#" class="products-item_link">
+                                    <div class="block-image">
+                                        <img src="./content/images/ghe-tua-phong-khach.jpg" alt="ghe-tua-phong-khach">
+                                        <div class="products-item-sale">
+                                            <span class="sale-val">-25%</span>
+                                        </div>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="product-name">
+                                            <p>Ghế tựa lưng phòng khách <span>S004</span></p>
+                                        </div>
+                                        <div class="product-price">
+                                            <p>2,400,000<sup>đ</sup> <del>3,200,000<sup>đ</sup></del></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-default">
+                            <div class="block-products">
+                                <a href="#" class="products-item_link">
+                                    <div class="block-image">
+                                        <img src="./content/images/ghe-tua-phong-khach.jpg" alt="ghe-tua-phong-khach">
+                                        <div class="products-item-sale">
+                                            <span class="sale-val">-25%</span>
+                                        </div>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="product-name">
+                                            <p>Ghế tựa lưng phòng khách <span>S004</span></p>
+                                        </div>
+                                        <div class="product-price">
+                                            <p>2,400,000<sup>đ</sup> <del>3,200,000<sup>đ</sup></del></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-default">
+                            <div class="block-products">
+                                <a href="#" class="products-item_link">
+                                    <div class="block-image">
+                                        <img src="./content/images/ghe-tua-phong-khach.jpg" alt="ghe-tua-phong-khach">
+                                        <div class="products-item-sale">
+                                            <span class="sale-val">-25%</span>
+                                        </div>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="product-name">
+                                            <p>Ghế tựa lưng phòng khách <span>S004</span></p>
+                                        </div>
+                                        <div class="product-price">
+                                            <p>2,400,000<sup>đ</sup> <del>3,200,000<sup>đ</sup></del></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-default">
+                            <div class="block-products">
+                                <a href="#" class="products-item_link">
+                                    <div class="block-image">
+                                        <img src="./content/images/ghe-tua-phong-khach.jpg" alt="ghe-tua-phong-khach">
+                                        <div class="products-item-sale">
+                                            <span class="sale-val">-25%</span>
+                                        </div>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="product-name">
+                                            <p>Ghế tựa lưng phòng khách <span>S004</span></p>
+                                        </div>
+                                        <div class="product-price">
+                                            <p>2,400,000<sup>đ</sup> <del>3,200,000<sup>đ</sup></del></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-default">
+                            <div class="block-products">
+                                <a href="#" class="products-item_link">
+                                    <div class="block-image">
+                                        <img src="./content/images/ghe-tua-phong-khach.jpg" alt="ghe-tua-phong-khach">
+                                        <div class="products-item-sale">
+                                            <span class="sale-val">-25%</span>
+                                        </div>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="product-name">
+                                            <p>Ghế tựa lưng phòng khách <span>S004</span></p>
+                                        </div>
+                                        <div class="product-price">
+                                            <p>2,400,000<sup>đ</sup> <del>3,200,000<sup>đ</sup></del></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
+                <!-- end row products -->
             </section>
             <section class="container-fluid" style="padding: 0 80px;">
                 <h4 class="promotional_productss" style="text-align: center;">
@@ -677,7 +973,7 @@
         </section>
         <footer class="container-fluid footer_content" style="padding: 40px 80px;">
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer_content-1">
                         <h4 class="footer_content-title">
                             Giới Thiệu
@@ -690,7 +986,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer_content-2">
                         <h4 class="footer_content-title">
                             Liên Kết
@@ -704,7 +1000,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer_content-2">
                         <h4 class="footer_content-title">
                             Thông Tin Liên Hệ
@@ -717,15 +1013,18 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer_content-2">
                         <h4 class="footer_content-title">
                             Fanpage
-                            <iframe
-                                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDattmpc2002&tabs=timeline&width=340&height=80px&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=3492134550897147"
-                                width="100%" height="300px" style="border:none;overflow:hidden" scrolling="no"
-                                frameborder="0" allowfullscreen="true"
-                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                            <!---->
+                            <div id="fb-root"></div>
+                            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v12.0&appId=429054661501304&autoLogAppEvents=1" nonce="8y62QKO0"></script>
+                            <!---->
+                           <!---->
+                           <div class="fb-page" data-href="https://www.facebook.com/BNShop-107553001575960/?ref=pages_you_manage" data-tabs="timeline" data-width="300" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/BNShop-107553001575960/?ref=pages_you_manage" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/BNShop-107553001575960/?ref=pages_you_manage">BNShop</a></blockquote></div>
+                           <!---->
+
                         </h4>
                     </div>
                 </div>
@@ -735,7 +1034,7 @@
             </div>
         </footer>
     </div>
-    
+    <script src="./content/js/app.js"></script>
 </body>
 
 </html>
