@@ -598,3 +598,32 @@ ul li {
     padding: 20px;
 }
 /*  */
+/* quản lý  */
+.aside_content {
+    background: aliceblue;
+}
+.div_hinh {
+    width: 50%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.account_manage-img {
+    width: 100%;
+    border-radius: 50%;
+}
+.account_manage-links, .sidebar_menu-links {
+    padding: 10px 20px;
+    display: block;
+}
+.account_manage-lish, .account_manage-items, .sidebar_menu-lish {
+    border-bottom: 1px solid #fff;
+}
+.account_manage-ten {
+    display: flex;
+    justify-content: center;
+}
+.account_manageincon {
+    padding-left: 10px;
+    font-size: 1.5rem;
+}
+/* end qan lý */

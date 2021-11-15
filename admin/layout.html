@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Quản Lý </title>
+    <link rel="stylesheet" href="../content/css/style.css">
+    <link rel="stylesheet" href="../content/font/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+        <!--repónive css-->
+        <link rel="stylesheet" href="./content/css/responsive.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-sm-3 aside_content">
+                <div class="account_manage-product">
+                    <div class="div_hinh">
+                    <img src="../content/images/sofa-giuong-keo.jpg" alt="Hình Đại Diện" class="account_manage-img">
+                    </div>
+                    <ul class="account_manage-lish">
+                        <div class="account_manage-ten">
+                            <h4 style="text-align: center;">ADMIN</h4>
+                            <i class="account_manageincon fas fa-caret-down"></i>
+                        </div>
+                        <li class="account_manage-items">
+                            <a href="" class="account_manage-links"><i class="fas fa-exchange-alt"></i> Đổi Mật Khẩu</a>
+                        </li>
+                        <li class="account_manage-items">
+                            <a href="" class="account_manage-links"><i class="far fa-edit"></i> Cập Nhật Tài Khoản</a>
+                        </li>
+                        <li class="account_manage-items">
+                            <a href="" class="account_manage-links"><i class="fas fa-cogs"></i> Quản Trị Website</a>
+                        </li>
+                        <li class="account_manage-items">
+                            <a href="" class="account_manage-links"><i class="fas fa-sign-out-alt"></i> Đăng Xuất</a>
+                        </li>
+                    </ul>
+                    <div class="sidebar_menu-product">
+                        <ul class="sidebar_menu">
+                            <li class="sidebar_menu-lish">
+                                <a href="" class="sidebar_menu-links"><i class="fas fa-home"></i> Trang Chủ</a>
+                            </li>
+                            <li class="sidebar_menu-lish">
+                                <a href="" class="sidebar_menu-links"><i class="far fa-chart-bar"></i> Loại Hàng</a>
+                            </li>
+                            <li class="sidebar_menu-lish">
+                                <a href="" class="sidebar_menu-links"><i class="fas fa-box-open"></i> Hàng Hóa</a>
+                            </li>
+                            <li class="sidebar_menu-lish">
+                                <a href="" class="sidebar_menu-links"><i class="far fa-user-circle"></i> Khách Hàng</a>
+                            </li>
+                            <li class="sidebar_menu-lish">
+                                <a href="" class="sidebar_menu-links"><i class="far fa-comments"></i> Bình Luận</a>
+                            </li>
+                            <li class="sidebar_menu-lish">
+                                <a href="" class="sidebar_menu-links"><i class="fas fa-chart-pie"></i> Thống Kê</a>
+                            </li>
+                            <li class="sidebar_menu-lish">
+                                <a href="" class="sidebar_menu-links"><i class="far fa-calendar"></i> Quản Lý Đơn Hàng</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            <article class="col-sm-9">
+                <form action="" method="POST">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="alert alert-success" role="alert">
+                                <h3 class="">Danh sách khách hàng</h3>
+                            </div>
+                            <table class="table table-light">
+                                <thead class="table-danger">
+                
+                                    <tr>
+                                        <th class="check"><input type="checkbox"> </th>
+                                        <th>Mã khách hàng</th>
+                                        <th>Mật khẩu</th>
+                                        <th>Họ tên</th>
+                                        <th>Ảnh</th>
+                                        <th>Email</th>
+                                        <th>Vai trò</th>
+                                        <th>Kích hoạt</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                            <td class="check"><input type="checkbox" name="check[]" value=""></td>
+                                            <td class="kh__item">12345</td>
+                                            <td class="kh__item">123456</td>
+                                            <td class="kh__item">dạt</td>
+                                            <td class="kh__item">
+                                                <img src="../content/images/sofa-giuong-keo.jpg" alt="" style="width: 74px; height: 74px;">
+                                            </td>
+                                            <td class="kh__item"></td>
+                                            <td class="kh__item">
+                                            
+                                            </td>
+                                            <td class="kh__item">
+                                               
+                                            </td>
+                                            <td class="kh__item"><a class="btn btn-info" href="">Xóa</a> <a class="btn btn-info" href="">Sửa</a></td>
+                                    </tr>
+                                <tr>
+                                    <td colspan="8">
+                                        <!-- <button name="check_all" id="check_all" class="btn btn-primary" href="#" role="button">Chọn tất cả</button>
+                                        <button name="uncheck_all" id="uncheck_all" class="btn btn-primary" href="#" role="button">Bỏ chọn tất cả</button> -->
+                
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <button name="delete_select" id="delete_check_all" class="btn btn-info" href="#" role="button">Xóa các mục đã chọn</button>
+                                                <a name="" id="" class="btn btn-info" href="index.php?btn_new" role="button">Thêm Mới</a>
+                                                <!-- <a name="" id="" class="btn btn-info" href="index.php" role="button">Danh sách</a> -->
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class=" col-sm-12 phan_trang" style="display:flex; justify-content:center">
+                        </div>
+                    </div>
+                
+                
+                </form>
+            </article>
+        </div>
+    </div>
+</body>
+</html>
