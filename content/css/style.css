@@ -586,3 +586,15 @@ ul li {
     }
 }
 /* end */
+/* dangky */
+.dangky-product {
+    width: 50%;
+    margin: 0 auto;
+}
+.form-group > .form-control {
+    padding: 25px 10px;
+}
+.header_dangky {
+    padding: 20px;
+}
+/*  */
