@@ -1,0 +1,100 @@
+/* quản lý  */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.aside_content {
+    background: aliceblue;
+    position: relative;
+}
+
+.div_hinh {
+    width: 50%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.account_manage-img {
+    width: 100%;
+    border-radius: 50%;
+}
+.account_manage-links, .sidebar_menu-links {
+    padding: 10px 20px;
+    display: block;
+    transition: all 0.2s ease-in-out;
+   
+}
+.account_manage-lish, .account_manage-items, .sidebar_menu-lish {
+    border-bottom: 1px solid #fff;
+}
+.account_manage-lish{
+    height: 30px;
+    transition:all 0.5s;
+    overflow: hidden;
+}
+.account_manage-lish.active{
+    height: auto;
+    transition: all 0.5s;
+}
+.account_manage-lish.active:hover{
+   height: 218px;
+}
+.account_manage-ten {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;  
+}
+.account_manageincon {
+    padding-left: 10px;
+    font-size: 1.5rem;
+}
+.account_manage-items_block{
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+ .toggle-icon{
+     position: absolute;
+     right: 5px;
+     top: 10px;
+     font-size: 25px;
+ }
+ .aside_and_article{
+     display: flex;
+ }
+.aside{
+    width: 20%;
+    position: relative;
+    animation: admin_menu_on linear 0.1s forwards;  
+}
+.aside.active{
+   animation: admin_menu_hidden linear 0.1s forwards;
+}
+.article{
+    width: 100%;
+    margin-left: 20px;
+    transition: width 1s;
+    overflow: hidden;
+    padding: 0px 20px;
+}
+@keyframes admin_menu_on {
+    from{
+        left: -25%;
+        width: 0%;
+       
+     } to{
+        left: 0;
+       
+     }
+}
+ @keyframes admin_menu_hidden {
+     from{
+        left: 0;
+        opacity: 0;
+     } to{
+        left: -25%;
+        width: 0%;
+        display: none;
+     }
+ }
+/* end qan lý */
