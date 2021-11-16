@@ -2,14 +2,14 @@
 
 function loai_selectall()
 {
-    $sql = "select * from loai order by ten_loai DESC";
+    $sql = "select * from loai order by ma_loai DESC";
     return pdo_query($sql);
 }
 // thêm mới loại
 function loai_insert($ten_loai,$hinh)
 {
     $sql = "INSERT INTO loai(ten_loai,hinh) VALUES (?,?)";
-    pdo_execute($sql, $ten_loai,$hinh);
+    pdo_execute($sql, $ten_loai, $hinh);
 }
 // xóa
 function loai_delete($ma_loai)

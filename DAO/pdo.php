@@ -24,7 +24,7 @@ function pdo_execute($sql)
     try {
         $conn = pdo_get_connection();
         $stmt = $conn->prepare($sql);
-        $stmt->execute($sql_args);
+        $stmt -> execute($sql_args);
     } catch (PDOException $e) {
         throw $e;
         // echo "Lỗi truy vấn ";
