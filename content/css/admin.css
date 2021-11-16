@@ -5,7 +5,7 @@
     padding: 0;
 }
 .aside_content {
-    background: aliceblue;
+    background-color: #1fb5d4;
     position: relative;
 }
 
@@ -39,6 +39,22 @@
 .account_manage-lish.active:hover{
    height: 218px;
 }
+.account_manage-ten h4{
+    color: white;
+    cursor: pointer;
+}
+.account_manage-links{
+    color: white;
+}
+.account_manage-links:hover{
+color: black;
+}
+.sidebar_menu-links{
+    color: white;
+}
+.sidebar_menu-links:hover{
+    color: black;
+}
 .account_manage-ten {
     display: flex;
     justify-content: center;
@@ -47,6 +63,8 @@
 .account_manageincon {
     padding-left: 10px;
     font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
 }
 .account_manage-items_block{
     position: relative;
@@ -58,6 +76,7 @@
      right: 5px;
      top: 10px;
      font-size: 25px;
+     color: white;
  }
  .aside_and_article{
      display: flex;
