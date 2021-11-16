@@ -27,10 +27,10 @@
                             <div class="sidebar_menu-product">
                                 <ul class="sidebar_menu">
                                     <li class="sidebar_menu-lish">
-                                        <a href="" class="sidebar_menu-links"><i class="fas fa-home"></i> Trang Chủ</a>
+                                        <a href="<?=$ADMIN_URL?>/trang-chinh" class="sidebar_menu-links"><i class="fas fa-home"></i> Trang Chủ</a>
                                     </li>
                                     <li class="sidebar_menu-lish">
-                                        <a href="" class="sidebar_menu-links"><i class="far fa-chart-bar"></i> Loại Hàng</a>
+                                        <a href="<?=$ADMIN_URL?>/loai-hang" class="sidebar_menu-links"><i class="far fa-chart-bar"></i> Loại Hàng</a>
                                     </li>
                                     <li class="sidebar_menu-lish">
                                         <a href="" class="sidebar_menu-links"><i class="fas fa-box-open"></i> Hàng Hóa</a>
