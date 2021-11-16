@@ -89,12 +89,15 @@ color: black;
 .aside.active{
    animation: admin_menu_hidden linear 0.1s forwards;
 }
+thead th{
+    font-size: 0.8rem;
+}
 .article{
     width: 100%;
     margin-left: 20px;
     transition: width 1s;
     overflow: hidden;
-    padding: 0px 20px;
+    /* padding: 0px 20px; */
 }
 @keyframes admin_menu_on {
     from{

@@ -16,11 +16,9 @@
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
         <!--repónive css-->
-      
         <link rel="stylesheet" href="<?= $CONTENT_URL ?>/css/admin.css">
 </head>
 <body>
-   
         <div class="aside_and_article">
             <div class="aside" id= "aside">
                 <div class="row">
@@ -39,4 +37,5 @@
     </div>
     <script src="<?= $CONTENT_URL ?>/js/admin.js"></script>
 </body>
+
 </html>
