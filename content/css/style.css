@@ -444,7 +444,7 @@ ul li {
     border-bottom: 1px solid #cccccc;
 }
 .block-products{
-    height: 400px;
+    height: auto;
     padding: 5px;
     font-size: 14px;
     font-weight: 500;
@@ -627,3 +627,29 @@ ul li {
     font-size: 1.5rem;
 }
 /* end qan lý */
+/* cart */
+.table-danger {
+    align-items: center;
+}
+.order_title>h3 {
+    background: aliceblue;
+    padding: 12px 7px;
+    font-size: 1.4rem;
+}
+form, .waxbox_odercart {
+    border: 1px solid #eee;
+    padding: 10px;
+}
+.checkout-btn {
+    padding: 12px;
+    display: block;
+    text-align: center;
+    color: #fff;
+    background: #e00707;
+}
+.countine_order_cart {
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+}
+/* end */
