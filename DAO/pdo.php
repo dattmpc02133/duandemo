@@ -6,7 +6,7 @@ function pdo_get_connection()
     $userName = "root";
     $password = "";
     $conn = '';
-    $dbName = "quan_ly_noi_that";
+    $dbName = "ql_noi_that";
     try {
         $conn = new PDO("mysql:host=$serverName;dbname=$dbName", $userName, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -17,18 +17,22 @@ function pdo_get_connection()
 }
 
 // thực thi cơ sở dữ liệu không trả về kết quả
-function pdo_execute($sql){
+function pdo_execute($sql)
+{
     $sql_args = array_slice(func_get_args(), 1);
+    // tách chuổi tham số slice
     try {
         $conn = pdo_get_connection();
         $stmt = $conn->prepare($sql);
         $stmt->execute($sql_args);
     } catch (PDOException $e) {
         throw $e;
+        // echo "Lỗi truy vấn ";
     } finally {
         unset($conn);
     }
 }
+
 
 // truy vấn nhiều dữ liệu
 function pdo_query($sql)

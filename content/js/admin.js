@@ -38,11 +38,7 @@ function on_account(){
         //     account_manage_lish.style.transition = 'all 0.5s';
         // }
     }
-
-
 }
-
-
 
 // on_menu_admin();
 toggle_menu_admin();

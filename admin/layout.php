@@ -34,9 +34,11 @@
                     </article>
                 </div>
             </div>
-    </div>
+         </div>
     <script src="<?= $CONTENT_URL ?>/js/admin.js"></script>
-    <footer></footer>
+    <footer>
+
+    </footer>
 </body>
 
 </html>

@@ -13,33 +13,29 @@ function hang_hoa_getinfo($ma_hh)
 }
 
 // Thêm sản phẩm mới
-function hang_hoa_insert(
+function san_pham_insert(
     $ten_sp, 
     $don_gia, 
     $giam_gia, 
     $hinh, 
-    $ngay_nhap, 
     $so_luong, 
-    $mo_ta, 
     $trang_thai, 
     $dac_biet, 
     $luot_xem, 
     $ma_loai)
 {
-    $sql = "INSERT INTO hang_hoa(ten_sp,don_gia,giam_gia,hinh,ngay_nhap,so_luong,mo_ta,trang_thai,dac_biet,so_luot_xem,ma_loai) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO san_pham(ten_sp,don_gia,giam_gia,hinh,so_luong,trang_thai,dac_biet,so_luot_xem,ma_loai) VALUES(?,?,?,?,?,?,?,?,?)";
     // gọi lại hàm thực thi, tương tác dữ liệu
     pdo_execute(
         $sql,
-        $ten_sp,
-        $don_gia,
-        $giam_gia,
-        $hinh,
-        $ngay_nhap,
-        $so_luong,
-        $mo_ta,
-        $trang_thai,
-        $dac_biet,
-        $luot_xem,
+        $ten_sp, 
+        $don_gia, 
+        $giam_gia, 
+        $hinh, 
+        $so_luong, 
+        $trang_thai, 
+        $dac_biet, 
+        $luot_xem, 
         $ma_loai
     );
 }
