@@ -6,7 +6,7 @@ function pdo_get_connection()
     $userName = "root";
     $password = "";
     $conn = '';
-    $dbName = "quan_ly_noi_that";
+    $dbName = "ql_noi_that";
     try {
         $conn = new PDO("mysql:host=$serverName;dbname=$dbName", $userName, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -22,7 +22,7 @@ function pdo_execute($sql){
     try {
         $conn = pdo_get_connection();
         $stmt = $conn->prepare($sql);
-        $stmt->execute($sql_args);
+        $stmt -> execute($sql_args);
     } catch (PDOException $e) {
         throw $e;
     } finally {
