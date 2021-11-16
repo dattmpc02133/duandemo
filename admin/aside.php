@@ -36,7 +36,7 @@
                                         <a href="" class="sidebar_menu-links"><i class="fas fa-box-open"></i> Hàng Hóa</a>
                                     </li>
                                     <li class="sidebar_menu-lish">
-                                        <a href="" class="sidebar_menu-links"><i class="far fa-user-circle"></i> Khách Hàng</a>
+                                        <a href="<?=$ADMIN_URL?>/khach-hang" class="sidebar_menu-links"><i class="far fa-user-circle"></i> Khách Hàng</a>
                                     </li>
                                     <li class="sidebar_menu-lish">
                                         <a href="" class="sidebar_menu-links"><i class="far fa-comments"></i> Bình Luận</a>

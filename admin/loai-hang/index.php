@@ -8,6 +8,5 @@
     }else {
         $VIEW_NAME = "list.php";
     } 
-    require "../layout.php";  
-
+    require "../layout.php";
 ?>
