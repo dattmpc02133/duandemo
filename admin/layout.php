@@ -27,15 +27,16 @@
                 </aside>
                 </div>
             </div>
-        <div class="article">
-          <div class="row">
-            <article class="col-12" id= "main_admin">
-               <?php require_once $VIEW_NAME; ?>
-            </article>
-          </div>
-        </div>
+            <div class="article">
+                <div class="row">
+                    <article class="col-12" id= "main_admin">
+                    <?php require_once $VIEW_NAME; ?>
+                    </article>
+                </div>
+            </div>
     </div>
     <script src="<?= $CONTENT_URL ?>/js/admin.js"></script>
+    <footer></footer>
 </body>
 
 </html>

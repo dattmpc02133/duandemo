@@ -6,7 +6,10 @@
 }
 .aside_content {
     background-color: #1fb5d4;
-    position: relative;
+    padding-left: 25px;
+}
+body{
+    margin-bottom: 20px;
 }
 
 .div_hinh {
@@ -22,7 +25,6 @@
     padding: 10px 20px;
     display: block;
     transition: all 0.2s ease-in-out;
-   
 }
 .account_manage-lish, .account_manage-items, .sidebar_menu-lish {
     border-bottom: 1px solid #fff;
@@ -37,7 +39,7 @@
     transition: all 0.5s;
 }
 .account_manage-lish.active:hover{
-   height: 218px;
+   height: 217px;
 }
 .account_manage-ten h4{
     color: white;
@@ -80,21 +82,34 @@ color: black;
  }
  .aside_and_article{
      display: flex;
+     padding: 1px 0px;
+     margin-left: -20px;
  }
 .aside{
-    width: 20%;
+    width: 23%;
+    padding-right: 20px;
+    /* margin-right: 20px; */
     position: relative;
     animation: admin_menu_on linear 0.1s forwards;  
 }
 .aside.active{
    animation: admin_menu_hidden linear 0.1s forwards;
 }
-thead th{
+.table thead th{
     font-size: 0.8rem;
+    vertical-align:top;
 }
+.table tbody td{
+    vertical-align:middle;
+}
+tbody img{
+    width: 60px;
+}
+
 .article{
+    padding: 0px 10px;
     width: 100%;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     transition: width 1s;
     overflow: hidden;
     /* padding: 0px 20px; */
@@ -119,4 +134,4 @@ thead th{
         display: none;
      }
  }
-/* end qan lý */
+/* thêm sản phẩm */
