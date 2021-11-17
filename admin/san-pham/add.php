@@ -1,11 +1,9 @@
 <?php
-require("../../DAO/san-pham.php");
+require_once("../../global.php");
 require("../../DAO/pdo.php");
 require("../../DAO/loai.php");
-require_once("../../global.php");
+require("../../DAO/san-pham.php");
 ?>
-
-
 <div class="row">
     <div class="col p-12 t-12 m-12">
         <h3 class="title__manager">Thêm sản phẩm</h3>
