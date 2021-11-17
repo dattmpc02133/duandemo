@@ -7,8 +7,9 @@
 ul li {
     list-style: none;
 }
-.h1,h2,h3,h4,h5,h6 {
+.h1,h2,h3,h4,h5 {
     color: #0975f5;
+    padding: 3px;
 }
 .riverdungchung {
     display: flex;
@@ -18,10 +19,11 @@ ul li {
 .header_seachr {
     flex: 1;
     position: relative;
+    padding: 23px;
 }
 .btn_seachr {
     position: absolute;
-    right: 24px;
+    right: 31px;
 }
 .header_box-right {
     display: flex;
@@ -172,7 +174,7 @@ ul li {
     padding: 0 14px;
     border-radius: 2px;
     outline: none;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc; 
     margin-right: 10px;
 }
 .content-icon_img {
@@ -636,7 +638,7 @@ ul li {
     padding: 12px 7px;
     font-size: 1.4rem;
 }
-form, .waxbox_odercart {
+ .waxbox_odercart {
     border: 1px solid #eee;
     padding: 10px;
 }
