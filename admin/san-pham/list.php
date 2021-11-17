@@ -5,7 +5,7 @@
 ?>
 <div class="row">
     <div class="col-12">
-        <h3 class="title__manager" style="background-color: #d4edda; padding:12px 20px;">Danh sách sản phẩm</h3>
+        <h3 class="title__manager" style="background-color: #1fb5d4; padding:12px 20px; color:white">Danh sách sản phẩm</h3>
     </div>
 </div>
 <div class="row">
@@ -21,15 +21,17 @@
                             <th> Tên SP </th>
                             <th>Đơn giá</th>
                             <th class="">Giá giảm</th>
-                            <th class="">Ngày nhập</th>
+                           
                             <th class="">Số lượng</th>
-                            <th class="">Mô tả</th>
+                           
                             <th class="">Trạng thái</th>
                             <th class="">Đặc biệt</th>
                             <!-- <th>GIÁ ĐÃ GIẢM</th> -->
                             <!-- <td>' . number_format($giam_gia * $don_gia / $percent)   . ' VNĐ</td> -->
                             <th>Lượt xem</th>
                             <th>Mã loại</th>
+                            <th></th>
+                           
                         </tr>
                     </thead>
                     <tbody>
@@ -40,14 +42,14 @@
                         <td> Đèn bàn </td>
                         <td>200.000 <sup>đ</sup></td>
                         <td class="">25%</td>
-                        <td class="">11/06/2021</td>
                         <td class="">30</td>
-                        <td class="">Đèn bàn</td>
+                        
                         <td class="">Còn hàng</td>
                         <td class="">0</td>
                            
                         <td>0</td>
                         <td>01</td>
+                        <td><a href="#"><i class="fas fa-edit"></i></a>  <a href="#"><i class="fas fa-trash-alt" style="color: darkred;"></i></a></td>
                     </tr>
                     <tr>
                         <td class="check"><input type="checkbox"> </td>
@@ -56,14 +58,14 @@
                         <td> Đèn bàn </td>
                         <td>200.000 <sup>đ</sup></td>
                         <td class="">25%</td>
-                        <td class="">11/06/2021</td>
                         <td class="">30</td>
-                        <td class="">Đèn bàn</td>
+                        
                         <td class="">Còn hàng</td>
                         <td class="">0</td>
                            
                         <td>0</td>
                         <td>01</td>
+                        <td><a href="#"><i class="fas fa-edit"></i></a>  <a href="#"><i class="fas fa-trash-alt" style="color: darkred;"></i></a></td>
                     </tr>
                     <tr>
                         <td class="check"><input type="checkbox"> </td>
@@ -72,14 +74,14 @@
                         <td> Đèn bàn </td>
                         <td>200.000 <sup>đ</sup></td>
                         <td class="">25%</td>
-                        <td class="">11/06/2021</td>
                         <td class="">30</td>
-                        <td class="">Đèn bàn</td>
+                        
                         <td class="">Còn hàng</td>
                         <td class="">0</td>
                            
                         <td>0</td>
                         <td>01</td>
+                        <td><a href="#"><i class="fas fa-edit"></i></a>  <a href="#"><i class="fas fa-trash-alt" style="color: darkred;"></i></a></td>
                     </tr>
                     <tr>
                         <td class="check"><input type="checkbox"> </td>
@@ -88,14 +90,14 @@
                         <td> Đèn bàn </td>
                         <td>200.000 <sup>đ</sup></td>
                         <td class="">25%</td>
-                        <td class="">11/06/2021</td>
                         <td class="">30</td>
-                        <td class="">Đèn bàn</td>
+                        
                         <td class="">Còn hàng</td>
                         <td class="">0</td>
                            
                         <td>0</td>
                         <td>01</td>
+                        <td><a href="#"><i class="fas fa-edit"></i></a>  <a href="#"><i class="fas fa-trash-alt" style="color: darkred;"></i></a></td>
                     </tr>
                     <tr>
                         <td class="check"><input type="checkbox"> </td>
@@ -104,13 +106,13 @@
                         <td> Đèn bàn </td>
                         <td>200.000 <sup>đ</sup></td>
                         <td class="">25%</td>
-                        <td class="">11/06/2021</td>
                         <td class="">30</td>
-                        <td class="">Đèn bàn</td>
+                        
                         <td class="">Còn hàng</td>
                         <td class="">0</td>
                         <td>0</td>
                         <td>01</td>
+                        <td><a href="#"><i class="fas fa-edit"></i></a>  <a href="#"><i class="fas fa-trash-alt" style="color: darkred;"></i></a></td>
                     </tr>
                    </tbody>
                 </table>

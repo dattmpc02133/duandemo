@@ -7,11 +7,14 @@
 .aside_content {
     background-color: #1fb5d4;
     padding-left: 25px;
+    min-height: 100vh;
 }
 body{
     margin-bottom: 20px;
 }
-
+a ~ a{
+    margin: 0px 8px;
+}
 .div_hinh {
     width: 50%;
     max-width: 100%;
@@ -85,8 +88,10 @@ color: black;
      padding: 1px 0px;
      margin-left: -20px;
  }
+ 
 .aside{
-    width: 23%;
+    
+    width: 25%;
     padding-right: 20px;
     /* margin-right: 20px; */
     position: relative;
