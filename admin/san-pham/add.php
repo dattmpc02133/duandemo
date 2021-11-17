@@ -11,7 +11,7 @@ require_once("../../global.php");
         <h3 class="title__manager">Thêm sản phẩm</h3>
     </div>
 </div>
-<form action="" method="POST" enctype="multipart/form-data" id="form_du_an1">
+<form method="POST" enctype="multipart/form-data" id="form_du_an1">
     <div class="form-group">
         <input type="text" class="form-control" placeholder="Nhập tên sản phẩm" name="ten_sp" id="ten_sp">
     </div>
@@ -28,7 +28,6 @@ require_once("../../global.php");
     <div class="form-group">
         <input type="number" class="form-control" placeholder="Nhập số lượng" name="so_luong" id="so_luong">
     </div>
-
     <div class="form-control form-group">
         <label for="">Trạng thái</label>
         <select name="trang_thai" id="trang_thai">
@@ -65,45 +64,18 @@ require_once("../../global.php");
 </form>
 <script>
     $(document).ready(function(){
-           $('#form_du_an1').on('submit',function(e){   
-            //    e.preventDefault();
-               var ten_sp  = $('#ten_sp').val();
-               var don_gia = $('#don_gia').val();
-               var giam_gia = $('#giam_gia').val();
-               var hinh = $('#hinh').val();
-               var so_luong = $('#so_luong').val();
-               var trang_thai = $('#trang_thai').val();
-               var dac_biet = $('#dac_biet').val();
-               var luot_xem = $('#luot_xem').val();
-               var ma_loai = $('#ma_loai').val();
-                
-                $.ajax({
-                    url:"ajax_action.php",
-                    method:"POST",
-                    data: {
-                           url:"ajax_action.php",
-                           method:"POST",
-                           data: {
-                            ten_sp:ten_sp,
-                            on_gia:on_gia,
-                            giam_gia:giam_gia,
-                            hinh:hinh,
-                            so_luong:so_luong,
-                            trang_thai:trang_thai,
-                            dac_biet:dac_biet,
-                            luot_xem:luot_xem,
-                            ma_loai:ma_loai,
-                           },
-                           contentType:false,
-                           processData:false,
-                           success: function(e){
-                               alert();
-                           }
-                    },
-                    success: function(e){
-                        alert();
-                    }  
-                })
+           $('#form_du_an1').on('submit',function(e){             
+                e.preventDefault();
+                $.ajax({               
+                   url:"ajax_action.php",
+                   method:"POST",
+                   data: new FormData(this),
+                   contentType:false,
+                   processData:false,
+                   success: function(respone){
+                    alert(respone);
+                   }
+                })        
             })
     })
 

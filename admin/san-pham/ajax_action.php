@@ -2,9 +2,9 @@
 require_once("../../global.php");
 require_once("../../DAO/pdo.php");
 require_once("../../DAO/san-pham.php");
-if(isset($_FILES['hinh'])){
+if(isset($_POST['ten_sp'])){
     // $path =  $CONTENT_URL . '/images/products/';
-    $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL . '/images/products/';
+    $path = $CONTENT_URL . '/images/products/';
     // $them_san_pham = $_POST['them_san_pham'];
     $ten_sp = $_POST['ten_sp'];
     $don_gia = $_POST['don_gia'];
@@ -20,13 +20,12 @@ if(isset($_FILES['hinh'])){
         $ten_sp, 
         $don_gia, 
         $giam_gia, 
-        $hinh, 
+        $hinh2, 
         $so_luong, 
         $trang_thai, 
         $dac_biet, 
         $luot_xem, 
         $ma_loai);
-   
 } 
-else echo "no";
+
 ?>
