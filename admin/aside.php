@@ -33,7 +33,7 @@
                 <a href="<?=$ADMIN_URL?>/loai-hang" class="sidebar_menu-links"><i class="far fa-chart-bar"></i> Loại hàng</a>
             </li>
             <li class="sidebar_menu-lish">
-                <a href="" class="sidebar_menu-links"><i class="fab fa-product-hunt"></i> Sản phẩm</a>
+                <a href="<?=$ADMIN_URL?>/san-pham" class="sidebar_menu-links"><i class="fab fa-product-hunt"></i> Sản phẩm</a>
             </li>
             <li class="sidebar_menu-lish">
                 <a href="<?=$ADMIN_URL?>/khach-hang" class="sidebar_menu-links"><i class="far fa-user-circle"></i> Khách hàng</a>
