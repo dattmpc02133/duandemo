@@ -361,6 +361,11 @@ ul li {
 .menu_boximg-img {
     width: 100%;
 }
+.introduce_product>li{
+    font-size: 0.9rem;
+    list-style: circle;
+    margin-left: 20px;
+}
 /* end Giới Thiệu */
 /* blog */
 .blog_content-img {
