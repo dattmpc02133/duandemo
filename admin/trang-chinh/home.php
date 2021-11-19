@@ -1,62 +1,138 @@
+<?php
+    require_once("../../global.php");
+    require_once("../../DAO/pdo.php");
+    require_once("../../DAO/san-pham.php");
+?>
+<div class="row">
+    <div class="col-12">
+        <h3 class="title__manager" style="background-color: #1fb5d4; padding:12px 20px; color:white">Danh sách sản phẩm</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="form__content">
+            <form action="#" method="POST">
+                <table class="form__content-table table">
+                    <thead class="table-danger">
+                        <tr>
+                            <th class="check"><input type="checkbox"> </th>
+                            <th>Mã SP</th>
+                            <th style="text-align:center"> Ảnh </th>
+                            <th> Tên SP </th>
+                            <th>Đơn giá</th>
+                            <th class="">Giá giảm</th>
+                           
+                            <th class="">Số lượng</th>
+                           
+                            <th class="">Trạng thái</th>
+                            <th class="">Đặc biệt</th>
+                            <!-- <th>GIÁ ĐÃ GIẢM</th> -->
+                            <!-- <td>' . number_format($giam_gia * $don_gia / $percent)   . ' VNĐ</td> -->
+                            <th>Lượt xem</th>
+                            <th>Mã loại</th>
+                            <th></th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="check"><input type="checkbox"> </td>
+                        <td>01</td>
+                        <td style="text-align:center;"> <img src="<?= $CONTENT_URL ?>/images/den-ban.jpg"   alt=""> </td>
+                        <td> Đèn bàn </td>
+                        <td>200.000 <sup>đ</sup></td>
+                        <td class="">25%</td>
+                        <td class="">30</td>
+                        
+                        <td class="">Còn hàng</td>
+                        <td class="">0</td>
+                           
+                        <td>0</td>
+                        <td>01</td>
+                        <td><a href="#"><i class="fas fa-edit"></i></a>  <a href="#"><i class="fas fa-trash-alt" style="color: darkred;"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td class="check"><input type="checkbox"> </td>
+                        <td>02</td>
+                        <td style="text-align:center;"> <img src="<?= $CONTENT_URL ?>/images/den-ban.jpg"   alt=""> </td>
+                        <td> Đèn bàn </td>
+                        <td>200.000 <sup>đ</sup></td>
+                        <td class="">25%</td>
+                        <td class="">30</td>
+                        
+                        <td class="">Còn hàng</td>
+                        <td class="">0</td>
+                           
+                        <td>0</td>
+                        <td>01</td>
+                        <td><a href="#"><i class="fas fa-edit"></i></a>  <a href="#"><i class="fas fa-trash-alt" style="color: darkred;"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td class="check"><input type="checkbox"> </td>
+                        <td>03</td>
+                        <td style="text-align:center;"> <img src="<?= $CONTENT_URL ?>/images/den-ban.jpg"   alt=""> </td>
+                        <td> Đèn bàn </td>
+                        <td>200.000 <sup>đ</sup></td>
+                        <td class="">25%</td>
+                        <td class="">30</td>
+                        
+                        <td class="">Còn hàng</td>
+                        <td class="">0</td>
+                           
+                        <td>0</td>
+                        <td>01</td>
+                        <td><a href="#"><i class="fas fa-edit"></i></a>  <a href="#"><i class="fas fa-trash-alt" style="color: darkred;"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td class="check"><input type="checkbox"> </td>
+                        <td>04</td>
+                        <td style="text-align:center;"> <img src="<?= $CONTENT_URL ?>/images/den-ban.jpg"   alt=""> </td>
+                        <td> Đèn bàn </td>
+                        <td>200.000 <sup>đ</sup></td>
+                        <td class="">25%</td>
+                        <td class="">30</td>
+                        
+                        <td class="">Còn hàng</td>
+                        <td class="">0</td>
+                           
+                        <td>0</td>
+                        <td>01</td>
+                        <td><a href="#"><i class="fas fa-edit"></i></a>  <a href="#"><i class="fas fa-trash-alt" style="color: darkred;"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td class="check"><input type="checkbox"> </td>
+                        <td>05</td>
+                        <td style="text-align:center;"> <img src="<?= $CONTENT_URL ?>/images/den-ban.jpg"   alt=""> </td>
+                        <td> Đèn bàn </td>
+                        <td>200.000 <sup>đ</sup></td>
+                        <td class="">25%</td>
+                        <td class="">30</td>
+                        
+                        <td class="">Còn hàng</td>
+                        <td class="">0</td>
+                        <td>0</td>
+                        <td>01</td>
+                        <td><a href="#"><i class="fas fa-edit"></i></a>  <a href="#"><i class="fas fa-trash-alt" style="color: darkred;"></i></a></td>
+                    </tr>
+                   </tbody>
+                </table>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="button__group">
+                            <!-- <button class="button__group-item button__group-checkAll">Chọn tất cả</button>
+                            <button class="button__group-item button__group-unCheckAll">Bỏ chọn tất
+                                cả</button> -->
+                            <button class=" btn btn-info button__group-item button__group-input" name="delete_select">Xóa các mục
+                                chọn</button>
+                            <a href="index.php?btn_add" class=" btn btn-info button__group-item button__group-input">Thêm mới</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
 
-                <form action="" method="POST">
-                    <div class="row">
-                        <div class="col-12" style="padding: 0;">
-                            <div class="alert" style="background-color: #1fb5d4;" role="alert">
-                                <h3 class="" style="color:white;;" >Danh sách khách hàng</h3>
-                            </div>
-                            <table class="table table-light">
-                                <thead class="table-danger">
-                                    <tr>
-                                        <th class="check"><input type="checkbox"> </th>
-                                        <th>Mã khách hàng</th>
-                                        <th>Mật khẩu</th>
-                                        <th>Họ tên</th>
-                                        <th>Ảnh</th>
-                                        <th>Email</th>
-                                        <th>Vai trò</th>
-                                        <th>Kích hoạt</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                            <td class="check"><input type="checkbox" name="check[]" value=""></td>
-                                            <td class="kh__item">12345</td>
-                                            <td class="kh__item">123456</td>
-                                            <td class="kh__item">dạt</td>
-                                            <td class="kh__item">
-                                                <img src="<?= $CONTENT_URL ?>/images/sofa-giuong-keo.jpg" alt="" style="width: 74px; height: 74px;">
-                                            </td>
-                                            <td class="kh__item"></td>
-                                            <td class="kh__item">
-                                            
-                                            </td>
-                                            <td class="kh__item">
-                                               
-                                            </td>
-                                            <td class="kh__item"><a class="btn btn-info" href="">Xóa</a> <a class="btn btn-info" href="">Sửa</a></td>
-                                    </tr>
-                                <tr>
-                                    <td colspan="8">
-                                        <!-- <button name="check_all" id="check_all" class="btn btn-primary" href="#" role="button">Chọn tất cả</button>
-                                        <button name="uncheck_all" id="uncheck_all" class="btn btn-primary" href="#" role="button">Bỏ chọn tất cả</button> -->
-                
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <button name="delete_select" id="delete_check_all" class="btn btn-info" href="#" role="button">Xóa các mục đã chọn</button>
-                                                <a name="" id="" class="btn btn-info" href="index.php?btn_new" role="button">Thêm Mới</a>
-                                               
-                                                <!-- <a name="" id="" class="btn btn-info" href="index.php" role="button">Danh sách</a> -->
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class=" col-sm-12 phan_trang" style="display:flex; justify-content:center">
-                        </div>
-                    </div>          
-    </form>
-          
+        </div>
+    </div>
+    <div class=" col-sm-12 phan_trang" style="display:flex; justify-content:center">
+      
+    </div>
+</div>
