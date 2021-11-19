@@ -22,13 +22,10 @@ if (isset($_POST['delete_select'])) {
 
 
 ?>
-<div class="row">
-    <div class="col p-12 t-12 m-12">
-        <h3 class="title__manager" style="background-color: #d4edda; padding:12px 20px ">QUẢN LÝ LOẠI HÀNG</h3>
-    </div>
+<div class="title">
+    <h3>QUẢN LÝ LOẠI SẢN PHẨM</h3>
 </div>
-<div class="row">
-    <div class="col p-12 t-12 m-12">
+
         <div class="form__content">
             <form accept="#" method="POST">
                 <table class="table">
@@ -39,7 +36,6 @@ if (isset($_POST['delete_select'])) {
                             <th>TÊN LOẠI</th>
                             <th>HÌNH</th>
                             <th style="width:15%"></th>
-
                         </tr>
                     </thead>
                     <tbody>
@@ -58,8 +54,8 @@ if (isset($_POST['delete_select'])) {
                             <td>' . $ten_loai . '</td>
                             <td>' . $hinh . '</td>
                             <td class="update__delete" >
-                            <a class="btn btn-info" href="' . $btn_update . '">Sửa</a>
-                            <a class="btn btn-info" href="' . $delete_link . '"> Xóa</a> 
+                            <a class="btn btn-info" href="' . $btn_update . '"><i class="fas fa-edit"></i></a>
+                            <a class="btn btn-info" href="' . $delete_link . '"> <i class="fas fa-trash-alt"></i></a> 
                             </td>
                          </tr>
                         ';
@@ -80,8 +76,6 @@ if (isset($_POST['delete_select'])) {
 
             </form>
         </div>
-    </div>
-</div>
 
 <!--grid-->
 

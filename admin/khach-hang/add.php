@@ -20,12 +20,11 @@
               </script>";
     }
 ?>
-<div class="row">
-    <div class="col-sm-12 ">
+<div class="title">
+    <h3>THÊM KHÁCH HÀNG</h3>
+</div>
+    <div class="form__content">
         <form action="index.php?btn-add" method="POST" enctype="multipart/form-data" id="form_du_an">
-            <label>
-                <h3>Thêm khách hàng</h3>
-            </label>
             <div class="form-group">
                 <label for="">Mã khách hàng:</label>
                 <input type="text" class="form-control" placeholder="Nhập mã khách hàng" name="ma_kh" id="ma_kh">
@@ -86,4 +85,3 @@
             </div>
         </form>
     </div>
-</div>

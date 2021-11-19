@@ -3,13 +3,9 @@
     require_once("../../DAO/pdo.php");
     require_once("../../DAO/san-pham.php");
 ?>
-<div class="row">
-    <div class="col-12">
-        <h3 class="title__manager" style="background-color: #1fb5d4; padding:12px 20px; color:white">Danh sách sản phẩm</h3>
-    </div>
+<div class="title">
+   <h3>DANH SÁCH SẢN PHẨM</h3>
 </div>
-<div class="row">
-    <div class="col-12">
         <div class="form__content">
             <form action="#" method="POST">
                 <table class="form__content-table table">

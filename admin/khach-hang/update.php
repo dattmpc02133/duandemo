@@ -35,13 +35,13 @@ if (isset($_GET['ma_kh'])) {
 }
 
 ?>
-<form action="index.php?btn-update&ma_loai=<?= $_SESSION['ma_kh'] ?>" method="POST"enctype="multipart/form-data" id="form_du_an">
-    <label>
-        <h3>Cập nhật khách hàng</h3>
-    </label>
+<div class="title">
+    <h3>CẬP NHẬT KHÁCH HÀNG</h3>
+</div>
+<form action="index.php?btn-update&ma_kh=<?= $_SESSION['ma_kh'] ?>" method="POST"enctype="multipart/form-data" id="form_du_an">
     <div class="form-group">
         <label for="">Mã khách hàng:</label>
-        <input type="text" class="form-control" readonly value="<?= $ma_kh ?>" name="ma_kh" id="ma_kh">
+        <input type="text" class="form-control" readonly value="<?=$ma_kh?>" name="ma_kh" id="ma_kh">
     </div>
     <div class="form-group">
         <label for="">Mật khẩu:</label>
@@ -85,7 +85,7 @@ if (isset($_GET['ma_kh'])) {
     </div>
     <div class="form-group">
         <label for="">Email:</label>
-        <input type="text" class="form-control" value="<?= $dia_chi ?>" name="dia_chi" id="dia_chi">
+        <input type="text" class="form-control" value="<?= $dia_chi ?>" name="email" id="email">
     </div>
     <div class="form-group">
         <label for="">Vai trò:</label>

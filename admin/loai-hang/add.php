@@ -10,21 +10,21 @@ require("../../DAO/loai.php");
         // header('Location:  ./index.php');
     }
 ?>
-<div class="row">
-    <div class="col-sm-12 ">
+<div class="title">
+    <h3>THÊM LOẠI SẢN PHẨM</h3>
+</div>
+<div class="form__content">
         <form action="index.php?btn-add" method="POST" enctype="multipart/form-data" id="form_du_an">
-            <label>
-                <h3>Thêm Mới Loại Hàng</h3>
-            </label>
-
             <div class="form-group">
+                <label for="">Mã loại:</label>
                 <input type="text" class="form-control" placeholder="Nhập tên hàng hóa" name="ma_loai" value="mã loại: auto" disabled>
             </div>
             <div class="form-group">
+                <label for="">Tên loại:</label>
                 <input type="text" class="form-control" placeholder="Nhập tên loại" name="ten_loai" id="ten_loai">
             </div>
             <div class="form-group">
-                <label for=""><b>Ảnh *</b></label>
+                <label for="">Ảnh:</label>
                 <input type="file" class="form-control-file" name="hinh" id="hinh" aria-describedby="fileHelpId">
             </div>
             <div class="btn__group">

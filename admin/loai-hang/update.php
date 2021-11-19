@@ -30,17 +30,21 @@ if (isset($_GET['ma_loai'])) {
 }
 
 ?>
+<div class="title">
+    <h3>CẬP NHẬT LOẠI SẢN PHẨM</h3>
+</div>
+
 <form action="index.php?btn-update&ma_loai=<?= $_SESSION['ma_loai'] ?>" method="POST"enctype="multipart/form-data" id="form_du_an">
-    <label>
-        <h3>Cập Nhật Loại Hàng</h3>
-    </label>
     <div class="form-group">
+        <label for="">Mã loại:</label>
         <input type="text" class="form-control" readonly value="<?= $ma_loai ?>" name="ma_loai">
     </div>
     <div class="form-group">
+        <label for="">Tên loại:</label>
         <input type="text" class="form-control" name="ten_loai" id="ten_loai" value="<?= $ten_loai  ?>">
     </div>
     <div class="form-group">
+        <label for="">Ảnh:</label>
         <input type="file" class="form-control"  value="<?= $hinh ?>" name="hinh1">
         <input type="text" class="form-control" readonly value="<?= $hinh ?>" name="hinh">
     </div>

@@ -1,0 +1,98 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* side bar */
+.left-col{
+    padding-left: 0;
+}
+.side-bar{
+    min-height: 850px;
+    background-color: #232946;
+    padding: 0;
+    margin: 0;
+}
+hr{
+    background-color: #fffffe;
+    opacity: 0.25;            
+}
+
+.side-bar li a{
+    display: block;
+    color: #b8c1ec;
+}
+.side-bar li a:hover{
+    background-color: #eebbc3;
+    color: #232946;
+}
+.top{
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.top .account{
+    margin-left: 10px;
+    display: flex;
+}
+.top .account .avt{
+    width: 75px;
+    height: 75px;
+    border-radius: 100rem;
+}
+.top h3{
+    color: #fffffe;
+    padding: 1rem;
+}
+.fas{
+    margin-right: 10px;
+}
+.drop-button{
+    margin-left: auto;
+    margin-right: 4px;
+}
+.drop-button button,
+.drop-button button:hover,
+.drop-button button:active{
+    background-color: #232946 !important;
+    outline: none !important;
+    border: none !important;
+}
+.dropdown-item:hover,
+.dropdown-item:active{
+    background-color: #232946;
+    color: #fffffe;
+}
+/* end side bar */
+
+/* article */
+.right-col{
+    padding: 0;
+}
+/* main{
+    background-color: #cccccc;
+} */
+.content{
+    min-height: 850px;
+}
+.title{
+    padding: 1.85rem 0 1.85rem 0;
+    background-color: #232946;
+    color: #fffffe;
+}
+.title h3{
+    margin-left: 20px;
+}
+/* end article */
+/* table */
+.table{
+    font-size: 14px;
+}
+.table td, .table th {
+    padding: 0.5rem !important;
+}
+.update__delete .btn-info .fas{
+    margin-right: 0px;
+}
+/*end table*/
