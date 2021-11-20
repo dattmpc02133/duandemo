@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php 
+    require("../../global.php");
+    extract($_REQUEST);
+    if (exit_param("btn-list")) {
+        // trang danh sach loaim hang
+        $VIEW_NAME = "list.php";
+    } elseif (exit_param("btn_update")) {
+        $VIEW_NAME = "update.php";
+    } elseif (exit_param('btn-details')) {
+        $VIEW_NAME = "details.php";
+    } else {
+        $VIEW_NAME = "list.php";
+    }
+    require("../layout.php");
+?>

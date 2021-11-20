@@ -2,7 +2,6 @@
     require_once("../../global.php");
     require_once("../../DAO/pdo.php");
     require_once("../../DAO/san-pham.php");
-
     if(isset($_GET['ma_sp'])){
         san_pham_delete($_GET['ma_sp']);
         header('location: index.php');
@@ -27,7 +26,6 @@
                         <tr>
                             <th class="check"><input type="checkbox"> </th>
                             <th>Mã SP</th>
-                            <th style="text-align:center"> Ảnh </th>
                             <th> Tên SP </th>
                             <th>Đơn giá</th>
                             <th class="">Giảm giá (%)</th>
@@ -51,7 +49,6 @@
                     <tr>
                         <td class="check"><input type="checkbox"> </td>
                         <td><?=$ma_sp?></td>
-                        <td style="text-align:center;"><img src="<?=$CONTENT_URL?>/images/products/<?=$hinh?>" alt="<?=$hinh?>" style="width:50%; border: 1px solid #cccccc;"></td>
                         <td><?=$ten_sp?></td>
                         <td><?=number_format($don_gia)?><sup>đ</sup></td>
                         <td class=""><?php

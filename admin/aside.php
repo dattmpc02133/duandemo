@@ -31,7 +31,7 @@
                         <a class="nav-link active" href="<?=$ADMIN_URL?>/san-pham"><i class="fas fa-box-open"></i>Sản phẩm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#"><i class="fas fa-shipping-fast"></i>Đơn hàng</a>
+                        <a class="nav-link active" href="<?=$ADMIN_URL?>/quan-ly-gio-hang"><i class="fas fa-shipping-fast"></i>Đơn hàng</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#"><i class="fas fa-comments"></i>Bình luận</a>
