@@ -1,12 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php
+require ("../../global.php");
+// require ("../../DAO/binh-luan.php");
+// require ("../../DAO/thong_ke_binh_luan.php");
+require ("../../DAO/pdo.php");
+// 
+extract($_REQUEST);
+if(exit_param("chart")){
+    // $items = thong_ke_hang_hoa();
+    $VIEW_NAME = "chart.php";
+}else{
+    // $items = thong_ke_hang_hoa();
+    $VIEW_NAME = "list.php";
+}
+// $items = thong_ke_hang_hoa();
+require ("../layout.php");
+
+?>
