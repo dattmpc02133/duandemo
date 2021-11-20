@@ -7,7 +7,7 @@ require("../../DAO/loai.php");
         $hinh = $_FILES['hinh'];
         $tenhinh = save_file($hinh, $path);
         loai_insert($ten_loai, $tenhinh);
-        // header('Location:  ./index.php');
+        header('location: index.php');
     }
 ?>
 <div class="title">

@@ -28,7 +28,7 @@
                         <a class="nav-link active" href="<?=$ADMIN_URL?>/loai-hang"><i class="fas fa-boxes"></i>Loại sản phẩm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#"><i class="fas fa-box-open"></i>Sản phẩm</a>
+                        <a class="nav-link active" href="<?=$ADMIN_URL?>/san-pham"><i class="fas fa-box-open"></i>Sản phẩm</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#"><i class="fas fa-shipping-fast"></i>Đơn hàng</a>

@@ -1,24 +1,20 @@
 <?php
-require("../../DAO/hang_hoa.php");
+require("../../DAO/san-pham.php");
 require("../../DAO/pdo.php");
 require("../../DAO/loai.php");
 require_once("../../global.php");
-$_SESSION['ma_hh'] = $_GET['ma_hh'];
-
-
-if (isset($_POST['btn_update'])) {
-    $ten_hang_hoa = "";
+$_SESSION['ma_sp'] = $_GET['ma_sp'];
+if (isset($_POST['btn_update1'])) {
+    $ten_sp = "";
     $don_gia = "";
-    $ngay_nhap = "";
-    $hinh = "";
     $test = true;
     $kt_loi = array();
 
-    if (empty($_POST['ten_hang_hoa'])) {
-        $kt_loi['ten_hang_hoa'] = "Tên hàng hóa không được bỏ trống !";
+    if (empty($_POST['ten_sp'])) {
+        $kt_loi['ten_sp'] = "Tên hàng hóa không được bỏ trống !";
         $test =  false;
     } else {
-        $ten_hang_hoa = $_POST['ten_hang_hoa'];
+        $ten_sp = $_POST['ten_sp'];
     }
     if (empty($_POST['don_gia'])) {
         $kt_loi['don_gia'] = "Đơn giá không được bỏ trống !";
@@ -26,50 +22,37 @@ if (isset($_POST['btn_update'])) {
     } else {
         $don_gia = $_POST['don_gia'];
     }
-    if (empty($_POST['ngay_nhap'])) {
-        $kt_loi['ngay_nhap'] = "Ngày nhập không được bỏ trống !";
-        $test = false;
-    } else {
-        $ngay_nhap = $_POST['ngay_nhap'];
-    }
+    echo 'a';
     if ($test) {
-        // echo "<script> alert('Thành công'); </script>";
-        if (isset($_POST['ma_hh'])) {
-            // $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL;
+        if (isset($_POST['ma_sp'])) {
             $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL . '/images/products/';
-            $ten_hh = $_POST['ten_hang_hoa'];
+            $ten_sp = $_POST['ten_sp'];
             $don_gia = $_POST['don_gia'];
             $giam_gia = $_POST['giam_gia'];
-            // $hinh = $_POST['hinh'];
-            $ngay_nhap = $_POST['ngay_nhap'];
-            $mo_ta = $_POST['description'];
+            $so_luong = $_POST['so_luong'];
             $trang_thai = $_POST['trang_thai'];
-            $dac_biet = $_POST['trang_thai_bd'];
-            $so_luot_xem = $_POST['luot_xem'];
+            $dac_biet = $_POST['dac_biet'];
+            $so_luot_xem = $_POST['so_luot_xem'];
             $ma_loai = $_POST['ma_loai'];
-            $ma_hh = $_POST['ma_hh'];
-
+            $ma_sp = $_POST['ma_sp'];
             if (strlen($_FILES['hinh_new']['name']) > 0) {
                 $hinh = $_FILES['hinh_new'];
-                $hinh2 =    save_file($hinh, $path);
-                // move_uploaded_file($_FILES['hinh_new']['tmp_name'], "$path./images/products/$hinh");
+                $hinh2 = save_file($hinh, $path);
             } else {
                 $hinh2 = $_POST['hinh'];
             }
             update_hh(
-                $ten_hh,
-                $don_gia,
-                $giam_gia,
+                $ten_sp, 
+                $don_gia, 
+                $giam_gia, 
                 $hinh2,
-                $ngay_nhap,
-                $mo_ta,
+                $so_luong,
                 $trang_thai,
-                $dac_biet,
-                $so_luot_xem,
-                $ma_loai,
-                $ma_hh,
-            );
-            unset($_SESSION['ma_hh']);
+                $dac_biet, 
+                $so_luot_xem, 
+                $ma_loai, 
+                $ma_sp);
+            unset($_SESSION['ma_sp']);
             header("location: index.php");
         }
     } else {
@@ -77,64 +60,98 @@ if (isset($_POST['btn_update'])) {
     }
 }
 
-
-
-if (isset($_GET['ma_hh'])) {
-    $ma_hh = $_GET['ma_hh'];
-    $hh_get_info =  hang_hoa_getinfo($ma_hh);
-    extract($hh_get_info);
+if (isset($_GET['ma_sp'])) {
+    $ma_sp = $_GET['ma_sp'];
+    $sp_get_info = san_pham_getinfo($ma_sp);
+    extract($sp_get_info);
 }
 ?>
-<div class="row">
-    <div class="col p-12 t-12 m-12">
-        <h3 class="title__manager">Cập nhật hàng hóa</h3>
-    </div>
+<div class="title">
+    <h3>CẬP NHẬT SẢN PHẨM</h3>
 </div>
-<form action="index.php?btn_update&ma_hh=<?= $_SESSION['ma_hh'] ?>" method="POST" enctype="multipart/form-data" id="form_du_an">
+<form action="index.php?btn-update&ma_sp=<?= $_SESSION['ma_sp'] ?>" method="POST" enctype="multipart/form-data" id="form_du_an">
     <div class="form-group">
-        <input type="text" class="form-control" value="<?= $ten_hh ?>" name="ten_hang_hoa" id="ten_hh">
-        <?php if (isset($kt_loi['ten_hang_hoa'])) { ?>
-            <span class="err"> <?php echo $kt_loi['ten_hang_hoa'] ?> </span>
+      <label for="">Mã sản phẩm:</label>
+      <input type="text" class="form-control" name="ma_sp" id="ma_sp" placeholder="" value="<?=$ma_sp?>" readonly>
+    </div>
+    <div class="form-group">
+        <label for="">Tên sản phẩm:</label>
+        <input type="text" class="form-control" value="<?= $ten_sp ?>" name="ten_sp" id="ten_sp">
+        <?php if (isset($kt_loi['ten_sp'])) { ?>
+            <span class="err"> <?php echo $kt_loi['ten_sp'] ?> </span>
         <?php } ?>
         <span class="mess "></span>
     </div>
     <div class="form-group">
-        <input type="number" class="form-control" value="<?= $don_gia ?>" name="don_gia" id="don_gia">
+        <label for="">Đơn giá:</label>
+        <input type="number" class="form-control" value="<?= $don_gia ?>" name="don_gia" id="don_gia" min=0>
         <?php if (isset($kt_loi['don_gia'])) { ?>
             <span class="err"> <?php echo $kt_loi['don_gia'] ?> </span>
         <?php } ?>
         <span class="mess "></span>
     </div>
     <div class="form-group">
-        <input type="number" class="form-control" value="<?= $giam_gia ?>" name="giam_gia">
+        <label for="">Giảm giá (%):</label>
+        <input type="number" class="form-control" value="<?=$giam_gia?>" name="giam_gia" min=0>
     </div>
     <div class="form-group">
-        <label for=""><b>Ảnh *</b></label>
+        <label for="">Số lượng:</label>
+        <input type="number" class="form-control" value="<?=$so_luong?>" name="so_luong">
+    </div>
+    <div class="form-group">
+        <label for="">Ảnh:</label>
         <input type="file" class="form-control-file" name="hinh_new" id="hinh_new" aria-describedby="fileHelpId">
         <input class="form-control" type="text" name="hinh" id="hinh" value="<?php echo $hinh ?>" readonly style="border: none; outline:none;">
-
     </div>
     <div class="form-group">
-        <input type="date" class="form-control" value="<?= $ngay_nhap ?>" name="ngay_nhap">
-        <?php if (isset($kt_loi['ngay_nhap'])) { ?>
-            <span class="err"> <?php echo $kt_loi['ngay_nhap'] ?> </span>
-        <?php } ?>
+        <label for="">Trạng thái:</label>
+        <div class="form-control-radio">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="trang_thai" id="trang_thai" value="1" <?php 
+                        if($trang_thai==1){
+                            echo 'checked';
+                        }
+                    ?>>Còn hàng
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="trang_thai" id="trang_thai" value="0"<?php 
+                        if($trang_thai==0){
+                            echo 'checked';
+                        }
+                    ?>>Hết hàng
+                </label>
+            </div>
+        </div>
     </div>
     <div class="form-group">
-        <textarea class="form-control" name="description" id="description" rows="3"> <?= $mo_ta ?></textarea>
-        <!-- <textarea cols="125" rows="5" name="description"> <?= $mo_ta ?> </textarea> -->
+        <label for="">Đặc biệt:</label>
+        <div class="form-control-radio">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="dac_biet" id="dac_biet" value="1" <?php 
+                        if($dac_biet==1){
+                            echo 'checked';
+                        }
+                    ?>>Đặc biệt
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="dac_biet" id="dac_biet" value="0"<?php 
+                        if($dac_biet==0){
+                            echo 'checked';
+                        }
+                    ?>>Thường
+                </label>
+            </div>
+        </div>
     </div>
     <div class="form-group">
-        <label>Trạng thái</label>
-        <input type="text" class="form-control" value="<?= $trang_thai ?>" name="trang_thai">
-    </div>
-    <div class="form-group">
-        <label>Đặc biệt</label>
-        <input type="number" min="0" max="1" step="1" class="form-control" value="<?= $dac_biet ?>" name="trang_thai_bd">
-    </div>
-    <div class="form-group">
-        <label>Số lượt xem</label>
-        <input type="number" class="form-control" value="<?= $so_luot_xem ?>" name="luot_xem">
+        <label>Số lượt xem:</label>
+        <input type="number" class="form-control" value="<?= $so_luot_xem ?>" name="so_luot_xem">
     </div>
     <div class="form-group">
         <select class="form-control" id="sel1" name="ma_loai">
@@ -147,8 +164,9 @@ if (isset($_GET['ma_hh'])) {
             ?>
         </select>
     </div>
-    <input readonly type="text" class="form-control" value="<?= $ma_hh ?>" name="ma_hh">
-    <button type="submit" class="btn btn-info" name="btn_update">Cập nhật sản phẩm</button>
-    <a href="index.php?btn_list" class="btn btn-info">Danh sách</a>
-    <a href="index.php?btn_add" class="btn btn-info">Thêm mới</a>
+    <div class="btn__group">
+        <button type="submit" class="btn btn-info" name="btn_update1">Cập nhật sản phẩm</button>
+        <a href="index.php" class="btn btn-info">Danh sách</a>
+        <a href="index.php?btn-add" class="btn btn-info">Thêm mới</a>
+    </div>
 </form>
