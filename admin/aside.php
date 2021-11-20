@@ -34,7 +34,7 @@
                         <a class="nav-link active" href="#"><i class="fas fa-shipping-fast"></i>Đơn hàng</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#"><i class="fas fa-comments"></i>Bình luận</a>
+                        <a class="nav-link active" href="<?=$ADMIN_URL?>/binh-luan"><i class="fas fa-comments"></i>Bình luận</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="<?=$ADMIN_URL?>/thong-ke"><i class="fas fa-chart-line"></i>Thống kê</a>
