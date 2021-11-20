@@ -16,7 +16,7 @@ if (isset($_POST['delete_select'])) {
 
 
 <div class="title">
-    <h3>QUẢN LÝ LOẠI SẢN PHẨM</h3>
+    <h3>QUẢN LÝ BÌNH LUẬN</h3>
 </div>
 <div class="row">
     <div class="col p-12 t-12 m-12">
@@ -114,8 +114,4 @@ if (isset($_POST['delete_select'])) {
 
         </div>
     </div>
-
-
-
-
 </div>

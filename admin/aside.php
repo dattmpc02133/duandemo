@@ -28,6 +28,9 @@
                         <a class="nav-link active" href="<?=$ADMIN_URL?>/loai-hang"><i class="fas fa-boxes"></i>Loại sản phẩm</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link active" href="<?=$ADMIN_URL?>/nha-cung-cap"><i class="fas fa-warehouse"></i>Nhà cung cấp</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" href="<?=$ADMIN_URL?>/san-pham"><i class="fas fa-box-open"></i>Sản phẩm</a>
                     </li>
                     <li class="nav-item">

@@ -40,7 +40,7 @@
                 <td>3.000.000 <sup>đ</sup></td>
                 <td>Lương Tâm - Long Mỹ - Hậu Giang</td>
                 <td>20/11/2021</td>
-                <td>Đang xử lý </td>
+                <td> Đang vận chuyển </td>
                 <td class="update__delete">
                     <a class="btn btn-info" href="index.php?btn-details"><i class="fas fa-info-circle"></i></a>
                     <a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a> 
@@ -54,7 +54,7 @@
                 <td>3.000.000 <sup>đ</sup></td>
                 <td>Lương Tâm - Long Mỹ - Hậu Giang</td>
                 <td>20/11/2021</td>
-                <td>Đang xử lý </td>
+                <td>Đã thanh toán </td>
                 <td class="update__delete">
                     <a class="btn btn-info" href="index.php?btn-details"><i class="fas fa-info-circle"></i></a>
                     <a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a> 
@@ -68,7 +68,7 @@
                 <td>3.000.000 <sup>đ</sup></td>
                 <td>Lương Tâm - Long Mỹ - Hậu Giang</td>
                 <td>20/11/2021</td>
-                <td>Đang xử lý </td>
+                <td> Đơn hàng đổi trả</td>
                 <td class="update__delete">
                     <a class="btn btn-info" href="index.php?btn-details"><i class="fas fa-info-circle"></i></a>
                     <a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a> 

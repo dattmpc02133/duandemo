@@ -17,7 +17,7 @@
     }
 ?>
 <div class="title">
-   <h3>DANH SÁCH SẢN PHẨM</h3>
+   <h3>QUẢN LÝ SẢN PHẨM</h3>
 </div>
         <div class="form__content">
             <form action="#" method="POST">

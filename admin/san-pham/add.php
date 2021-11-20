@@ -114,21 +114,3 @@ if(isset($_POST['add'])){
     <button type="reset" class="btn btn-info" name="nhap_lai">Nhập lại</button>
     <a href="index.php?btn_list" class="btn btn-info">Danh sách</a>
 </form>
-<!-- <script>
-    $(document).ready(function(){
-           $('#form_du_an1').on('submit',function(e){             
-                e.preventDefault();
-                $.ajax({               
-                   url:"ajax_action.php",
-                   method:"POST",
-                   data: new FormData(this),
-                   contentType:false,
-                   processData:false,
-                   success: function(respone){
-                    alert(respone);
-                   }
-                })        
-            })
-    })
-
-</script> -->
