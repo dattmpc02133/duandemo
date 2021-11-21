@@ -4,7 +4,7 @@
                         <div class="account">
                             <img src="<?=$CONTENT_URL?>/images/draconic.png" alt="draconic" class="avt">
                            <div class="account-text">
-                             <h3>Trần Minh Đạt</h3>
+                             <h5>ADMIN</h5>
                             <div class="btn-group drop-button">
                               <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="sr-only">Toggle Dropdown</span>
