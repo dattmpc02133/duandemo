@@ -79,7 +79,7 @@
                     </td>
                     <td class="update__delete" >
                     <a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a>
-                    <a class="btn btn-info" href="<?=$delete_link?>"><i class="fas fa-trash-alt"></i></a> 
+                    <a class="btn btn-danger" href="<?=$delete_link?>"><i class="fas fa-trash-alt"></i></a> 
                     </td>
                     </tr>
                     <?php
