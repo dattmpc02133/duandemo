@@ -32,57 +32,91 @@
                             <th class="">Số lượng</th>
                             <th class="">Trạng thái</th>
                             <th class="">Đặc biệt</th>
-                            <th>Lượt xem</th>
+                            <th>Lượt mua</th>
                             <th>Mã loại</th>
                             <th></th>
                            
                         </tr>
                     </thead>
                     <tbody>
-                    <?php 
-                        $lists=san_pham_selectall();
-                        foreach ($lists as $sp) {
-                            extract($sp);
-                            $delete_link = "list.php?btn-delete&ma_sp=$ma_sp";
-                            $btn_update = "index.php?btn-update&ma_sp=$ma_sp";
-                    ?>
-                    <tr>
-                        <td class="check"><input type="checkbox"> </td>
-                        <td><?=$ma_sp?></td>
-                        <td><?=$ten_sp?></td>
-                        <td><?=number_format($don_gia)?><sup>đ</sup></td>
-                        <td class=""><?php
-                            if($giam_gia == null || $giam_gia == 0){
-                                echo '0%';
-                            }
-                            else{
-                                echo $giam_gia.'%';
-                            }
-                        ?></td>
-                        <td class=""><?=$so_luong?></td>
-                        <td class=""><?php 
-                            if($trang_thai == 0){
-                                echo 'Hết hàng';
-                            }
-                            else{
-                                echo 'Còn hàng';
-                            }
-                        ?></td>
-                        <td class=""><?php 
-                            if($dac_biet == 0){
-                                echo 'Thường';
-                            }
-                            else{
-                                echo 'Đặc biệt';
-                            }
-                        ?></td>
-                        <td><?=$so_luot_xem?></td>
-                        <td><?=$ma_loai?></td>
-                        <td class="update__delete"><a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a> <a class="btn btn-info" href="<?=$delete_link?>"><i class="fas fa-trash-alt"></a></td>
-                    </tr>
-                    <?php
-                        }
-                    ?>
+                        <tr>
+                            <td class="check"><input type="checkbox"> </td>
+                            <td>7878793</td>
+                            <td> Tranh canvas - Kool (Bộ 3 tranh)</td>
+                            <td>399,000 <sup>đ</sup></td>
+                            <td class="">0% </td>
+                            <td class="">200</td>
+                            <td class="">Còn hàng</td>
+                            <td class="">Thường</td>
+                            <td>50</td>
+                            <td>3</td>
+                            <td class="update__delete"><a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a> <a class="btn btn-danger" href="<?=$delete_link?>"><i class="fas fa-trash-alt"></a></td>
+                        </tr>
+                        <tr>
+                            <td class="check"><input type="checkbox"> </td>
+                            <td>7878792</td>
+                            <td> Giường hiện đại cho trẻ em</td>
+                            <td>322,900,000 <sup>đ</sup></td>
+                            <td class="">0% </td>
+                            <td class="">30</td>
+                            <td class="">Còn hàng</td>
+                            <td class="">Thường</td>
+                            <td>20</td>
+                            <td>2</td>
+                            <td class="update__delete"><a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a> <a class="btn btn-danger" href="<?=$delete_link?>"><i class="fas fa-trash-alt"></a></td>
+                        </tr>
+                        <tr>
+                            <td class="check"><input type="checkbox"> </td>
+                            <td>7878791</td>
+                            <td> Sofa băng Tân Á</td>
+                            <td>5,900,000 <sup>đ</sup></td>
+                            <td class="">0% </td>
+                            <td class="">50</td>
+                            <td class="">Còn hàng</td>
+                            <td class="">Thường</td>
+                            <td>40</td>
+                            <td>1</td>
+                            <td class="update__delete"><a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a> <a class="btn btn-danger" href="<?=$delete_link?>"><i class="fas fa-trash-alt"></a></td>
+                        </tr>
+                        <tr>
+                            <td class="check"><input type="checkbox"> </td>
+                            <td>7878790</td>
+                            <td> Đèn ngủ để bàn chân sứ tròn</td>
+                            <td>355,000 <sup>đ</sup></td>
+                            <td class="">15% </td>
+                            <td class="">100</td>
+                            <td class="">Còn hàng</td>
+                            <td class="">Thường</td>
+                            <td>50</td>
+                            <td>3</td>
+                            <td class="update__delete"><a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a> <a class="btn btn-danger" href="<?=$delete_link?>"><i class="fas fa-trash-alt"></a></td>
+                        </tr>
+                        <tr>
+                            <td class="check"><input type="checkbox"> </td>
+                            <td>7878789</td>
+                            <td>Giường ngủ tân cổ điển</td>
+                            <td>18,900,000<sup>đ</sup></td>
+                            <td class="">0% </td>
+                            <td class="">30</td>
+                            <td class="">Còn hàng</td>
+                            <td class="">Thường</td>
+                            <td>10</td>
+                            <td>2</td>
+                            <td class="update__delete"><a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a> <a class="btn btn-danger" href="<?=$delete_link?>"><i class="fas fa-trash-alt"></a></td>
+                        </tr>
+                        <tr>
+                            <td class="check"><input type="checkbox"> </td>
+                            <td>7878788</td>
+                            <td>Tủ đầu giường 3 hộc trơn</td>
+                            <td>1,500,000<sup>đ</sup></td>
+                            <td class="">25% </td>
+                            <td class="">50</td>
+                            <td class="">Còn hàng</td>
+                            <td class="">Thường</td>
+                            <td>50</td>
+                            <td>1</td>
+                            <td class="update__delete"><a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a> <a class="btn btn-danger" href="<?=$delete_link?>"><i class="fas fa-trash-alt"></a></td>
+                        </tr>
                    </tbody>
                 </table>
                         <div class="button__group">
