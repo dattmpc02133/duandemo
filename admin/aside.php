@@ -31,6 +31,9 @@
                         <a class="nav-link active" href="<?=$ADMIN_URL?>/nha-cung-cap"><i class="fas fa-warehouse"></i>Nhà cung cấp</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link active" href="<?=$ADMIN_URL?>/phieu-nhap"><i class="fas fa-file-invoice"></i>Phiếu nhập</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" href="<?=$ADMIN_URL?>/san-pham"><i class="fas fa-box-open"></i>Sản phẩm</a>
                     </li>
                     <li class="nav-item">
