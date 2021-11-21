@@ -96,4 +96,7 @@ hr{
 .update__delete .btn-info .fas{
     margin-right: 0px;
 }
+.update__delete .btn-danger .fas{
+    margin-right: 0px;
+}
 /*end table*/

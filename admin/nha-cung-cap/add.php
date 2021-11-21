@@ -9,7 +9,7 @@
     </div>
     <div class="form-group">
         <label for="">Địa chỉ</label>
-        <input type="number" class="form-control" placeholder="Nhập địa chỉ" >  
+        <input type="text" class="form-control" placeholder="Nhập địa chỉ" >  
     </div>
     <div class="form-group">
         <label for="">Điện thoại</label>
