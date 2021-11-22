@@ -27,8 +27,7 @@
                     $list = hoa_don_select_all();
                     foreach ($list as $hoa_don) {
                         extract($hoa_don);
-                        // $btn_update = ;
-                        // $delete_link = 'index.php?';
+                        $btn_update_hd = "index.php?btn_update_hd&ma_hd=$ma_hd";
                 ?>
                 <td class="check"><input type="checkbox"></td>   
                 <td><?=$ma_hd?></td>
@@ -39,7 +38,7 @@
                 <td><?=$trang_thai?></td>
                 <td class="update__delete">
                     <a class="btn btn-info" href="index.php?btn-details&ma_hd=<?=$ma_hd?>"><i class="fas fa-info-circle"></i></a>
-                    <a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a> 
+                    <a class="btn btn-info" href="<?=$btn_update_hd?>"><i class="fas fa-edit"></i></a> 
                     <!-- <a class="btn btn-danger" href="<?=$delete_link?>"><i class="fas fa-trash-alt"> </i></a> -->
                 </td>
             </tr>

@@ -1,12 +1,18 @@
 <?php 
     if(isset($_GET['ma_hd'])){
         $ma_hd_update = $_GET['ma_hd'];
-        $_SESSION['ma_hd'];
+        $_SESSION['ma_hd'] = $ma_hd_update;
     }
 
     if(isset($_POST['update_hd'])){
         $ma_hd = $_POST['ma_hd'];
+        $trang_thai = $_POST['trang_thai'];
+        $dia_chi_giao_hang = $_POST['dia_chi_giao_hang'];
         hoa_don_update($dia_chi_giao_hang, $trang_thai, $ma_hd);
+        unset($_SESSION['ma_hd']);
+        echo '<script>
+            location.href = "index.php";
+        </script>';
     }
 ?>
 
