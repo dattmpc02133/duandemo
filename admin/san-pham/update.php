@@ -41,7 +41,7 @@ if (isset($_POST['btn_update1'])) {
             } else {
                 $hinh2 = $_POST['hinh'];
             }
-            update_hh(
+            update_sp(
                 $ten_sp, 
                 $don_gia, 
                 $giam_gia, 
