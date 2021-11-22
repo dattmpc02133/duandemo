@@ -21,15 +21,20 @@
     // 
 
     // Sửa hóa đơn theo khách yêu cầu
-    function hoa_don_update($tong_tien, $dia_chi_giao_hang, $trang_thai, $ma_hd)
+    function hoa_don_update($dia_chi_giao_hang, $trang_thai, $ma_hd)
     {
-        $sql = "UPDATE hoa_don SET tong_tien = ?, dia_chi_giao_hang = ?, trang_thai = ? WHERE ma_hd = ?";
-        pdo_execute($sql, $tong_tien, $dia_chi_giao_hang, $trang_thai, $ma_hd);
+        $sql = "UPDATE hoa_don SET dia_chi_giao_hang = ?, trang_thai = ? WHERE ma_hd = ?";
+        pdo_execute($sql, $dia_chi_giao_hang, $trang_thai, $ma_hd);
     }
-    function hoa_don_chi_tiet_update($ma_sp, $gia_ban, $so_luong)
+    function hoa_don_chi_tiet_update($so_luong, $id)
     {
-        $sql = "UPDATE hoa_don_chi_tiet SET ma_sp = ?, gia_ban = ?, so_luong = ? WHERE id = ?";
-        pdo_execute($sql, $ma_sp, $gia_ban, $so_luong);
+        $sql = "UPDATE hoa_don_chi_tiet SET so_luong = ? WHERE id = ?";
+                // UPDATE hoa_don_chi_tiet SET so_luong = 2 WHERE id = 5
+        pdo_execute($sql,$so_luong, $id);
+    }
+    function update_tong_tien_hd($tien_tru, $thanh_tien, $ma_hd){
+        $sql = "UPDATE hoa_don SET tong_tien = tong_tien - ? + ? WHERE ma_hd = ?";
+        pdo_execute($sql, $tien_tru, $thanh_tien, $ma_hd);
     }
         // Xóa sản phẩm khi khách hàng bỏ sản phẩm đó khỏi đơn hàng
     function hoa_don_chi_tiet_delete($id)
@@ -63,6 +68,11 @@
     function get_ma_hd(){
         $sql = "SELECT ma_hd FROM hoa_don ORDER BY ma_hd DESC LIMIT 0,1";
         return pdo_query_value($sql);
+    }
+    function get_info_id_hdct($id)
+    {
+        $sql = "SELECT * FROM hoa_don_chi_tiet WHERE id = ?";
+        return pdo_query_one($sql, $id);
     }
     // 
 
