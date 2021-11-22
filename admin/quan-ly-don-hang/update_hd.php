@@ -47,7 +47,7 @@
         <input type="text" class="form-control" value="<?= $trang_thai ?>" name="trang_thai" id="trang_thai">
     </div>
     <div class="btn__group">
-        <button class="btn btn-info" type="submit" name="update_hd">Cập Nhật</button>
-        <a class="btn btn-info" href="index.php?btn_list">Danh sách loại</a>
+        <button class="btn btn-info" type="submit" name="update_hd">Cập nhật</button>
+        <a class="btn btn-info" href="index.php?btn_list">Danh sách</a>
     </div>
 </form>

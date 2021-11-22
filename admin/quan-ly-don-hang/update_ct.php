@@ -55,7 +55,7 @@
         <input style="display: none;" type="number" class="form-control" value="<?= $so_luong ?>" name="so_luong_old" min=1>
     </div>
     <div class="btn__group">
-        <button class="btn btn-info" type="submit" name="update_hdct">Cập Nhật</button>
-        <a class="btn btn-info" href="index.php?btn_list">Danh sách loại</a>
+        <button class="btn btn-info" type="submit" name="update_hdct">Cập nhật</button>
+        <a class="btn btn-info" href="index.php?btn_list">Danh sách</a>
     </div>
 </form>
