@@ -238,6 +238,7 @@ ul li {
 .header_cart-price {
     display: flex;
     justify-content: space-between;
+    padding: 15px 0;
 }
 .user__active{
     display: flex;
@@ -247,16 +248,23 @@ ul li {
     justify-content: space-between;
 }
 .PayPay {
-    padding: 20px;
-    background: #0056b3;
-    color: white;
+    padding: 14px;
+    background: #138496;
+    border-color:#117a8b;
+    border-radius: 4px;
+    color: #fff;
+}
+.PayPay:hover {
+    background-color: #067284;
+    color: #fff;
+    text-decoration: none;
 }
 .header_cart-list::after {
     content: "";
     position: absolute;
     top: -40px;
     cursor: pointer;
-    right: 9px;
+    right: 25px;
     z-index: 999;
     border-width: 20px 22px;
     border-style: solid;
