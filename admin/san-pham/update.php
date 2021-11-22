@@ -98,11 +98,11 @@ if (isset($_GET['ma_sp'])) {
         <label for="">Số lượng:</label>
         <input type="number" class="form-control" value="<?=$so_luong?>" name="so_luong">
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label for="">Ảnh:</label>
         <input type="file" class="form-control-file" name="hinh_new" id="hinh_new" aria-describedby="fileHelpId">
-        <input class="form-control" type="text" name="hinh" id="hinh" value="<?php echo $hinh ?>" readonly style="border: none; outline:none;">
-    </div>
+        <input class="form-control"type="text" name="hinh" id="hinh" value="<?php echo $hinh ?>" readonly style="border: none; outline:none;">
+    </div> -->
     <div class="form-group">
         <label for="">Trạng thái:</label>
         <div class="form-control-radio">
