@@ -6,64 +6,31 @@
             <form action="index.php" method="POST">
                 <table class="table">
                     <thead class="table-danger">
+                        
                         <tr>
-                            <th>LOẠI HÀNG</th>
-                            <th>SỐ LƯỢNG</th>
-                            <th>GIÁ CAO NHẤT</th>
-                            <th>GIÁ THẤP NHẤT</th>
-                            <th>GIÁ TRUNG BÌNH</th>
+                            <th>Loại sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th>Giá cao nhất</th>
+                            <th>Giá thấp nhất</th>
+                            <th>Giá trung bình</th>
                         </tr>
                     </thead>
                     <tbody>
+                    <?php
+                        foreach ($items as $thong_ke) {
+                            extract($thong_ke);
+                        ?>
                             <tr>
-                                <!-- <td><?= $ten_loai ?></td>
+                                 <td><?= $ten_loai ?></td>
                                 <td><?= $so_luong ?></td>
                                 <td><?= number_format($gia_max, 2) ?> <sup>đ</sup></td>
                                 <td><?= number_format($gia_min, 2) ?> <sup>đ</sup></td>
-                                <td><?= number_format($gia_avg, 2) ?> <sup>đ</sup></td> -->
-                                <td>Sản phẩm khuyến mãi</td>
-                                <td>3</td>
-                                <td>600.000<sup>đ</sup></td>
-                                <td>400.000<sup>đ</sup></td>
-                                <td>500.000<sup>đ</sup></td>
-                            </tr>
-                            <tr>
-                                <!-- <td><?= $ten_loai ?></td>
-                                <td><?= $so_luong ?></td>
-                                <td><?= number_format($gia_max, 2) ?> <sup>đ</sup></td>
-                                <td><?= number_format($gia_min, 2) ?> <sup>đ</sup></td>
-                                <td><?= number_format($gia_avg, 2) ?> <sup>đ</sup></td> -->
-                                <td>Nội thất phòng khách</td>
-                                <td>3</td>
-                                <td>600.000<sup>đ</sup></td>
-                                <td>400.000<sup>đ</sup></td>
-                                <td>500.000<sup>đ</sup></td>
-                            </tr>
-                            <tr>
-                                <!-- <td><?= $ten_loai ?></td>
-                                <td><?= $so_luong ?></td>
-                                <td><?= number_format($gia_max, 2) ?> <sup>đ</sup></td>
-                                <td><?= number_format($gia_min, 2) ?> <sup>đ</sup></td>
-                                <td><?= number_format($gia_avg, 2) ?> <sup>đ</sup></td> -->
-                                <td>Nội thất phòng ngủ</td>
-                                <td>3</td>
-                                <td>600.000<sup>đ</sup></td>
-                                <td>400.000<sup>đ</sup></td>
-                                <td>500.000<sup>đ</sup></td>
-                            </tr>
-                            <tr>
-                                <!-- <td><?= $ten_loai ?></td>
-                                <td><?= $so_luong ?></td>
-                                <td><?= number_format($gia_max, 2) ?> <sup>đ</sup></td>
-                                <td><?= number_format($gia_min, 2) ?> <sup>đ</sup></td>
-                                <td><?= number_format($gia_avg, 2) ?> <sup>đ</sup></td> -->
-                                <td>Phụ kiện trang trí</td>
-                                <td>3</td>
-                                <td>600.000<sup>đ</sup></td>
-                                <td>400.000<sup>đ</sup></td>
-                                <td>500.000<sup>đ</sup></td>
-                            </tr>
-                      
+                                <td><?= number_format($gia_avg, 2) ?> <sup>đ</sup></td>
+                               
+                            </tr>   
+                            <?php
+                        }
+                            ?>
                     </tbody>
                 </table>
                 <div class="row">
