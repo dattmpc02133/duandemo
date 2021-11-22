@@ -18,20 +18,23 @@ if (isset($_POST['delete_select'])) {
 </div>
         <div class="form__content">
             <form action="index.php?btn_chitiet" method="POST">
-                <!-- <h3>Hàng Hóa: <?= $items[0]['ten_hh'] ?></h3> -->
+                <h3>Sản phẩm: <?= $items[0]['ten_sp'] ?></h3>
                 <table class="table">
                     <thead class="table-danger">
                         <tr>
                             <th class="check"><input type="checkbox"> </th>
-                            <th>NỘI DUNG</th>
-                            <th>NGÀY BL</th>
-                            <th>NGƯỜI BÌNH LUẬN</th>
+                            <th>Nội dung</th>
+                            <th>Ngày bình luận</th>
+                            <th>Người bình luận</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                       
-                            <!-- <tr>
+                       <?php
+                        foreach ($items as $detail){
+                            extract($detail);
+                       ?>
+                            <tr>
                                 <td class="check"><input type="checkbox" name="check[]" value="<?= $ma_bl ?>"></td>
                                 <td><?= $noi_dung ?></td>
                                 <td><?= $ngay_bl ?></td>
@@ -39,52 +42,10 @@ if (isset($_POST['delete_select'])) {
                                 <td>
                                     <a href="index.php?btn_delete&ma_bl=<?= $ma_bl ?>" class="btn btn-primary btn__delete">Xóa</a>
                                 </td>
-                            </tr> -->
-                            <tr>
-                                <td class="check"><input type="checkbox" name="check[]" value="<?= $ma_bl ?>"></td>
-                                <td>Sản phẩm rất chất lượng</td>
-                                <td>2021-11-20</td>
-                                <td>admin</td>
-                                <td>
-                                    <a href="index.php?btn_delete&ma_bl=<?= $ma_bl ?>" class="btn btn-primary btn__delete">Xóa</a>
-                                </td>
                             </tr>
-                            <tr>
-                                <td class="check"><input type="checkbox" name="check[]" value="<?= $ma_bl ?>"></td>
-                                <td>Sản phẩm rất chất lượng</td>
-                                <td>2021-11-20</td>
-                                <td>admin</td>
-                                <td>
-                                    <a href="index.php?btn_delete&ma_bl=<?= $ma_bl ?>" class="btn btn-primary btn__delete">Xóa</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="check"><input type="checkbox" name="check[]" value="<?= $ma_bl ?>"></td>
-                                <td>Sản phẩm rất chất lượng</td>
-                                <td>2021-11-20</td>
-                                <td>admin</td>
-                                <td>
-                                    <a href="index.php?btn_delete&ma_bl=<?= $ma_bl ?>" class="btn btn-primary btn__delete">Xóa</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="check"><input type="checkbox" name="check[]" value="<?= $ma_bl ?>"></td>
-                                <td>Sản phẩm rất chất lượng</td>
-                                <td>2021-11-20</td>
-                                <td>admin</td>
-                                <td>
-                                    <a href="index.php?btn_delete&ma_bl=<?= $ma_bl ?>" class="btn btn-primary btn__delete">Xóa</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="check"><input type="checkbox" name="check[]" value="<?= $ma_bl ?>"></td>
-                                <td>Sản phẩm rất chất lượng</td>
-                                <td>2021-11-20</td>
-                                <td>admin</td>
-                                <td>
-                                    <a href="index.php?btn_delete&ma_bl=<?= $ma_bl ?>" class="btn btn-primary btn__delete">Xóa</a>
-                                </td>
-                            </tr>
+                         <?php
+                         }
+                         ?>
                      
                     </tbody>
 

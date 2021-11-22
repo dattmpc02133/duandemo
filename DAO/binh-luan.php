@@ -51,4 +51,25 @@ function bl_select_by_id($ma_bl)
     $sql = "SELECT * FROM binh_luan WHERE ma_bl=?";
     return pdo_query_one($sql,$ma_bl);
 }
+
+// bình luận thống kê
+function bl_thong_ke()
+{
+
+    $sp_tung_trang = 9;
+    if (!isset($_GET['page'])) {
+        $trang = 1;
+    } else {
+        $trang = $_GET['page'];
+    }
+    $tung_trang =  ($trang - 1) * $sp_tung_trang;
+
+    $sql = "SELECT sp.ma_sp, sp.ten_sp, COUNT(*) AS so_luong, MIN(bl.ngay_bl) AS bl_cu_nhat, MAX(bl.ngay_bl) AS bl_moi_nhat
+                FROM binh_luan bl JOIN san_pham sp ON sp.ma_sp = bl.ma_sp
+                GROUP BY sp.ma_sp, sp.ten_sp 
+                HAVING so_luong > 0 ORDER BY sp.ma_sp  DESC LIMIT $tung_trang,$sp_tung_trang ";
+
+    return pdo_query($sql);
+}
+
 ?>

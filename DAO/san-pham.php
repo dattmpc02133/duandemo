@@ -87,7 +87,7 @@ function san_pham_select_by_keyword($keyword)
     return pdo_query($sql, '%' . $keyword . '%', '%' . $keyword . '%');
 }
 // cập nhật sản phẩm
-function update_hh($ten_sp, 
+function update_sp($ten_sp, 
                     $don_gia, 
                     $giam_gia, 
                     $hinh,
@@ -122,6 +122,16 @@ function san_pham_so_luot_luot_xem($ma_sp)
 function product_count()
 {
     $sql = "SELECT COUNT(*) as total  FROM san_pham WHERE ma_sp";
+    return pdo_query($sql);
+}
+
+// thống kê sản phẩm
+function sp_thong_ke()
+{
+
+    $sql = "SELECT lo.ma_loai, lo.ten_loai, COUNT(*) so_luong, MIN(sp.don_gia) gia_min, MAX(sp.don_gia) gia_max, AVG(sp.don_gia) gia_avg
+                FROM san_pham sp JOIN loai lo ON lo.ma_loai = sp.ma_loai 
+                GROUP BY lo.ma_loai, lo.ten_loai";
     return pdo_query($sql);
 }
 ?>
