@@ -32,9 +32,9 @@ if (isset($_POST['delete_select'])) {
                     <thead class="table-danger">
                         <tr>
                             <th class="check"><input type="checkbox"> </th>
-                            <th>MÃ LOẠI</th>
-                            <th>TÊN LOẠI</th>
-                            <th>HÌNH</th>
+                            <th>Mã loại</th>
+                            <th>Tên loại</th>
+                            <th>Hình</th>
                             <th style="width:15%"></th>
                         </tr>
                     </thead>
@@ -55,7 +55,7 @@ if (isset($_POST['delete_select'])) {
                             <td>' . $hinh . '</td>
                             <td class="update__delete" >
                             <a class="btn btn-info" href="' . $btn_update . '"><i class="fas fa-edit"></i></a>
-                            <a class="btn btn-info" href="' . $delete_link . '"> <i class="fas fa-trash-alt"></i></a> 
+                            <a class="btn btn-danger" href="' . $delete_link . '"> <i class="fas fa-trash-alt"></i></a> 
                             </td>
                          </tr>
                         ';

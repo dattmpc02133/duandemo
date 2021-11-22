@@ -10,8 +10,8 @@
                                 <span class="sr-only">Toggle Dropdown</span>
                               </button>
                               <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Đổi mật khẩu</a>
-                                <a class="dropdown-item" href="#">Cập nhật thông tin</a>
+                                <a class="dropdown-item" href="../../doi-mk.html">Đổi mật khẩu</a>
+                                <a class="dropdown-item" href="../../cap_nhat_tk.html">Cập nhật thông tin</a>
                                 <a class="dropdown-item" href="#">Đăng xuất</a>
                               </div>
                             </div>
@@ -38,7 +38,7 @@
                         <a class="nav-link active" href="<?=$ADMIN_URL?>/san-pham"><i class="fas fa-box-open"></i>Sản phẩm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="<?=$ADMIN_URL?>/quan-ly-gio-hang"><i class="fas fa-shipping-fast"></i>Đơn hàng</a>
+                        <a class="nav-link active" href="<?=$ADMIN_URL?>/quan-ly-don-hang"><i class="fas fa-shipping-fast"></i>Đơn hàng</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="<?=$ADMIN_URL?>/binh-luan"><i class="fas fa-comments"></i>Bình luận</a>

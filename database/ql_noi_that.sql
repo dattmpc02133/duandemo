@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 16, 2021 lúc 08:16 AM
--- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 7.3.31
+-- Thời gian đã tạo: Th10 21, 2021 lúc 04:26 PM
+-- Phiên bản máy phục vụ: 10.4.20-MariaDB
+-- Phiên bản PHP: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -115,6 +115,18 @@ CREATE TABLE `gio_hang_tam` (
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `hinh`
+--
+
+CREATE TABLE `hinh` (
+  `id` int(11) NOT NULL,
+  `ma_sp` int(11) NOT NULL,
+  `hinh` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `hoa_don`
 --
 
@@ -146,8 +158,7 @@ CREATE TABLE `hoa_don_chi_tiet` (
   `id` int(11) NOT NULL,
   `ma_hd` int(11) NOT NULL,
   `ma_sp` int(11) NOT NULL,
-  `ten_sp` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gia` double(10,2) NOT NULL,
+  `gia_ban` double(10,2) NOT NULL,
   `so_luong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -155,11 +166,11 @@ CREATE TABLE `hoa_don_chi_tiet` (
 -- Đang đổ dữ liệu cho bảng `hoa_don_chi_tiet`
 --
 
-INSERT INTO `hoa_don_chi_tiet` (`id`, `ma_hd`, `ma_sp`, `ten_sp`, `gia`, `so_luong`) VALUES
-(1, 1, 7878788, 'Tủ đầu giường 3 hộc trơn', 1500000.00, 1),
-(2, 1, 7878789, 'Giường ngủ tân cổ điển', 18900000.00, 1),
-(3, 2, 7878790, 'Đèn ngủ để bàn chân sứ tròn', 710000.00, 2),
-(4, 3, 7878793, 'Tranh canvas - Kool (Bộ 3 tranh)', 399000.00, 1);
+INSERT INTO `hoa_don_chi_tiet` (`id`, `ma_hd`, `ma_sp`, `gia_ban`, `so_luong`) VALUES
+(1, 1, 7878788, 1500000.00, 1),
+(2, 1, 7878789, 18900000.00, 1),
+(3, 2, 7878790, 710000.00, 2),
+(4, 3, 7878793, 399000.00, 1);
 
 -- --------------------------------------------------------
 
@@ -218,7 +229,7 @@ INSERT INTO `khuyen_mai` (`ma_km`, `hinh_thuc`, `ngay_bat_dau`, `ngay_ket_thuc`)
 CREATE TABLE `khuyen_mai_ct` (
   `id` int(11) NOT NULL,
   `ma_km` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ma_sp` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `ma_sp` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -226,9 +237,11 @@ CREATE TABLE `khuyen_mai_ct` (
 --
 
 INSERT INTO `khuyen_mai_ct` (`id`, `ma_km`, `ma_sp`) VALUES
-(1, 'KMTET20', 'all'),
-(2, 'KM5T5', 'all'),
-(3, 'GIAM10%', '7878790, 7878792, 7878793');
+(4, 'KM5T5', 7878792),
+(5, 'KMTET20', 7878789),
+(6, 'KM5T5', 7878788),
+(7, 'KM5T5', 7878789),
+(8, 'KMTET20', 7878790);
 
 -- --------------------------------------------------------
 
@@ -249,7 +262,8 @@ CREATE TABLE `loai` (
 INSERT INTO `loai` (`ma_loai`, `ten_loai`, `hinh`) VALUES
 (1, 'Sản phẩm phòng khách', 'sp-phong-khach.jpg'),
 (2, 'Sản phẩm phòng ngủ', 'sp-phong-ngu.jpg'),
-(3, 'Phụ kiện trang trí', 'phu-kien-trang-tri.jpg');
+(3, 'Phụ kiện trang trí', 'phu-kien-trang-tri.jpg'),
+(5, 'Ghế sofa', 'sp7-1_83fd0de6ab8b437d9b28cf50ad5e69cb_master.jpg');
 
 -- --------------------------------------------------------
 
@@ -306,11 +320,10 @@ CREATE TABLE `san_pham` (
   `ten_sp` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `don_gia` double(10,2) NOT NULL,
   `giam_gia` double(10,2) DEFAULT NULL,
-  `hinh` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `so_luong` int(11) NOT NULL,
   `trang_thai` tinyint(1) NOT NULL,
   `dac_biet` tinyint(1) NOT NULL,
-  `so_luot_xem` int(11) NOT NULL DEFAULT 0,
+  `so_luot_mua` int(11) NOT NULL DEFAULT 0,
   `ma_loai` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -318,13 +331,13 @@ CREATE TABLE `san_pham` (
 -- Đang đổ dữ liệu cho bảng `san_pham`
 --
 
-INSERT INTO `san_pham` (`ma_sp`, `ten_sp`, `don_gia`, `giam_gia`, `hinh`, `so_luong`, `trang_thai`, `dac_biet`, `so_luot_xem`, `ma_loai`) VALUES
-(7878788, 'Tủ đầu giường 3 hộc trơn', 1500000.00, NULL, 'tudaugiuong3hoc-tron.jpg', 50, 1, 0, 0, 1),
-(7878789, 'Giường ngủ tân cổ điển', 18900000.00, NULL, 'giuongtanco-trang.jpg', 30, 1, 0, 0, 2),
-(7878790, 'Đèn ngủ để bàn chân sứ tròn', 355000.00, NULL, 'dennguchansu.jpg', 100, 1, 0, 0, 3),
-(7878791, 'Sofa băng Tân Á', 5900000.00, NULL, 'sofabang-tana.jpg', 50, 1, 0, 0, 1),
-(7878792, 'Giường hiện đại cho trẻ em', 22900000.00, NULL, 'giuonghiendai-treem.jpg', 30, 1, 0, 0, 2),
-(7878793, 'Tranh canvas - Kool (Bộ 3 tranh)', 399000.00, NULL, 'tranhcanvas-kool.jpg', 200, 1, 0, 0, 3);
+INSERT INTO `san_pham` (`ma_sp`, `ten_sp`, `don_gia`, `giam_gia`, `so_luong`, `trang_thai`, `dac_biet`, `so_luot_mua`, `ma_loai`) VALUES
+(7878788, 'Tủ đầu giường 3 hộc trơn', 1500000.00, NULL, 50, 1, 0, 0, 1),
+(7878789, 'Giường ngủ tân cổ điển', 18900000.00, NULL, 30, 1, 0, 0, 2),
+(7878790, 'Đèn ngủ để bàn chân sứ tròn', 355000.00, NULL, 100, 1, 0, 0, 3),
+(7878791, 'Sofa băng Tân Á', 5900000.00, NULL, 50, 1, 0, 0, 1),
+(7878792, 'Giường hiện đại cho trẻ em', 22900000.00, NULL, 30, 1, 0, 0, 2),
+(7878793, 'Tranh canvas - Kool (Bộ 3 tranh)', 399000.00, NULL, 200, 1, 0, 0, 3);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -359,6 +372,13 @@ ALTER TABLE `gio_hang_tam`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `hinh`
+--
+ALTER TABLE `hinh`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `ma_sp` (`ma_sp`);
+
+--
 -- Chỉ mục cho bảng `hoa_don`
 --
 ALTER TABLE `hoa_don`
@@ -390,7 +410,8 @@ ALTER TABLE `khuyen_mai`
 --
 ALTER TABLE `khuyen_mai_ct`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `ma_km` (`ma_km`);
+  ADD KEY `ma_km` (`ma_km`),
+  ADD KEY `ma_sp` (`ma_sp`);
 
 --
 -- Chỉ mục cho bảng `loai`
@@ -441,6 +462,12 @@ ALTER TABLE `gio_hang_tam`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT cho bảng `hinh`
+--
+ALTER TABLE `hinh`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT cho bảng `hoa_don`
 --
 ALTER TABLE `hoa_don`
@@ -456,13 +483,13 @@ ALTER TABLE `hoa_don_chi_tiet`
 -- AUTO_INCREMENT cho bảng `khuyen_mai_ct`
 --
 ALTER TABLE `khuyen_mai_ct`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `loai`
 --
 ALTER TABLE `loai`
-  MODIFY `ma_loai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ma_loai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `nha_cung_cap`
@@ -480,7 +507,7 @@ ALTER TABLE `phieu_nhap`
 -- AUTO_INCREMENT cho bảng `san_pham`
 --
 ALTER TABLE `san_pham`
-  MODIFY `ma_sp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7878794;
+  MODIFY `ma_sp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7878827;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -507,6 +534,12 @@ ALTER TABLE `chi_tiet_sp`
   ADD CONSTRAINT `chi_tiet_sp_ibfk_1` FOREIGN KEY (`ma_sp`) REFERENCES `san_pham` (`ma_sp`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Các ràng buộc cho bảng `hinh`
+--
+ALTER TABLE `hinh`
+  ADD CONSTRAINT `hinh_ibfk_1` FOREIGN KEY (`ma_sp`) REFERENCES `san_pham` (`ma_sp`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Các ràng buộc cho bảng `hoa_don`
 --
 ALTER TABLE `hoa_don`
@@ -523,7 +556,8 @@ ALTER TABLE `hoa_don_chi_tiet`
 -- Các ràng buộc cho bảng `khuyen_mai_ct`
 --
 ALTER TABLE `khuyen_mai_ct`
-  ADD CONSTRAINT `khuyen_mai_ct_ibfk_1` FOREIGN KEY (`ma_km`) REFERENCES `khuyen_mai` (`ma_km`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `khuyen_mai_ct_ibfk_1` FOREIGN KEY (`ma_km`) REFERENCES `khuyen_mai` (`ma_km`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `khuyen_mai_ct_ibfk_2` FOREIGN KEY (`ma_sp`) REFERENCES `san_pham` (`ma_sp`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `phieu_nhap`
