@@ -14,5 +14,7 @@ if(exit_param("chart")){
 }
 // $items = thong_ke_hang_hoa();
 require ("../layout.php");
-
 ?>
+<script>
+    document.querySelector('.thong-ke').classList.add('active');
+</script>

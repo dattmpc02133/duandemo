@@ -1,7 +1,7 @@
 <?php
 
 require_once("../../DAO/pdo.php");
-require_once("../../DAO/binh-luan.php");
+// require_once("../../DAO/binh-luan.php");
 if (isset($_POST['delete_select'])) {
     if (empty($_POST['check'])) {
         echo '<script> alert("Chưa có bình nào được chọn"); </script>';
@@ -26,33 +26,76 @@ if (isset($_POST['delete_select'])) {
                     <thead class="table-danger">
                         <tr>
                             <th class="check"><input type="checkbox"> </th>
-                            <th>Tên sản phẩm</th>
-                            <th>Số bình luận</th>
-                            <th>Mới nhất</th>
-                            <th>Cũ nhất</th>
+                            <th class="ten_hinh">HÀNG HÓA</th>
+                            <th class="don_gia">SỐ BL</th>
+                            <th class="gia_giam">MỚI NHẤT</th>
+                            <th class="luot_xem">CŨ NHẤT</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                    <?php
-                        $list = bl_thong_ke();
-                        foreach ($list as $binh_luan){
-                            extract($binh_luan);
-                        
-                    ?>
-                        <tr>
-                                <td><input type="checkbox" name="check[]" value="<?= $ma_bl ?>"></td>
-                                <td><?= $ten_sp ?></td>
+
+                        <!-- <tr>
+                                <td><input type="checkbox" name="check[]" value="<?= $ma_hh ?>"></td>
+                                <td><?= $ten_hh ?></td>
                                 <td><?= $so_luong ?></td>
                                 <td><?= $bl_moi_nhat ?></td>
                                 <td><?= $bl_cu_nhat ?></td>
                                 <td>
-                                    <a href="index.php?btn_chitiet&ma_sp=<?= $ma_sp ?>" class="btn btn-primary btn btn__delete">Chi Tiết</a>
+                                    <a href="index.php?btn_chitiet&ma_hh=<?= $ma_hh ?>" class="btn btn-primary btn btn__delete">Chi Tiết</a>
                                 </td>
-                            </tr>
-                            <?php
-                            }
-                            ?>
+                            </tr> -->
+                        <tr>
+                            <td><input type="checkbox" name="check[]" value="<?= $ma_hh ?>"></td>
+                            <td>Ghế banasonic</td>
+                            <td>3</td>
+                            <td>2021-11-11</td>
+                            <td>2021-10-11</td>
+                            <td>
+                                <a href="index.php?btn_chitiet&ma_hh=" class="btn btn-primary btn btn__delete">Chi Tiết</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="check[]" value="<?= $ma_hh ?>"></td>
+                            <td>Bàn tre phòng khách</td>
+                            <td>3</td>
+                            <td>2021-11-11</td>
+                            <td>2021-10-11</td>
+                            <td>
+                                <a href="index.php?btn_chitiet&ma_hh=" class="btn btn-primary btn btn__delete">Chi Tiết</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="check[]" value="<?= $ma_hh ?>"></td>
+                            <td>Đèn ngủ</td>
+                            <td>1</td>
+                            <td>2021-11-11</td>
+                            <td>2021-10-11</td>
+                            <td>
+                                <a href="index.php?btn_chitiet&ma_hh=" class="btn btn-primary btn btn__delete">Chi Tiết</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="check[]" value="<?= $ma_hh ?>"></td>
+                            <td>Ghế 4 chân </td>
+                            <td>2</td>
+                            <td>2021-11-11</td>
+                            <td>2021-10-11</td>
+                            <td>
+                                <a href="index.php?btn_chitiet&ma_hh=" class="btn btn-primary btn btn__delete">Chi Tiết</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="check[]" value="<?= $ma_hh ?>"></td>
+                            <td>Sofa phòng khách</td>
+                            <td>1</td>
+                            <td>2021-11-11</td>
+                            <td>2021-10-11</td>
+                            <td>
+                                <a href="index.php?btn_chitiet&ma_hh=" class="btn btn-primary btn btn__delete">Chi Tiết</a>
+                            </td>
+                        </tr>
+
                     </tbody>
                 </table>
                 <div class="row">

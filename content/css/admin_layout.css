@@ -27,6 +27,10 @@ hr{
     background-color: #eebbc3;
     color: #232946;
 }
+.side-bar li a.active{
+    background-color: #eebbc3;
+    color: #232946;
+}
 .top{
     padding-top: 15px;
 }
