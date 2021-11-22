@@ -10,3 +10,6 @@
     } 
     require "../layout.php";
 ?>
+<script>
+    document.querySelector('.loai').classList.add('active');
+</script>

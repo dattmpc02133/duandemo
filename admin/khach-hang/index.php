@@ -10,3 +10,7 @@
     } 
     require "../layout.php";  
 ?>
+
+<script>
+    document.querySelector('.khach-hang').classList.add('active');
+</script>

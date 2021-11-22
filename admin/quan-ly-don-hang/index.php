@@ -15,3 +15,10 @@
         $VIEW_NAME = "list.php";
     }
     require("../layout.php");
+<<<<<<< HEAD
+=======
+?>
+<script>
+    document.querySelector('.don-hang').classList.add('active');
+</script>
+>>>>>>> 0b3df736ca44d3b4bdd87558da93da8369b9f874

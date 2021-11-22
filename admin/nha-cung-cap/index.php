@@ -13,3 +13,6 @@ if (exit_param("btn_add")) {
 }
 require "../layout.php";
 ?>
+<script>
+    document.querySelector('.ncc').classList.add('active');
+</script>

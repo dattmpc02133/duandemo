@@ -24,3 +24,8 @@ if (exit_param("btn_chitiet")) {
     $VIEW_NAME = "list.php";
 }
 require("../layout.php");
+?>
+
+<script>
+    document.querySelector('.binh-luan').classList.add('active');
+</script>

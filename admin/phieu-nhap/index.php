@@ -13,3 +13,6 @@ if (exit_param("btn_add")) {
 }
 require "../layout.php";
 ?>
+<script>
+    document.querySelector('.phieu_nhap').classList.add('active');
+</script>

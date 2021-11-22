@@ -10,3 +10,8 @@ if (exit_param("btn-add")) {
     $VIEW_NAME = "list.php";
 }
 require("../layout.php");
+?>
+
+<script>
+    document.querySelector('.san-pham').classList.add('active');
+</script>
