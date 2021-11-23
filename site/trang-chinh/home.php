@@ -187,7 +187,7 @@
                                     </div>
                                     <div class="block-body">
                                         <div class="product-name">
-                                            <p> <?= $ten_sp ?> <span><?= $ma_sp ?></span></p>
+                                            <p> <?= $ten_sp ?></span></p>
                                         </div>
                                         <div class="product-price">
                                             <p><?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?><sup>đ</sup> <del><?= number_format($don_gia) ?><sup>đ</sup></del></p>

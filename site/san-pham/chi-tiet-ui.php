@@ -30,7 +30,14 @@ extract($san_pham);
             <div class="description">
                 <h4 class="description__title"><?= $ten_sp ?></h4>
                 <div class="description__price">
-                    <span class="description__price-percent">-<?= $giam_gia ?>%</span>
+                    <?php
+                    if ($giam_gia == 0 || $giam_gia == null || $giam_gia == '0') {
+                        echo "";
+                    } else {
+                        echo " <span class='description__price-percent'>-$giam_gia%</span>";
+                    }
+                    ?>
+
                     <span class="description__price-product"><?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?> <sup>đ</sup></span>
                     <span class="description__price-del"><del><?= number_format($don_gia) ?><sup>đ</sup></del></span>
                 </div>
@@ -80,7 +87,7 @@ extract($san_pham);
                                                 <p><?= $ten_sp ?><span></span></p>
                                             </div>
                                             <div class="product-price">
-                                                <p><?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?><sup>đ</sup> <del><?=   $don_gia ?>  <sup>đ</sup></del></p>
+                                                <p><?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?><sup>đ</sup> <del><?= $don_gia ?> <sup>đ</sup></del></p>
                                             </div>
                                         </div>
                                     </a>

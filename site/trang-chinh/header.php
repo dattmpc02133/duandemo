@@ -105,7 +105,7 @@
         </li>
         <!-- <li class="navbar_header-link"><a href="#" class="header-linkk">PRODUCT VIEW</a></li> -->
         <li class="navbar_header-link"><a href="./tin-tuc.html" class="header-linkk">TIN TỨC</a></li>
-        <li class="navbar_header-link"><a href="./gioi-thieu.html" class="header-linkk">GIỚI THIỆU</a></li>
+        <li class="navbar_header-link"><a href="<?= $SITE_URL ?>/trang-chinh/index.php?gioi-thieu" class="header-linkk">GIỚI THIỆU</a></li>
         <li class="navbar_header-link"><a href="./lien-he.html" class="header-linkk">LIÊN HỆ</a></li>
     </ul>
 </nav>
@@ -146,7 +146,7 @@
                         </ul>
                     </li>
                     <!-- <li class="navbar_bar-lish"><a href="#" class="header-linkk_items">PRODUCT VIEW</a></li> -->
-                    <li class="navbar_bar-lish"><a href="#" class="header-linkk_items">BLOG</a></li>
+                    <li class="navbar_bar-lish"><a href="#" class="header-linkk_items">TIN TỨC</a></li>
                     <li class="navbar_bar-lish"><a href="#" class="header-linkk_items">GIỚI THIỆU</a></li>
                     <li class="navbar_bar-lish"><a href="#" class="header-linkk_items">LIÊN HỆ</a></li>
                 </ul>
@@ -220,7 +220,7 @@
                 <button class="btn btn-outline-success my-2 my-sm-0 btn__responsive" type="submit">Search</button>
             </form>
         </nav>
-        <nav class="navbar_header">
+        <!-- <nav class="navbar_header">
             <ul class="navbar_header-product">
                 <li class="navbar_header-link"><a href="<?= $ROOT_URL ?>" class="header-linkk">TRANG CHỦ</a></li>
                 <li class="navbar_header-link header--ative">
@@ -238,7 +238,7 @@
                 <li class="navbar_header-link"><a href="./gioi-thieu.html" class="header-linkk">GIỚI THIỆU</a></li>
                 <li class="navbar_header-link"><a href="./lien-he.html" class="header-linkk">LIÊN HỆ</a></li>
             </ul>
-        </nav>
+        </nav> -->
     </div>
 </section>
                      <!-- end menu -->

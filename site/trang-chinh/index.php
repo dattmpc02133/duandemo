@@ -6,8 +6,17 @@ require_once("../../DAO/loai.php");
 extract($_REQUEST);
 if(exit_param("dang_ky", $_REQUEST)){
     $VIEW_NAME = "dang-ky.php";
-} else{
+} elseif(exit_param("gioi-thieu")){
+    $VIEW_NAME = "gioi-thieu.php";
+} elseif(exit_param("chinh-sach-doi-tra")){
+    $VIEW_NAME = "chinh-sach-doi-tra.php";
+} elseif(exit_param("chinh-sach-bao-mat")){
+    $VIEW_NAME = "chinh-sach-bao-mat.php";
+} elseif(exit_param("dieu-khoang-dich-vu")){
+    $VIEW_NAME = "dieu-khoang-dich-vu.php";
+}
+ else{
     // $VIEW_NAME = "../trang-chinh/cart.php";
-    $VIEW_NAME = "home.php";
+    $VIEW_NAME = "../trang-chinh/home.php";
 }
 require("../layout.php");

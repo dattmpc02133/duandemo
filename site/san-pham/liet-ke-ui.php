@@ -33,23 +33,30 @@
                 extract($product);
 
             ?>
+            
                 <div class="col-default">
-                    <div class="block-products">
-                        <a href="#">
-                            <div class="block-image">
-                                <img src="<?= $CONTENT_URL ?>/images/<?= $hinh ?>" alt="">
+                            <div class="block-products">                
+                                <a href="../san-pham/chi-tiet.php?ma_sp=<?= $ma_sp ?>" class="products-item_link">
+                                    <div class="block-image">
+                                        
+                                        <img src="<?=  $CONTENT_URL  ?>/images/products/<?= $hinh ?>" alt="sản phẩm khuyễn mãi">
+                                        <div class="products-item-sale">
+                                            <span class="sale-val">- <?= $giam_gia ?> %</span>
+                                        </div>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="product-name">
+                                            <p  > <?= $ten_sp ?> </span></p>
+                                        </div>
+                                        <div class="product-price">
+                                            <p><?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?><sup>đ</sup> <del><?= number_format($don_gia) ?><sup>đ</sup></del></p>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                            <div class="block-body">
-                                <div class="product-name">
-                                    <p> <?= $ten_sp ?></p>
-                                </div>
-                                <div class="product-price">
-                                    <p><?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?><sup>đ</sup> <del> <?= $don_gia ?> <sup>đ</sup></del></p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                  </div> 
+
+
             <?php
             }
             ?>
