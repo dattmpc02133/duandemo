@@ -57,7 +57,7 @@ function san_pham_insert(
 // hàng hóa theo loại
 function san_pham_select_by_loai($ma_loai)
 {
-    $sql = "SELECT * FROM san_pham WHERE ma_loai = ?";
+    $sql = "SELECT * FROM san_pham  WHERE ma_loai = ? LIMIT 0,5 ";
     return  pdo_query($sql, $ma_loai);
 }
 
@@ -94,11 +94,11 @@ function san_pham_delete($ma_sp)
     pdo_execute($sql, $ma_sp);
 }
 // hiển thị hàng hóa theo keywwords
-function san_pham_select_by_keyword($keyword)
+function san_pham_select_by_keyword($search)
 {
     $sql = "SELECT * FROM san_pham a INNER JOIN  loai b ON b.ma_loai = a.ma_loai 
     WHERE ten_sp LIKE ? OR ten_loai LIKE ? ";
-    return pdo_query($sql, '%' . $keyword . '%', '%' . $keyword . '%');
+    return pdo_query($sql, '%' . $search . '%', '%' . $search . '%');
 }
 // cập nhật sản phẩm
 function update_sp( $ten_sp, 

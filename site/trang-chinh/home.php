@@ -72,7 +72,7 @@
                     ?>
                         <div class="col-default">
                             <div class="block-products">
-                                <a href="#">
+                                <a href="../san-pham/chi-tiet.php?ma_sp=<?= $ma_sp ?>" class="products-item_link">
                                     <div class="block-image">
                                         <img src="<?=  $CONTENT_URL  ?>/images/products/<?= $hinh ?>" alt="">
                                     </div>

@@ -11,7 +11,7 @@
                         <div class="col-sm-5">
                             <div class="search">
                                 <form class="form-inline my-2 my-lg-0 header_seachr">
-                                    <input class="form-control mr-sm-2 header_seachr" type="search"
+                                    <input class="form-control mr-sm-2 header_seachr" name="search" type="search"
                                         placeholder="Tìm kiếm sản phẩm" aria-label="Search">
                                     <button class="btn btn-primary my-2 my-sm-0 btn_seachr" type="submit"><i
                                             class="fas fa-search"></i></button>
@@ -83,9 +83,9 @@
                       <!-- menu -->
                       <nav class="navbar_header">
     <ul class="navbar_header-product">
-        <li class="navbar_header-link"><a href="index.html" class="header-linkk">TRANG CHỦ</a></li>
+        <li class="navbar_header-link"><a href="<?= $ROOT_URL ?>" class="header-linkk">TRANG CHỦ</a></li>
         <li class="navbar_header-link header--ative">
-            <a href="san-pham.html" class="header-linkk">SẢN PHẨM</a>
+            <a href="<?= $SITE_URL ?>/san-pham/liet-ke.php" class="header-linkk">SẢN PHẨM</a>
             <ul class="header_chill-product">
                 <li class="header_chill-link">
                 <?php 
@@ -95,7 +95,7 @@
                       
                             
                 ?>
-                    <a href="<?= $SITE_URL ?>/trang-chinh/san-pham/liet-ke.php?ma_loai=<?= $ma_loai ?>" class="header-link_chilll"><?= $ten_loai ?></a>
+                    <a href="<?= $SITE_URL ?>/san-pham/liet-ke.php?ma_loai=<?=$ma_loai?>" class="header-link_chilll"><?= $ten_loai ?></a>
                    
                 <?php 
                       }
@@ -133,9 +133,9 @@
                     <div class="navbar_bar-close">
                         <label for="nav_mobie_input"><i class="navbar_iconx fas fa-times"></i></label>
                     </div>
-                    <li class="navbar_bar-lish"><a href="index.html" class="header-linkk_items">TRANG CHỦ</a></li>
+                    <li class="navbar_bar-lish"><a href="<?= $ROOT_URL ?>" class="header-linkk_items">TRANG CHỦ</a></li>
                     <li class="navbar_bar-lish header--ative">
-                        <a href="san-pham.html" class="header-linkk_items">SẢN PHẨM</a>
+                        <a href="<?= $SITE_URL ?>/san-pham/" class="header-linkk_items">SẢN PHẨM</a>
                         <ul class="header_chill-product">
                             <li class="header_chill-link">
                                 <a href="san-pham-khuyen-mai.html" class="header-link_chilll">Sản Phẩm Khuyến Mãi</a>
@@ -216,15 +216,15 @@
         </div>
         <nav class="navbar navbar-light bg-light">
             <form class="form-inline" style="width:100%">
-                <input class="form-control mr-sm-2 search__mobile" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control mr-sm-2 search__mobile" name="search" type="search" placeholder="Tìm kiến sản phẩm" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0 btn__responsive" type="submit">Search</button>
             </form>
         </nav>
         <nav class="navbar_header">
             <ul class="navbar_header-product">
-                <li class="navbar_header-link"><a href="index.html" class="header-linkk">TRANG CHỦ</a></li>
+                <li class="navbar_header-link"><a href="<?= $ROOT_URL ?>" class="header-linkk">TRANG CHỦ</a></li>
                 <li class="navbar_header-link header--ative">
-                    <a href="san-pham.html" class="header-linkk">SẢN PHẨM</a>
+                    <a href="<?= $SITE_URL ?>/san-pham/" class="header-linkk">SẢN PHẨM</a>
                     <ul class="header_chill-product">
                         <li class="header_chill-link">
                             <a href="san-pham-khuyen-mai.html" class="header-link_chilll">Sản Phẩm Khuyến Mãi</a>
