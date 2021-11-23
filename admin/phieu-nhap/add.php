@@ -8,11 +8,9 @@
         foreach ($list_pn0 as $pn0) {
             extract($pn0);
             // $_SESSION['ma_pn'] = $ma_pn;
-            echo '
-                <script>
+            echo '<script>
                     location.href = "index.php?btn_add_pn_ct&ma_pn='.$ma_pn.'";
-                </script>
-                ';
+                </script>';
             break;
         }
 

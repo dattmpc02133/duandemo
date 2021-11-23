@@ -15,3 +15,7 @@
         $VIEW_NAME = "list.php";
     }
     require("../layout.php");
+?>
+<script>
+    document.querySelector('.don-hang').classList.add('active');
+</script>

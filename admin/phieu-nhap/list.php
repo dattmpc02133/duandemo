@@ -31,7 +31,10 @@
                         extract($ncc);
                         echo $ten_ncc;
                     ?></td>
-                    <td class="update__delete"><a class="btn btn-info" href="index.php?btn_update&ma_pn=<?=$ma_pn?>"><i class="fas fa-edit"></i></a></td>
+                    <td class="update__delete">
+                        <a class="btn btn-info" href="index.php?btn_detail&ma_pn=<?=$ma_pn?>"><i class="fas fa-info-circle"></i></a>
+                        <a class="btn btn-info" href="index.php?btn_update&ma_pn=<?=$ma_pn?>"><i class="fas fa-edit"></i></a>
+                    </td>
                 </tr>
                 <?php
                     }

@@ -1,9 +1,15 @@
 <?php 
-
+//
 function nha_cung_cap_selectall()
 {
     $sql = "select * from nha_cung_cap order by ma_ncc DESC";
     return pdo_query($sql);
+}
+// chọn nhà cung cấp update
+function ncc_select_not($ma_ncc)
+{
+    $sql = "SELECT * FROM nha_cung_cap WHERE ma_ncc NOT IN (?) ORDER BY ma_ncc DESC";
+    return pdo_query($sql, $ma_ncc);
 }
 
 // thêm nhà cung cấp

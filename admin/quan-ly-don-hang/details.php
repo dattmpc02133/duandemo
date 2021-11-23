@@ -2,6 +2,8 @@
     if(isset($_GET['ma_hd'])){
         $hoa_don = $_GET['ma_hd'];
     }
+
+
 ?>
 <div class="title">
     <h3>CHI TIẾT HÓA ĐƠN</h3>
@@ -29,7 +31,7 @@
                     foreach ($list_detail as $chi_tiet) {
                         extract($chi_tiet);
                         $btn_update = "index.php?btn_update_ct&id=$id";
-                        $delete_link = "index.php?btn_delete&id=$id";
+                        $delete_link = "index.php?btn-details&id=$id";
                 ?>
                 <tr>
                     <td class="check"><input type="checkbox"></td>

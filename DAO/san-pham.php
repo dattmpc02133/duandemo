@@ -114,6 +114,13 @@ function update_sp($ten_sp,
                 $ma_loai, 
                 $ma_sp);
 }
+// sản phẩm update số lượng
+function sp_update_so_luong_nhap($so_luong, $ma_sp)
+{
+    $sql = "UPDATE san_pham SET so_luong = so_luong + ? WHERE ma_sp = ?";
+    pdo_execute($sql, $so_luong, $ma_sp);
+}
+
 // số lượt lượt xem
 function san_pham_so_luot_luot_xem($ma_sp)
 {

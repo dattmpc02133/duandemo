@@ -2,12 +2,31 @@
     if(isset($_GET['ma_pn'])){
         $ma_pn = $_GET['ma_pn'];
     }
+
+    if(isset($_POST['add_pn_ct'])){
+        $ma_pn = $_POST['ma_pn'];
+        $ma_sp = $_POST['ma_sp'];
+        $so_luong = $_POST['so_luong'];
+        $gia = $_POST['gia'];
+        chi_tiet_pn_insert($ma_pn, $ma_sp, $so_luong, $gia);
+        sp_update_so_luong_nhap($so_luong, $ma_sp);
+        
+        echo '<script>
+                var choice = confirm ("Bạn muốn nhập tiếp không ?");
+                if(choice == true){
+                    location.href = "index.php?btn_add_pn_ct&ma_pn='.$ma_pn.'";
+                }
+                else {
+                    location.href = "index.php";
+                }
+            </script>';
+    }
 ?>
 <div class="title">
     <h3>THÊM CHI TIẾT PHIẾU NHẬP</h3>
 </div>
 <div class="form__content">
-        <form action="index.php?btn_add" method="POST" id="form_du_an">
+        <form action="index.php?btn_add_pn_ct&ma_pn=<?=$ma_pn?>" method="POST" id="form_du_an">
             <div class="form-group">
                 <label for="">Mã phiếu nhập:</label>
                 <input type="text" class="form-control" name="ma_pn" value="<?=$ma_pn?>" readonly>
@@ -37,7 +56,7 @@
             </div>
 
             <div class="btn__group">
-                <button class="btn__group-item btn btn-info" type="submit" name="add_pn">Thêm mới</button>
+                <button class="btn__group-item btn btn-info" type="submit" name="add_pn_ct">Thêm mới</button>
                 <a class="btn__group-item btn btn-info" href="index.php?btn_list">Danh sách</a>
             </div>
         </form>

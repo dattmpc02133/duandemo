@@ -12,20 +12,32 @@
         $sql = "SELECT * FROM phieu_nhap WHERE ma_pn =?";
         return pdo_query_one($sql, $ma_pn);
     }
+    // Lấy thông tin chi tiết phiếu nhập
+    function pn_ct_get_info($ma_pn)
+    {
+        $sql = "SELECT * FROM chi_tiet_phieu_nhap WHERE ma_pn = ?";
+        return pdo_query_one($sql, $ma_pn);
+    }
 
     // Thêm phiếu nhập mới
     function phieu_nhap_insert( $ngay_nhap, $ma_ncc)
     {
-        $sql = "INSERT INTO phieu_nhap VALUES(?,?)";
-        // gọi lại hàm thực thi, tương tác dữ liệu
+        $sql = "INSERT INTO phieu_nhap(ngay_nhap, ma_ncc) VALUES(?,?)";
         pdo_execute($sql,$ngay_nhap,$ma_ncc);
     }
-
-    // xóa phiếu nhập
-    function phieu_nhap_delete($ma_pn)
+    
+    // Thêm chi tiết phiếu nhập
+    function chi_tiet_pn_insert($ma_pn, $ma_sp, $so_luong, $gia)
     {
-        $sql = "DELETE FROM phieu_nhap WHERE ma_pn = ?";
-        pdo_execute($sql, $ma_pn);
+        $sql = "INSERT INTO chi_tiet_phieu_nhap (ma_pn, ma_sp, so_luong, gia) VALUES (?,?,?,?)";
+        pdo_execute($sql, $ma_pn, $ma_sp, $so_luong, $gia);
+    }
+
+    // xóa phiếu nhập chi tiết
+    function phieu_nhap_ct_delete($id)
+    {
+        $sql = "DELETE FROM chi_tiet_phieu_nhap WHERE id = ?";
+        pdo_execute($sql, $id);
     }
 
     // cập nhật phiếu nhập

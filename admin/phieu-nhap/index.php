@@ -7,11 +7,17 @@ require_once '../../DAO/san-pham.php';
 extract($_REQUEST);
 if (exit_param("btn_add")) {
     $VIEW_NAME = "add.php";
-} else if(exit_param("btn_add_pn_ct")){
+} 
+else if(exit_param("btn_add_pn_ct")){
     $VIEW_NAME = "add_pn_ct.php";
-} else if(exit_param("btn_update")){
+} 
+else if(exit_param("btn_detail")){
+    $VIEW_NAME = "detail.php";
+}
+else if(exit_param("btn_update")){
     $VIEW_NAME = "update.php";
-} else {
+}
+else {
     $VIEW_NAME = "list.php";
 }
 require "../layout.php";
