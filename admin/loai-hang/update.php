@@ -45,8 +45,8 @@ if (isset($_GET['ma_loai'])) {
     </div>
     <div class="form-group">
         <label for="">Ảnh:</label>
-        <input type="file" class="form-control"  value="<?= $hinh ?>" name="hinh1">
-        <input type="text" class="form-control" readonly value="<?= $hinh ?>" name="hinh">
+        <input type="file" class="form-control"  value="<?= $hinh_loai_sp ?>" name="hinh1">
+        <input type="text" class="form-control" readonly value="<?= $hinh_loai_sp ?>" name="hinh">
     </div>
     <button class="btn btn-primary" type="submit" name="btn_update1">Cập Nhật</button>
     <a class="btn btn-primary" href="index.php?btn_list">Danh sách loại</a>

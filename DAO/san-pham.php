@@ -89,19 +89,20 @@ function san_pham_select_by_keyword($keyword)
     return pdo_query($sql, '%' . $keyword . '%', '%' . $keyword . '%');
 }
 // cập nhật sản phẩm
-function update_sp($ten_sp, 
+function update_sp( $ten_sp, 
                     $don_gia, 
                     $giam_gia, 
-                    $hinh,
-                    $so_luong ,
-                    $trang_thai,
+                    $hinh, 
+                    $so_luong, 
+                    $trang_thai, 
                     $dac_biet, 
-                    $so_luot_xem, 
-                    $ma_loai, 
+                    $so_luot_mua, 
+                    $ma_loai,
+                    $mo_ta, 
                     $ma_sp)
 {
     $sql = "UPDATE san_pham 
-    SET ten_sp=?,don_gia=?,giam_gia=?,hinh=?,so_luong=?,trang_thai=?,dac_biet=?,so_luot_xem=?,ma_loai=? WHERE ma_sp=?";
+    SET ten_sp=?,don_gia=?,giam_gia=?,hinh=?,so_luong=?,trang_thai=?,dac_biet=?,so_luot_mua=?,ma_loai=?,mo_ta = ? WHERE ma_sp=?";
     pdo_execute($sql, 
                 $ten_sp, 
                 $don_gia, 
@@ -110,8 +111,9 @@ function update_sp($ten_sp,
                 $so_luong, 
                 $trang_thai, 
                 $dac_biet, 
-                $so_luot_xem, 
-                $ma_loai, 
+                $so_luot_mua, 
+                $ma_loai,
+                $mo_ta, 
                 $ma_sp);
 }
 // số lượt lượt xem
@@ -120,13 +122,18 @@ function san_pham_so_luot_luot_xem($ma_sp)
     $sql = "UPDATE san_pham SET so_luot_xem = so_luot_xem + 1 WHERE ma_sp = ? ";
     pdo_execute($sql, $ma_sp);
 }
-// đếm số lượng hàng hóa
+// đếm số lượng sản phẩm
 function product_count()
 {
     $sql = "SELECT COUNT(*) as total  FROM san_pham WHERE ma_sp";
     return pdo_query($sql);
 }
-
+// đếm sản phẩm theo loại
+function product_giam_gia_count_loai()
+{
+    $sql = "SELECT COUNT(*) as total  FROM san_pham WHERE giam_gia";
+    return pdo_query($sql);
+}
 // thống kê sản phẩm
 function sp_thong_ke()
 {
@@ -136,4 +143,16 @@ function sp_thong_ke()
                 GROUP BY lo.ma_loai, lo.ten_loai";
     return pdo_query($sql);
 }
+// khuyến mãi
+function san_pham_khuyen_mai(){
+    $sql = "SELECT * FROM san_pham WHERE giam_gia > 0";
+    return pdo_query($sql);
+}
+// sản phẩm mới
+function select_product_new(){
+    $sql = "SELECT * FROM san_pham sp INNER JOIN loai l on sp.ma_loai = l.ma_loai WHERE sp.ma_loai = 9";
+    return pdo_query($sql);
+}
+
+
 ?>

@@ -52,7 +52,9 @@ if (isset($_POST['delete_select'])) {
                         <td class="check"><input type="checkbox"  name= "check[]" value = ' . $ma_loai . '  ></td>
                             <td>' . $ma_loai . '</td>
                             <td>' . $ten_loai . '</td>
-                            <td>' . $hinh . '</td>
+                            <td>
+                            <img src="'. $CONTENT_URL.'/images/products/'.$hinh_loai_sp.'" alt="" width="60px" > 
+                            </td>
                             <td class="update__delete" >
                             <a class="btn btn-info" href="' . $btn_update . '"><i class="fas fa-edit"></i></a>
                             <a class="btn btn-danger" href="' . $delete_link . '"> <i class="fas fa-trash-alt"></i></a> 

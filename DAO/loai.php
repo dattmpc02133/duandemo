@@ -8,7 +8,7 @@ function loai_selectall()
 // thêm mới loại
 function loai_insert($ten_loai,$hinh)
 {
-    $sql = "INSERT INTO loai(ten_loai,hinh) VALUES (?,?)";
+    $sql = "INSERT INTO loai(ten_loai,hinh_loai_sp) VALUES (?,?)";
     pdo_execute($sql, $ten_loai, $hinh);
 }
 // xóa
@@ -26,8 +26,23 @@ function loai_getinfo($ma_loai)
 // cập nhật dữ liệu
 function loai_update($ten_loai, $hinh, $ma_loai)
 {
-    $sql = "UPDATE loai SET ten_loai= ?, hinh = ? WHERE ma_loai=?";
+    $sql = "UPDATE loai SET ten_loai= ?, hinh_loai_sp = ? WHERE ma_loai=?";
     pdo_execute($sql, $ten_loai, $hinh , $ma_loai);
+}
+
+
+// loại khuyễn mãi và sản phẩm mới
+
+function loai_mk_moi(){
+    $sql = "SELECT * FROM loai WHERE ma_loai IN(8,9) ";
+    return pdo_query($sql);
+}
+// loại not in khuyến mãi và sản phẩm mới
+
+function loai_not_in(){
+    // $sql = "SELECT * FROM san_pham sp INNER JOIN loai l ON sp.ma_loai = l.ma_loai  WHERE sp.giam_gia > 0 AND l.ma_loai NOT IN (8,9,10)";
+    $sql = "SELECT * FROM loai WHERE ma_loai NOT IN(8,9,10)";
+    return pdo_query($sql);
 }
 
 ?>

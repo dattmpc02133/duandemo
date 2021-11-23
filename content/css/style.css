@@ -69,6 +69,7 @@ ul li {
     background: #fff;
     border: 1px solid #eee;
     display: none;
+    min-width: 200px;
 }
 .header-link_chilll {
     padding: 10px;
@@ -81,6 +82,10 @@ ul li {
     text-decoration: none;
     color: #333;
     padding: 20px;
+}
+.header_chill-link a:hover{
+   background-color: #e3f6f5;
+   text-decoration: none;
 }
 .header--ative:hover .header_chill-link {
     display: block;
@@ -500,7 +505,8 @@ ul li {
     position: absolute;
     top: 5px;
     color: #ffffff;
-    padding: 2px;
+    padding: 5px;
+    min-width: 60px;
 }
 /* end sản phẩm khuyến mãi */
 

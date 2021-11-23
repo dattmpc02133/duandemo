@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php
+require_once("../../global.php");
+require_once("../../DAO/pdo.php");
+require_once("../../DAO/san-pham.php");
+require_once("../../DAO/loai.php");
+extract($_REQUEST);
+if(exit_param("dang_ky", $_REQUEST)){
+    $VIEW_NAME = "dang-ky.php";
+} else{
+    // $VIEW_NAME = "../trang-chinh/cart.php";
+    $VIEW_NAME = "home.php";
+}
+require("../layout.php");
