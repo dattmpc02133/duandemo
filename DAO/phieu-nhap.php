@@ -1,6 +1,6 @@
 <?php 
     // select tất cả phiếu nhập
-    function nhieu_nhap_selectall()
+    function phieu_nhap_selectall()
     {
         $sql = "SELECT * FROM phieu_nhap ORDER by ma_pn DESC";
         return pdo_query($sql);
@@ -37,7 +37,7 @@
     }
 
     // đếm số lượng phiếu nhập
-    function product_count()
+    function phieu_nhap_count()
     {
         $sql = "SELECT COUNT(*) as total  FROM phieu_nhap WHERE ma_pn";
         return pdo_query($sql);

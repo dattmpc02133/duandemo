@@ -2,7 +2,7 @@
 
 function nha_cung_cap_selectall()
 {
-    $sql = "select * from loai order by ten_loai DESC";
+    $sql = "select * from nha_cung_cap order by ma_ncc DESC";
     return pdo_query($sql);
 }
 
@@ -24,7 +24,7 @@ function nha_cung_cap_delete($ma_ncc){
 // lấy thông tin 1 mã nhà cung cấp
 function nha_cung_cap_getinfo($ma_ncc)
 {
-    $sql = "SELECT * FROM loai WHERE ma_ncc=?";
+    $sql = "SELECT * FROM nha_cung_cap WHERE ma_ncc=?";
     return pdo_query_one($sql, $ma_ncc);
 }
 ?>

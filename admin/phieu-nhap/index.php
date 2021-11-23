@@ -1,14 +1,17 @@
 <?php 
 require_once("../../global.php");
 require_once("../../DAO/pdo.php");
-
+require_once '../../DAO/phieu-nhap.php';
+require_once '../../DAO/nha_cung_cap.php';
+require_once '../../DAO/san-pham.php';
 extract($_REQUEST);
 if (exit_param("btn_add")) {
     $VIEW_NAME = "add.php";
-} else if(exit_param("btn-add")){
-
+} else if(exit_param("btn_add_pn_ct")){
+    $VIEW_NAME = "add_pn_ct.php";
+} else if(exit_param("btn_update")){
+    $VIEW_NAME = "update.php";
 } else {
-    // $items = thong_ke_binh_luan();
     $VIEW_NAME = "list.php";
 }
 require "../layout.php";
