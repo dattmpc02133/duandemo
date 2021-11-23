@@ -29,6 +29,7 @@
                     foreach ($list_detail as $chi_tiet) {
                         extract($chi_tiet);
                         $btn_update = "index.php?btn_update_ct&id=$id";
+                        $delete_link = "index.php?btn_delete&id=$id";
                 ?>
                 <tr>
                     <td class="check"><input type="checkbox"></td>
