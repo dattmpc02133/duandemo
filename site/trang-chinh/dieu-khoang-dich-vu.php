@@ -35,21 +35,21 @@
                                 </div>
                                 <div class="menu_ground-cetory">
                                     <div class="menu_ground-content">
-                                        <ul class="menu_ground-wrap">
+                                    <ul class="menu_ground-wrap">
                                             <li class="menu_ground-items">
                                                 <a href="" class="menu_ground-links">Tìm Kiếm</a>
                                             </li>
                                             <li class="menu_ground-items">
-                                                <a href="./gioi-thieu.html" class="menu_ground-links">Giới Thiệu</a>
+                                                <a href="<?= $SITE_URL ?>/trang-chinh/index.php?gioi-thieu" class="menu_ground-links">Giới Thiệu</a>
                                             </li>
                                             <li class="menu_ground-items">
-                                                <a href="./chinh-sach-doi-tra.html" class="menu_ground-links">Chính Sách Đổi Trả</a>
+                                                <a href="<?= $SITE_URL ?>/trang-chinh/index.php?chinh-sach-doi-tra" class="menu_ground-links">Chính Sách Đổi Trả</a>
                                             </li>
                                             <li class="menu_ground-items">
-                                                <a href="./chinh-sach-bao-mat.html" class="menu_ground-links">Chính Sách Bảo Mật</a>
+                                                <a href="<?= $SITE_URL ?>/trang-chinh/index.php?chinh-sach-bao-mat" class="menu_ground-links">Chính Sách Bảo Mật</a>
                                             </li>
                                             <li class="menu_ground-items">
-                                                <a href="./dieu-khoan-dich-vu.html" class="menu_ground-links">Điều Khoản Dịch Vụ</a>
+                                                <a href="<?= $SITE_URL ?>/trang-chinh/index.php?dieu-khoang-dich-vu" class="menu_ground-links">Điều Khoản Dịch Vụ</a>
                                             </li>
                                         </ul>
                                     </div>
