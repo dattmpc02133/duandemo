@@ -1,8 +1,8 @@
-<?php 
-    if(isset($_GET['ma_pn'])){
-        $ma_pn = $_GET['ma_pn'];
-        phieu_nhap_delete($ma_pn);
-    }
+<?php
+if (isset($_GET['ma_pn'])) {
+    $ma_pn = $_GET['ma_pn'];
+    phieu_nhap_delete($ma_pn);
+}
 ?>
 <div class="title">
     <h3>QUẢN LÝ PHIẾU NHẬP</h3>
@@ -22,59 +22,59 @@
             </thead>
             <tbody>
 
-                <?php 
-                    $list = phieu_nhap_selectall();
-                    foreach ($list as $pn) {
-                        extract($pn);
-                ?>
-                <tr>
-                    <td class="check"><input type="checkbox"> </td>
-                    <td><?=$ma_pn?></td>
-                    <td><?=$ngay_nhap?></td>
-                    <td><?php 
-                        // echo $ma_ncc;
-                        $ncc = nha_cung_cap_getinfo($ma_ncc);
-                        extract($ncc);
-                        echo $ten_ncc;
-                    ?></td>
-                    <td class="update__delete">
-                        <a class="btn btn-info" href="index.php?btn_detail&ma_pn=<?=$ma_pn?>"><i class="fas fa-info-circle"></i></a>
-                        <a class="btn btn-info" href="index.php?btn_update&ma_pn=<?=$ma_pn?>"><i class="fas fa-edit"></i></a>
-                        <a class="btn btn-danger" href="index.php?btn_delete&ma_pn=<?=$ma_pn?>"><i class="fas fa-trash-alt"></i></a>
-                    </td>
-                </tr>
                 <?php
-                    }
+                $list = phieu_nhap_selectall();
+                foreach ($list as $pn) {
+                    extract($pn);
+                ?>
+                    <tr>
+                        <td class="check"><input type="checkbox"> </td>
+                        <td><?= $ma_pn ?></td>
+                        <td><?= $ngay_nhap ?></td>
+                        <td><?php
+                            // echo $ma_ncc;
+                            $ncc = nha_cung_cap_getinfo($ma_ncc);
+                            extract($ncc);
+                            echo $ten_ncc;
+                            ?></td>
+                        <td class="update__delete">
+                            <a class="btn btn-info" href="index.php?btn_detail&ma_pn=<?= $ma_pn ?>"><i class="fas fa-info-circle"></i></a>
+                            <a class="btn btn-info" href="index.php?btn_update&ma_pn=<?= $ma_pn ?>"><i class="fas fa-edit"></i></a>
+                            <a class="btn btn-danger" href="index.php?btn_delete&ma_pn=<?= $ma_pn ?>"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                <?php
+                }
                 ?>
 
-                
+
                 <!-- <tr>
                     <td class="check"><input type="checkbox"> </td>
                     <td>2</td>
                     <td>21/11/2021</td>
                     <td>Nội thất GOVI	</td>
-                   <td class="update__delete"><a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a> <a class="btn btn-danger" href="<?=$delete_link?>"><i class="fas fa-trash-alt"></a></td>
+                   <td class="update__delete"><a class="btn btn-info" href="<?= $btn_update ?>"><i class="fas fa-edit"></i></a> <a class="btn btn-danger" href="<?= $delete_link ?>"><i class="fas fa-trash-alt"></a></td>
                 </tr>
                 <tr>
                     <td class="check"><input type="checkbox"> </td>
                     <td>3</td>
                     <td>21/11/2021</td>
                     <td>Nội thất Hòa Phát</td>
-                   <td class="update__delete"><a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a> <a class="btn btn-danger" href="<?=$delete_link?>"><i class="fas fa-trash-alt"></a></td>
+                   <td class="update__delete"><a class="btn btn-info" href="<?= $btn_update ?>"><i class="fas fa-edit"></i></a> <a class="btn btn-danger" href="<?= $delete_link ?>"><i class="fas fa-trash-alt"></a></td>
                 </tr>
                 <tr>
                     <td class="check"><input type="checkbox"> </td>
                     <td>4</td>
                     <td>21/11/2021</td>
                     <td>Nội thất Misota</td>
-                   <td class="update__delete"><a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a> <a class="btn btn-danger" href="<?=$delete_link?>"><i class="fas fa-trash-alt"></a></td>
+                   <td class="update__delete"><a class="btn btn-info" href="<?= $btn_update ?>"><i class="fas fa-edit"></i></a> <a class="btn btn-danger" href="<?= $delete_link ?>"><i class="fas fa-trash-alt"></a></td>
                 </tr>
                 <tr>
                     <td class="check"><input type="checkbox"> </td>
                     <td>5</td>
                     <td>21/11/2021</td>
                     <td>Nội thất văn hòng Proce</td>
-                   <td class="update__delete"><a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a> <a class="btn btn-danger" href="<?=$delete_link?>"><i class="fas fa-trash-alt"></a></td>
+                   <td class="update__delete"><a class="btn btn-info" href="<?= $btn_update ?>"><i class="fas fa-edit"></i></a> <a class="btn btn-danger" href="<?= $delete_link ?>"><i class="fas fa-trash-alt"></a></td>
                 </tr> -->
             </tbody>
         </table>

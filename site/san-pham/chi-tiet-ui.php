@@ -43,10 +43,10 @@ extract($san_pham);
                     if ($giam_gia == 0 || $giam_gia == null || $giam_gia == '0') {
                         echo "";
                     } else {
-                        echo  ' <span class="description__price-del"><del> '.number_format($don_gia).' <sup>đ</sup></del></span>';
+                        echo  ' <span class="description__price-del"><del> ' . number_format($don_gia) . ' <sup>đ</sup></del></span>';
                     }
                     ?>
-                   
+
                 </div>
                 <div class="description__form">
                     <div class="row">
