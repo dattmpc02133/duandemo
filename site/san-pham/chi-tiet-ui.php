@@ -7,7 +7,7 @@ extract($san_pham);
 
 <div class="container__chi-tiet">
     <div class="row">
-        <div class="col-6 col-md-6 ">
+        <div class="col-6 col-md-6">
             <div class="view__product">
                 <div class="row">
                     <div class="col-3">
