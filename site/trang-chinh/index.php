@@ -14,6 +14,10 @@ if(exit_param("dang_ky", $_REQUEST)){
     $VIEW_NAME = "chinh-sach-bao-mat.php";
 } elseif(exit_param("dieu-khoang-dich-vu")){
     $VIEW_NAME = "dieu-khoang-dich-vu.php";
+} elseif(exit_param("tin-tuc")){
+    $VIEW_NAME = "tin-tuc.php";
+} elseif(exit_param("lien-he")){
+    $VIEW_NAME = "lien-he.php";
 }
  else{
     // $VIEW_NAME = "../trang-chinh/cart.php";
