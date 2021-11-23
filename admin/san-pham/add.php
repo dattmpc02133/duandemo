@@ -18,6 +18,7 @@ if(isset($_POST['add'])){
     $dac_biet = $_POST['dac_biet'];
     $so_luot_xem = 0;
     $ma_loai = $_POST['ma_loai'];
+    $mo_ta = $_POST['mo_ta'];
     san_pham_insert(
                     $ten_sp, 
                     $don_gia, 
@@ -27,8 +28,12 @@ if(isset($_POST['add'])){
                     $trang_thai, 
                     $dac_biet, 
                     $so_luot_xem, 
-                    $ma_loai);
-    header('location: index.php');
+                    $ma_loai,
+                    $mo_ta);
+    // header('location: index.php');
+    echo "<script>
+                  location.href = 'index.php';
+         </script>";
 }
 ?>
 <div class="title">
@@ -109,6 +114,10 @@ if(isset($_POST['add'])){
             }
             ?>
         </select>
+    </div>
+    <div class="form-group">
+        <label for="">Mô tả:</label>
+            <textarea name="mo_ta"></textarea>
     </div>
     <button type="submit" name="add" id="add" class="btn btn-info" btn-lg btn-block">Thêm sản phẩm</button>
     <button type="reset" class="btn btn-info" name="nhap_lai">Nhập lại</button>

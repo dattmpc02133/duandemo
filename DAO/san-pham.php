@@ -22,9 +22,10 @@ function san_pham_insert(
     $trang_thai, 
     $dac_biet, 
     $so_luot_xem, 
-    $ma_loai)
+    $ma_loai,
+    $mo_ta)
 {
-    $sql = "INSERT INTO san_pham VALUES(null,?,?,?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO san_pham VALUES(null,?,?,?,?,?,?,?,?,?,?)";
     // gọi lại hàm thực thi, tương tác dữ liệu
     pdo_execute(
         $sql,
@@ -36,7 +37,8 @@ function san_pham_insert(
         $trang_thai, 
         $dac_biet, 
         $so_luot_xem, 
-        $ma_loai
+        $ma_loai,
+        $mo_ta
     );
 }
 
