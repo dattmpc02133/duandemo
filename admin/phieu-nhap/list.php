@@ -5,7 +5,7 @@
     }
 ?>
 <div class="title">
-    <h3>QUẢN LÝ LOẠI SẢN PHẨM</h3>
+    <h3>QUẢN LÝ PHIẾU NHẬP</h3>
 </div>
 
 <div class="form__content">
