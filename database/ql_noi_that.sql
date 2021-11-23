@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 21, 2021 lúc 04:26 PM
+-- Thời gian đã tạo: Th10 23, 2021 lúc 05:19 AM
 -- Phiên bản máy phục vụ: 10.4.20-MariaDB
 -- Phiên bản PHP: 8.0.8
 
@@ -65,10 +65,8 @@ CREATE TABLE `chi_tiet_phieu_nhap` (
 
 INSERT INTO `chi_tiet_phieu_nhap` (`ma_ct_pn`, `ma_pn`, `ma_sp`, `so_luong`, `gia`) VALUES
 (1, 3, 7878788, 50, 14500000.00),
-(2, 1, 7878789, 30, 18400000.00),
 (3, 1, 7878790, 100, 300000.00),
 (4, 2, 7878791, 50, 5400000.00),
-(5, 2, 7878792, 30, 22400000.00),
 (6, 2, 7878793, 200, 349000.00);
 
 -- --------------------------------------------------------
@@ -92,10 +90,8 @@ CREATE TABLE `chi_tiet_sp` (
 
 INSERT INTO `chi_tiet_sp` (`ma_sp`, `kich_thuoc`, `mau_sac`, `chat_lieu`, `bao_hanh`, `xuat_xu`) VALUES
 (7878788, '50x50x60 cm', 'Màu đỏ gỗ Xoan đào', 'Gỗ xoan đào', '5 năm', 'Việt Nam'),
-(7878789, '2x1,8 m', 'Trắng', 'MDF chống ẩm', '5 năm', 'Đài Loan'),
 (7878790, '22x35 cm', 'Xám nhạt', 'Chụp đèn: Vải cao cấp; Thân đèn: Gốm sứ', '1 năm', 'Việt Nam'),
 (7878791, '1,8x0,6 m', 'Xám', 'Nệm mút D40 chống xẹp', '1 năm', 'Việt Nam'),
-(7878792, '1,9x1,5 m', 'Màu gỗ', 'Gỗ CN Đài Loan', '5 năm', 'Đài Loan'),
 (7878793, '40x40 cm', 'Nhiều màu', 'Vải bạt/ gỗ', '1 năm', 'Việt Nam');
 
 -- --------------------------------------------------------
@@ -168,7 +164,6 @@ CREATE TABLE `hoa_don_chi_tiet` (
 
 INSERT INTO `hoa_don_chi_tiet` (`id`, `ma_hd`, `ma_sp`, `gia_ban`, `so_luong`) VALUES
 (1, 1, 7878788, 1500000.00, 1),
-(2, 1, 7878789, 18900000.00, 1),
 (3, 2, 7878790, 710000.00, 2),
 (4, 3, 7878793, 399000.00, 1);
 
@@ -237,10 +232,7 @@ CREATE TABLE `khuyen_mai_ct` (
 --
 
 INSERT INTO `khuyen_mai_ct` (`id`, `ma_km`, `ma_sp`) VALUES
-(4, 'KM5T5', 7878792),
-(5, 'KMTET20', 7878789),
 (6, 'KM5T5', 7878788),
-(7, 'KM5T5', 7878789),
 (8, 'KMTET20', 7878790);
 
 -- --------------------------------------------------------
@@ -252,18 +244,21 @@ INSERT INTO `khuyen_mai_ct` (`id`, `ma_km`, `ma_sp`) VALUES
 CREATE TABLE `loai` (
   `ma_loai` int(11) NOT NULL,
   `ten_loai` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `hinh` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `hinh_loai_sp` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `loai`
 --
 
-INSERT INTO `loai` (`ma_loai`, `ten_loai`, `hinh`) VALUES
-(1, 'Sản phẩm phòng khách', 'sp-phong-khach.jpg'),
-(2, 'Sản phẩm phòng ngủ', 'sp-phong-ngu.jpg'),
-(3, 'Phụ kiện trang trí', 'phu-kien-trang-tri.jpg'),
-(5, 'Ghế sofa', 'sp7-1_83fd0de6ab8b437d9b28cf50ad5e69cb_master.jpg');
+INSERT INTO `loai` (`ma_loai`, `ten_loai`, `hinh_loai_sp`) VALUES
+(1, 'Phòng khách', 'collection1.jpg'),
+(3, 'Trang trí', 'collection2.jpg'),
+(8, 'Khuyến mãi', 'img_banner_center_2.jpg'),
+(9, 'Sản phẩm mới', 'img_banner_center_1.jpg'),
+(10, 'Nhà bếp', 'img_banner_center_3.jpg'),
+(11, 'Ghế phụ', 'collection3.jpg'),
+(12, 'Phòng làm việc', 'collection4.jpg');
 
 -- --------------------------------------------------------
 
@@ -319,25 +314,26 @@ CREATE TABLE `san_pham` (
   `ma_sp` int(11) NOT NULL,
   `ten_sp` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `don_gia` double(10,2) NOT NULL,
-  `giam_gia` double(10,2) DEFAULT NULL,
+  `giam_gia` int(11) DEFAULT NULL,
+  `hinh` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `so_luong` int(11) NOT NULL,
   `trang_thai` tinyint(1) NOT NULL,
   `dac_biet` tinyint(1) NOT NULL,
   `so_luot_mua` int(11) NOT NULL DEFAULT 0,
-  `ma_loai` int(11) NOT NULL
+  `ma_loai` int(11) NOT NULL,
+  `mo_ta` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `san_pham`
 --
 
-INSERT INTO `san_pham` (`ma_sp`, `ten_sp`, `don_gia`, `giam_gia`, `so_luong`, `trang_thai`, `dac_biet`, `so_luot_mua`, `ma_loai`) VALUES
-(7878788, 'Tủ đầu giường 3 hộc trơn', 1500000.00, NULL, 50, 1, 0, 0, 1),
-(7878789, 'Giường ngủ tân cổ điển', 18900000.00, NULL, 30, 1, 0, 0, 2),
-(7878790, 'Đèn ngủ để bàn chân sứ tròn', 355000.00, NULL, 100, 1, 0, 0, 3),
-(7878791, 'Sofa băng Tân Á', 5900000.00, NULL, 50, 1, 0, 0, 1),
-(7878792, 'Giường hiện đại cho trẻ em', 22900000.00, NULL, 30, 1, 0, 0, 2),
-(7878793, 'Tranh canvas - Kool (Bộ 3 tranh)', 399000.00, NULL, 200, 1, 0, 0, 3);
+INSERT INTO `san_pham` (`ma_sp`, `ten_sp`, `don_gia`, `giam_gia`, `hinh`, `so_luong`, `trang_thai`, `dac_biet`, `so_luot_mua`, `ma_loai`, `mo_ta`) VALUES
+(7878788, 'Tủ đầu giường 3 hộc trơn', 1500000.00, 25, 'sp1-2_0ab2e2a624424c2a803800990fb57109_large.jpg', 50, 1, 0, 0, 1, ''),
+(7878790, 'Đèn ngủ để bàn chân sứ tròn', 355000.00, 25, 'sp8-2_6a27ed54ad9849a3ae439de360094566_large.jpg', 100, 1, 0, 0, 3, 'Mô tả sản phẩm '),
+(7878791, 'Sofa băng Tân Á', 5900000.00, NULL, 'sp11-2_d58d2329380c41f1885a093a5cf2f27c_large.jpg', 50, 1, 0, 0, 1, 'Mô tả sản phẩm'),
+(7878793, 'Tranh canvas - Kool (Bộ 3 tranh)', 399000.00, NULL, 'sp5-1_655fbdd6a3ba415485ec214fd2a5c4a9_large.jpg', 200, 1, 0, 0, 3, 'Đây là mô tả'),
+(7878830, 'Ấm trà inox', 200000.00, 10, 'sp12-1_5316e032a8b0403b8fe26c4cd6bef167_master.jpg', 5, 1, 0, 0, 12, '<p>D&ograve;ng sản phẩm&nbsp;xuất khẩu&nbsp;được sản xuất tại Nh&agrave; M&aacute;y Việt Nam&nbsp;theo ti&ecirc;u chuẩn Ch&acirc;u &Acirc;u. Nguồn gốc nguy&ecirc;n vật liệu cũng như chất lượng,&nbsp;độ bền sản phẩm đ&atilde; được kiểm chứng bởi c&aacute;c nh&agrave; nhập khẩu &Acirc;u Mỹ</p>\r\n\r\n<p>CHẤT LIỆU</p>\r\n\r\n<p>Khung sườn: gỗ dầu&nbsp;(Việt Nam) đ&atilde; xử l&yacute; mối mọt theo ti&ecirc;u chuẩn xuất khẩu Ch&acirc;u &Acirc;u<br />\r\nNệm m&uacute;t: nhập khẩu từ Malaysia<br />\r\nChỉ may: nhập khẩu từ Anh Quốc<br />\r\nDa/ PVC/ Vải:&nbsp;Da B&ograve; nhập khẩu từ &Yacute;/ PVC nhập khẩu từ Th&aacute;i Lan/ Vải nhập khẩu từ H&agrave;n Quốc</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Hướng dẫn bảo quản</p>\r\n\r\n<ul>\r\n	<li>Tr&aacute;nh để đồ qu&aacute; n&oacute;ng hoặc qu&aacute; lạnh trực tiếp l&ecirc;n bề mặt gỗ, h&atilde;y d&ugrave;ng miếng l&oacute;t b&ecirc;n dưới</li>\r\n	<li>Sử dụng vải kh&ocirc; để l&agrave;m sạch bề mặt gỗ ngay khi bị bẩn</li>\r\n	<li>Đối với đồ nội thất l&agrave;m từ gỗ, ch&uacute;ng t&ocirc;i khuyến nghị n&ecirc;n d&ugrave;ng s&aacute;p v&agrave; xi b&oacute;ng gỗ để ch&agrave; sạch v&agrave; l&agrave;m mới &iacute;t nhất 6 th&aacute;ng một lần</li>\r\n	<li>Đồ nội thất bằng gỗ sẽ c&oacute; sự kh&aacute;c nhau về v&acirc;n gỗ hoặc những t&igrave; vết tự nhi&ecirc;n m&agrave; kh&ocirc;ng l&agrave;m ảnh hưởng đến chất lượng v&agrave; t&iacute;nh thẩm mỹ của sản phẩm</li>\r\n</ul>\r\n\r\n<p>Chất liệu cao cấp, sử dụng l&acirc;u bền</p>\r\n\r\n<p>Ch&acirc;n ghế được l&agrave;m từ chất liệu th&eacute;p mạ chrome bền đẹp, &iacute;t bị hoen gỉ qua thời gian sử dụng. 5 b&aacute;nh xe dưới c&aacute;c thanh đỡ gi&uacute;p bạn dễ d&agrave;ng xoay v&agrave; di chuyển ghế một c&aacute;ch dễ d&agrave;ng. Ghế c&oacute; thể điều chỉnh độ cao cho ph&ugrave; hợp với người sử dụng nhờ bộ piston kh&iacute; n&eacute;n. Sản phẩm chịu được trọng lượng cao m&agrave; vẫn đảm bảo độ bền qua thời gian sử dụng.&nbsp;</p>\r\n');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -489,7 +485,7 @@ ALTER TABLE `khuyen_mai_ct`
 -- AUTO_INCREMENT cho bảng `loai`
 --
 ALTER TABLE `loai`
-  MODIFY `ma_loai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ma_loai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT cho bảng `nha_cung_cap`
@@ -507,7 +503,7 @@ ALTER TABLE `phieu_nhap`
 -- AUTO_INCREMENT cho bảng `san_pham`
 --
 ALTER TABLE `san_pham`
-  MODIFY `ma_sp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7878827;
+  MODIFY `ma_sp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7878831;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
