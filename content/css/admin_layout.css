@@ -101,6 +101,10 @@ hr{
     vertical-align: middle !important;
     padding: 0.5rem !important;
 }
+.table td, .table td {
+    vertical-align: middle !important;
+   
+}
 .update__delete .btn-info .fas{
     margin-right: 0px;
 }

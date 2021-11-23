@@ -18,6 +18,8 @@ if(exit_param("dang_ky", $_REQUEST)){
     $VIEW_NAME = "tin-tuc.php";
 } elseif(exit_param("lien-he")){
     $VIEW_NAME = "lien-he.php";
+} elseif(exit_param("cart")){
+    $VIEW_NAME = "cart.php";
 }
  else{
     // $VIEW_NAME = "../trang-chinh/cart.php";

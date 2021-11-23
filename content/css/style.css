@@ -670,6 +670,9 @@ ul li {
     color: #fff;
     background: #e00707;
 }
+tbody td{
+    vertical-align: middle !important;
+}
 .countine_order_cart {
     text-align: center;
     display: block;

@@ -69,7 +69,7 @@
                                 <span class="cart-text_right">0<sup>đ</sup></span>
                             </div>
                             <div class="cart_pay">
-                                <a href="./cart.html" class="PayPay">Xem giỏ hàng</a>
+                                <a href="<?= $SITE_URL ?>/trang-chinh/index.php?cart" class="PayPay">Xem giỏ hàng</a>
                                 <a href="./cart.html" class="PayPay">Thanh toán</a>
 
                             </div>
@@ -216,7 +216,7 @@
                                 <span class="cart-text_right">0<sup>đ</sup></span>
                             </div>
                             <div class="cart_pay">
-                                <a href="" class="PayPay">Xem Giỏ Hàng</a>
+                                <a href="<?= $SITE_URL ?>/trang-chinh/index.php?cart" class="PayPay">Xem Giỏ Hàng</a>
                                 <a href="" class="PayPay">Thanh Toán</a>
 
                             </div>
