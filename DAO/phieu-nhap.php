@@ -27,10 +27,17 @@
     }
     
     // Thêm chi tiết phiếu nhập
-    function chi_tiet_pn_insert($ma_pn, $ma_sp, $so_luong, $gia)
+    function chi_tiet_pn_insert($ma_pn, $ma_sp, $so_luong_nhap, $gia)
     {
-        $sql = "INSERT INTO chi_tiet_phieu_nhap (ma_pn, ma_sp, so_luong, gia) VALUES (?,?,?,?)";
-        pdo_execute($sql, $ma_pn, $ma_sp, $so_luong, $gia);
+        $sql = "INSERT INTO chi_tiet_phieu_nhap (ma_pn, ma_sp, so_luong_nhap, gia) VALUES (?,?,?,?)";
+        pdo_execute($sql, $ma_pn, $ma_sp, $so_luong_nhap, $gia);
+    }
+
+    // xoá phiếu nhập
+    function phieu_nhap_delete($ma_pn)
+    {
+        $sql = "DELETE FROM phieu_nhap WHERE ma_pn = ?";
+        pdo_execute($sql, $ma_pn);
     }
 
     // xóa phiếu nhập chi tiết
@@ -46,6 +53,13 @@
         $sql = "UPDATE phieu_nhap
         SET ngay_nhap=?,ma_ncc=? WHERE ma_pn=?";
         pdo_execute($sql,$ngay_nhap, $ma_ncc,$ma_pn);
+    }
+
+    // phieu nhap chi tiet update
+    function chi_tiet_pn_update($ma_sp, $so_luong_nhap, $gia, $ma_ct_pn)
+    {
+        $sql = "UPDATE chi_tiet_phieu_nhap SET ma_sp = ?, so_luong_nhap = ?, gia = ? WHERE ma_ct_pn = ?";
+        pdo_execute($sql, $ma_sp, $so_luong_nhap, $gia, $ma_ct_pn);
     }
 
     // đếm số lượng phiếu nhập

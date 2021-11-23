@@ -17,6 +17,9 @@ else if(exit_param("btn_detail")){
 else if(exit_param("btn_update")){
     $VIEW_NAME = "update.php";
 }
+else if(exit_param("btn_update_ct")){
+    $VIEW_NAME = "update_ct.php";
+}
 else {
     $VIEW_NAME = "list.php";
 }

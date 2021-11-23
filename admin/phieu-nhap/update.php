@@ -1,19 +1,18 @@
 <?php 
-    if(isset($_GET['ma_pn'])){
-        $ma_pn = $_GET['ma_pn'];
-        $in4_phieu_nhap = phieu_nhap_getinfo($ma_pn);
-        extract($in4_phieu_nhap);
-    }
-
     if(isset($_POST['update_pn'])){
         $ma_pn = $_POST['ma_pn'];
         $ngay_nhap = $_POST['ngay_nhap'];
         $ma_ncc = $_POST['ma_ncc'];
         phieu_nhap_update($ngay_nhap, $ma_ncc, $ma_pn);
-        
         echo '<script>
-                location.href = "index.php";
-            <script>';
+            location.href = "index.php";
+        </script>';
+    }
+
+    if(isset($_GET['ma_pn'])){
+        $ma_pn = $_GET['ma_pn'];
+        $in4_phieu_nhap = phieu_nhap_getinfo($ma_pn);
+        extract($in4_phieu_nhap);
     }
 ?>
 <div class="title">
@@ -31,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label for="">Mã nhà cung cấp:</label>
-                <select class="form-control" name="ma_ncc" id="ma_ncc">
+                <select class="form-control" name="ma_ncc">
                     <option value="<?=$ma_ncc?>"><?php 
                         $ncc_selected = nha_cung_cap_getinfo($ma_ncc);
                         extract($ncc_selected);

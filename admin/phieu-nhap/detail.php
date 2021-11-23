@@ -1,5 +1,5 @@
 <?php 
-    if(isset($_POST['ma_pn'])){
+    if(isset($_GET['ma_pn'])){
         $ma_pn = $_GET['ma_pn'];
     }
     if(isset($_GET['ma_ct_pn'])){
@@ -11,7 +11,7 @@
     extract($in4_pn);
 ?>
 <div class="title">
-    <h3>CHI TIẾT PHIẾU NHẬP</h3>
+    <h3>CHI TIẾT PHIẾU NHẬP: <?=$ma_pn?></h3>
 </div>
 
 <div class="form__content">
@@ -33,15 +33,15 @@
                     <td class="check"><input type="checkbox"> </td>
                     <td><?=$ma_ct_pn?></td>
                     <td><?=$ma_pn?></td>
-                    <td><?php 
-                        $in4_sp = san_pham_getinfo($ma_sp);
-                        extract($in4_sp);
-                        echo $ten_sp;
+                    <td><?php
+                        $ten_sp_selected = ten_sp_select_in($ma_sp);
+                        echo $ten_sp_selected;
                     ?></td>
-                    <td><?=$gia?></td>
+                    <td><?=$so_luong_nhap?></td>
+                    <td><?=$gia?><sup>đ</sup></td>
                     <td class="update__delete">
-                        <a class="btn btn-info" href="index.php?btn_detail&ma_ct_pn=<?=$ma_ct_pn?>"><i class="fas fa-trash-alt"></i></a>
-                        <a class="btn btn-info" href="index.php?btn_update&ma_pn=<?=$ma_pn?>"><i class="fas fa-edit"></i></a>
+                        <a class="btn btn-info" href="index.php?btn_update_ct&ma_ct_pn=<?=$ma_ct_pn?>"><i class="fas fa-edit"></i></a>
+                        <!-- <a class="btn btn-danger" href="index.php?btn_delete_ct&ma_ct_pn=<?=$ma_ct_pn?>"><i class="fas fa-trash-alt"></i></a> -->
                     </td>
                 </tr>
                 </tbody>

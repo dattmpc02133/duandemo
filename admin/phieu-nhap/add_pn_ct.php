@@ -6,10 +6,10 @@
     if(isset($_POST['add_pn_ct'])){
         $ma_pn = $_POST['ma_pn'];
         $ma_sp = $_POST['ma_sp'];
-        $so_luong = $_POST['so_luong'];
+        $so_luong_nhap = $_POST['so_luong_nhap'];
         $gia = $_POST['gia'];
-        chi_tiet_pn_insert($ma_pn, $ma_sp, $so_luong, $gia);
-        sp_update_so_luong_nhap($so_luong, $ma_sp);
+        chi_tiet_pn_insert($ma_pn, $ma_sp, $so_luong_nhap, $gia);
+        sp_update_so_luong_nhap($so_luong_nhap, $ma_sp);
         
         echo '<script>
                 var choice = confirm ("Bạn muốn nhập tiếp không ?");
@@ -48,7 +48,7 @@
             </div>
             <div class="form-group">
               <label for="">Số lượng:</label>
-              <input type="number" class="form-control" name="so_luong" id="so_luong" placeholder="Nhập số lượng" min=1>
+              <input type="number" class="form-control" name="so_luong_nhap" id="so_luong_nhap" placeholder="Nhập số lượng" min=1>
             </div>
             <div class="form-group">
               <label for="">Giá:</label>

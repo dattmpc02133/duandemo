@@ -2,8 +2,6 @@
     if(isset($_GET['ma_hd'])){
         $hoa_don = $_GET['ma_hd'];
     }
-
-
 ?>
 <div class="title">
     <h3>CHI TIẾT HÓA ĐƠN</h3>

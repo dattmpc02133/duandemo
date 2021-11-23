@@ -4,12 +4,24 @@ function san_pham_selectall()
     $sql = "SELECT * FROM san_pham ORDER BY ma_sp DESC";
     return pdo_query($sql);
 }
+//san pham select not in
+function sp_select_not_in($ma_sp)
+{  
+    $sql = "SELECT * FROM san_pham WHERE ma_sp NOT IN (?) ORDER BY ma_sp DESC";
+    return pdo_query($sql, $ma_sp);
+}
 
 // lấy thông tin 1 mã sản phẩm
 function san_pham_getinfo($ma_sp)
 {
     $sql = "SELECT * FROM san_pham WHERE ma_sp =?";
     return pdo_query_one($sql, $ma_sp);
+}
+// select 1 sp
+function ten_sp_select_in($ma_sp)
+{
+    $sql = "SELECT ten_sp FROM san_pham WHERE ma_sp = ?";
+    return pdo_query_value($sql, $ma_sp);
 }
 
 // Thêm sản phẩm mới
@@ -122,6 +134,11 @@ function sp_update_so_luong_nhap($so_luong, $ma_sp)
     $sql = "UPDATE san_pham SET so_luong = so_luong + ? WHERE ma_sp = ?";
     pdo_execute($sql, $so_luong, $ma_sp);
 }
+function sp_update_so_luong_nhap_fix($so_luong_nhap_old, $so_luong_nhap, $ma_sp)
+{
+    $sql = "UPDATE san_pham SET so_luong = so_luong - ? + ? WHERE ma_sp = ?";
+    pdo_execute($sql, $so_luong_nhap_old, $so_luong_nhap, $ma_sp);
+}
 
 // số lượt lượt xem
 function san_pham_so_luot_luot_xem($ma_sp)
@@ -152,12 +169,12 @@ function sp_thong_ke()
 }
 // khuyến mãi
 function san_pham_khuyen_mai(){
-    $sql = "SELECT * FROM san_pham WHERE giam_gia > 0";
+    $sql = "SELECT * FROM san_pham WHERE giam_gia > 0 ORDER BY ma_sp DESC";
     return pdo_query($sql);
 }
 // sản phẩm mới
 function select_product_new(){
-    $sql = "SELECT * FROM san_pham sp INNER JOIN loai l on sp.ma_loai = l.ma_loai WHERE sp.ma_loai = 9";
+    $sql = "SELECT * FROM san_pham ORDER BY ma_sp DESC";
     return pdo_query($sql);
 }
 
