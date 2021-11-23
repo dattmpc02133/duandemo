@@ -41,7 +41,14 @@
                                         
                                         <img src="<?=  $CONTENT_URL  ?>/images/products/<?= $hinh ?>" alt="sản phẩm khuyễn mãi">
                                         <div class="products-item-sale">
-                                            <span class="sale-val">- <?= $giam_gia ?> %</span>
+                                            <?php 
+                                                    if($giam_gia == 0 || $giam_gia == null){
+                                                        echo "";
+                                                    } else{
+                                                        echo "<span class='sale-val'>- $giam_gia %</span>";
+                                                    }
+                                            ?>
+                                            
                                         </div>
                                     </div>
                                     <div class="block-body">

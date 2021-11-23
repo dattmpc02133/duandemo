@@ -484,10 +484,13 @@ ul li {
     overflow: hidden;
     text-overflow: ellipsis;
     word-break: break-word;
+    font-size: 16px;
 }
 .block-products .product-price p{
     color: red;
+    font-size: 18px;
 }
+
 .block-products del{
     color: #cccccc;
     font-weight: normal;

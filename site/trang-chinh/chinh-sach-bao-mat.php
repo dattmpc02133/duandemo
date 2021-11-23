@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                             <div class="menu_boximg">
-                                <a href=""><img src="./content/images/page_banner.jpg" alt="hình" class="menu_boximg-img"></a>
+                                <!-- <a href=""><img src="./content/images/page_banner.jpg" alt="hình" class="menu_boximg-img"></a> -->
                             </div>
                         </div>
                     </div>

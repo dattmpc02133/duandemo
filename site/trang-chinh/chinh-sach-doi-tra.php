@@ -51,12 +51,12 @@
                                             <li class="menu_ground-items">
                                                 <a href="<?= $SITE_URL ?>/trang-chinh/index.php?dieu-khoang-dich-vu" class="menu_ground-links">Điều Khoản Dịch Vụ</a>
                                             </li>
-                                        </ul>
+                                     </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="menu_boximg">
-                                <a href=""><img src="./content/images/page_banner.jpg" alt="hình" class="menu_boximg-img"></a>
+                                <!-- <a href=""><img src="./content/images/page_banner.jpg" alt="hình" class="menu_boximg-img"></a> -->
                             </div>
                         </div>
                     </div>

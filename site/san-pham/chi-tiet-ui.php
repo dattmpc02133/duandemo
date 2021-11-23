@@ -39,7 +39,14 @@ extract($san_pham);
                     ?>
 
                     <span class="description__price-product"><?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?> <sup>đ</sup></span>
-                    <span class="description__price-del"><del><?= number_format($don_gia) ?><sup>đ</sup></del></span>
+                    <?php
+                    if ($giam_gia == 0 || $giam_gia == null || $giam_gia == '0') {
+                        echo "";
+                    } else {
+                        echo  ' <span class="description__price-del"><del> '.number_format($don_gia).' <sup>đ</sup></del></span>';
+                    }
+                    ?>
+                   
                 </div>
                 <div class="description__form">
                     <div class="row">
