@@ -63,7 +63,7 @@
                             <div class="footer_content-logo">
                                 <p style="font-size: 0.9rem; text-align: justify; margin: 0;">Trang mua sắm trực tuyến nội
                                     thất mang phong cách việt, giúp bạn cập nhập và nắm bắt xu hướng mới</p>
-                                <img src="./content/images/logo_bct.png" style="width:50%" alt="logo"
+                                <img src="<?= $CONTENT_URL ?>/images/logo_bct.png" style="width:50%" alt="logo"
                                     class="footer_content-img">
                             </div>
                         </div>

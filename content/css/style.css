@@ -446,6 +446,8 @@ ul li {
 }
 .fill2{
     text-align: right;
+    display: flex;
+    justify-content: flex-end;
 }
 .fill2 select{
     font-size: 14px;
