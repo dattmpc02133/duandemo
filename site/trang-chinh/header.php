@@ -27,7 +27,7 @@
                             <i class="incon_size fas fa-user-circle"></i>
                             <div class="account_dangnhap">
                                 <a href="#">Đăng Nhập /</a>
-                                <a href="../trang-chinh/index.php?dang_ky">Đăng Ký</a><br>
+                                <a href="../tai-khoan/index.php?dang_ky">Đăng Ký</a><br>
                                 <a href="#" style="margin: 0; text-align: center;">Tài Khoản Của Tôi</a>
                             </div>
                         </div>
