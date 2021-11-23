@@ -36,7 +36,7 @@
         $sql = "UPDATE hoa_don SET tong_tien = tong_tien - ? + ? WHERE ma_hd = ?";
         pdo_execute($sql, $tien_tru, $thanh_tien, $ma_hd);
     }
-        // Xóa sản phẩm khi khách hàng bỏ sản phẩm đó khỏi đơn hàng
+        // Xóa sản phẩm khi khách hàng muốn bỏ sản phẩm đó khỏi đơn hàng
     function hoa_don_chi_tiet_delete($id)
     {
         $sql = "DELETE FROM hoa_don_chi_tiet WHERE id = ?";
