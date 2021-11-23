@@ -32,8 +32,9 @@ if (isset($_POST['btn_update1'])) {
             $so_luong = $_POST['so_luong'];
             $trang_thai = $_POST['trang_thai'];
             $dac_biet = $_POST['dac_biet'];
-            $so_luot_xem = $_POST['so_luot_xem'];
+            $so_luot_mua = $_POST['so_luot_mua'];
             $ma_loai = $_POST['ma_loai'];
+            $mo_ta = $_POST['mo_ta'];
             $ma_sp = $_POST['ma_sp'];
             if (strlen($_FILES['hinh_new']['name']) > 0) {
                 $hinh = $_FILES['hinh_new'];
@@ -49,11 +50,15 @@ if (isset($_POST['btn_update1'])) {
                 $so_luong,
                 $trang_thai,
                 $dac_biet, 
-                $so_luot_xem, 
-                $ma_loai, 
+                $so_luot_mua, 
+                $ma_loai,
+                $mo_ta ,
                 $ma_sp);
             unset($_SESSION['ma_sp']);
-            header("location: index.php");
+            // header("location: index.php");
+            echo "<script>
+                  location.href = 'index.php';
+               </script>";
         }
     } else {
         echo "<script> alert('thất bại'); </script>";
@@ -98,11 +103,11 @@ if (isset($_GET['ma_sp'])) {
         <label for="">Số lượng:</label>
         <input type="number" class="form-control" value="<?=$so_luong?>" name="so_luong">
     </div>
-    <!-- <div class="form-group">
+    <div class="form-group">
         <label for="">Ảnh:</label>
         <input type="file" class="form-control-file" name="hinh_new" id="hinh_new" aria-describedby="fileHelpId">
         <input class="form-control"type="text" name="hinh" id="hinh" value="<?php echo $hinh ?>" readonly style="border: none; outline:none;">
-    </div> -->
+    </div>
     <div class="form-group">
         <label for="">Trạng thái:</label>
         <div class="form-control-radio">
@@ -150,8 +155,8 @@ if (isset($_GET['ma_sp'])) {
         </div>
     </div>
     <div class="form-group">
-        <label>Số lượt xem:</label>
-        <input type="number" class="form-control" value="<?= $so_luot_xem ?>" name="so_luot_xem">
+        <label>Số lượt mua:</label>
+        <input type="number" class="form-control" value="<?= $so_luot_mua ?>" name="so_luot_mua">
     </div>
     <div class="form-group">
         <select class="form-control" id="sel1" name="ma_loai">
@@ -163,6 +168,9 @@ if (isset($_GET['ma_sp'])) {
             }
             ?>
         </select>
+    </div>
+    <div class="form-group">
+       <textarea name="mo_ta"> <?=  $mo_ta ?> </textarea>
     </div>
     <div class="btn__group">
         <button type="submit" class="btn btn-info" name="btn_update1">Cập nhật sản phẩm</button>
