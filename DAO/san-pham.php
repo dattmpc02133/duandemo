@@ -178,5 +178,14 @@ function select_product_new(){
     return pdo_query($sql);
 }
 
-
+// insert hình phụ
+function product_hinh_phu($ma_sp,$hinh){
+    $sql = "INSERT INTO hinh VALUES(null,?,?)";
+    pdo_execute( $sql,$ma_sp,$hinh);
+}
+// mã san phẩm hình phụ 
+function ma_sp_hinh_phu(){
+    $sql = "SELECT * FROM san_pham ORDER BY ma_sp DESC LIMIT 0,1 ";
+   return  pdo_query_one($sql);
+}
 ?>

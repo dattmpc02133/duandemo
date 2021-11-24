@@ -4,14 +4,31 @@ require("../../DAO/pdo.php");
 require("../../DAO/loai.php");
 require("../../DAO/san-pham.php");
 
-if(isset($_POST['add'])){
+if (isset($_POST['add'])) {
     $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL . '/images/products/';
     $ten_sp = $_POST['ten_sp'];
     $don_gia = $_POST['don_gia'];
     $giam_gia = $_POST['giam_gia'];
 
+
+
+
+
+    // echo '<pre>';
+    // print_r($_FILES);
+    // die();
+
     $hinh_array = $_FILES['hinh'];
-    $hinh = save_file($hinh_array, $path);
+    if ($hinh_array['type'] == 'image/jpeg' || $hinh_array['type'] == 'image/jpg' || $hinh_array['type'] == 'image/png') {
+        $hinh = save_file($hinh_array, $path);
+    } else {
+        echo "<script> alert('Ảnh không đúng định dạng: jpeg, jpg, png') </script>";
+        echo "<script>
+                     location.href = 'index.php?btn-add';
+              </script>";
+    }
+
+   
 
     $so_luong = $_POST['so_luong'];
     $trang_thai = $_POST['trang_thai'];
@@ -20,17 +37,29 @@ if(isset($_POST['add'])){
     $ma_loai = $_POST['ma_loai'];
     $mo_ta = $_POST['mo_ta'];
     san_pham_insert(
-                    $ten_sp, 
-                    $don_gia, 
-                    $giam_gia, 
-                    $hinh, 
-                    $so_luong, 
-                    $trang_thai, 
-                    $dac_biet, 
-                    $so_luot_xem, 
-                    $ma_loai,
-                    $mo_ta);
+        $ten_sp,
+        $don_gia,
+        $giam_gia,
+        $hinh,
+        $so_luong,
+        $trang_thai,
+        $dac_biet,
+        $so_luot_xem,
+        $ma_loai,
+        $mo_ta
+    );
+     // hình phụ
+    // lấy mã sp cho hình phụ 
+    // kết thúc hình phụ
     // header('location: index.php');
+    $ma_sp_hinh_phu = ma_sp_hinh_phu();
+    $hinh_phu = $_FILES['hinh_phu'];
+    $hinh_phu_name = $hinh_phu['name'];
+    extract($ma_sp_hinh_phu);
+    foreach ($hinh_phu_name as $key => $value) { 
+        move_uploaded_file($hinh_phu['tmp_name'][$key], $path . $value);
+        product_hinh_phu($ma_sp ,$value);
+    }
     echo "<script>
                   location.href = 'index.php';
          </script>";
@@ -46,15 +75,19 @@ if(isset($_POST['add'])){
     </div>
     <div class="form-group">
         <label for="">Đơn giá:</label>
-        <input type="number" class="form-control" placeholder="Nhập đơn giá" name="don_gia" id="don_gia">  
+        <input type="number" class="form-control" placeholder="Nhập đơn giá" name="don_gia" id="don_gia">
     </div>
     <div class="form-group">
-        <label for="">Giảm giá:</label>
+        <label for="">Giảm giá (%):</label>
         <input type="number" min="0" max="100" class="form-control" placeholder="Nhập đơn giá giảm" name="giam_gia" id="giam_gia">
     </div>
     <div class="form-group">
-        <label for="">Ảnh:</label>
+        <label for="">Ảnh chính:</label>
         <input type="file" class="form-control-file" name="hinh" id="hinh" aria-describedby="fileHelpId">
+    </div>
+    <div class="form-group">
+        <label for="">Ảnh phụ:</label>
+        <input type="file" multiple="true" class="form-control-file" name="hinh_phu[]" id="hinh_phu" aria-describedby="fileHelpId">
     </div>
     <div class="form-group">
         <label for="">Số lượng:</label>
@@ -117,7 +150,7 @@ if(isset($_POST['add'])){
     </div>
     <div class="form-group">
         <label for="">Mô tả:</label>
-            <textarea name="mo_ta"></textarea>
+        <textarea name="mo_ta"></textarea>
     </div>
     <button type="submit" name="add" id="add" class="btn btn-info" btn-lg btn-block">Thêm sản phẩm</button>
     <button type="reset" class="btn btn-info" name="nhap_lai">Nhập lại</button>
