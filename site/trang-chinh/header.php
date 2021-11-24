@@ -26,28 +26,41 @@
                         <div class="user__active" id="account_dangnhap">
                             <i class="incon_size fas fa-user-circle"></i>
                             <div class="account_dangnhap">
-                                <a href="#">Đăng Nhập /</a>
-                                <a href="../tai-khoan/index.php?dang_ky">Đăng Ký</a><br>
-                                <a href="#" style="margin: 0; text-align: center;">Tài Khoản Của Tôi</a>
+                                <?php
+                                    if(isset($_SESSION['user'])){
+                                        echo $_SESSION['user'] . ' /';
+                                        echo ' <a href="../tai-khoan/dang-nhap.php?logout">Đăng Xuất</a> <br>';
+                                        echo '<a href="#" style="margin: 0; text-align: center;">Tài Khoản Của Tôi</a>';
+                              
+                                    }else{
+                                        echo ' <a href="#">Đăng Nhập /</a>
+                                        <a href="../tai-khoan/index.php?dang_ky">Đăng Ký</a><br>'
+                                        ; }
+                                ?>
+                                <!-- <a href="#" style="margin: 0; text-align: center;">Tài Khoản Của Tôi</a> -->
                             </div>
                         </div>
                         <div class="header-dropdown_content" id="header-dropdown_content">
                             <div class="site_account_panel_list">
                                 <h3 class="site_account-title">
-                                    Đăng Nhập Tài Khoản
-                                    <p style="color:#677297; font-size:0.9rem;margin: 0;padding-top: 5px;">Nhập email và mật khẩu của bạn:</p>
+                                    Đăng nhập tài khoản
+                                    <p style="color:#677297; font-size:0.9rem;margin: 0;padding-top: 5px;">Tên đăng nhập và mật khẩu:</p>
                                 </h3>
-                                <form action="#" method="post" class="customer_login">
+                                <form action="../tai-khoan/dang-nhap.php?login=" method="post" class="customer_login">
                                     <div class="customer_account">
-                                        <input type="text" placeholder="Email" class="site_account-input">
-                                        <input type="password" placeholder="Mật Khẩu" class="site_account-input">
+                                        <input type="text" placeholder="Tên đăng nhập" class="site_account-input" name="username">
+                                        <input type="password" placeholder="Mật khẩu" class="site_account-input" name="password">
                                     </div>
                                     <span>
-                                        <p style="font-size: 0.9rem;text-align: justify; color: #677297;">This site is protected by reCAPTCHA and the Google Privacy Policy and
+                                        <!-- <p style="font-size: 0.9rem;text-align: justify; color: #677297;">This site is protected by reCAPTCHA and the Google Privacy Policy and
                                             Terms of Service apply.
-                                        </p>
+                                        </p> -->
                                     </span>
-                                    <button type="submit" name="" class="btn btn-primary account-dangnhap">Đăng Nhập</button>
+                                    <button type="submit" name="login" class="btn btn-primary account-dangnhap">Đăng nhập</button>
+                                    <div class="site_account-register" style="margin-top: 10px;">
+                                        <span>Khách hàng mới? <a href="../tai-khoan/index.php?dang_ky" class="link">Tạo tài khoản</a></span> <br>
+                                        <span>Quên mật khẩu? <a href="" class="link">Khôi phục mật khẩu</a></span>
+                                    </div>
                                 </form>
                             </div>
                         </div>
