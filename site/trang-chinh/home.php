@@ -79,7 +79,11 @@
                                     <p><?= $ten_sp ?> </p>
                                 </div>
                                 <div class="product-price">
-                                    <p><?= number_format($don_gia) ?><sup>đ</sup> <del><?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?><sup>đ</sup></del></p>
+                                    <p> <?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?>  <sup>đ</sup> <?php if($giam_gia == 0 || $giam_gia == null){
+                                         echo "";
+                                    } else{
+                                        echo '<del>   '.number_format($don_gia).'  <sup>đ</sup></del>';
+                                    } ?> </p>
                                 </div>
                             </div>
                         </a>
