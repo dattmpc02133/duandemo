@@ -29,8 +29,8 @@
                                 <?php
                                     if(isset($_SESSION['user'])){
                                         echo $_SESSION['user'] . ' /';
-                                        echo ' <a href="../tai-khoan/dang-nhap.php?logout">Đăng Xuất</a> <br>';
-                                        echo '<a href="#" style="margin: 0; text-align: center;">Tài Khoản Của Tôi</a>';
+                                        echo ' <a href="../tai-khoan/dang-nhap.php?logout">Đăng Xuất</a><br>';
+                                        echo '<a href="../tai-khoan/index.php?btn-thong-tin" style="margin: 0; text-align: center;">Tài Khoản Của Tôi</a>';
                               
                                     }else{
                                         echo ' <a href="#">Đăng Nhập /</a>
@@ -188,8 +188,8 @@
                         <i class="incon_size fas fa-user-circle"></i>
                         <div class="account_dangnhap">
                             <a href="#">Đăng Nhập /</a>
-                            <a href=".../tai-khoan/index.php?dang_ky">Đăng Ký</a><br>
-                            <a href="#" style="margin: 0; text-align: center;">Tài Khoản Của Tôi</a>
+                            <a href="../tai-khoan/index.php?dang_ky">Đăng Ký</a><br>
+                            <a href="../tai-khoan/index.php?thong-tin-tk" style="margin: 0; text-align: center;">Tài Khoản Của Tôi</a>
                         </div>
                         <div class="header-dropdown_content">
                             <div class="site_account_panel_list">
@@ -203,9 +203,9 @@
                                         <input type="password" placeholder="Mật Khẩu" class="site_account-input">
                                     </div>
                                     <span>
-                                        <p style="font-size: 0.9rem;text-align: justify; color: #677297;">This site is protected by reCAPTCHA and the Google Privacy Policy and
+                                        <!-- <p style="font-size: 0.9rem;text-align: justify; color: #677297;">This site is protected by reCAPTCHA and the Google Privacy Policy and
                                             Terms of Service apply.
-                                        </p>
+                                        </p> -->
                                     </span>
                                     <button type="submit" name="" class="btn btn-primary account-dangnhap">Đăng Nhập</button>
                                 </form>
