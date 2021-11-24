@@ -27,7 +27,7 @@ function get_info_kh($ma_kh)
     return pdo_query_one($sql, $ma_kh);
 }
 
-// Cập nhật
+// Cập nhật admin
 function khach_hang_update($mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email, $vai_tro, $ma_kh)
 {
     $sql = "UPDATE khach_hang SET mat_khau=?,ho_ten=?,dia_chi=?,kich_hoat=?,hinh=?,email=?,vai_tro=? WHERE ma_kh=?";
@@ -41,6 +41,12 @@ function cap_nhat_tai_khoang_vai_tro_khach($ho_ten, $dia_chi, $hinh, $email, $ma
     pdo_execute($sql, $ho_ten, $dia_chi, $hinh, $email, $ma_kh);
 }
 
+// // cập nhật thông tin
+// function kh_update($ho_ten, $dia_chi, $hinh, $email, $ma_kh)
+// {
+//     $sql = "UPDATE khach_hang SET ho_ten = ?, dia_chi = ?, hinh = ?, email = ? WHERE ma_kh = ?";
+//     pdo_execute($sql, $ho_ten, $dia_chi, $hinh, $email, $ma_kh);
+// }
 // cập nhật mật khẩu
 function kh_update_mat_khau($mat_khau, $ma_kh)
 {
