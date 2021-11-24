@@ -14,7 +14,6 @@ else{
   $VIEW_NAME = "dang-ky.php";
 }
 
-
 require_once '../layout.php';
 if (isset($_SESSION['thong_bao'])) {
   echo $_SESSION['thong_bao'];
