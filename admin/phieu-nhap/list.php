@@ -81,7 +81,7 @@ if (isset($_GET['ma_pn'])) {
         <div class="row">
             <div class="col p-12 t-12 m-12">
                 <div class="button__group">
-                    <button class=" btn btn-info button__group-item button__group-Delete" name="delete_select">Xóa các mục chọn</button>
+                    <button class=" btn btn-danger button__group-item button__group-Delete" name="delete_select">Xóa các mục chọn</button>
                     <a href="index.php?btn_add" class="btn btn-info button__group-item button__group-input">Thêm mới</a>
                     <!-- <a href="./insert_hang_hoa.php" class="button__group-item button__group-input">Nhập thêm</a> -->
                 </div>

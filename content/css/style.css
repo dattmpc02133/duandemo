@@ -478,7 +478,9 @@ h5 {
   text-decoration: none;
 }
 .block-products .block-image img {
+  
   width: 100%;
+  /* image-rendering:pixelated; */
 }
 .block-products .product-name p {
   display: -webkit-box;
@@ -501,6 +503,10 @@ h5 {
 .block-products .block-image,
 .block-products .block-body {
   padding: 5px;
+
+}
+.block-image{
+overflow: hidden;
 }
 .button-page {
   text-align: center;

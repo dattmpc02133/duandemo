@@ -3,7 +3,7 @@
         <div class="header_dangky">
             <h3 style="text-align: center;">Tạo tài khoản</h3>
         </div>
-        <form action="#" method="post" id="form_du_an" enctype="multipart/form-data">
+        <form action="../tai-khoan/index.php?dang_ky" method="post" id="form_du_an" enctype="multipart/form-data">
             <div class="form-group">
                 <label for=""><b>Tên đăng nhập *</b></label>
                 <input type="text" class="form-control" name="ma_kh" id="ma_kh" aria-describedby="helpId" placeholder="Nhập tên đăng nhập">
@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <button type="submit" name="add_kh" class="btn btn-primary">Đăng ký</button>
+                <button type="submit" name="btn-dk" class="btn btn-primary">Đăng ký</button>
                 <button type="reset" name="reset_form_add_kh" class="btn btn-primary">Nhập lại</button>
             </div>
         </form>

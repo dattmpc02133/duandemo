@@ -14,11 +14,12 @@ if (isset($_POST['add_kh'])) {
     khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email, $vai_tro);
     $_SESSION['alert'] = 'Đã thêm khách hàng !';
     echo "<script>
-                 location.href = '../../index.php';
-                  </script>";
-} else {
-    echo "<script> alert('thất bại'); </script>";
+            location.href = '../../index.php';
+          </script>";
 }
+// else {
+//     echo "<script> alert('thất bại'); </script>";
+// }
 ?>
 <div class="container">
     <div class="dangky-product">

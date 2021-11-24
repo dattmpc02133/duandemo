@@ -65,7 +65,7 @@
                         }
                         ?>
                     </td>
-                    <td><?=$hinh?></td>
+                    <td> <img style="width:60px" src="<?= $CONTENT_URL  ?>/images/user/<?= $hinh ?>" alt=""></td>
                     <td><?=$email?></td>
                     <td>
                         <?php 
@@ -89,7 +89,7 @@
                 </table>
                 
                 <div class="button__group">
-                    <button class=" btn btn-info button__group-item button__group-Delete" name="delete_select">Xóa các mục chọn</button>
+                    <button class=" btn btn-danger button__group-item button__group-Delete" name="delete_select">Xóa các mục chọn</button>
                     <a href="index.php?btn-add" class="btn btn-info button__group-item button__group-input">Thêm mới</a>
                     <!-- <a href="./insert_hang_hoa.php" class="button__group-item button__group-input">Nhập thêm</a> -->
                 </div>
