@@ -1,7 +1,7 @@
 <?php 
 function san_pham_selectall()
 {
-    $sql = "SELECT * FROM san_pham ORDER BY ma_sp DESC";
+    $sql = "SELECT * FROM san_pham ORDER BY ma_sp DESC ";
     return pdo_query($sql);
 }
 //san pham select not in

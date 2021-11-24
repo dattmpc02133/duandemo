@@ -1,7 +1,7 @@
 <?php 
 require_once("../../global.php");
 require_once("../../DAO/pdo.php");
-
+require_once("../../DAO/nha_cung_cap.php");
 extract($_REQUEST);
 if (exit_param("btn_add")) {
     $VIEW_NAME = "add.php";
