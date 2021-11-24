@@ -1,7 +1,7 @@
 <?php 
     if(isset($_GET['ma_ct_pn'])){
         $ma_ct_pn = $_GET['ma_ct_pn'];
-        $_SESSION = $ma_ct_pn;
+        $_SESSION['ma_ct_pn'] = $ma_ct_pn;
     }
     $in4_pnct = pn_ct_get_info($ma_ct_pn);
     extract($in4_pnct);

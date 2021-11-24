@@ -13,10 +13,10 @@
         return pdo_query_one($sql, $ma_pn);
     }
     // Lấy thông tin chi tiết phiếu nhập
-    function pn_ct_get_info($ma_pn)
+    function pn_ct_get_info($ma_ct_pn)
     {
-        $sql = "SELECT * FROM chi_tiet_phieu_nhap WHERE ma_pn = ?";
-        return pdo_query_one($sql, $ma_pn);
+        $sql = "SELECT * FROM chi_tiet_phieu_nhap WHERE ma_ct_pn = ?";
+        return pdo_query_one($sql, $ma_ct_pn);
     }
 
     // Thêm phiếu nhập mới
