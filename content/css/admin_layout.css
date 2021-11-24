@@ -24,12 +24,12 @@ hr{
     color: #b8c1ec;
 }
 .side-bar li a:hover{
-    background-color: #eebbc3;
-    color: #232946;
+    background-color: #066cda;
+    color: #ffffff;
 }
 .side-bar li a.active{
-    background-color: #eebbc3;
-    color: #232946;
+    background-color: #066cda;
+    color: #ffffff;
 }
 .top{
     padding-top: 15px;

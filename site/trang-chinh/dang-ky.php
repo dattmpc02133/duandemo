@@ -21,7 +21,7 @@
             </div>
             <div class="form-group">
                 <label for=""><b>Địa chỉ *</b></label>
-                <input type="text" class="form-control" name="dia_chi" id="dia_chi" aria-describedby="helpId" placeholder="Nhập Địa chỉ">
+                <input type="text" class="form-control" name="dia_chi" id="dia_chi" aria-describedby="helpId" placeholder="Nhập địa chỉ">
                 <span class="mess "></span>
             </div>
             <div class="form-group">
