@@ -12,11 +12,17 @@
         $sql = "SELECT * FROM phieu_nhap WHERE ma_pn =?";
         return pdo_query_one($sql, $ma_pn);
     }
-    // Lấy thông tin chi tiết phiếu nhập
+    // Lấy thông tin chi tiết 1 phiếu nhập
     function pn_ct_get_info($ma_ct_pn)
     {
         $sql = "SELECT * FROM chi_tiet_phieu_nhap WHERE ma_ct_pn = ?";
         return pdo_query_one($sql, $ma_ct_pn);
+    }
+    // Lấy các chi tiết của 1 phiếu nhập
+    function get_ct_1_pn($ma_pn)
+    {
+        $sql = "SELECT * FROM chi_tiet_phieu_nhap WHERE ma_pn = ?";
+        return pdo_query($sql, $ma_pn);
     }
 
     // Thêm phiếu nhập mới

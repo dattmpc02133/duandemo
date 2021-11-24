@@ -6,9 +6,6 @@
         $id = $_GET['ma_ct_pn'];
         phieu_nhap_ct_delete($id);
     }
-
-    $in4_pn = pn_ct_get_info($ma_pn);
-    extract($in4_pn);
 ?>
 <div class="title">
     <h3>CHI TIẾT PHIẾU NHẬP: <?=$ma_pn?></h3>
@@ -29,6 +26,11 @@
                 </tr>
             </thead>
             <tbody>
+                <?php 
+                    $in4_pn = get_ct_1_pn($ma_pn);
+                    foreach ($in4_pn as $ct) {
+                        extract($ct);
+                ?>
                 <tr>
                     <td class="check"><input type="checkbox"> </td>
                     <td><?=$ma_ct_pn?></td>
@@ -44,6 +46,9 @@
                         <!-- <a class="btn btn-danger" href="index.php?btn_delete_ct&ma_ct_pn=<?=$ma_ct_pn?>"><i class="fas fa-trash-alt"></i></a> -->
                     </td>
                 </tr>
+                <?php
+                    }
+                ?>
                 </tbody>
         </table>
         <div class="row">
