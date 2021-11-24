@@ -12,7 +12,15 @@ extract($san_pham);
                 <div class="row">
                     <div class="col-3">
                         <div class="view__product-img">
-                            <img src="<?= $CONTENT_URL ?>/images/products/<?= $hinh ?>" alt="">
+                            <?php
+                            $hinh_phu = select_hinh_phu($ma_sp);
+                            foreach ($hinh_phu as $key) {
+                                extract($key);
+                            ?>
+                                <img style="padding-bottom: 10px;" src="<?= $CONTENT_URL ?>/images/products/<?= $hinh_phu ?>" alt="">
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                     <div class="col-9">

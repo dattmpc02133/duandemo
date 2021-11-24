@@ -188,4 +188,9 @@ function ma_sp_hinh_phu(){
     $sql = "SELECT * FROM san_pham ORDER BY ma_sp DESC LIMIT 0,1 ";
    return  pdo_query_one($sql);
 }
+// select hinh phụ
+    function select_hinh_phu($ma_sp){
+        $sql = "SELECT * FROM hinh WHERE ma_sp = ? LIMIT 0,2";
+        return  pdo_query($sql,$ma_sp);
+    }
 ?>
