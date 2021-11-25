@@ -1,8 +1,6 @@
 <?php
 $san_pham =  san_pham_getinfo($ma_sp);
 extract($san_pham);
-
-
 ?>
 
 <div class="container__chi-tiet">
@@ -57,20 +55,27 @@ extract($san_pham);
 
                 </div>
                 <div class="description__form">
-                    <div class="row">
+                    <form action="<?= $SITE_URL ?>/trang-chinh/index.php?cart" method="post">
+                        <div class="row">
                         <div class="col-4">
                             <div class="description__form-left">
                                 <div class="quantity-area" id="giam_so_luong">-</div>
-                                <input class="description__form-left-input" value="1" min="1" type="number" id="so_luong_chi_tiet">
+                                <input class="description__form-left-input" name="so_luong" value="1" min="1" type="number" id="so_luong_chi_tiet">
                                 <div class="quantity-area" id="tang_so_luong">+</div>
                             </div>
                         </div>
                         <div class="col-8">
                             <div class="description__form-right">
-                                <button class="btn btn-primary add__carrt">Thêm vào giỏ hàng</button>
+                                    <button class="btn btn-primary add__carrt" name="addcart">Thêm vào giỏ hàng</button>
+                                    <input type="hidden" name="hinh_sp" value="<?= $hinh ?>">
+                                    <input type="hidden" name="ten_sp" value="<?= $ten_sp ?>">
+                                    <input type="hidden" name="don_gia" value="<?= $don_gia ?>">
+                                    <input type="hidden" name="ma_sp" value="<?= $ma_sp ?>">
+                                </form>
                             </div>
                         </div>
                     </div>
+                        </form>
                 </div>
                 <div class="description__text">
                     <div class="description__text-text">Mô tả</div>
