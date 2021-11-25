@@ -44,7 +44,15 @@
     </div>
     <div class="form-group">
         <label for="">Trạng thái:</label>
-        <input type="text" class="form-control" value="<?= $trang_thai ?>" name="trang_thai" id="trang_thai">
+        <select class="form-control" name="trang_thai" id="">
+            <option value="Chờ xử lý"><?= $trang_thai ?></option>
+            <option value="Đã xác nhận đơn hàng">Đã xác nhận đơn hàng</option>
+            <option value="Đang vận chuyển">Đang vận chuyển</option>
+            <option value="Đã thanh toán">Đã thanh toán</option>
+            <option value="Đã hủy">Đã hủy</option>
+        </select>
+       
+        
     </div>
     <div class="btn__group">
         <button class="btn btn-info" type="submit" name="update_hd">Cập nhật</button>

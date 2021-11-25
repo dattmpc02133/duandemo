@@ -22,7 +22,7 @@ if (isset($_POST['addcart'])) {
     }
 }
 
-if(isset($_POST['dat_hang'])){
+if (isset($_POST['dat_hang'])) {
     $ma_kh = $_SESSION['user'];
     $tong_tien = $_POST['tong_tien'];
     $dia_chi_giao_hang = $_POST['dia_chi_giao_hang'];
@@ -106,12 +106,15 @@ if(isset($_POST['dat_hang'])){
                         </div>
                         <div class="order_total_price">
                             <label for="">Địa chỉ khách hàng</label>
-                            <textarea name="dia_chi_giao_hang" class="form-control" style="font-size: 1.2rem; line-height:35px;" maxlength="255">
-                        </textarea>
+                            <?php
+                            $kh = get_info_kh($ma_kh);
+                            extract($kh);
+                            ?>
+                            <textarea name="dia_chi_giao_hang" class="form-control" style="font-size: 0.9rem; line-height:35px;" maxlength="255"><?= $dia_chi?></textarea>
                             <p></p>
                             <p class="order_total_dix" style="padding: 0 8px; color: rgba(0, 0, 0, 0.3); font-size: 1rem"><strong>Tổng Tiền:</strong>
-                                <span id="tong_tien" style="color: red; margin-left: 8px; ">0</span> <sup style="color:red" >đ</sup>
-                                    <input type="hidden" id="tong_tien2" name="tong_tien">
+                                <span id="tong_tien" style="color: red; margin-left: 8px; ">0</span> <sup style="color:red">đ</sup>
+                                <input type="hidden" id="tong_tien2" name="tong_tien">
                             </p>
                         </div>
                         <div class="note-promo">
@@ -119,7 +122,7 @@ if(isset($_POST['dat_hang'])){
                                 Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.</p>
                         </div>
                         <div class="cart-buttons">
-                            <button type="submit" class="checkout-btn" name="dat_hang">Thanh Toán</button>
+                            <button type="submit" class="btn btn-danger checkout-btn" name="dat_hang">Thanh Toán</button>
                             <!--   -->
                         </div>
                         <a href="<?= $ROOT_URL ?>" class="countine_order_cart"><i class="fas fa-reply"></i> Tiếp tục mua hàng</a>
@@ -136,10 +139,9 @@ if(isset($_POST['dat_hang'])){
     thanhtiens.forEach(function(thanhtien) {
         tong += thanhtien.value * 1;
     })
-   
-   var tong_tien = document.querySelector("#tong_tien");
-   var tong_tien2 = document.querySelector("#tong_tien2");
-  tong_tien2.value =   tong;
-  tong_tien.innerHTML = tong.toLocaleString("en");
- 
+
+    var tong_tien = document.querySelector("#tong_tien");
+    var tong_tien2 = document.querySelector("#tong_tien2");
+    tong_tien2.value = tong;
+    tong_tien.innerHTML = tong.toLocaleString("en");
 </script>
