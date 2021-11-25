@@ -74,6 +74,17 @@
         $sql = "SELECT * FROM hoa_don_chi_tiet WHERE id = ?";
         return pdo_query_one($sql, $id);
     }
+    // Lấy tất cả sản phẩm trong giỏ hàng của một khách hàng
+    function get_ma_sp_gio_hang_tam($ma_kh)
+    {
+        $sql = "SELECT * FROM gio_hang_tam WHERE ma_kh = ?";
+        return pdo_query($sql, $ma_kh);
+    }
+    // Xóa giỏ hàng tạm sau khi đặt hàng thành công !
+    function delete_all_gio_hang_tam(){
+        $sql = "DELETE FROM gio_hang_tam";
+        pdo_execute($sql);
+    }
     // 
 
     // xóa hóa đơn

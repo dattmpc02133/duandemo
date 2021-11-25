@@ -678,6 +678,7 @@ overflow: hidden;
   padding: 10px;
 }
 .checkout-btn {
+  width: 100%;
   padding: 12px;
   display: block;
   text-align: center;

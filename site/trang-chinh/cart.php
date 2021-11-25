@@ -1,5 +1,6 @@
 <?php
 require_once("../../global.php");
+require_once '../../DAO/hoa-don.php';
 if (isset($_GET['id'])) {
     car_delete($_GET['id']);
     echo "<script>
@@ -19,6 +20,26 @@ if (isset($_POST['addcart'])) {
     } else {
         $cart = cart_insert($ma_kh, $ma_sp, $hinh, $ten_sp, $don_gia, $so_luong);
     }
+}
+
+if(isset($_POST['dat_hang'])){
+    $ma_kh = $_SESSION['user'];
+    $tong_tien = $_POST['tong_tien'];
+    $dia_chi_giao_hang = $_POST['dia_chi_giao_hang'];
+    $ngay_dat = date_format(date_create(), "Y-m-d");
+    $trang_thai = "Chờ xử lý";
+    hoa_don_insert($ma_kh, $tong_tien, $dia_chi_giao_hang, $ngay_dat, $trang_thai);
+    $ma_hd2 = get_ma_hd();
+    $list_sp_ght = get_ma_sp_gio_hang_tam($ma_kh);
+    foreach ($list_sp_ght as $sp) {
+        extract($sp);
+        hoa_don_chi_tiet_insert($ma_hd2, $ma_sp, $don_gia, $so_luong);
+    }
+    delete_all_gio_hang_tam();
+    echo '<script>
+        location.href = "index.php";
+        alert("Đặt hàng thành công !");
+    </script>';
 }
 ?>
 <section class="mainn">
@@ -85,7 +106,7 @@ if (isset($_POST['addcart'])) {
                         </div>
                         <div class="order_total_price">
                             <label for="">Địa chỉ khách hàng</label>
-                            <textarea class="form-control" style="font-size: 1.2rem; line-height:35px;" maxlength="255">
+                            <textarea name="dia_chi_giao_hang" class="form-control" style="font-size: 1.2rem; line-height:35px;" maxlength="255">
                         </textarea>
                             <p></p>
                             <p class="order_total_dix" style="padding: 0 8px; color: rgba(0, 0, 0, 0.3); font-size: 1rem"><strong>Tổng Tiền:</strong>
@@ -98,7 +119,7 @@ if (isset($_POST['addcart'])) {
                                 Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.</p>
                         </div>
                         <div class="cart-buttons">
-                            <a href="./cart.php" class="checkout-btn">Thanh Toán</a>
+                            <button type="submit" class="checkout-btn" name="dat_hang">Thanh Toán</button>
                             <!--   -->
                         </div>
                         <a href="<?= $ROOT_URL ?>" class="countine_order_cart"><i class="fas fa-reply"></i> Tiếp tục mua hàng</a>

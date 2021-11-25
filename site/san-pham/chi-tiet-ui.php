@@ -44,7 +44,10 @@ extract($san_pham);
                     }
                     ?>
 
-                    <span class="description__price-product"><?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?> <sup>đ</sup></span>
+                    <span class="description__price-product"><?php 
+                    $gia_ban = $don_gia - ($giam_gia * $don_gia / 100);
+                    echo number_format($gia_ban); 
+                    ?> <sup>đ</sup></span>
                     <?php
                     if ($giam_gia == 0 || $giam_gia == null || $giam_gia == '0') {
                         echo "";
@@ -69,7 +72,7 @@ extract($san_pham);
                                     <button class="btn btn-primary add__carrt" name="addcart">Thêm vào giỏ hàng</button>
                                     <input type="hidden" name="hinh_sp" value="<?= $hinh ?>">
                                     <input type="hidden" name="ten_sp" value="<?= $ten_sp ?>">
-                                    <input type="hidden" name="don_gia" value="<?= $don_gia ?>">
+                                    <input type="hidden" name="don_gia" value="<?= $gia_ban ?>">
                                     <input type="hidden" name="ma_sp" value="<?= $ma_sp ?>">
                                 </form>
                             </div>
