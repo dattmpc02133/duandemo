@@ -88,6 +88,7 @@ if (isset($_POST['addcart'])) {
                     </div>
                     <div class="cart-buttons">
                         <a href="./cart.php" class="checkout-btn">Thanh Toán</a>
+                        <!--   -->
                     </div>
                     <a href="<?= $ROOT_URL ?>" class="countine_order_cart"><i class="fas fa-reply"></i> Tiếp tục mua hàng</a>
                 </div>
