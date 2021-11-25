@@ -9,11 +9,6 @@ if (isset($_POST['add'])) {
     $ten_sp = $_POST['ten_sp'];
     $don_gia = $_POST['don_gia'];
     $giam_gia = $_POST['giam_gia'];
-
-
-
-
-
     // echo '<pre>';
     // print_r($_FILES);
     // die();

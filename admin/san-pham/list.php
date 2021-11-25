@@ -4,7 +4,10 @@
     require_once("../../DAO/san-pham.php");
     if(isset($_GET['ma_sp'])){
         san_pham_delete($_GET['ma_sp']);
-        header('location: index.php');
+        // header('location: index.php');
+        echo "<script>
+              location.href = 'index.php';
+           </script>";
     }
     if (isset($_POST['delete_select'])) {
         if (empty($_POST['check'])) {
