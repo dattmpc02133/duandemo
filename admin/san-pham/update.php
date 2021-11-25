@@ -22,7 +22,7 @@ if (isset($_POST['btn_update1'])) {
     } else {
         $don_gia = $_POST['don_gia'];
     }
-    echo 'a';
+   
     if ($test) {
         if (isset($_POST['ma_sp'])) {
             $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL . '/images/products/';
@@ -54,6 +54,17 @@ if (isset($_POST['btn_update1'])) {
                 $ma_loai,
                 $mo_ta ,
                 $ma_sp);
+// hình phụ 
+                if(!empty($_FILES['hinh_phu'])){
+                    hinh_phu_delete($ma_sp);
+                    $hinh_phu = $_FILES['hinh_phu'];
+                    $hinh_phu_name = $hinh_phu['name'];                
+                    foreach ($hinh_phu_name as $key => $value) { 
+                        move_uploaded_file($hinh_phu['tmp_name'][$key], $path . $value);
+                        product_hinh_phu($ma_sp ,$value);
+                       
+                    }    
+                }  
             unset($_SESSION['ma_sp']);
             // header("location: index.php");
             echo "<script>
@@ -104,10 +115,23 @@ if (isset($_GET['ma_sp'])) {
         <input type="number" class="form-control" value="<?=$so_luong?>" name="so_luong">
     </div>
     <div class="form-group">
-        <label for="">Ảnh:</label>
+        <label for="">Ảnh chính:</label>
         <input type="file" class="form-control-file" name="hinh_new" id="hinh_new" aria-describedby="fileHelpId">
         <input class="form-control"type="text" name="hinh" id="hinh" value="<?php echo $hinh ?>" readonly style="border: none; outline:none;">
     </div>
+    <div class="form-group">
+        <label for="">Ảnh phụ:</label>
+        <input type="file" class="form-control-file" name="hinh_phu[]" id="hinh_phu" multiple="true" aria-describedby="fileHelpId">           
+    </div>
+    <?php 
+        $hinh_phu = select_hinh_phu($ma_sp);
+        foreach($hinh_phu as $key){
+            extract($key);   
+    ?>
+        <img style="width:100px" src="../../content/images/products/<?= $hinh_phu ?>" alt="">
+    <?php 
+        }
+    ?>
     <div class="form-group">
         <label for="">Trạng thái:</label>
         <div class="form-control-radio">
