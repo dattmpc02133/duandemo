@@ -1,15 +1,19 @@
-            <?php 
-                if(isset($_SESSION['user'])){
-                    $user = get_info_kh($_SESSION['user']);
-                    extract($user);
-                }
+            <?php
+            if (isset($_SESSION['user'])) {
+                $user = get_info_kh($_SESSION['user']);
+                extract($user);
+            }
             ?>
             <nav class="nav flex-column side-bar" style="width:70%;display:flex;margin:0 auto;">
                 <div class="top">
                     <div class="accountt" style="text-align: center;">
-                        <img src="<?= $CONTENT_URL ?>/images/user/<?=$hinh?>" style="width:35%" alt="<?=$hinh?>" class="avt">
+                        <img style="width: 35%;
+                        height: 150px;
+                         border-radius: 50%;
+                        image-rendering: pixelated;
+                        filter: drop-shadow(0 0 5px #eee);" src="<?= $CONTENT_URL ?>/images/user/<?= $hinh ?>" style="width:35%" alt="<?= $hinh ?>" class="avt">
                         <div class="account-text" style="display: flex;flex-direction: column;">
-                            <h5><?=$ho_ten?></h5>
+                            <h5><?= $ho_ten ?></h5>
                             <hr>
                             <div class="account-tilte" style="text-align: left;">
                                 <a class="dropdown-item" href="../../admin/">Quản trị website</a>
