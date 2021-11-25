@@ -62,7 +62,7 @@ if (isset($_POST['addcart'])) {
                                         <td> <input type="hidden" value="<?= $don_gia ?>">
                                             <?= number_format($don_gia) ?><sup>đ</sup>
                                         </td>
-                                        <td><input type="number" min= 1 value="<?= $so_luong ?>"></td>
+                                        <td><input type="number" min=1 value="<?= $so_luong ?>"></td>
                                         <td class="tt">
                                             <input class="thanhtien" type="hidden" value="<?= $tong ?>">
                                             <?= number_format($tong) ?><sup>đ</sup>
@@ -74,15 +74,7 @@ if (isset($_POST['addcart'])) {
                                 }
                             }
                             ?>
-                            <script>
-                                var thanhtien = document.querySelector(".thanhtien");
-                                var tong = 0;
-                                for(var i = 0; i<thanhtien.lenght;i++){
-                                    thanhtien[i].value
-                                    console.log(thanhtien[i].value);
-                                }
 
-                            </script>
                         </tbody>
                     </table>
                 </div>
@@ -96,8 +88,9 @@ if (isset($_POST['addcart'])) {
                             <textarea class="form-control" style="font-size: 1.2rem; line-height:35px;" maxlength="255">
                         </textarea>
                             <p></p>
-                            <p class="order_total_dix" style="padding: 0 8px; color: rgba(0, 0, 0, 0.3)"><strong>Tổng Tiền:</strong>
-                                <span style="color: red; margin-left: 8px;">0<sup>đ</sup></span>
+                            <p class="order_total_dix" style="padding: 0 8px; color: rgba(0, 0, 0, 0.3); font-size: 1rem"><strong>Tổng Tiền:</strong>
+                                <span id="tong_tien" style="color: red; margin-left: 8px; ">0</span> <sup style="color:red" >đ</sup>
+                                    <input type="hidden" id="tong_tien2" name="tong_tien">
                             </p>
                         </div>
                         <div class="note-promo">
@@ -116,3 +109,16 @@ if (isset($_POST['addcart'])) {
         </form>
     </div>
 </section>
+<script>
+    var thanhtiens = document.querySelectorAll(".thanhtien");
+    var tong = 0;
+    thanhtiens.forEach(function(thanhtien) {
+        tong += thanhtien.value * 1;
+    })
+   
+   var tong_tien = document.querySelector("#tong_tien");
+   var tong_tien2 = document.querySelector("#tong_tien2");
+  tong_tien2.value =   tong;
+  tong_tien.innerHTML = tong.toLocaleString("en");
+ 
+</script>
