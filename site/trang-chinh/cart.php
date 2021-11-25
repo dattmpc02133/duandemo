@@ -1,6 +1,6 @@
 <?php
 require_once("../../global.php");
-if (isset($_GET['id'])){
+if (isset($_GET['id'])) {
     car_delete($_GET['id']);
     echo "<script>
          location.href = 'index.php?addcart';
@@ -13,20 +13,20 @@ if (isset($_POST['addcart'])) {
     $ten_sp = $_POST['ten_sp'];
     $don_gia = $_POST['don_gia'];
     $so_luong = $_POST['so_luong'];
-    if(san_pham_getinfo_tam($ma_sp)){
+    if (san_pham_getinfo_tam($ma_sp)) {
         $them = $_POST['so_luong'];
-        cart_update_so_luong($them,$ma_sp);
-    }else{
+        cart_update_so_luong($them, $ma_sp);
+    } else {
         $cart = cart_insert($ma_kh, $ma_sp, $hinh, $ten_sp, $don_gia, $so_luong);
     }
 }
 ?>
 <section class="mainn">
-    <h3 style="text-align: center;">Giỏ hàng của bạn</h3>
     <div class="container-fluid" style="padding: 0 80px;">
-        <div class="row">
-            <div class="col-9">
-                <form action="" method="post">
+        <form action="" method="post">
+            <div class="row">
+                <div class="col-9">
+                    <h3 style="text-align: center;">Giỏ hàng của bạn</h3>
                     <table class="form__content-table table">
                         <thead class="table-danger">
                             <tr>
@@ -50,50 +50,69 @@ if (isset($_POST['addcart'])) {
                                 foreach ($gio_hang as $gio_hang_new) {
                                     extract($gio_hang_new);
                                     $stt++;
-                                    $tong = $don_gia*$so_luong;
+                                    $tong = $don_gia * $so_luong;
+                                    $tongtien[] = $tong;
                                     $delete_link = "index.php?addcart&id=$id";
                             ?>
-                                <tr>
-                                    <td class="check"><input type="checkbox"> </td>
-                                    <td><?= $stt ?></td>
-                                    <td style="text-align:center;"><img src="<?= $CONTENT_URL ?>/images/products/<?= $hinh ?>" alt=""></td>
-                                    <td><?= $ten_sp ?></td>
-                                    <td><?= number_format($don_gia) ?><sup>đ</sup></td>
-                                    <td><?= $so_luong ?></td>
-                                    <td><?= number_format($tong)?><sup>đ</sup></td>
-                                    <td><a class="btn btn-danger" href="<?=$delete_link?>">Xóa</a></td>
-                                </tr>
-                           
+                                    <tr>
+                                        <td class="check"><input type="checkbox"> </td>
+                                        <td><?= $stt ?></td>
+                                        <td style="text-align:center;"><img src="<?= $CONTENT_URL ?>/images/products/<?= $hinh ?>" alt=""></td>
+                                        <td><?= $ten_sp ?></td>
+                                        <td> <input type="hidden" value="<?= $don_gia ?>">
+                                            <?= number_format($don_gia) ?><sup>đ</sup>
+                                        </td>
+                                        <td><input type="number" min= 1 value="<?= $so_luong ?>"></td>
+                                        <td class="tt">
+                                            <input class="thanhtien" type="hidden" value="<?= $tong ?>">
+                                            <?= number_format($tong) ?><sup>đ</sup>
+                                        </td>
+                                        <td><a class="btn btn-danger" href="<?= $delete_link ?>">Xóa</a></td>
+                                    </tr>
+
                             <?php
+                                }
                             }
-                        }
                             ?>
+                            <script>
+                                var thanhtien = document.querySelector(".thanhtien");
+                                var tong = 0;
+                                for(var i = 0; i<thanhtien.lenght;i++){
+                                    thanhtien[i].value
+                                    console.log(thanhtien[i].value);
+                                }
+
+                            </script>
                         </tbody>
                     </table>
-                </form>
-            </div>
-            <div class="col-3">
-                <div class="waxbox_odercart">
-                    <div class="order_title">
-                        <h3>Thông tin đơn hàng</h3>
-                    </div>
-                    <div class="order_total_price">
-                        <p class="order_total_dix" style="padding: 0 8px; color: rgba(0, 0, 0, 0.3)"><strong>Tổng Tiền:</strong>
-                            <span style="color: red; margin-left: 8px;">0<sup>đ</sup></span>
-                        </p>
-                    </div>
-                    <div class="note-promo">
-                        <p>Phí vận chuyển sẽ được tính ở trang thanh toán. <br>
-                            Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.</p>
-                    </div>
-                    <div class="cart-buttons">
-                        <a href="./cart.php" class="checkout-btn">Thanh Toán</a>
-                        <!--   -->
-                    </div>
-                    <a href="<?= $ROOT_URL ?>" class="countine_order_cart"><i class="fas fa-reply"></i> Tiếp tục mua hàng</a>
                 </div>
+                <div class="col-3">
+                    <div class="waxbox_odercart">
+                        <div class="order_title">
+                            <h3>Thông tin đơn hàng</h3>
+                        </div>
+                        <div class="order_total_price">
+                            <label for="">Địa chỉ khách hàng</label>
+                            <textarea class="form-control" style="font-size: 1.2rem; line-height:35px;" maxlength="255">
+                        </textarea>
+                            <p></p>
+                            <p class="order_total_dix" style="padding: 0 8px; color: rgba(0, 0, 0, 0.3)"><strong>Tổng Tiền:</strong>
+                                <span style="color: red; margin-left: 8px;">0<sup>đ</sup></span>
+                            </p>
+                        </div>
+                        <div class="note-promo">
+                            <p>Phí vận chuyển sẽ được tính ở trang thanh toán. <br>
+                                Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.</p>
+                        </div>
+                        <div class="cart-buttons">
+                            <a href="./cart.php" class="checkout-btn">Thanh Toán</a>
+                            <!--   -->
+                        </div>
+                        <a href="<?= $ROOT_URL ?>" class="countine_order_cart"><i class="fas fa-reply"></i> Tiếp tục mua hàng</a>
+                    </div>
 
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 </section>
