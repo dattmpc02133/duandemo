@@ -105,7 +105,7 @@ if (isset($_POST['dat_hang'])) {
                             <h3>Thông tin đơn hàng</h3>
                         </div>
                         <div class="order_total_price">
-                            <label for="">Địa chỉ khách hàng</label>
+                            <label for="">Địa chỉ giao hàng:</label>
                             <?php
                             $kh = get_info_kh($ma_kh);
                             extract($kh);
