@@ -9,6 +9,8 @@ if(exit_param('btn-thong-tin')){
   $VIEW_NAME = "thong-tin-tk.php";
 }elseif (exit_param('doi-mk')){
   $VIEW_NAME = "doi-mk.php";
+}elseif(exit_param('don-hang')){
+  $VIEW_NAME = "don-hang-account.php";
 }
 else{
   $VIEW_NAME = "dang-ky.php";
