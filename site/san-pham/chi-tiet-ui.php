@@ -28,7 +28,7 @@ extract($san_pham);
                             <img src="<?= $CONTENT_URL ?>/images/products/<?= $hinh ?>" class="wrap_img" alt="" id="main_img">
                         </div>
                         <div class="view__product-main-dot">
-                            <div class="circle"></div>
+                            <!-- <div class="circle"></div> -->
                         </div>
                     </div>
                 </div>
