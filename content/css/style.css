@@ -749,3 +749,68 @@ tbody td {
   margin-top: 10px;
 }
 /* end */
+/* acount don hang */
+.oder_invoice-items {
+  display: flex;
+  justify-content: space-around;
+  background-color: #232946;
+  margin-bottom: 10px;
+}
+.oder_invoice-links {
+  padding: 10px 0;
+  color: #b8c1ec;
+}
+/* end đon hang */
+/* tìm kiếm đơn hàng trong đơn hàng của tôi */
+.bill_search {
+  background-color: #eaeaea;
+}
+.bill_search_input {
+  flex: 1;
+  outline: none;
+  background-color: #eaeaea;
+  border: none;
+  line-height: 40px;
+}
+/* end */
+/* sp_hoa-don */
+.invoice_img {
+  width: 16%;
+  height: 95px;
+  padding: 2px;
+  border: 1px solid #3333;
+  image-rendering: pixelated;
+}
+.oder_invoice-picture_area {
+  display: flex;
+}
+.oder_invoice-text {
+  padding-left: 10px;
+}
+.oder_invoice-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.oder_invoice-product-price {
+  display: flex;
+  align-items: center;
+}
+.oder_price{
+  padding-top: 35px;
+  align-items: center;
+  display: flex;
+}
+.oder_invoice-total-money-product {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.oder_invoice-products {
+  padding: 10px 10px;
+}
+.dropdown-item {
+  color: #b8c1ec !important;
+}
+/* e  d */
