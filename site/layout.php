@@ -34,6 +34,7 @@
             </section>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
     <script src="<?= $CONTENT_URL ?>/js/app.js"></script>
    
 </body>

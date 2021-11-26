@@ -9,21 +9,23 @@ extract($san_pham);
             <div class="view__product">
                 <div class="row">
                     <div class="col-3">
-                        <div class="view__product-img">
+                        <div class="view__product-img wrap_aside">
                             <?php
                             $hinh_phu = select_hinh_phu($ma_sp);
+                            
                             foreach ($hinh_phu as $key) {
                                 extract($key);
                             ?>
-                                <img style="padding-bottom: 10px;" src="<?= $CONTENT_URL ?>/images/products/<?= $hinh_phu ?>" alt="">
+                                <img style="padding-bottom: 10px;" class="wrap_img" src="<?= $CONTENT_URL ?>/images/products/<?= $hinh_phu ?>" alt="">
                             <?php
                             }
                             ?>
+                        <img src="<?= $CONTENT_URL ?>/images/products/<?= $hinh ?>" class="wrap_img" alt="">
                         </div>
                     </div>
                     <div class="col-9">
-                        <div class="view__product-main">
-                            <img src="<?= $CONTENT_URL ?>/images/products/<?= $hinh ?>" alt="">
+                        <div class="view__product-main wrap_aside">
+                            <img src="<?= $CONTENT_URL ?>/images/products/<?= $hinh ?>" class="wrap_img" alt="" id="main_img">
                         </div>
                         <div class="view__product-main-dot">
                             <div class="circle"></div>
@@ -226,4 +228,16 @@ extract($san_pham);
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+<script>
+        $(() => {
+            $('.wrap_aside img').click(function() {
+                let imgPath = $(this).attr('src');
+                // alert (imgPath);
+                // console.log(imgPath);
+                // attr lấy giá trị thuộc tính & thay thế giá trị thuộc tính
+                $('#main_img').attr('src',imgPath);
+            })
+        })
+        </script>
 <script src="<?= $CONTENT_URL ?>/js/chi-tiet.js"></script>
