@@ -285,6 +285,58 @@ h5 {
   display: block;
 }
 /* end */
+/* header_header_cart-products
+*/
+.header_cart-products {
+  padding: 0 8px;
+}
+.header_cart-items-content {
+  display: flex;
+}
+.header_cart-money-wraper {
+  display: flex;
+  margin-right: 10px;
+}
+.header_cart-item-name {
+    padding: 0 20px 0 0;
+    text-align: -webkit-auto;
+    font-size: 0.9rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+.header_cart-money-item {
+  color: red;
+  font-size: 0.9rem;
+}
+.header_cart-money-mutify {
+  margin: 0px 5px;
+    color: #757575;
+    font-size: 0.9rem;
+}
+.header_cart-money-quanty {
+  font-size: 0.9rem;
+  color: #757575;
+}
+.product-img {
+    height: 75%;
+    width: 100%;
+    image-rendering: pixelated;
+    border: 1px solid #eee;
+    padding: 2px;
+}
+.header_cart-classify {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10px;
+}
+.header_drop-dow {
+  height: 40vh;
+  overflow-x: hidden;
+}
+/* enndheader_cart-products */
 /* hover click đăng nhập */
 .header-dropdown_content {
   position: relative;
