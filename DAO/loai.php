@@ -41,7 +41,7 @@ function loai_mk_moi(){
 
 function loai_not_in(){
     // $sql = "SELECT * FROM san_pham sp INNER JOIN loai l ON sp.ma_loai = l.ma_loai  WHERE sp.giam_gia > 0 AND l.ma_loai NOT IN (8,9,10)";
-    $sql = "SELECT * FROM loai WHERE ma_loai NOT IN(8,9,10)";
+    $sql = "SELECT * FROM loai WHERE ma_loai IN (3,1,11,12) "; // NOT IN(8,9,10)
     return pdo_query($sql);
 }
 
