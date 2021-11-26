@@ -83,7 +83,7 @@ if (isset($_POST['dat_hang'])) {
                                         <td> <input type="hidden" value="<?= $don_gia ?>">
                                             <?= number_format($don_gia) ?><sup>đ</sup>
                                         </td>
-                                        <td><input type="number" min=1 value="<?= $so_luong ?>"></td>
+                                        <td><input style="width:50px" class="form-control" type="number" min=1 value="<?= $so_luong ?>"></td>
                                         <td class="tt">
                                             <input class="thanhtien" type="hidden" value="<?= $tong ?>">
                                             <?= number_format($tong) ?><sup>đ</sup>
