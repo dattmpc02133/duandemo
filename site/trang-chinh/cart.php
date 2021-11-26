@@ -9,16 +9,16 @@ if (isset($_GET['id'])) {
 }
 if (isset($_POST['addcart'])) {
     $ma_kh = $_SESSION['user'];
-    $ma_sp = $_POST['ma_sp'];
-    $hinh = $_POST['hinh_sp'];
-    $ten_sp = $_POST['ten_sp'];
-    $don_gia = $_POST['don_gia'];
-    $so_luong = $_POST['so_luong'];
-    if (san_pham_getinfo_tam($ma_sp)) {
+    $ma_sp_tam = $_POST['ma_sp'];
+    $hinh_tam = $_POST['hinh_sp'];
+    $ten_sp_tam = $_POST['ten_sp'];
+    $don_gia_tam = $_POST['don_gia'];
+    $so_luong_tam = $_POST['so_luong'];
+    if (san_pham_getinfo_tam($ma_sp_tam)) {
         $them = $_POST['so_luong'];
-        cart_update_so_luong($them, $ma_sp);
+        cart_update_so_luong($them, $ma_sp_tam);
     } else {
-        $cart = cart_insert($ma_kh, $ma_sp, $hinh, $ten_sp, $don_gia, $so_luong);
+        $cart = cart_insert($ma_kh, $ma_sp_tam, $hinh_tam, $ten_sp_tam, $don_gia_tam, $so_luong_tam);
     }
 }
 
@@ -33,7 +33,7 @@ if (isset($_POST['dat_hang'])) {
     $list_sp_ght = get_ma_sp_gio_hang_tam($ma_kh);
     foreach ($list_sp_ght as $sp) {
         extract($sp);
-        hoa_don_chi_tiet_insert($ma_hd2, $ma_sp, $don_gia, $so_luong);
+        hoa_don_chi_tiet_insert($ma_hd2, $ma_sp_tam, $don_gia_tam, $so_luong_tam);
     }
     delete_all_gio_hang_tam();
     echo '<script>
@@ -71,19 +71,19 @@ if (isset($_POST['dat_hang'])) {
                                 foreach ($gio_hang as $gio_hang_new) {
                                     extract($gio_hang_new);
                                     $stt++;
-                                    $tong = $don_gia * $so_luong;
+                                    $tong = $don_gia_tam * $so_luong_tam;
                                     $tongtien[] = $tong;
                                     $delete_link = "index.php?addcart&id=$id";
                             ?>
                                     <tr>
                                         <td class="check"><input type="checkbox"> </td>
                                         <td><?= $stt ?></td>
-                                        <td style="text-align:center;"><img src="<?= $CONTENT_URL ?>/images/products/<?= $hinh ?>" alt=""></td>
-                                        <td><?= $ten_sp ?></td>
-                                        <td> <input class="don_gia" type="hidden" value="<?= $don_gia ?>">
-                                            <?= number_format($don_gia) ?><sup>đ</sup>
+                                        <td style="text-align:center;"><img src="<?= $CONTENT_URL ?>/images/products/<?= $hinh_tam ?>" alt=""></td>
+                                        <td><?= $ten_sp_tam ?></td>
+                                        <td> <input class="don_gia" type="hidden" value="<?= $don_gia_tam ?>">
+                                            <?= number_format($don_gia_tam) ?><sup>đ</sup>
                                         </td>
-                                        <td><input style="width:65px"  oninput="thanh_tien()" class="form-control so_luong" type="number" min=1 value="<?= $so_luong ?>"></td>
+                                        <td><input style="width:65px"  oninput="thanh_tien()" class="form-control so_luong" type="number" min=1 value="<?= $so_luong_tam ?>"></td>
                                         <td class="tt">
                                             <input class="thanhtien" type="hidden" value="<?= $tong ?>">
                                            <span class="thanh_tien_show" >thành tiền</span><sup>đ</sup>

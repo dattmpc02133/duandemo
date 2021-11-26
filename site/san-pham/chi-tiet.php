@@ -4,6 +4,7 @@ require_once("../../global.php");
 require_once("../../DAO/san-pham.php");
 // require_once("../../DAO/binh-luan.php");
 require_once("../../DAO/loai.php");
+require_once("../../DAO/cart.php");
 extract($_REQUEST);
 
 // truy vấn hàng hóa theo loại
