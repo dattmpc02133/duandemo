@@ -27,15 +27,14 @@
                             <i class="incon_size fas fa-user-circle"></i>
                             <div class="account_dangnhap">
                                 <?php
-                                    if(isset($_SESSION['user'])){
-                                        echo $_SESSION['user'] . ' /';
-                                        echo ' <a href="../tai-khoan/dang-nhap.php?logout">Đăng Xuất</a><br>';
-                                        echo '<a href="../tai-khoan/index.php?btn-thong-tin" style="margin: 0; text-align: center;">Tài Khoản Của Tôi</a>';
-                              
-                                    }else{
-                                        echo ' <a href="#">Đăng Nhập /</a>
-                                        <a href="../tai-khoan/index.php?dang_ky">Đăng Ký</a><br>'
-                                        ; }
+                                if (isset($_SESSION['user'])) {
+                                    echo $_SESSION['user'] . ' /';
+                                    echo ' <a href="../tai-khoan/dang-nhap.php?logout">Đăng Xuất</a><br>';
+                                    echo '<a href="../tai-khoan/index.php?btn-thong-tin" style="margin: 0; text-align: center;">Tài Khoản Của Tôi</a>';
+                                } else {
+                                    echo ' <a href="#">Đăng Nhập /</a>
+                                        <a href="../tai-khoan/index.php?dang_ky">Đăng Ký</a><br>';
+                                }
                                 ?>
                                 <!-- <a href="#" style="margin: 0; text-align: center;">Tài Khoản Của Tôi</a> -->
                             </div>
@@ -71,12 +70,139 @@
                             <span class="header_cart-notice">0</span>
                         </div>
                         <span style="cursor: pointer;">Giỏ Hàng</span>
-                        <div class="header_cart-list" id="header_cart-list">
+                        <!-- <div class="header_cart-list" id="header_cart-list">
                             <h3 class="header_cart-textt">Giỏ hàng</h3>
                             <div class="header_cart-hanghoa">
                                 <i class="header_cart-no-cart-img fab fa-shopify"></i>
                                 <span class="header_cart-list-no-cart-msg">Chưa có sản phẩm nào..!!</span>
                             </div>
+                            <div class="header_cart-price">
+                                <span class="cart-text_left">Tổng tiền: </span>
+                                <span class="cart-text_right">0<sup>đ</sup></span>
+                            </div>
+                            <div class="cart_pay">
+                                <a href="index.php?addcart" class="PayPay">Xem giỏ hàng</a>
+                                <a href="./cart.html" class="PayPay">Thanh toán</a>
+
+                            </div>
+                        </div> -->
+                        <div class="header_cart-list" id="header_cart-list">
+                            <h3 class="header_cart-textt">Giỏ hàng</h3>
+                            <div class="header_drop-dow">
+                            <div class="header_cart-products">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img src="../../content/images/products/banbep.jpg" alt="" class="product-img">
+                                    </div>
+                                    <div class="col-9" style="padding: 0;">
+                                        <div class="header_cart-items-wraps">
+                                            <div class="header_cart-items-content">
+                                                <h6 class="header_cart-item-name">
+                                                    Ghế đẩu 4 chân ngồi siu sướng đít fonrare-header
+                                                    Ghế đẩu 4 chân ngồi siu sướng đít fonrare-header
+                                                </h6>
+                                                <div class="header_cart-money-wraper">
+                                                    <span class="header_cart-money-item">
+                                                        2.000.000<sup>đ</sup>
+                                                    </span>
+                                                    <span class="header_cart-money-mutify">x</span>
+                                                    <span class="header_cart-money-quanty">5</span>
+                                                </div>
+                                            </div>
+                                            <div class="header_cart-classify">
+                                                <span class="header_cart-item-decription"></span>
+                                                <span class="header_cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header_cart-products">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img src="../../content/images/products/banbep.jpg" alt="" class="product-img">
+                                    </div>
+                                    <div class="col-9" style="padding: 0;">
+                                        <div class="header_cart-items-wraps">
+                                            <div class="header_cart-items-content">
+                                                <h6 class="header_cart-item-name">
+                                                    Ghế đẩu 4 chân ngồi siu sướng đít fonrare-header
+                                                    Ghế đẩu 4 chân ngồi siu sướng đít fonrare-header
+                                                </h6>
+                                                <div class="header_cart-money-wraper">
+                                                    <span class="header_cart-money-item">
+                                                        2.000.000<sup>đ</sup>
+                                                    </span>
+                                                    <span class="header_cart-money-mutify">x</span>
+                                                    <span class="header_cart-money-quanty">5</span>
+                                                </div>
+                                            </div>
+                                            <div class="header_cart-classify">
+                                                <span class="header_cart-item-decription"></span>
+                                                <span class="header_cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header_cart-products">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img src="../../content/images/products/phongkhach3.jpg" alt="" class="product-img">
+                                    </div>
+                                    <div class="col-9" style="padding: 0;">
+                                        <div class="header_cart-items-wraps">
+                                            <div class="header_cart-items-content">
+                                                <h6 class="header_cart-item-name">
+                                                    Ghế đẩu 4 chân ngồi siu sướng đít fonrare-header
+                                                    Ghế đẩu 4 chân ngồi siu sướng đít fonrare-header
+                                                </h6>
+                                                <div class="header_cart-money-wraper">
+                                                    <span class="header_cart-money-item">
+                                                        2.000.000<sup>đ</sup>
+                                                    </span>
+                                                    <span class="header_cart-money-mutify">x</span>
+                                                    <span class="header_cart-money-quanty">5</span>
+                                                </div>
+                                            </div>
+                                            <div class="header_cart-classify">
+                                                <span class="header_cart-item-decription"></span>
+                                                <span class="header_cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header_cart-products">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img src="../../content/images/products/phongkhach2.jpg" alt="" class="product-img">
+                                    </div>
+                                    <div class="col-9" style="padding: 0;">
+                                        <div class="header_cart-items-wraps">
+                                            <div class="header_cart-items-content">
+                                                <h6 class="header_cart-item-name">
+                                                    Ghế đẩu 4 chân ngồi siu sướng đít fonrare-header
+                                                    Ghế đẩu 4 chân ngồi siu sướng đít fonrare-header
+                                                </h6>
+                                                <div class="header_cart-money-wraper">
+                                                    <span class="header_cart-money-item">
+                                                        2.000.000<sup>đ</sup>
+                                                    </span>
+                                                    <span class="header_cart-money-mutify">x</span>
+                                                    <span class="header_cart-money-quanty">5</span>
+                                                </div>
+                                            </div>
+                                            <div class="header_cart-classify">
+                                                <span class="header_cart-item-decription"></span>
+                                                <span class="header_cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            
                             <div class="header_cart-price">
                                 <span class="cart-text_left">Tổng tiền: </span>
                                 <span class="cart-text_right">0<sup>đ</sup></span>
