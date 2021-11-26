@@ -121,11 +121,14 @@ img{
   border: none;
   outline: none;
 }
+img{
+  cursor: pointer;
+}
 /* input[type='number'] {
     -moz-appearance:textfield;
 } */
-.description__form-left-inpu::-webkit-outer-spin-button,
-.description__form-left-inpu::-webkit-inner-spin-button {
+.description__form-left-input::-webkit-outer-spin-button,
+.description__form-left-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
