@@ -226,3 +226,4 @@ extract($san_pham);
         </div>
     </div>
 </div>
+<script src="<?= $CONTENT_URL ?>/js/chi-tiet.js"></script>

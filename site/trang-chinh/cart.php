@@ -83,10 +83,11 @@ if (isset($_POST['dat_hang'])) {
                                         <td> <input class="don_gia" type="hidden" value="<?= $don_gia ?>">
                                             <?= number_format($don_gia) ?><sup>đ</sup>
                                         </td>
-                                        <td><input style="width:50px" class="form-control so_luong" type="number" min=1 value="<?= $so_luong ?>"></td>
+                                        <td><input style="width:50px"  onchange="thanh_tien()" class="form-control so_luong" type="number" min=1 value="<?= $so_luong ?>"></td>
                                         <td class="tt">
                                             <input class="thanhtien" type="hidden" value="<?= $tong ?>">
-                                           <span>thành tiền</span><sup>đ</sup>
+                                           <span class="thanh_tien_show" >thành tiền</span><sup>đ</sup>
+                                           <span hidden class="thanh_tien_js" >thành tiền</span>
                                         </td>
                                         <td><a class="btn btn-danger" href="<?= $delete_link ?>">Xóa</a></td>
                                     </tr>
@@ -134,30 +135,39 @@ if (isset($_POST['dat_hang'])) {
     </div>
 </section>
 <script>
+     // tính tông tiền của giỏ hàng
+     function tong_tien(){
+        var thanhtiens = document.querySelectorAll(".thanh_tien_js");
+        var tong_tien_nums = 0;
+        var tong_tien_html = document.querySelector("#tong_tien");
+        thanhtiens.forEach(function(thanhtien){
+          
+            tong_tien_nums += Number(thanhtien.innerHTML) * 1;
+        })
+      tong_tien_html.innerHTML =  tong_tien_nums.toLocaleString() ;
+    }
+    
+    // kết thúc tính tổng tiền của giỏ hàng
     // thành tiền của sản phẩm
       function thanh_tien(){
+         
         var don_gia = document.querySelectorAll(".don_gia");
+        var so_luong = document.querySelectorAll(".so_luong");
       
-        var thanhtien = document.querySelectorAll(".thanh_tien");
+        var thanh_tien = document.querySelectorAll(".thanh_tien_show");
+         var thanh_tien_js = document.querySelectorAll('.thanh_tien_js');
         don_gia.forEach(function(gia,index){
-            var so_luong = document.querySelectorAll(".so_luong").value;
-            console.log(so_luong[index]);
+            var tien = (Number(gia.value) * Number(so_luong[index].value)).toLocaleString();
+            var tien_js = (Number(gia.value) * Number(so_luong[index].value));
+            thanh_tien[index].innerHTML =  tien;
+            thanh_tien_js[index].innerHTML = tien_js;
+        
         })
+        tong_tien();
       }
-
+     
       thanh_tien();
 
 
-    // tính tông tiền của giỏ hàng
-    var thanhtiens = document.querySelectorAll(".thanhtien");
-    var tong = 0;
-    thanhtiens.forEach(function(thanhtien) {
-        tong += thanhtien.value * 1;
-    })
-
-    var tong_tien = document.querySelector("#tong_tien");
-    var tong_tien2 = document.querySelector("#tong_tien2");
-    tong_tien2.value = tong;
-    tong_tien.innerHTML = tong.toLocaleString("en");
-    // kết thúc tính tổng tiền của giỏ hàng
+   
 </script>

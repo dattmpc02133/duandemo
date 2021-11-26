@@ -35,7 +35,7 @@
         </div>
     </div>
     <script src="<?= $CONTENT_URL ?>/js/app.js"></script>
-    <script src="<?= $CONTENT_URL ?>/js/chi-tiet.js"></script>
+   
 </body>
 
 </html>
