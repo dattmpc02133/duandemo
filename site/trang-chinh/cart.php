@@ -80,13 +80,13 @@ if (isset($_POST['dat_hang'])) {
                                         <td><?= $stt ?></td>
                                         <td style="text-align:center;"><img src="<?= $CONTENT_URL ?>/images/products/<?= $hinh ?>" alt=""></td>
                                         <td><?= $ten_sp ?></td>
-                                        <td> <input type="hidden" value="<?= $don_gia ?>">
+                                        <td> <input class="don_gia" type="hidden" value="<?= $don_gia ?>">
                                             <?= number_format($don_gia) ?><sup>đ</sup>
                                         </td>
-                                        <td><input style="width:50px" class="form-control" type="number" min=1 value="<?= $so_luong ?>"></td>
+                                        <td><input style="width:50px" class="form-control so_luong" type="number" min=1 value="<?= $so_luong ?>"></td>
                                         <td class="tt">
                                             <input class="thanhtien" type="hidden" value="<?= $tong ?>">
-                                            <?= number_format($tong) ?><sup>đ</sup>
+                                           <span>thành tiền</span><sup>đ</sup>
                                         </td>
                                         <td><a class="btn btn-danger" href="<?= $delete_link ?>">Xóa</a></td>
                                     </tr>
@@ -134,6 +134,20 @@ if (isset($_POST['dat_hang'])) {
     </div>
 </section>
 <script>
+    // thành tiền của sản phẩm
+      function thanh_tien(){
+        var don_gia = document.querySelectorAll(".don_gia");
+        var so_luong = document.querySelectorAll(".so_luong");
+        var thanhtien = document.querySelectorAll(".thanh_tien");
+        don_gia.forEach(function(gia){
+            console.log(gia);
+        })
+      }
+
+      thanh_tien();
+
+
+    // tính tông tiền của giỏ hàng
     var thanhtiens = document.querySelectorAll(".thanhtien");
     var tong = 0;
     thanhtiens.forEach(function(thanhtien) {
@@ -144,4 +158,5 @@ if (isset($_POST['dat_hang'])) {
     var tong_tien2 = document.querySelector("#tong_tien2");
     tong_tien2.value = tong;
     tong_tien.innerHTML = tong.toLocaleString("en");
+    // kết thúc tính tổng tiền của giỏ hàng
 </script>
