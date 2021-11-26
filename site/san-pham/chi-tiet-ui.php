@@ -60,7 +60,7 @@ extract($san_pham);
 
                 </div>
                 <div class="description__form">
-                    <form action="<?= $SITE_URL ?>/trang-chinh/index.php?cart" method="post">
+                    <form action="<?= $SITE_URL ?>/trang-chinh/index.php?addcart" method="post">
                         <div class="row">
                         <div class="col-4">
                             <div class="description__form-left">

@@ -83,7 +83,7 @@ if (isset($_POST['dat_hang'])) {
                                         <td> <input class="don_gia" type="hidden" value="<?= $don_gia ?>">
                                             <?= number_format($don_gia) ?><sup>đ</sup>
                                         </td>
-                                        <td><input style="width:50px"  onchange="thanh_tien()" class="form-control so_luong" type="number" min=1 value="<?= $so_luong ?>"></td>
+                                        <td><input style="width:65px"  oninput="thanh_tien()" class="form-control so_luong" type="number" min=1 value="<?= $so_luong ?>"></td>
                                         <td class="tt">
                                             <input class="thanhtien" type="hidden" value="<?= $tong ?>">
                                            <span class="thanh_tien_show" >thành tiền</span><sup>đ</sup>
@@ -139,12 +139,15 @@ if (isset($_POST['dat_hang'])) {
      function tong_tien(){
         var thanhtiens = document.querySelectorAll(".thanh_tien_js");
         var tong_tien_nums = 0;
+        var tong_tien2 = document.querySelector("#tong_tien2");
         var tong_tien_html = document.querySelector("#tong_tien");
         thanhtiens.forEach(function(thanhtien){
           
             tong_tien_nums += Number(thanhtien.innerHTML) * 1;
         })
-      tong_tien_html.innerHTML =  tong_tien_nums.toLocaleString() ;
+        tong_tien_html.innerHTML =  tong_tien_nums.toLocaleString("en") ;
+        tong_tien2.value = tong_tien_nums;
+       console.log(tong_tien2.value)
     }
     
     // kết thúc tính tổng tiền của giỏ hàng
@@ -157,7 +160,7 @@ if (isset($_POST['dat_hang'])) {
         var thanh_tien = document.querySelectorAll(".thanh_tien_show");
          var thanh_tien_js = document.querySelectorAll('.thanh_tien_js');
         don_gia.forEach(function(gia,index){
-            var tien = (Number(gia.value) * Number(so_luong[index].value)).toLocaleString();
+            var tien = (Number(gia.value) * Number(so_luong[index].value)).toLocaleString("en");
             var tien_js = (Number(gia.value) * Number(so_luong[index].value));
             thanh_tien[index].innerHTML =  tien;
             thanh_tien_js[index].innerHTML = tien_js;
