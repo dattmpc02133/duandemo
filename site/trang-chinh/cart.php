@@ -137,10 +137,11 @@ if (isset($_POST['dat_hang'])) {
     // thành tiền của sản phẩm
       function thanh_tien(){
         var don_gia = document.querySelectorAll(".don_gia");
-        var so_luong = document.querySelectorAll(".so_luong");
+      
         var thanhtien = document.querySelectorAll(".thanh_tien");
-        don_gia.forEach(function(gia){
-            console.log(gia);
+        don_gia.forEach(function(gia,index){
+            var so_luong = document.querySelectorAll(".so_luong").value;
+            console.log(so_luong[index]);
         })
       }
 
