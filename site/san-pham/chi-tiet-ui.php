@@ -110,7 +110,7 @@ extract($san_pham);
                                                 <p><?= $ten_sp ?><span></span></p>
                                             </div>
                                             <div class="product-price">
-                                                <p><?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?><sup>đ</sup> <del><?= $don_gia ?> <sup>đ</sup></del></p>
+                                                <p><span><?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?><sup>đ</sup></span> <del><?= $don_gia ?> <sup>đ</sup></del></p>
                                             </div>
                                         </div>
                                     </a>
@@ -139,7 +139,7 @@ extract($san_pham);
                                             <p>Sofa Giường Kéo Roots<span></span></p>
                                         </div>
                                         <div class="product-price">
-                                            <p>7,800,000<sup>đ</sup> <del><sup></sup></del></p>
+                                            <p><span>7,800,000<sup>đ</sup></span> <del><sup></sup></del></p>
                                         </div>
                                     </div>
                                 </a>
@@ -160,7 +160,7 @@ extract($san_pham);
                                             <p>Sofa Phòng Khách <span>S003</span></p>
                                         </div>
                                         <div class="product-price">
-                                            <p>6,800,000<sup>đ</sup> <del>7,900,000<sup>đ</sup></del></p>
+                                            <p><span>6,800,000<sup>đ</sup></span> <del>7,900,000<sup>đ</sup></del></p>
                                         </div>
                                     </div>
                                 </a>
@@ -178,7 +178,7 @@ extract($san_pham);
                                             <p>Sofa Giường Kéo Roots<span></span></p>
                                         </div>
                                         <div class="product-price">
-                                            <p>7,800,000<sup>đ</sup> <del><sup></sup></del></p>
+                                            <p><span>7,800,000<sup>đ</sup></span> <del><sup></sup></del></p>
                                         </div>
                                     </div>
                                 </a>
@@ -196,7 +196,7 @@ extract($san_pham);
                                             <p>Sofa Giường Kéo Roots<span></span></p>
                                         </div>
                                         <div class="product-price">
-                                            <p>7,800,000<sup>đ</sup> <del><sup></sup></del></p>
+                                            <p><span>7,800,000<sup>đ</sup></span> <del><sup></sup></del></p>
                                         </div>
                                     </div>
                                 </a>
@@ -214,7 +214,7 @@ extract($san_pham);
                                             <p>Sofa Giường Kéo Roots<span></span></p>
                                         </div>
                                         <div class="product-price">
-                                            <p>7,800,000<sup>đ</sup> <del><sup></sup></del></p>
+                                            <p><span>7,800,000<sup>đ</sup></span> <del><sup></sup></del></p>
                                         </div>
                                     </div>
                                 </a>

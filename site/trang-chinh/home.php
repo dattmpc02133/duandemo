@@ -91,7 +91,7 @@
                                     <p> <?= $ten_sp ?></span></p>
                                 </div>
                                 <div class="product-price">
-                                    <p><?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?><sup>đ</sup> <del><?= number_format($don_gia) ?><sup>đ</sup></del></p>
+                                    <p><span><?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?><sup>đ</sup> </span><del><?= number_format($don_gia) ?><sup>đ</sup></del></p>
                                 </div>
                             </div>
                         </a>
@@ -197,7 +197,7 @@
                                     <p> <?= $ten_sp ?></span></p>
                                 </div>
                                 <div class="product-price">
-                                    <p><?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?><sup>đ</sup> <del><?= number_format($don_gia) ?><sup>đ</sup></del></p>
+                                    <p><span><?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?><sup>đ</sup></span> <del><?= number_format($don_gia) ?><sup>đ</sup></del></p>
                                 </div>
                             </div>
                         </a>

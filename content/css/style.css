@@ -494,6 +494,9 @@ h5 {
 .block-products .product-price p {
   color: red;
   font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 4px;
 }
 
 .block-products del {
