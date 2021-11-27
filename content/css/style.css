@@ -784,7 +784,7 @@ tbody td {
 .oder_invoice-picture_area {
   display: flex;
 }
-.oder_invoice-text {
+.oder_invoice-text, .oder_invoice-text{
   padding-left: 10px;
 }
 .oder_invoice-title {

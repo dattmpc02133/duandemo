@@ -25,5 +25,5 @@ extract($_REQUEST);
 //     binh_luan_insert($ma_kh, $ma_hh, $noi_dung, $ngay_bl);
 // }
 // $binh_luan_list =  binh_luan_select_by_hang_hoa($ma_hh);
-$VIEW_NAME = "san-pham/chi-tiet-ui.php";
+$VIEW_NAME = "chi-tiet-ui.php";
 require("../layout.php");

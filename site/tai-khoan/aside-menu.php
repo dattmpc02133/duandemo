@@ -18,7 +18,7 @@
                             <hr>
                             <div class="account-tilte" style="text-align: left;">
                                     <?php 
-                                        if($vai_tro == 0){
+                                        if($vai_tro == 1){
                                             echo ' <a class="dropdown-item" style="color:#b8c1ec;padding:10px" href="../../admin/"><i class="fas fa-users-cog"></i> Quản trị website</a>';
                                         }
                                     ?>           
