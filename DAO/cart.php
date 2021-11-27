@@ -33,4 +33,6 @@ function cart_update_so_luong($them,$ma_sp){
             $sql = "SELECT COUNT(*) as total  FROM gio_hang_tam WHERE ma_kh = ?";
             return pdo_query($sql,$ma_kh);
         }
+        // đếm sản phẩm trong giỏ hàng theo mã khách hàng
+        
 ?>

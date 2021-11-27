@@ -8,6 +8,14 @@ if (isset($_GET['id'])) {
        </script>";
 }
 if (isset($_POST['addcart'])) {
+   if(!isset($_SESSION['user'])){
+             $ma_sp_tam = $_POST['ma_sp'];
+    echo '<script> alert("Vui lòng đăng nhập để mua sản phẩm"); </script>';
+            echo '<script>
+                location.href = "'.$SITE_URL.'/san-pham/chi-tiet.php?ma_sp='.$ma_sp_tam.'";
+            </script>';
+
+   } else{
     $ma_kh = $_SESSION['user'];
     $ma_sp_tam = $_POST['ma_sp'];
     $hinh_tam = $_POST['hinh_sp'];
@@ -20,6 +28,7 @@ if (isset($_POST['addcart'])) {
     } else {
         $cart = cart_insert($ma_kh, $ma_sp_tam, $hinh_tam, $ten_sp_tam, $don_gia_tam, $so_luong_tam);
     }
+   }
 }
 
 if (isset($_POST['dat_hang'])) {

@@ -69,13 +69,18 @@
                             <i class="incon_size fas fa-shopping-cart"></i>
                             <?php 
                         // đếm số lượng sản phẩm trong giỏ hàng
-                                 $ma_kh = $_SESSION['user'];
+                        if(isset($_SESSION['user'])){
+                            $ma_kh = $_SESSION['user'];
                                 $count_cart_pro =  cart_count_ma_kh($ma_kh);
                                 foreach( $count_cart_pro as $pro_mums){
                                     extract($pro_mums);
-                                }
+                                
                             ?>
                             <span class="header_cart-notice"><?= $total ?></span>
+                            <?php 
+                                } 
+                        }
+                            ?>
                         </div>
                         <span style="cursor: pointer;">Giỏ Hàng</span>
                        
