@@ -814,3 +814,12 @@ tbody td {
   color: #b8c1ec !important;
 }
 /* e  d */
+/* tin tuc chi tiết */
+.content_page-new {
+  border: 1px solid #eee;
+}
+.img_content-page {
+  width: 100%;
+  padding: 10px;
+}
+/* end
