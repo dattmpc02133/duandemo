@@ -1,75 +1,29 @@
-<div class="main_container">
-    <div class="main_container-product">
-        <div class="container-fluid" style="padding: 30px 85px;">
-            <div class="row">
-                <div class="col-md-9 col-sm-12">
-                    <div class="blog_news">
-                        <div class="blog_heading">
-                            <h3>TIN TỨC</h3>
+<div class="container_chi-tiet-new">
+    <div class="container-fluid" style="padding: 0 80px;">
+        <div class="row">
+            <div class="col-md-9 col-sm-12">
+                <div class="content_page-new">
+                    <div class="content_page-new-lish">
+                        <div class="content_page-images">
+                            <img src="../../content/images/hinhtintuc.jpg" alt="hình tin tức" class="img_content-page">
                         </div>
-                        <div class="blog_content">
-                            <div class="row">
-                                <div class="col-sm-12 col-md-4">
-                                    <a href="../tin-tuc/tin-tuc.php?ma-tin-tuc=<?=$ma_tin_tuc?>" class="blog_content-links">
-                                        <img src="<?= $CONTENT_URL ?>/images/giuong1.jpg" alt="" class="blog_content-img">
-                                    </a>
-                                </div>
-                                <div class="col-sm-12 col-md-8">
-                                    <h4 class="blog_heading-title">
-                                        <a href=""> Mua sofa giường mang cả thiên đường đến những căn hộ nhỏ</a>
-                                    </h4>
-                                    <div class="blog_post-news">
-                                        <p class="blog_post-lish">1- Sử dụng nội thất thông minh và tận dụng không gian để lưu trữ đồ đạc Với một không gian chật hẹp thì điều đầu...
-                                            Sử dụng nội thất thông minh và tận dụng không gian để lưu trữ đồ đạc Với một không gian chật hẹp thì điều đầu
-                                            Sử dụng nội thất thông minh và tận dụng không gian để lưu trữ đồ đạc Với một không gian chật hẹp thì điều đầu
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog_content">
-                            <div class="row">
-                                <div class="col-sm-12 col-md-4">
-                                    <a href="" class="blog_content-links">
-                                        <img src="<?= $CONTENT_URL ?>/images/giuong2.jpg" alt="" class="blog_content-img">
-                                    </a>
-                                </div>
-                                <div class="col-sm-12 col-md-8">
-                                    <h4 class="blog_heading-title">
-                                        <a href=""> Mua sofa giường mang cả thiên đường đến những căn hộ nhỏ</a>
-                                    </h4>
-                                    <div class="blog_post-news">
-                                        <p class="blog_post-lish">1- Sử dụng nội thất thông minh và tận dụng không gian để lưu trữ đồ đạc Với một không gian chật hẹp thì điều đầu...
-                                            Sử dụng nội thất thông minh và tận dụng không gian để lưu trữ đồ đạc Với một không gian chật hẹp thì điều đầu
-                                            Sử dụng nội thất thông minh và tận dụng không gian để lưu trữ đồ đạc Với một không gian chật hẹp thì điều đầu
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog_content">
-                            <div class="row">
-                                <div class="col-sm-12 col-md-4">
-                                    <a href="" class="blog_content-links">
-                                        <img src="<?= $CONTENT_URL ?>/images/giuong3.jpg" alt="" class="blog_content-img">
-                                    </a>
-                                </div>
-                                <div class="col-sm-12 col-md-8">
-                                    <h4 class="blog_heading-title">
-                                        <a href=""> Mua sofa giường mang cả thiên đường đến những căn hộ nhỏ</a>
-                                    </h4>
-                                    <div class="blog_post-news">
-                                        <p class="blog_post-lish">1- Sử dụng nội thất thông minh và tận dụng không gian để lưu trữ đồ đạc Với một không gian chật hẹp thì điều đầu...
-                                            Sử dụng nội thất thông minh và tận dụng không gian để lưu trữ đồ đạc Với một không gian chật hẹp thì điều đầu
-                                            Sử dụng nội thất thông minh và tận dụng không gian để lưu trữ đồ đạc Với một không gian chật hẹp thì điều đầu
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <h3 class="page_news-title">
+                        Mua sofa giường mang cả thiên đường đến những căn hộ nhỏ
+                        </h3>
+                        <ul class="page_news-useradmin">
+                            <li>
+                                Người viết: Đạt G
+                                <time pubdate datetime = "2021-11-27">27-11-2021</time> 
+                            </li>
+                            <li><i class="far fa-file-alt"></i>
+                        <a href="">Tin tức</a></li>
+                            <li><i class="far fa-comment"></i>
+                        <a href="">0 <span>Bình luận</span></a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-12">
+            </div>
+            <div class="col-md-3 col-sm-12">
                     <div class="sidebar-log">
                         <div class="sidebar-log_news">
                             <div class="sidebar-log_heading">
@@ -157,7 +111,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 </div>
