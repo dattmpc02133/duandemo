@@ -46,8 +46,7 @@ extract($info_kh);
                 </div>
                 <div class="form-group">
                     <label for=""><b>Mật khẩu mới *</b></label>
-                    <input type="password" class="form-control" name="mat_khau_moi" id="mat_khau_moi" aria-describedby="helpId" placeholder="Nhập mật khẩu mới">
-                   
+                    <input type="password" class="form-control" name="mat_khau_moi" id="mat_khau_moi" aria-describedby="helpId" placeholder="Nhập mật khẩu mới">                  
                 </div>
                 <div class="form-group">
                     <label for=""><b>Xác nhận mật khẩu mới *</b></label>

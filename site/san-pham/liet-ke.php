@@ -4,6 +4,7 @@ require_once("../../DAO/pdo.php");
 require_once("../../DAO/san-pham.php");
 require_once("../../DAO/loai.php");
 require_once("../../global.php");
+require_once("../../DAO/cart.php");
 extract($_REQUEST);
 if (exit_param("ma_loai")) {
     $poducts = san_pham_select_by_loai($ma_loai);
