@@ -220,44 +220,29 @@
         Tin Tức
     </h4>
     <div class="grid row">
+        <?php 
+            $news = tin_tuc_selectlimit();
+            foreach ($news as $ket){
+                extract($ket);
+        ?>
         <div class="col-sm-4 col-md-4 col-xs-12">
-            <a href=""><img src="<?= $CONTENT_URL  ?>/images/tintuc1.jpg" alt="tin tức" class="news_tintuc"></a>
+            <a href="../tin-tuc/tin-tuc.php?ma-tin-tuc=<?=$ma_tin_tuc?>">
+           <div class="box_hinh">
+           <img src="<?= $CONTENT_URL  ?>/images/news/<?=$hinh_tin_tuc?>" alt="tin tức" class="news_tintuc">
+           </div>
+        </a>
             <div class="news_tintuc-product">
                 <h3 class="news_tintuc-items">
-                    <a href="">MUA SOFA GIƯỜNG MANG CẢ THIÊN ĐƯỜNG ĐẾN NHỮNG CĂN HỘ NHỎ</a>
+                    <a class="box_tiltes" href="../tin-tuc/tin-tuc.php?ma-tin-tuc=<?=$ma_tin_tuc?>"><?=$tieu_de?></a>
                 </h3>
                 <div class="news_tintuc-tiile">
-                    1- Sử dụng nội thất thông minh và tận dụng không gian để lưu trữ đồ đạcVới một không
-                    gian Với một không gian một số đồ dùng thông minh lắm nha
+                   <?=$mo_ta_tin_tuc?>
                 </div>
-                <a href="" class="xem-them">Xem Thêm</a>
+                <a href="../tin-tuc/tin-tuc.php?ma-tin-tuc=<?=$ma_tin_tuc?>" class="xem-them">Xem Thêm</a>
             </div>
         </div>
-        <div class="col-sm-4 col-md-4 col-xs-12">
-            <a href=""><img src="<?= $CONTENT_URL  ?>/images/tintuc3.jpg" alt="tin tức" class="news_tintuc"></a>
-            <div class="news_tintuc-product">
-                <h3 class="news_tintuc-items">
-                    <a href="">MUA SOFA GIƯỜNG MANG CẢ THIÊN ĐƯỜNG ĐẾN NHỮNG CĂN HỘ NHỎ</a>
-                </h3>
-                <div class="news_tintuc-tiile">
-                    1- Sử dụng nội thất thông minh và tận dụng không gian để lưu trữ đồ đạc Với một không
-                    gian một số đồ dùng thông minh lắm nha
-                </div>
-                <a href="" class="xem-them">Xem Thêm</a>
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-4 col-xs-12">
-            <a href=""><img src="<?= $CONTENT_URL  ?>/images/tintuc3.jpg" alt="tin tức" class="news_tintuc"></a>
-            <div class="news_tintuc-product">
-                <h3 class="news_tintuc-items">
-                    <a href="">MUA SOFA GIƯỜNG MANG CẢ THIÊN ĐƯỜNG ĐẾN NHỮNG CĂN HỘ NHỎ</a>
-                </h3>
-                <div class="news_tintuc-tiile">
-                    1- Sử dụng nội thất thông minh và tận dụng không gian để lưu trữ đồ đạc Với một không
-                    gian ádasdasdasdđasadsaddsadasdasdasdasdas
-                </div>
-                <a href="" class="xem-them">Xem Thêm</a>
-            </div>
-        </div>
+        <?php
+            }
+        ?>
     </div>
 </section>

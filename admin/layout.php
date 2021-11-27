@@ -37,6 +37,12 @@
     <script>
                         CKEDITOR.replace('mo_ta');
     </script>
+    <script>
+                        CKEDITOR.replace('mo_ta_tin_tuc');
+    </script>
+    <script>
+                        CKEDITOR.replace('noi_dung_tin_tuc');
+    </script>
   </body>
   
 </html>
