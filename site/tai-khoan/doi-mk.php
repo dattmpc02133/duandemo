@@ -40,8 +40,8 @@ extract($info_kh);
                     <input type="text" readonly class="form-control" name="ma_kh" id="" aria-describedby="helpId" value="<?= $ma_kh ?>">
                 </div>
                 <div class="form-group">
-                    <label for=""><b>Mật khẩu cũ *</b></label>
-                    <input type="password" class="form-control" name="mat_khau_1" id="mat_khau_1" aria-describedby="helpId" placeholder="Nhập mật khẩu">
+                    <label for=""><b>Mật khẩu hiện tại *</b></label>
+                    <input type="password" class="form-control" name="mat_khau_1" id="mat_khau_1" aria-describedby="helpId" placeholder="Nhập mật khẩu hiện tại">
                     <input type="hidden" name="mat_khau" value="<?=$mat_khau?>">
                 </div>
                 <div class="form-group">
@@ -51,7 +51,7 @@ extract($info_kh);
                 </div>
                 <div class="form-group">
                     <label for=""><b>Xác nhận mật khẩu mới *</b></label>
-                    <input type="password" class="form-control" name="mat_khau_moi_xac_nhan" id="xac_nhan_mat_khau_moi" aria-describedby="helpId" placeholder="Xác nhận mật khẩu">
+                    <input type="password" class="form-control" name="mat_khau_moi_xac_nhan" id="xac_nhan_mat_khau_moi" aria-describedby="helpId" placeholder="Xác nhận mật khẩu mới">
                 </div>
                 <div class="form-group">
                     <button type="submit" name="btn-doi-mk" class="btn btn-primary">Đổi mật khẩu</button>

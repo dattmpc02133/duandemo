@@ -17,7 +17,11 @@
                             <h5><?= $ho_ten ?></h5>
                             <hr>
                             <div class="account-tilte" style="text-align: left;">
-                                <a class="dropdown-item" style="color:#b8c1ec;padding:10px" href="../../admin/"><i class="fas fa-users-cog"></i> Quản trị website</a>
+                                    <?php 
+                                        if($vai_tro == 0){
+                                            echo ' <a class="dropdown-item" style="color:#b8c1ec;padding:10px" href="../../admin/"><i class="fas fa-users-cog"></i> Quản trị website</a>';
+                                        }
+                                    ?>           
                                 <a class="dropdown-item" style="color:#b8c1ec;padding:10px" href="../tai-khoan/index.php?doi-mk"><i class="fas fa-exchange-alt"></i> Đổi mật khẩu</a>
                                 <a class="dropdown-item" style="color:#b8c1ec;padding:10px" href="../tai-khoan/index.php?don-hang"><i class="fas fa-shipping-fast"></i> Đơn hàng của tôi</a>
                                 <a class="dropdown-item" style="color:#b8c1ec;padding:10px" href="../tai-khoan/index.php?btn-thong-tin"><i class="fas fa-edit"></i> Cập nhật thông tin</a>
