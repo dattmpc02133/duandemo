@@ -79,6 +79,8 @@
                             <span class="header_cart-notice"><?= $total ?></span>
                             <?php 
                                 } 
+                        } else{
+                            echo '  <span class="header_cart-notice">0</span>';
                         }
                             ?>
                         </div>
