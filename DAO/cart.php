@@ -35,4 +35,10 @@ function cart_update_so_luong($them,$ma_sp){
         }
         // đếm sản phẩm trong giỏ hàng theo mã khách hàng
         
+// hóa đơn (khách hàng)
+function hoa_don_kh($ma_hd){
+    $sql = "SELECT a.*,b.ten_sp,b.hinh FROM hoa_don_chi_tiet a INNER JOIN san_pham b ON a.ma_sp = b.ma_sp WHERE a.ma_hd = ?";
+    return pdo_query($sql,$ma_hd);
+}
+        
 ?>

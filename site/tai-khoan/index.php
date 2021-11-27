@@ -4,6 +4,7 @@ require_once '../../DAO/pdo.php';
 require_once("../../DAO/khach-hang.php");
 require_once("../../DAO/loai.php");
 require_once("../../DAO/cart.php");
+require_once("../../DAO/hoa-don.php");
 // $VIEW_NAME = "dang-ky.php";
 extract($_REQUEST);
 if(exit_param('btn-thong-tin')){
