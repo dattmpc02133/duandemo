@@ -759,6 +759,7 @@ tbody td {
 .oder_invoice-links {
   padding: 10px 0;
   color: #b8c1ec;
+  cursor: pointer;
 }
 /* end đon hang */
 /* tìm kiếm đơn hàng trong đơn hàng của tôi */
@@ -787,11 +788,20 @@ tbody td {
 .oder_invoice-text, .oder_invoice-text{
   padding-left: 10px;
 }
+.oder_invoice-products{
+  display: none;
+}
+.oder_invoice-products.active{
+  display: block;
+}
 .oder_invoice-title {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
+}
+.oder_invoice-number{
+  padding-left: 10px;
 }
 .oder_invoice-product-price {
   display: flex;
@@ -823,3 +833,18 @@ tbody td {
   padding: 10px;
 }
 /* end
+
+
+/* table cart */
+.table-in{
+ 
+  margin: 0 auto;
+ 
+} 
+.table-in th{
+  vertical-align: middle !important;
+ /* border-top: 1px solid #ccc; */
+ border-bottom: none !important;
+ 
+ 
+}

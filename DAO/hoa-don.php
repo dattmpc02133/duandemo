@@ -94,4 +94,10 @@
     //     pdo_execute($sql, $ma_hd);
     // }
     //
+
+    // hóa đơn khách hàng
+    function hoa_don_ma_kh($ma_kh){
+        $sql = "SELECT ma_hd,tong_tien,dia_chi_giao_hang,ngay_dat,trang_thai FROM hoa_don WHERE ma_kh = ?";
+        return pdo_query($sql,$ma_kh);
+    }
 ?>
