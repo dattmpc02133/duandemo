@@ -63,7 +63,7 @@ if (isset($_POST['add'])) {
 <div class="title">
     <h3>THÊM SẢN PHẨM</h3>
 </div>
-<form action="" method="POST" enctype="multipart/form-data" id="form_du_an1">
+<form action="" method="POST" enctype="multipart/form-data" id="form_du_an1" style="margin-bottom: 10px;" >
     <div class="form-group">
         <label for="">Tên sản phẩm:</label>
         <input type="text" class="form-control" placeholder="Nhập tên sản phẩm" name="ten_sp" id="ten_sp">
@@ -147,7 +147,7 @@ if (isset($_POST['add'])) {
         <label for="">Mô tả:</label>
         <textarea name="mo_ta"></textarea>
     </div>
-    <button type="submit" name="add" id="add" class="btn btn-info" btn-lg btn-block">Thêm sản phẩm</button>
+    <button type="submit" name="add" id="add" class="btn btn-info">Thêm sản phẩm</button>
     <button type="reset" class="btn btn-info" name="nhap_lai">Nhập lại</button>
     <a href="index.php?btn_list" class="btn btn-info">Danh sách</a>
 </form>
