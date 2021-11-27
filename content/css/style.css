@@ -817,9 +817,26 @@ tbody td {
 /* tin tuc chi tiết */
 .content_page-new {
   border: 1px solid #eee;
+  padding: 20px;
 }
 .img_content-page {
   width: 100%;
-  padding: 10px;
+}
+.page_news-title {
+  margin: 24px 0;
+  font-size: 24px;
+}
+.page_news-useradmin {
+  display: flex;
+}
+.page_news-useradmin>li {
+  margin-right: 10px;
+}
+.page-new-acticle__img {
+  width: 70%;
+}
+.content_page-new-acticle>p {
+  font-size: 16px;
+  text-align: justify;
 }
 /* end
