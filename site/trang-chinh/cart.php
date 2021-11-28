@@ -49,6 +49,11 @@ if (isset($_POST['dat_hang'])) {
     foreach ($list_sp_ght as $sp) {
         extract($sp);
         hoa_don_chi_tiet_insert($ma_hd2, $ma_sp_tam, $don_gia_tam, $so_luong_tam);
+        // tăng số lượt mua hàng của sản phẩm
+        so_luot_mua_sp($so_luong_tam, $ma_sp_tam);
+        // trừ đi số lượng sản phẩm trong kho khi khách hàng mua.
+        giam_sp_ton_kho_khi_mua($so_luong_tam,$ma_sp_tam);
+
     }
     delete_all_gio_hang_tam();
     echo '<script>

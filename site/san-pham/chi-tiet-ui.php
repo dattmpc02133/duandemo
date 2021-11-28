@@ -27,6 +27,7 @@ extract($san_pham);
                         <div class="view__product-main wrap_aside">
                             <img src="<?= $CONTENT_URL ?>/images/products/<?= $hinh ?>" class="wrap_img" alt="" id="main_img">
                         </div>
+                       
                         <div class="view__product-main-dot">
                             <!-- <div class="circle"></div> -->
                         </div>
@@ -65,7 +66,8 @@ extract($san_pham);
                         <div class="col-4">
                             <div class="description__form-left">
                                 <div class="quantity-area" id="giam_so_luong">-</div>
-                                <input class="description__form-left-input" name="so_luong" value="1" min="1" type="number" id="so_luong_chi_tiet">
+                                <input class="so_luong_ton_kho" type="hidden" value="<?=$so_luong?>">
+                                <input class="description__form-left-input" name="so_luong" value="1" min="1"  type="number" id="so_luong_chi_tiet">
                                 <div class="quantity-area" id="tang_so_luong">+</div>
                             </div>
                         </div>
@@ -240,4 +242,11 @@ extract($san_pham);
             })
         })
         </script>
+<script>
+    // xử lý sj số lượng tồn kho
+    var so_luong_sp_ton_kho = document.querySelector(".so_luong_ton_kho");
+    var so_luong_max = Number(so_luong_sp_ton_kho.value);
+    var so_luong_chi_tiet = document.querySelector("#so_luong_chi_tiet");
+    so_luong_chi_tiet.setAttribute("max",so_luong_max);
+</script>
 <script src="<?= $CONTENT_URL ?>/js/chi-tiet.js"></script>

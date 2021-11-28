@@ -131,11 +131,21 @@ function update_sp(
         $ma_sp
     );
 }
-// sản phẩm update số lượng
+// sản phẩm update số lượng nhập kho
 function sp_update_so_luong_nhap($so_luong, $ma_sp)
 {
     $sql = "UPDATE san_pham SET so_luong = so_luong + ? WHERE ma_sp = ?";
     pdo_execute($sql, $so_luong, $ma_sp);
+}
+// cập nhật số lượt mua 
+function so_luot_mua_sp($so_luong,$ma_sp){
+    $sql = "UPDATE san_pham SET so_luot_mua = so_luot_mua + ? WHERE ma_sp = ?";
+    pdo_execute($sql, $so_luong, $ma_sp);
+}
+// cập nhật số lượng sản phẩm còn lại trong kho khi khách hàng mua.
+function giam_sp_ton_kho_khi_mua($so_luong,$ma_sp){
+    $sql = "UPDATE san_pham SET so_luong = so_luong - ? WHERE ma_sp = ?";
+    pdo_execute($sql, $so_luong, $ma_sp);   
 }
 function sp_update_so_luong_nhap_fix($so_luong_nhap_old, $so_luong_nhap, $ma_sp)
 {
@@ -214,3 +224,5 @@ function hinh_phu_delete($ma_sp)
     $sql = "DELETE FROM hinh WHERE $ma_sp = ? ";
     pdo_query($sql,$ma_sp);
 }
+
+
