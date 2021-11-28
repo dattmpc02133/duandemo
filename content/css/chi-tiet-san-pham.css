@@ -131,7 +131,14 @@ img{
 .description__form-left-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
-
+.btn_het_hang{
+  text-transform: lowercase;
+}
+.btn_het_hang:hover{
+  box-shadow: 0 0 5px darkred;
+  cursor: pointer;
+ 
+}
 .description__form-right {
   display: flex;
   align-items: center;

@@ -73,7 +73,15 @@ extract($san_pham);
                         </div>
                         <div class="col-8">
                             <div class="description__form-right">
-                                    <button class="btn btn-primary add__carrt" name="addcart">Thêm vào giỏ hàng</button>
+                                <?php 
+                                    if($so_luong <= 0){
+                                        echo '  <button disabled class="btn btn-danger add__carrt btn_het_hang" name="">Hết hàng</button>';
+                                    } else{
+                                        echo ' <button class="btn btn-primary add__carrt" name="addcart">Thêm vào giỏ hàng</button>';
+                                    }
+                                ?>
+                                   
+                                  
                                     <input type="hidden" name="hinh_sp" value="<?= $hinh ?>">
                                     <input type="hidden" name="ten_sp" value="<?= $ten_sp ?>">
                                     <input type="hidden" name="don_gia" value="<?= $gia_ban ?>">
