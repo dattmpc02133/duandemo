@@ -1,6 +1,13 @@
 <?php
 require_once("../../global.php");
 require_once '../../DAO/hoa-don.php';
+if(!isset($_SESSION['user'])){
+  
+    echo '<script>
+    alert("bạn cần đăng nhập để xem giỏ hàng");
+    location.href = "'.$ROOT_URL.'";
+</script>';
+}
 if (isset($_GET['id'])) {
     car_delete($_GET['id']);
     echo "<script>
@@ -117,6 +124,7 @@ if (isset($_POST['dat_hang'])) {
                         <div class="order_total_price">
                             <label for="">Địa chỉ giao hàng:</label>
                             <?php
+                           
                             $kh = get_info_kh($ma_kh);
                             extract($kh);
                             ?>
