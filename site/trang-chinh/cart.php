@@ -140,8 +140,8 @@ if (isset($_POST['dat_hang'])) {
                             </p>
                         </div>
                         <div class="note-promo">
-                            <p>Phí vận chuyển sẽ được tính ở trang thanh toán. <br>
-                                Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.</p>
+                            <!-- <p>Phí vận chuyển sẽ được tính khi bạn bấm vào thanh toán. <br>
+                                </p> -->
                         </div>
                         <div class="cart-buttons">
                             <button type="submit" class="btn btn-danger checkout-btn" name="dat_hang">Thanh Toán</button>

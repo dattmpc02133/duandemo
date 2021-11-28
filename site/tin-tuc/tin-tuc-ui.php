@@ -14,7 +14,7 @@
                         <h3 class="page_news-title">
                             <?= $tieu_de ?>
                         </h3>
-                        <ul class="page_news-useradmin">
+                        <!-- <ul class="page_news-useradmin">
                             <li>
                                 Người viết: Đạt G
                                 <time pubdate datetime="2021-11-27">27-11-2021</time>
@@ -25,7 +25,7 @@
                             <li><i class="far fa-comment"></i>
                                 <a href="">0 <span>Bình luận</span></a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                     <div class="content_page-new-acticle">
                         <?= $noi_dung_tin_tuc ?>
@@ -34,21 +34,36 @@
                         <h3 style="margin-bottom: 30px;">Viết bình luận</h3>
                         <div class="contact-boxt_sent_lish">
                             <form action="#" method="post" class="row grid">
-                                <div class="col-md-6">
+                                <?php
+                                    if(isset($_SESSION['user'])){
+                                        echo '<div class="col-md-12">
+                                        <textarea class="form-control controller" id="exampleFormControlTextarea1" rows="5" placeholder="Nội dung"></textarea>
+                                    </div>';
+                                    echo '<div class="col-sm-12">
+                                    <button class="btn btn-primary" type="submit">Gửi cho chúng tôi</button>
+                                </div>';
+                                    }else {
+                                        echo '<div class="col-md-12">
+                                        <textarea class="form-control controller" id="exampleFormControlTextarea1" disabled rows="5" placeholder="Đăng nhập để viết bình luận"></textarea>
+                                    </div>';
+                                    echo '<div class="col-sm-12">
+                                    <button class="btn btn-primary" disabled type="submit">Gửi cho chúng tôi</button>
+                                </div>';
+                                    }
+                                ?>
+                                <!-- <div class="col-md-6">
                                     <input type="text" class="form-control controller" placeholder="Tên của bạn">
                                 </div>
                                 <div class="col-md-6">
                                     <input type="email" class="form-control controller" placeholder="Email của bạn">
-                                </div>
-                                <div class="col-md-12">
-                                    <textarea class="form-control controller" id="exampleFormControlTextarea1" rows="5" placeholder="Nội dung"></textarea>
-                                </div>
+                                </div> -->
+                                <!-- <div class="col-md-12">
+                                    <textarea class="form-control controller" id="exampleFormControlTextarea1"  rows="5" placeholder="Nội dung"></textarea>
+                                </div> -->
                                 <!-- <div class="contact-sitebox col-sm-12">
                                           <p>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
                                       </div> -->
-                                <div class="col-sm-12">
-                                    <button class="btn btn-primary" type="submit">Gửi cho chúng tôi</button>
-                                </div>
+                                
                             </form>
                         </div>
                     </div>

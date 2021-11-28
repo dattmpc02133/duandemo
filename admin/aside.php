@@ -12,6 +12,7 @@
                               <div class="dropdown-menu">
                                 <a class="dropdown-item" href="../../doi-mk.html">Đổi mật khẩu</a>
                                 <a class="dropdown-item" href="../../cap_nhat_tk.html">Cập nhật thông tin</a>
+                                <a class="dropdown-item" href="../../index.php">Giao diện khách hàng</a>
                                 <a class="dropdown-item" href="#">Đăng xuất</a>
                               </div>
                             </div>
@@ -49,5 +50,6 @@
                     <li class="nav-item">
                         <a class="nav-link thong-ke" href="<?=$ADMIN_URL?>/thong-ke"><i class="fas fa-chart-line"></i>Thống kê</a>
                     </li>
+                   
                 </nav>
                

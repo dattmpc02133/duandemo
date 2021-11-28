@@ -6,7 +6,7 @@
         </div>
         <div class="sidebar-log_list">
             <?php
-            $newnew = tin_tuc_selectall();
+            $newnew = tin_tuc_selectlimit();
             foreach ($newnew as $newasss) {
                 extract($newasss);
             ?>
