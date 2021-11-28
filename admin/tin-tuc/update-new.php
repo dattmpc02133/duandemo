@@ -42,6 +42,6 @@ if(isset($_GET['ma-tin-tuc'])){
         <textarea name="noi_dung_tin_tuc"><?=$noi_dung_tin_tuc?></textarea>
     </div>
     <div class="btn__group">
-        <button type="submit" class="btn btn-info" name="btn_update">Cập nhật sản phẩm</button>
+        <button type="submit" class="btn btn-info" name="btn_update">Cập nhật</button>
     </div>
 </form>
