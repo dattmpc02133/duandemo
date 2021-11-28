@@ -43,14 +43,15 @@
 <div class="container banner_show">
     <div class="grid">
         <div class="row ">
+
             <div class="col-sm">
-                <a href="#"> <img src="<?= $CONTENT_URL  ?>/images/img_banner_home_1.jpg" alt="" class="banner-content"></a>
+                <a href="../../site/san-pham/liet-ke.php?ma_loai=15"> <img  src="<?= $CONTENT_URL  ?>/images/products/thiet-ke-phong-ngu-cho-co-nang-16-tuoi-1-3.png" alt="" class="banner-content"></a>
             </div>
             <div class="col-sm">
-                <a href="#"><img src="<?= $CONTENT_URL  ?>/images/img_banner_home_2.jpg" alt="" class="banner-content"></a>
+                <a href="../../site/san-pham/liet-ke.php?ma_loai=9"><img src="<?= $CONTENT_URL  ?>/images/img_banner_home_2.jpg" alt="" class="banner-content"></a>
             </div>
             <div class="col-sm">
-                <a href="#"><img src="<?= $CONTENT_URL  ?>/images/img_banner_home_3.jpg" alt="" class="banner-content"></a>
+                <a href="../../site/san-pham/liet-ke.php?ma_loai=3"><img src="<?= $CONTENT_URL  ?>/images/img_banner_home_3.jpg" alt="" class="banner-content"></a>
             </div>
         </div>
     </div>
@@ -119,7 +120,7 @@
 
 
                 ?>
-                    <a href="" class="news_content-item">
+                    <a href="../../site/san-pham/liet-ke.php?ma_loai=<?=$ma_loai?>" class="news_content-item">
                         <img src="<?= $CONTENT_URL  ?>/images/<?= $hinh_loai_sp ?>" alt="Hình Sp new" class="news_content-sp">
                     </a>
                 <?php
@@ -137,7 +138,7 @@
                 extract($nha_bep);
 
                 ?>
-                <a href="" class="news_content-item">
+                <a href="../../site/san-pham/liet-ke.php?ma_loai=<?=$ma_loai?>" class="news_content-item">
                     <img src="<?= $CONTENT_URL  ?>/images/<?= $hinh_loai_sp ?>" alt="Hình Sp new" class="news_content-sp">
                 </a>
             </div>
@@ -154,7 +155,7 @@
         ?>
             <div class="col-sm-3">
                 <div class="collect_content-product">
-                    <a href=""><img src="<?= $CONTENT_URL  ?>/images/products/<?= $hinh_loai_sp ?>" alt="" class="collorest-item"></a>
+                    <a href="../../site/san-pham/liet-ke.php?ma_loai=<?=$ma_loai?>"><img src="<?= $CONTENT_URL  ?>/images/products/<?= $hinh_loai_sp ?>" alt="" class="collorest-item"></a>
                     <div class="collect_content-group">
                         <h4 class="collect-title">
                             <a href="" class="collect-title_link"><?= $ten_loai ?></a>
@@ -227,7 +228,7 @@
         ?>
         <div class="col-sm-4 col-md-4 col-xs-12">
             <a href="../tin-tuc/tin-tuc.php?ma-tin-tuc=<?=$ma_tin_tuc?>">
-           <div class="box_hinh">
+           <div class="box_hinh" style="max-height:327px">
            <img src="<?= $CONTENT_URL  ?>/images/news/<?=$hinh_tin_tuc?>" alt="tin tức" class="news_tintuc">
            </div>
         </a>

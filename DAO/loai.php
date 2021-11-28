@@ -44,5 +44,9 @@ function loai_not_in(){
     $sql = "SELECT * FROM loai WHERE ma_loai IN (3,1,11,12) "; // NOT IN(8,9,10)
     return pdo_query($sql);
 }
-
+// phòng ngủ, khuyễn mãi, trang trí
+function sp_p_km_tt(){
+    $sql = "SELECT * FROM loai WHERE ma_loai IN(15,8,3) ";
+    return pdo_query($sql);
+}
 ?>
