@@ -1,11 +1,11 @@
 <?php
 require_once("../../global.php");
 require_once '../../DAO/hoa-don.php';
-if(!isset($_SESSION['user'])){
-  
+if (!isset($_SESSION['user'])) {
+
     echo '<script>
     alert("bạn cần đăng nhập để xem giỏ hàng");
-    location.href = "'.$ROOT_URL.'";
+    location.href = "' . $ROOT_URL . '";
 </script>';
 }
 if (isset($_GET['id'])) {
@@ -15,27 +15,26 @@ if (isset($_GET['id'])) {
        </script>";
 }
 if (isset($_POST['addcart'])) {
-   if(!isset($_SESSION['user'])){
-             $ma_sp_tam = $_POST['ma_sp'];
-    echo '<script> alert("Vui lòng đăng nhập để mua sản phẩm"); </script>';
-            echo '<script>
-                location.href = "'.$SITE_URL.'/san-pham/chi-tiet.php?ma_sp='.$ma_sp_tam.'";
+    if (!isset($_SESSION['user'])) {
+        $ma_sp_tam = $_POST['ma_sp'];
+        echo '<script> alert("Vui lòng đăng nhập để mua sản phẩm"); </script>';
+        echo '<script>
+                location.href = "' . $SITE_URL . '/san-pham/chi-tiet.php?ma_sp=' . $ma_sp_tam . '";
             </script>';
-
-   } else{
-    $ma_kh = $_SESSION['user'];
-    $ma_sp_tam = $_POST['ma_sp'];
-    $hinh_tam = $_POST['hinh_sp'];
-    $ten_sp_tam = $_POST['ten_sp'];
-    $don_gia_tam = $_POST['don_gia'];
-    $so_luong_tam = $_POST['so_luong'];
-    if (san_pham_getinfo_tam($ma_sp_tam)) {
-        $them = $_POST['so_luong'];
-        cart_update_so_luong($them, $ma_sp_tam);
     } else {
-        $cart = cart_insert($ma_kh, $ma_sp_tam, $hinh_tam, $ten_sp_tam, $don_gia_tam, $so_luong_tam);
+        $ma_kh = $_SESSION['user'];
+        $ma_sp_tam = $_POST['ma_sp'];
+        $hinh_tam = $_POST['hinh_sp'];
+        $ten_sp_tam = $_POST['ten_sp'];
+        $don_gia_tam = $_POST['don_gia'];
+        $so_luong_tam = $_POST['so_luong'];
+        if (san_pham_getinfo_tam($ma_sp_tam)) {
+            $them = $_POST['so_luong'];
+            cart_update_so_luong($them, $ma_sp_tam);
+        } else {
+            $cart = cart_insert($ma_kh, $ma_sp_tam, $hinh_tam, $ten_sp_tam, $don_gia_tam, $so_luong_tam);
+        }
     }
-   }
 }
 
 if (isset($_POST['dat_hang'])) {
@@ -99,11 +98,11 @@ if (isset($_POST['dat_hang'])) {
                                         <td> <input class="don_gia" type="hidden" value="<?= $don_gia_tam ?>">
                                             <?= number_format($don_gia_tam) ?><sup>đ</sup>
                                         </td>
-                                        <td><input style="width:65px"  oninput="thanh_tien()" class="form-control so_luong" type="number" min=1 value="<?= $so_luong_tam ?>"></td>
+                                        <td><input style="width:65px" oninput="thanh_tien()" class="form-control so_luong" type="number" min=1 value="<?= $so_luong_tam ?>"></td>
                                         <td class="tt">
                                             <input class="thanhtien" type="hidden" value="<?= $tong ?>">
-                                           <span class="thanh_tien_show" >thành tiền</span><sup>đ</sup>
-                                           <span hidden class="thanh_tien_js" >thành tiền</span>
+                                            <span class="thanh_tien_show">thành tiền</span><sup>đ</sup>
+                                            <span hidden class="thanh_tien_js">thành tiền</span>
                                         </td>
                                         <td><a class="btn btn-danger" href="<?= $delete_link ?>">Xóa</a></td>
                                     </tr>
@@ -124,11 +123,11 @@ if (isset($_POST['dat_hang'])) {
                         <div class="order_total_price">
                             <label for="">Địa chỉ giao hàng:</label>
                             <?php
-                           
+
                             $kh = get_info_kh($ma_kh);
                             extract($kh);
                             ?>
-                            <textarea name="dia_chi_giao_hang" class="form-control" style="font-size: 0.9rem; line-height:35px;" maxlength="255"><?= $dia_chi?></textarea>
+                            <textarea name="dia_chi_giao_hang" class="form-control" style="font-size: 0.9rem; line-height:35px;" maxlength="255"><?= $dia_chi ?></textarea>
                             <p></p>
                             <p class="order_total_dix" style="padding: 0 8px; color: rgba(0, 0, 0, 0.3); font-size: 1rem"><strong>Tổng Tiền:</strong>
                                 <span id="tong_tien" style="color: red; margin-left: 8px; ">0</span> <sup style="color:red">đ</sup>
@@ -152,42 +151,39 @@ if (isset($_POST['dat_hang'])) {
     </div>
 </section>
 <script>
-     // tính tông tiền của giỏ hàng
-     function tong_tien(){
+    // tính tông tiền của giỏ hàng
+    function tong_tien() {
         var thanhtiens = document.querySelectorAll(".thanh_tien_js");
         var tong_tien_nums = 0;
         var tong_tien2 = document.querySelector("#tong_tien2");
         var tong_tien_html = document.querySelector("#tong_tien");
-        thanhtiens.forEach(function(thanhtien){
-          
+        thanhtiens.forEach(function(thanhtien) {
+
             tong_tien_nums += Number(thanhtien.innerHTML) * 1;
         })
-        tong_tien_html.innerHTML =  tong_tien_nums.toLocaleString("en") ;
+        tong_tien_html.innerHTML = tong_tien_nums.toLocaleString("en");
         tong_tien2.value = tong_tien_nums;
-       console.log(tong_tien2.value)
+        console.log(tong_tien2.value)
     }
-    
+
     // kết thúc tính tổng tiền của giỏ hàng
     // thành tiền của sản phẩm
-      function thanh_tien(){
-         
+    function thanh_tien() {
+
         var don_gia = document.querySelectorAll(".don_gia");
         var so_luong = document.querySelectorAll(".so_luong");
-      
+
         var thanh_tien = document.querySelectorAll(".thanh_tien_show");
-         var thanh_tien_js = document.querySelectorAll('.thanh_tien_js');
-        don_gia.forEach(function(gia,index){
+        var thanh_tien_js = document.querySelectorAll('.thanh_tien_js');
+        don_gia.forEach(function(gia, index) {
             var tien = (Number(gia.value) * Number(so_luong[index].value)).toLocaleString("en");
             var tien_js = (Number(gia.value) * Number(so_luong[index].value));
-            thanh_tien[index].innerHTML =  tien;
+            thanh_tien[index].innerHTML = tien;
             thanh_tien_js[index].innerHTML = tien_js;
-        
+
         })
         tong_tien();
-      }
-     
-      thanh_tien();
+    }
 
-
-   
+    thanh_tien();
 </script>
