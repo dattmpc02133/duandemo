@@ -79,7 +79,7 @@ if($so_luong == 0 ){
                         <div class="col-8">
                             <div class="description__form-right">
                                 <?php 
-                                    if($so_luong <= 0){
+                                    if($trang_thai == 0){
                                         echo '  <button disabled class="btn btn-danger add__carrt btn_het_hang" name="">Hết hàng</button>';
                                     } else{
                                         echo ' <button class="btn btn-primary add__carrt" name="addcart">Thêm vào giỏ hàng</button>';
