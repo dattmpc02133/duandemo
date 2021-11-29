@@ -24,15 +24,15 @@ extract($info_kh);
 ?>
 <div class="container-fluid" style="padding: 0 80px;">
 <div class="row">
-    <div class="col-5">
+    <div class="col-3">
         <?php
             require_once('aside-menu.php');
         ?>
     </div>
-    <div class="col-7">
-        <div class="dangky-product" style="width:80%;">
+    <div class="col-9">
+        <div class="dangky-product">
             <div class="header_dangky" role="alert">
-                <h3 style="text-align: center;">Đổi mật khẩu</h3>
+                <h3 style="text-align: center;color:#fff;">Đổi mật khẩu</h3>
             </div>
             <form action="#" method="post" enctype="multipart/form-data" id="form_du_an">
                 <div class="form-group">
