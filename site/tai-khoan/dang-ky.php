@@ -1,22 +1,82 @@
 <?php
 require_once("../../global.php");
-if (isset($_POST['add_kh'])) {
-    $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL;
+if(isset($_POST['add_kh'])){
+    $ma_kh = "";
+    $mat_khau = "";
+    $ho_ten = "";
+    $check_email = '/^[A-Za-z0-9_.]{6,32}@([a-zA-Z0-9]{2,12})(.[a-zA-Z]{2,12})+$/';
+    $test = true;
+    $kt_loi = array();
+if (empty($_POST['ma_kh'])) {
+    $kt_loi['ma_kh'] = "Tên đăng nhập không được bỏ trống !";
+    $test = false;
+} else {
     $ma_kh = $_POST['ma_kh'];
-    $mat_khau = $_POST['mat_khau'];
-    $ho_ten = $_POST['ho_ten'];
-    $dia_chi = $_POST['dia_chi'];
-    $hinh = $_FILES['hinh']['name'];
-    $email = $_POST['email'];
-    $vai_tro = $_POST['vai_tro'];
-    $kich_hoat = $_POST['kich_hoat'];
-    move_uploaded_file($_FILES['hinh']['tmp_name'], "$path./images/user/$hinh");
-    khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email, $vai_tro);
-    $_SESSION['alert'] = 'Đã thêm khách hàng !';
-    echo "<script>
-            location.href = '../../index.php';
-          </script>";
 }
+
+if (empty($_POST['mat_khau'])) {
+    $kt_loi['mat_khau'] = "Mật khẩu không được bỏ trống !";
+    $test = false;
+} else {
+    $mat_khau = $_POST['mat_khau'];
+}
+
+if (empty($_POST['ho_ten'])) {
+    $kt_loi['ho_ten'] = "Họ Tên không được bỏ trống !";
+    $test = false;
+} else {
+    $ho_ten = $_POST['ho_ten'];
+}
+
+if (empty($_POST['dia_chi'])) {
+    $kt_loi['dia_chi'] = "Địa chỉ không được bỏ trống !";
+    $test = false;
+} else {
+    $dia_chi = $_POST['dia_chi'];
+}
+
+if (empty($_FILES['hinh']['name'])) {
+    $kt_loi['hinh'] = "Hình không được bỏ trống !";
+    $test = false;
+} else {
+    $hinh = $_FILES['hinh']['name'];
+}
+
+if (empty($_POST['email'])) {
+    $kt_loi['email'] = "Email không được để trống !";
+    $test = false;
+} elseif (!preg_match($check_email, $_POST['email'], $matchs)) {
+    $kt_loi['email'] = "Vui lòng nhập đúng định dạng Email !";
+    $test = false;
+} else {
+    $email = $_POST['email'];
+}
+
+if($test){
+    if (isset($_POST['add_kh'])) {
+        $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL;
+        $ma_kh = $_POST['ma_kh'];
+        $mat_khau = $_POST['mat_khau'];
+        $ho_ten = $_POST['ho_ten'];
+        $dia_chi = $_POST['dia_chi'];
+        $hinh = $_FILES['hinh']['name'];
+        $email = $_POST['email'];
+        $vai_tro = $_POST['vai_tro'];
+        $kich_hoat = $_POST['kich_hoat'];
+        move_uploaded_file($_FILES['hinh']['tmp_name'], "$path./images/user/$hinh");
+        khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email, $vai_tro);
+        $_SESSION['alert'] = 'Đã thêm khách hàng !';
+        echo "<script>
+                location.href = '../../index.php';
+              </script>";
+    }else{
+        echo "<script>
+                location.href = '../../index.php';
+              </script>";
+    }
+}
+}
+
 // else {
 //     echo "<script> alert('thất bại'); </script>";
 // }
@@ -30,22 +90,32 @@ if (isset($_POST['add_kh'])) {
             <div class="form-group">
                 <label for=""><b>Tên đăng nhập *</b></label>
                 <input type="text" class="form-control" name="ma_kh" id="ma_kh" aria-describedby="helpId" placeholder="Nhập tên đăng nhập">
-                <span class="mess"></span>
+                <?php if (isset($kt_loi['ma_kh'])) { ?>
+                        <span class="err"> <?php echo $kt_loi['ma_kh'] ?> </span>
+                    <?php } ?>
+                    <span class="mess"></span>
             </div>
             <div class="form-group">
                 <label for=""><b>Mật khẩu *</b></label>
                 <input type="password" class="form-control" name="mat_khau" id="mat_khau" aria-describedby="helpId" placeholder="Nhập mật khẩu">
-                <span class="mess"></span>
+                <?php if (isset($kt_loi['mat_khau'])) { ?>
+                        <span class="err"> <?php echo $kt_loi['mat_khau'] ?> </span>
+                    <?php } ?>
             </div>
             <div class="form-group">
                 <label for=""><b>Họ tên *</b></label>
                 <input type="text" class="form-control" name="ho_ten" id="ho_ten" aria-describedby="helpId" placeholder="Nhập họ tên khách hàng">
-                <span class="mess"></span>
+                <?php if (isset($kt_loi['ho_ten'])) { ?>
+                        <span class="err"> <?php echo $kt_loi['ho_ten'] ?> </span>
+                    <?php } ?>
             </div>
             <div class="form-group">
                 <label for=""><b>Địa chỉ *</b></label>
                 <input type="text" class="form-control" name="dia_chi" id="dia_chi" aria-describedby="helpId" placeholder="Nhập Địa chỉ">
-                <span class="mess "></span>
+                <?php if (isset($kt_loi['dia_chi'])) { ?>
+                        <span class="err"> <?php echo $kt_loi['dia_chi'] ?> </span>
+                    <?php } ?>
+                    <span class="mess "></span>
             </div>
             <div class="form-group">
                 <label for=""><b>Ảnh *</b></label>
@@ -55,19 +125,22 @@ if (isset($_POST['add_kh'])) {
             <div class="form-group">
                 <label for=""><b>Email *</b></label>
                 <input type="text" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="Nhập địa chỉ email khách hàng">
-                <span class="mess"></span>
+                <?php if (isset($kt_loi['email'])) { ?>
+                        <span class="err"> <?php echo $kt_loi['email'] ?> </span>
+                    <?php } ?>
+                    <span class="mess"></span>
             </div>
             <div hidden class="form-group">
                 <label for=""><b>Vai trò *</b></label>
                 <div class="form-control-radio">
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="vai_tro" id="vai_tro" value="1" checked>Khách
+                            <input class="form-check-input" type="radio" name="vai_tro" id="vai_tro" value="0" checked>Khách
                         </label>
                     </div>
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="vai_tro" id="vai_tro" value="0">Quản trị
+                            <input class="form-check-input" type="radio" name="vai_tro" id="vai_tro" value="1">Quản trị
                         </label>
                     </div>
                 </div>
