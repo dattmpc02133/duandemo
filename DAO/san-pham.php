@@ -215,7 +215,7 @@ function update_hinh_phu($hinh, $ma_sp)
     pdo_execute($sql, $hinh, $ma_sp);
 }
 
-// mã san phẩm hình phụ 
+// mã sản phẩm hình phụ 
 function ma_sp_hinh_phu()
 {
     $sql = "SELECT * FROM san_pham ORDER BY ma_sp DESC LIMIT 0,1 ";
