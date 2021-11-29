@@ -152,7 +152,16 @@ function sp_update_so_luong_nhap_fix($so_luong_nhap_old, $so_luong_nhap, $ma_sp)
     $sql = "UPDATE san_pham SET so_luong = so_luong - ? + ? WHERE ma_sp = ?";
     pdo_execute($sql, $so_luong_nhap_old, $so_luong_nhap, $ma_sp);
 }
-
+// cập nhật trạng thái về 0 "hết hàng";
+function trang_thai_sp_het_hang($ma_sp){
+    $sql = "UPDATE san_pham SET trang_thai = 0 WHERE ma_sp = ?";
+    pdo_execute($sql,$ma_sp);
+}
+// cập nhật trạng thái về 1 "còn hàng";
+function trang_thai_sp_con_hang($ma_sp){
+    $sql = "UPDATE san_pham SET trang_thai = 1 WHERE ma_sp = ?";
+    pdo_execute($sql,$ma_sp);
+}
 // số lượt lượt xem
 function san_pham_so_luot_luot_xem($ma_sp)
 {

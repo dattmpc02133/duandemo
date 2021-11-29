@@ -1,6 +1,11 @@
 <?php
 $san_pham =  san_pham_getinfo($ma_sp);
 extract($san_pham);
+if($so_luong == 0 ){
+    trang_thai_sp_het_hang($ma_sp);
+} else{
+    trang_thai_sp_con_hang($ma_sp);
+}
 ?>
 
 <div class="container__chi-tiet">
