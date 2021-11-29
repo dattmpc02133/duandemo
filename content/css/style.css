@@ -689,14 +689,16 @@ overflow: hidden;
 /* end */
 /* dangky */
 .dangky-product {
-  width: 50%;
-  margin: 0 auto;
+  padding: inherit;
 }
 .form-group > .form-control {
   padding: 25px 10px;
 }
 .header_dangky {
-  padding: 20px;
+  padding: 15px;
+  background: #232946;
+  border-radius: 5px;
+  margin-bottom: 15px;
 }
 /*  */
 /* quản lý  */

@@ -1,11 +1,11 @@
 <div class="container-fluid" style="padding: 0 80px;">
     <div class="row">
-        <div class="col-5">
+        <div class="col-3">
             <?php
             require_once('aside-menu.php');
             ?>
         </div>
-        <div class="col-7">
+        <div class="col-9">
             <div class="oder_invoice-wrapper">
                 <div class="oder_invoice-content">
                     <div class="oder_invoice-items">

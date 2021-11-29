@@ -21,14 +21,14 @@
 ?>
 <div class="container-fluid" style="padding: 0 80px;">
     <div class="row">
-        <div class="col-5">
+        <div class="col-3">
             <?php
             require_once('aside-menu.php');
             ?>
 
         </div>
-        <div class="col-7">
-            <div class="dangky-product" style="width:80%;">
+        <div class="col-9">
+            <div class="dangky-product">
                 <?php 
                     if(isset($_SESSION['user'])){
                         $user_data = get_info_kh($_SESSION['user']);
@@ -36,7 +36,7 @@
                     }
                 ?>
                 <div class="header_dangky" role="alert">
-                    <h3 style="text-align: center;">Cập nhật tài khoản</h3>
+                    <h3 style="text-align: center;color:#fff;">Cập nhật tài khoản</h3>
                 </div>
                 <form action="" method="post" id="form_du_an" enctype="multipart/form-data">
                     <div class="form-group">
@@ -57,7 +57,7 @@
                         <input type="text" class="form-control" name="dia_chi" id="dia_chi" value="<?=$dia_chi?>" aria-describedby="helpId" placeholder="Nhập địa chỉ">
                         <span class="mess"></span>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" hidden>
                         <label for=""><b>Ảnh đại diện *</b></label>
                         <input type="file" class="form-control-file" name="hinh_new" id="hinh_new" aria-describedby="fileHelpId">
                         <input class="form-control" type="text" name="hinh" id="hinh" value="<?=$hinh?>" readonly style="border: none; outline:none;">
