@@ -73,8 +73,25 @@
                     <div class="block-products">
                         <a href="../san-pham/chi-tiet.php?ma_sp=<?= $ma_sp ?>" class="products-item_link">
                             <div class="block-image">
-
-                                <img src="<?= $CONTENT_URL  ?>/images/products/<?= $hinh ?>" alt="sản phẩm khuyễn mãi">
+                                <?php  
+                                  $hinh_hover = select_hinh_phu($ma_sp);
+                                  foreach($hinh_hover as $hover){
+                                      extract($hover);
+                                  }
+                                 ?>
+                                <img class="hinh_chinh" src="<?= $CONTENT_URL  ?>/images/products/<?= $hinh ?>">
+                                <img hidden class="onmouseout" src="<?= $CONTENT_URL  ?>/images/products/<?= $hinh ?>">
+                                <?php 
+                                    if($hinh_phu == null){
+                                        echo ' <img hidden class="img_onmouseover" src="'.$CONTENT_URL.'/images/products/'.$hinh.'">
+                                        ';
+                                    } else{
+                                        echo '
+                                        <img hidden class="img_onmouseover" src="'. $CONTENT_URL.'/images/products/'.$hinh_phu.'">
+                                        
+                                        ';
+                                    }
+                                ?>
                                <?php
                                if($giam_gia == 0 || $giam_gia == null){
                                    echo "";
@@ -193,7 +210,27 @@
                         <a href="../san-pham/chi-tiet.php?ma_sp=<?= $ma_sp ?>" class="products-item_link">
                             <div class="block-image">
 
-                                <img src="<?= $CONTENT_URL  ?>/images/products/<?= $hinh ?>" alt="sản phẩm khuyễn mãi">
+
+                            <?php  
+                                  $hinh_hover = select_hinh_phu($ma_sp);
+                                  foreach($hinh_hover as $hover){
+                                      extract($hover);
+                                  }
+                                 ?>
+                                <img class="hinh_chinh" src="<?= $CONTENT_URL  ?>/images/products/<?= $hinh ?>">
+                                <img hidden class="onmouseout" src="<?= $CONTENT_URL  ?>/images/products/<?= $hinh ?>">
+                                <?php 
+                                    if($hinh_phu == null){
+                                        echo ' <img hidden class="img_onmouseover" src="'.$CONTENT_URL.'/images/products/'.$hinh.'">
+                                        ';
+                                    } else{
+                                        echo '
+                                        <img hidden class="img_onmouseover" src="'. $CONTENT_URL.'/images/products/'.$hinh_phu.'">
+                                        
+                                        ';
+                                    }
+                                ?>
+                            
                                 <div class="products-item-sale">
                                     <span class="sale-val">- <?= $giam_gia ?> %</span>
                                 </div>
@@ -247,3 +284,21 @@
         ?>
     </div>
 </section>
+<script>
+    function hover_img(){
+        var img_mains = document.querySelectorAll(".hinh_chinh");
+        var img_mouseover = document.querySelectorAll(".img_onmouseover")
+        var img_onmouseout = document.querySelectorAll(".onmouseout");
+        img_mains.forEach(function(img_main,index){
+            img_main.onmouseover = function(){
+                
+                img_main.src = img_mouseover[index].src;
+            }
+            img_main.onmouseout = function(){
+                img_main.src = img_onmouseout[index].src;
+            }
+        })
+       
+    }
+    hover_img();
+</script>

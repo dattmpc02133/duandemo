@@ -250,7 +250,7 @@ if ($so_luong == 0) {
 <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
 <script>
     $(() => {
-        $('.wrap_aside img').click(function() {
+        $('.wrap_aside img').mouseover(function() {
             let imgPath = $(this).attr('src');
             // alert (imgPath);
             // console.log(imgPath);

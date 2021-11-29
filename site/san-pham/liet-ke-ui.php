@@ -28,32 +28,48 @@
     <div class="row-products">
         <div class="row">
             <?php
-
-            foreach ($poducts as $product) {
-                extract($product);
-
+         
+            foreach ($products as $product) {
+                extract($product)
             ?>
-
                 <div class="col-default">
                     <div class="block-products">
                         <a href="../san-pham/chi-tiet.php?ma_sp=<?= $ma_sp ?>" class="products-item_link">
                             <div class="block-image">
-
-                                <img src="<?= $CONTENT_URL  ?>/images/products/<?= $hinh ?>" alt="sản phẩm khuyễn mãi">
-                                <div class="products-item-sale">
-                                    <?php
-                                    if ($giam_gia == 0 || $giam_gia == null) {
-                                        echo "";
-                                    } else {
-                                        echo "<span class='sale-val'>- $giam_gia %</span>";
+                                <?php  
+                                  $hinh_hover = select_hinh_phu($ma_sp);
+                                  foreach($hinh_hover as $hover){
+                                      extract($hover);
+                                  }
+                                 ?>
+                                <img class="hinh_chinh" src="<?= $CONTENT_URL  ?>/images/products/<?= $hinh ?>">
+                                <img hidden class="onmouseout" src="<?= $CONTENT_URL  ?>/images/products/<?= $hinh ?>">
+                                <?php 
+                                    if($hinh_phu == null){
+                                        echo ' <img hidden class="img_onmouseover" src="'.$CONTENT_URL.'/images/products/'.$hinh.'">
+                                        ';
+                                    } else{
+                                        echo '
+                                        <img hidden class="img_onmouseover" src="'. $CONTENT_URL.'/images/products/'.$hinh_phu.'">
+                                        
+                                        ';
                                     }
-                                    ?>
-
-                                </div>
+                                ?>
+                               <?php
+                               if($giam_gia == 0 || $giam_gia == null){
+                                   echo "";
+                               } else{
+                                   echo '
+                                      <div class="products-item-sale">
+                                             <span class="sale-val">- '.$giam_gia.' %</span>
+                                       </div>
+                                        ';
+                               }
+                               ?>
                             </div>
                             <div class="block-body">
                                 <div class="product-name">
-                                    <p> <?= $ten_sp ?> </span></p>
+                                    <p> <?= $ten_sp ?></span></p>
                                 </div>
                                 <div class="product-price">
                                     <p><span><?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?><sup>đ</sup></span><?php 
@@ -61,16 +77,12 @@
                                             echo '<del>'.number_format($don_gia).'<sup>đ</sup></del>';
                                         }
                                     ?></p>
-                                    <!-- <p><span><?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?><sup>đ</sup></span>
-                                    <del><?= number_format($don_gia) ?><sup>đ</sup></del> -->
-                                </p>
+                                    <!-- <p><span><?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?><sup>đ</sup> </span><del><?= number_format($don_gia) ?><sup>đ</sup></del></p> -->
                                 </div>
                             </div>
                         </a>
                     </div>
                 </div>
-
-
             <?php
             }
             ?>
