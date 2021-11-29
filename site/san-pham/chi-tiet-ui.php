@@ -63,8 +63,8 @@ if($so_luong == 0 ){
                         echo  ' <span class="description__price-del"><del> ' . number_format($don_gia) . ' <sup>đ</sup></del></span>';
                     }
                     ?>
-
                 </div>
+                <span class="so_luong_sp_con_lai">Còn lại: <?= $so_luong ?> sản phẩm  </span>
                 <div class="description__form">
                     <form action="<?= $SITE_URL ?>/trang-chinh/index.php?addcart" method="post">
                         <div class="row">
@@ -74,12 +74,14 @@ if($so_luong == 0 ){
                                 <input class="so_luong_ton_kho" type="hidden" value="<?=$so_luong?>">
                                 <input class="description__form-left-input" name="so_luong" value="1" min="1"  type="number" id="so_luong_chi_tiet">
                                 <div class="quantity-area" id="tang_so_luong">+</div>
+                       
                             </div>
+                          
                         </div>
                         <div class="col-8">
                             <div class="description__form-right">
                                 <?php 
-                                    if($so_luong <= 0){
+                                    if($so_luong == 0){
                                         echo '  <button disabled class="btn btn-danger add__carrt btn_het_hang" name="">Hết hàng</button>';
                                     } else{
                                         echo ' <button class="btn btn-primary add__carrt" name="addcart">Thêm vào giỏ hàng</button>';
@@ -93,7 +95,9 @@ if($so_luong == 0 ){
                                     <input type="hidden" name="ma_sp" value="<?= $ma_sp ?>">
                                 </form>
                             </div>
+                          
                         </div>
+                       
                     </div>
                         </form>
                 </div>
