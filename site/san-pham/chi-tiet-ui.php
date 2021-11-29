@@ -122,7 +122,7 @@ if($so_luong == 0 ){
                         ?>
                             <div class="col-default">
                                 <div class="block-products">
-                                    <a href="#">
+                                    <a href="<?= $SITE_URL ?>/san-pham/chi-tiet.php?ma_sp=<?=$ma_sp?>">
                                         <div class="block-image">
                                             <img src="<?= $CONTENT_URL ?>/images/products/<?= $hinh ?>" alt="">
                                         </div>
