@@ -281,7 +281,6 @@ if ($so_luong == 0) {
    }
 
     thong_so_luong()
-
 </script>
 
 
