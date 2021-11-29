@@ -876,6 +876,21 @@ tbody td {
   vertical-align: middle !important;
  /* border-top: 1px solid #ccc; */
  border-bottom: none !important;
- 
- 
 }
+/* kiểm lổi form */
+.err {
+  color: red;
+  font-style: oblique;
+  font-size: 14px;
+}
+.box__error input{
+border: 1px solid red;
+font-style: oblique;
+font-size: 14px;
+}
+.box__error .mess{
+color: red;
+font-style: oblique;
+font-style: 14px;
+}
+/* end 

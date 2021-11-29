@@ -36,6 +36,25 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
     <script src="<?= $CONTENT_URL ?>/js/app.js"></script>
+    <script src="<?= $CONTENT_URL ?>/js/kiem_loi.js"></script>
+    <script>
+    kiem_loi_form({
+      form: '#form_du_an',
+      rules: [
+        // kiem_loi_form.isRequiRed('#username'),
+        kiem_loi_form.minLength('#mat_khau', 6),
+        kiem_loi_form.isRequiRed('#ho_ten'),
+        kiem_loi_form.isRequiRed('#dia_chi'),
+        kiem_loi_form.isRequiRed('#ma_kh'),
+        kiem_loi_form.minLength('#mat_khau', 6),
+        kiem_loi_form.isEmail('#email'),
+        kiem_loi_form.minLength('#mat_khau_moi', 6),
+        kiem_loi_form.confirm('#xac_nhan_mat_khau_moi', function() {
+          return document.querySelector("#form_du_an #mat_khau_moi").value;
+        }, 'Mật khẩu xác nhận không trùng khớp'),
+      ]
+    })
+  </script>
    
 </body>
 
