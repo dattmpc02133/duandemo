@@ -42,6 +42,9 @@
                         <a class="nav-link don-hang" href="<?=$ADMIN_URL?>/quan-ly-don-hang"><i class="fas fa-shipping-fast"></i>Đơn hàng</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link khuyen-mai" href="<?=$ADMIN_URL?>/khuyen-mai"><i class="fas fa-piggy-bank"></i>Khuyến mãi</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link tin-tuc" href="<?=$ADMIN_URL?>/tin-tuc"><i class="far fa-newspaper"></i> Tin tức</a>
                     </li>
                     <li class="nav-item">

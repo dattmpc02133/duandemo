@@ -40,7 +40,7 @@ if (isset($_GET['ma_pn'])) {
                         <td class="update__delete">
                             <a class="btn btn-info" href="index.php?btn_detail&ma_pn=<?= $ma_pn ?>"><i class="fas fa-info-circle"></i></a>
                             <a class="btn btn-info" href="index.php?btn_update&ma_pn=<?= $ma_pn ?>"><i class="fas fa-edit"></i></a>
-                            <a class="btn btn-danger" href="index.php?btn_delete&ma_pn=<?= $ma_pn ?>"><i class="fas fa-trash-alt"></i></a>
+                            <a class="btn btn-danger" href="index.php?ma_pn=<?= $ma_pn ?>"><i class="fas fa-trash-alt"></i></a>
                         </td>
                     </tr>
                 <?php
