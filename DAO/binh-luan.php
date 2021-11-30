@@ -15,6 +15,15 @@ function bl_info ($ma_bl){
     $sql = "SELECT * FROM binh_luan WHERE ma_bl=?";
     return pdo_query_one($sql,$ma_bl);
 }
+// select all bl trang thái kích hoạt (1);
+function bl_select_by_kh_va_sp_trang_thai1($ma_sp){
+    $sql = "SELECT a.noi_dung,a.ngay_bl, b.ma_kh, b.hinh FROM binh_luan a INNER JOIN khach_hang b ON a.ma_kh = b.ma_kh WHERE a.trang_thai = 1 AND ma_sp = ? ORDER BY a.ma_bl DESC";
+    return pdo_query($sql,$ma_sp);
+}
+
+
+
+
 // xóa bl
 function bl_delete($ma_bl)
 {

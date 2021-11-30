@@ -20,7 +20,8 @@ if ($so_luong == 0) {
 
                             foreach ($hinh_phu as $key) {
                                 extract($key);
-                            ?>
+                            ?>  
+                                <input type="hidden" name="ma_sp" class="ma_sp" value="<?= $ma_sp ?>" >
                                 <img style="padding-bottom: 10px;" class="wrap_img" src="<?= $CONTENT_URL ?>/images/products/<?= $hinh_phu ?>" alt="">
                             <?php
                             }
@@ -110,25 +111,29 @@ if ($so_luong == 0) {
 </div>
 <div class="col-md-6 col-sm-12">
     <div class="content_page-new-comment">
-
+          
         <div class="contact-boxt_sent_lish" style="padding-top:20px">
             <h3 style="margin-bottom: 30px;">Viết bình luận</h3>
-            <form action="#" method="post" class="row grid">
+            <form  method="post" id="form__gui-bl" class="row grid">
                 <?php
                 if (isset($_SESSION['user'])) {
                     echo '<div class="col-md-12">
-                                        <textarea class="form-control controller" id="exampleFormControlTextarea1" rows="5" placeholder="Nội dung"></textarea>
-                                    </div>';
-                    echo '<div class="col-sm-12">
-                                    <button class="btn btn-primary" style="float:right;" type="submit">Gửi bình luận</button>
-                                </div>';
+                         <input type="hidden" name="ma_sp" id="ma_sp" value="'.$ma_sp.'" >
+                         <input type="hidden" id= "ma_kh" name="ma_kh" value="'.$_SESSION['user'].'" >
+                              <textarea class="form-control controller" name ="noi_dung_gui_bl" id="exampleFormControlTextarea1" rows="5" placeholder="Nội dung"></textarea>
+                         </div>
+                         <div class="col-sm-12">
+                             <button class="btn btn-primary" style="float:right;" name = "btn_gui_bl" type="submit">Gửi bình luận</button>
+                         </div>
+                         ';
+                   
                 } else {
                     echo '<div class="col-md-12">
-                                        <textarea class="form-control controller" id="exampleFormControlTextarea1" disabled rows="5" placeholder="Đăng nhập để viết bình luận"></textarea>
-                                    </div>';
+                               <textarea class="form-control controller" id="exampleFormControlTextarea1" disabled rows="5" placeholder="Đăng nhập để viết bình luận"></textarea>
+                           </div>';
                     echo '<div class="col-sm-12">
-                                    <button class="btn btn-primary"style="float:right; disabled type="submit">Gửi bình luận</button>
-                                </div>';
+                               <button class="btn btn-primary"style="float:right; disabled type="submit">Gửi bình luận</button>
+                           </div>';
                 }
                 ?>
             </form>
@@ -314,6 +319,32 @@ if ($so_luong == 0) {
     }
 
     thong_so_luong()
+    // xử lý gửi bình luận bằng ajax
+
+        $(document).ready(function(){
+
+            $("#form__gui-bl").on("submit",function(e){
+                
+                    e.preventDefault();
+                    // var ma_kh = $('#ma_kh').val();
+                    // var ma_sp = $("#ma_sp").val();
+                    // alert(ma_sp);
+                    $.ajax({
+                        url: "ajax_action.php",
+                        method: "POST",
+                        data: new FormData(this),
+                        contentType:false,
+                        processData:false,
+                        success: function(respone){
+                          
+                            // $("#form__gui-bl")[0].reset();
+                        }
+                    })
+            })
+
+
+        })
+
 </script>
 
 
