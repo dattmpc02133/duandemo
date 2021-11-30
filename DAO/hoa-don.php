@@ -37,7 +37,7 @@
         pdo_execute($sql, $tien_tru, $thanh_tien, $ma_hd);
     }
         // xử lý khi xóa sản phẩm hóa đơn chi tiết
-    function update_tong_tien_delete_hd($tien_tru,$ma_hd){
+    function update_tong_tien_delete_hdct($tien_tru,$ma_hd){
         $sql = "UPDATE hoa_don SET tong_tien = tong_tien - ? WHERE ma_hd = ?";
         pdo_execute($sql, $tien_tru, $ma_hd);
     }

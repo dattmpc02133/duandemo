@@ -3,16 +3,6 @@ if (isset($_GET['ma_hd'])) {
     $hoa_don = $_GET['ma_hd'];
 }
 
-
-if (isset($_GET['id'])) {
-    $a =   get_info_id_hdct($_GET['id']);
-    extract($a);
-    $tien_tru = $gia_ban * $so_luong;
-    echo '<script> alert("'.$tien_tru.'"); </script>';
-   
-    update_tong_tien_delete_hd($tien_tru, $hoa_don);
-    hoa_don_chi_tiet_delete($_GET['id']);
-}
 $in4_hd = hoa_don_get_info($hoa_don);
 extract($in4_hd);
 ?>
@@ -53,7 +43,7 @@ extract($in4_hd);
                         <td class="update__delete">
                             <!-- <a class="btn btn-info" href="index.php?btn-details&ma_hd=<?= $ma_hd ?>"><i class="fas fa-info-circle"></i></a> -->
                             <a class="btn btn-info" href="<?= $btn_update ?>"><i class="fas fa-edit"></i></a>
-                            <a class="btn btn-danger" href="index.php?id=<?= $id ?>"><i class="fas fa-trash-alt"></i></a>
+                            <a class="btn btn-danger" href="index.php?btn_delete_ct&id=<?=$id?>"><i class="fas fa-trash-alt"></i></a>
                         </td>
                     </tr>
                 <?php
