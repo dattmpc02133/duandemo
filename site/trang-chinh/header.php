@@ -45,7 +45,7 @@
                                     Đăng nhập tài khoản
                                     <p style="color:#677297; font-size:0.9rem;margin: 0;padding-top: 5px;">Tên đăng nhập và mật khẩu:</p>
                                 </h3>
-                                <form action="../tai-khoan/dang-nhap.php?login=" method="post" class="customer_login">
+                                <form action="../tai-khoan/dang-nhap.php" method="post" class="customer_login">
                                     <div class="customer_account">
                                         <input type="text" placeholder="Tên đăng nhập" class="site_account-input" name="username">
                                         <input type="password" placeholder="Mật khẩu" class="site_account-input" name="password">

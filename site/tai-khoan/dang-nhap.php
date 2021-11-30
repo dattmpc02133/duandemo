@@ -6,10 +6,10 @@ require_once("../../DAO/loai.php");
 extract($_REQUEST);
 if (isset($_POST['login'])) {
     $ma_kh = $_POST['username'];
-    $mat_khau = $_POST['password'];
+    $mat_khau = md5($_POST['password']);
     if (exit_param('login')) {
         $user =  get_info_kh($ma_kh);
-        if ($user) {
+        if ($user) {         
             if ($user['mat_khau'] == $mat_khau) {
                 $_SESSION['thong_bao'] = "Đăng nhập thành công";
                 $_SESSION['user'] = $ma_kh;

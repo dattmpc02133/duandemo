@@ -56,7 +56,7 @@ if($test){
     if (isset($_POST['add_kh'])) {
         $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL;
         $ma_kh = $_POST['ma_kh'];
-        $mat_khau = $_POST['mat_khau'];
+        $mat_khau = md5($_POST['mat_khau']);
         $ho_ten = $_POST['ho_ten'];
         $dia_chi = $_POST['dia_chi'];
         $hinh = $_FILES['hinh']['name'];
