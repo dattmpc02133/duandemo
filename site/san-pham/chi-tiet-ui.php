@@ -337,7 +337,7 @@ if ($so_luong == 0) {
                         processData:false,
                         success: function(respone){
                           
-                            // $("#form__gui-bl")[0].reset();
+                            $("#form__gui-bl")[0].reset();
                         }
                     })
             })
