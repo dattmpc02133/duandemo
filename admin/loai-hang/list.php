@@ -1,6 +1,6 @@
 <?php
-require("../../DAO/pdo.php");
-require("../../DAO/loai.php");
+require_once("../../DAO/pdo.php");
+require_once("../../DAO/loai.php");
 // require_once("../../DAO/phan_trang_global.php");
 
 if (isset($_GET['ma_loai'])) {
