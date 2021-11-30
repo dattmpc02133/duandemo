@@ -178,8 +178,8 @@ p {
   text-align: center;
 }
 .avt {
- width: 200px;
- height: 200px;
+ width: 180px;
+ height: 180px;
  margin-top: 16px;
  border-radius: 30vh;
  image-rendering: pixelated;
@@ -196,15 +196,15 @@ p {
 }
 .change_picture {
   position: absolute;
-  top: 180px;
-  right: 110px;
+  top: 160px;
+  right: 115px;
   background: #232946;
   border-radius: 50%;
-  width: 50px;
+  width: 40px;
   filter: drop-shadow(0 0 2px #eee);
 }
 .change_picture-icon {
-  font-size: 30px;
+  font-size: 25px;
   color: #fff;
   margin: 5px;
 }

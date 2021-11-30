@@ -42,9 +42,11 @@ hr{
     align-items: center;
 }
 .top .account .avt{
-    width: 50%;
-    height: 50%;
-    border-radius: 100rem;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    image-rendering:pixelated;
+    
 }
 .top h5{
     color: #fffffe;
