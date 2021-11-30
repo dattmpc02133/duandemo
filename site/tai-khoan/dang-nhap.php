@@ -21,7 +21,10 @@ if (isset($_POST['login'])) {
                     setcookie('mat_khau', $_POST['password'], strtotime("-1 week"), '/');
                 }
                 $_SESSION['user'] = $ma_kh;
-               
+                if($user['vai_tro'] == 1){
+                    $_SESSION['admin'] = $ma_kh;
+                }
+
                 header("location:../../index.php");
             } else {
                 $_SESSION['thong_bao'] = "Sai mật khẩu";

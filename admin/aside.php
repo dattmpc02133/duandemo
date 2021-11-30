@@ -1,10 +1,18 @@
-
+<?php
+    require_once '../../DAO/pdo.php';
+    require_once '../../DAO/khach-hang.php';
+    if(isset($_SESSION['user'])){
+        $user = $_SESSION['user'];
+    }
+    $get_kh = get_info_kh($user);
+    extract($get_kh);
+?>
                 <nav class="nav flex-column side-bar">
                     <div class="top">
                         <div class="account">
-                            <img src="<?=$CONTENT_URL?>/images/draconic.png" alt="draconic" class="avt">
+                            <img src="<?=$CONTENT_URL?>/images/user/<?=$hinh?>" alt="<?=$hinh?>" class="avt">
                            <div class="account-text">
-                             <h5>ADMIN</h5>
+                             <h5 style="word-wrap: break-word;"><?=$user?></h5>
                             <div class="btn-group drop-button">
                               <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="sr-only">Toggle Dropdown</span>
