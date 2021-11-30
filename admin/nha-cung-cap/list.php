@@ -1,3 +1,12 @@
+<?php 
+
+if(isset($_GET['ma_ncc'])){
+    nha_cung_cap_delete($_GET['ma_ncc']);
+}
+
+?>
+
+
 <div class="title">
     <h3>QUẢN LÝ NHÀ CUNG CẤP</h3>
 </div>
@@ -21,7 +30,9 @@
                         <?php 
                             $list_ncc = nha_cung_cap_selectall();
                             foreach($list_ncc as $ncc){
-                                extract($ncc);                        
+                                extract($ncc);    
+                                $btn_update = "index.php?btn_update&ma_ncc=$ma_ncc" ;     
+                                $delete_link = "index.php?ma_ncc=$ma_ncc";
                         ?>
                         <tr>
                             <td class="check"><input type="checkbox"> </td>

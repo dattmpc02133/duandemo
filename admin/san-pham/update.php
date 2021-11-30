@@ -1,7 +1,7 @@
 <?php
-require("../../DAO/san-pham.php");
-require("../../DAO/pdo.php");
-require("../../DAO/loai.php");
+require_once("../../DAO/san-pham.php");
+require_once("../../DAO/pdo.php");
+require_once("../../DAO/loai.php");
 require_once("../../global.php");
 $_SESSION['ma_sp'] = $_GET['ma_sp'];
 if (isset($_POST['btn_update1'])) {

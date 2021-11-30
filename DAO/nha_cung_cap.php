@@ -13,14 +13,14 @@ function ncc_select_not($ma_ncc)
 }
 
 // thêm nhà cung cấp
-function nha_cung_cap_insert($dia_chi,$sdt,$email){
-    $sql = "INSERT INTO nha_cung_cap(dia_chi, sdt, email) VALUES(?,?,?) ";
-    pdo_execute($sql, $dia_chi, $sdt, $email);
+function nha_cung_cap_insert($ten_ncc,$dia_chi,$sdt,$email){
+    $sql = "INSERT INTO nha_cung_cap(ten_ncc,dia_chi, sdt, email) VALUES(?,?,?,?) ";
+    pdo_execute($sql, $ten_ncc ,$dia_chi, $sdt, $email);
 }
 // update nhà cung cấp
-function nha_cung_cap_update($dia_chi,$sdt,$email){
-    $sql = "UPDATE nha_cung_cap SET dia_chi = ?, sdt = ?, email = ?";
-    pdo_execute($sql, $dia_chi, $sdt, $email);
+function nha_cung_cap_update($ten_ncc,$dia_chi,$sdt,$email,$ma_ncc){
+    $sql = "UPDATE nha_cung_cap SET ten_ncc = ?, dia_chi = ?, sdt = ?, email = ? WHERE ma_ncc = ?";
+    pdo_execute($sql,$ten_ncc, $dia_chi, $sdt, $email,$ma_ncc);
 }
 // xóa nhà cung cấp
 function nha_cung_cap_delete($ma_ncc){

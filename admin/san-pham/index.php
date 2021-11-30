@@ -9,7 +9,7 @@ if (exit_param("btn-add")) {
 } else {
     $VIEW_NAME = "list.php";
 }
-require("../layout.php");
+require_once("../layout.php");
 ?>
 
 <script>

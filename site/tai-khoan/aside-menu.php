@@ -12,7 +12,7 @@
                             <label for="hinh_new" class="change_picture">
                                 <i class="fas fa-camera change_picture-icon"></i>
                             </label>
-                           <form action="" method="post">
+                           <form action="" method="post" enctype="multipart/form-data">
                            <div class="form-group" hidden>
                         <label for=""><b>Ảnh đại diện *</b></label>
                         <input type="file" class="form-control-file" name="hinh_new" id="hinh_new" aria-describedby="fileHelpId">

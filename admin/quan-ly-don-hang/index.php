@@ -14,14 +14,15 @@
         $VIEW_NAME = "details.php";
     } elseif(exit_param("btn_add_sp_hdct")){
         $VIEW_NAME = "add_sp_hdct.php";
-    } elseif(exit_param("btn_delete_ct")){
-        if(isset($_GET['id'])){
-            hoa_don_chi_tiet_delete($_GET['id']);
-            echo '<script>
-                location.href = "index.php";
-            </script>';
-        }
-    } else {
+    } 
+    // elseif(exit_param("btn_delete_ct")){
+    //     if(isset($_GET['id'])){
+    //         hoa_don_chi_tiet_delete($_GET['id']);
+    //         echo '<script>
+    //             location.href = "index.php";
+    //         </script>';
+    //     }
+     else {
         $VIEW_NAME = "list.php";
     }
     require("../layout.php");

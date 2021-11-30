@@ -1,6 +1,6 @@
 <?php
-require("../../DAO/pdo.php");
-require("../../DAO/loai.php");
+require_once("../../DAO/pdo.php");
+require_once("../../DAO/loai.php");
 $_SESSION['ma_loai'] = $_GET['ma_loai'];
 if (isset($_POST['btn_update1'])) {
         $ten_loai = "";

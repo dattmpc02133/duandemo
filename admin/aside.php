@@ -1,8 +1,8 @@
 <?php
     require_once '../../DAO/pdo.php';
     require_once '../../DAO/khach-hang.php';
-    if(isset($_SESSION['user'])){
-        $user = $_SESSION['user'];
+    if(isset($_SESSION['admin'])){
+        $user = $_SESSION['admin'];
     }
     $get_kh = get_info_kh($user);
     extract($get_kh);

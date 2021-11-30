@@ -1,6 +1,6 @@
 <?php
-require("../../DAO/pdo.php");
-require("../../DAO/khach-hang.php");
+require_once("../../DAO/pdo.php");
+require_once("../../DAO/khach-hang.php");
 $_SESSION['ma_kh'] = $_GET['ma_kh'];
 if (isset($_POST['btn_update1'])) {  
         if (isset($_POST['btn_update1'])) {

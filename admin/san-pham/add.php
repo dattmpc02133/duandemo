@@ -1,8 +1,8 @@
 <?php
 require_once("../../global.php");
-require("../../DAO/pdo.php");
-require("../../DAO/loai.php");
-require("../../DAO/san-pham.php");
+require_once("../../DAO/pdo.php");
+require_once("../../DAO/loai.php");
+require_once("../../DAO/san-pham.php");
 
 if (isset($_POST['add'])) {
     $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL . '/images/products/';
