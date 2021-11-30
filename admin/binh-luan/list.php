@@ -21,7 +21,7 @@ if (isset($_POST['delete_select'])) {
 <div class="row">
     <div class="col p-12 t-12 m-12">
         <div class="form__content">
-            <form action="index.php" method="POST">
+            <form action="index.php" method="POST" id="form-list-bl">
                 <table class="table">
                     <thead class="table-danger">
                         <tr>
@@ -34,68 +34,29 @@ if (isset($_POST['delete_select'])) {
                         </tr>
                     </thead>
                     <tbody>
-
-                        <!-- <tr>
-                                <td><input type="checkbox" name="check[]" value="<?= $ma_hh ?>"></td>
-                                <td><?= $ten_hh ?></td>
-                                <td><?= $so_luong ?></td>
-                                <td><?= $bl_moi_nhat ?></td>
-                                <td><?= $bl_cu_nhat ?></td>
-                                <td>
-                                    <a href="index.php?btn_chitiet&ma_hh=<?= $ma_hh ?>" class="btn btn-primary btn btn__delete">Chi Tiết</a>
-                                </td>
-                            </tr> -->
+                            <?php 
+                                $list_bl_sp = bl_thong_ke();
+                                foreach($list_bl_sp as $bl){
+                                    extract($bl);
+                                }
+                            ?>
+                       
                         <tr>
-                            <td><input type="checkbox" name="check[]" value="<?= $ma_hh ?>"></td>
-                            <td>Ghế banasonic</td>
-                            <td>3</td>
-                            <td>2021-11-11</td>
-                            <td>2021-10-11</td>
+                           <?php if(isset($ma_sp)){ echo ' <td><input type="checkbox" name="check[]" value=" '.$ma_sp.'"></td>';} ?>
+                            <td><?php if(isset($ten_sp)){echo $ten_sp;} else{echo "";} ?></td>
+                            <td><?php if(isset($so_luong)){echo $so_luong;} else{echo "";} ?></td>
+                            <td> <?php if(isset($bl_moi_nhat)){echo $bl_moi_nhat;} else{echo "";} ?> </td>
+                            <td>  <?php if(isset($bl_cu_nhat)){echo $bl_cu_nhat;} else{echo "";} ?> </td>
                             <td>
-                                <a href="index.php?btn_chitiet&ma_hh=" class="btn btn-primary btn btn__delete">Chi Tiết</a>
+                                <?php if(isset($ma_sp)){
+                                    echo '
+                                    <a href="index.php?btn_chitiet&ma_sp='.$ma_sp.'" class="btn btn-info"><i class="fas fa-info-circle"></i></a>
+                                    ';
+                                } else{ echo "";} ?>
+                               
                             </td>
                         </tr>
-                        <tr>
-                            <td><input type="checkbox" name="check[]" value="<?= $ma_hh ?>"></td>
-                            <td>Bàn tre phòng khách</td>
-                            <td>3</td>
-                            <td>2021-11-11</td>
-                            <td>2021-10-11</td>
-                            <td>
-                                <a href="index.php?btn_chitiet&ma_hh=" class="btn btn-primary btn btn__delete">Chi Tiết</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="check[]" value="<?= $ma_hh ?>"></td>
-                            <td>Đèn ngủ</td>
-                            <td>1</td>
-                            <td>2021-11-11</td>
-                            <td>2021-10-11</td>
-                            <td>
-                                <a href="index.php?btn_chitiet&ma_hh=" class="btn btn-primary btn btn__delete">Chi Tiết</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="check[]" value="<?= $ma_hh ?>"></td>
-                            <td>Ghế 4 chân </td>
-                            <td>2</td>
-                            <td>2021-11-11</td>
-                            <td>2021-10-11</td>
-                            <td>
-                                <a href="index.php?btn_chitiet&ma_hh=" class="btn btn-primary btn btn__delete">Chi Tiết</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="check[]" value="<?= $ma_hh ?>"></td>
-                            <td>Sofa phòng khách</td>
-                            <td>1</td>
-                            <td>2021-11-11</td>
-                            <td>2021-10-11</td>
-                            <td>
-                                <a href="index.php?btn_chitiet&ma_hh=" class="btn btn-primary btn btn__delete">Chi Tiết</a>
-                            </td>
-                        </tr>
-
+                       
                     </tbody>
                 </table>
                 <div class="row">
@@ -104,7 +65,7 @@ if (isset($_POST['delete_select'])) {
                             <!-- <button class="button__group-item button__group-checkAll">Chọn tất cả</button>
                             <button class="button__group-item button__group-unCheckAll">Bỏ chọn tất
                                 cả</button> -->
-                            <button class="btn btn-info button__group-item button__group-Delete" name="delete_select">Xóa các mục
+                            <button class="btn btn-danger button__group-item button__group-Delete" name="delete_select">Xóa các mục
                                 chọn</button>
                             <!-- <a href="index.php?btn_add" class="button__group-item button__group-input">Nhập thêm</a> -->
                         </div>

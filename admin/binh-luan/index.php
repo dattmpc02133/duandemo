@@ -2,6 +2,7 @@
 require_once("../../global.php");
 require_once("../../DAO/pdo.php");
 require_once("../../DAO/binh-luan.php");
+require_once("../../DAO/san-pham.php");
 // require_once("../../DAO/thong_ke_binh_luan.php");
 extract($_REQUEST);
 if (exit_param("btn_chitiet")) {
@@ -19,7 +20,10 @@ if (exit_param("btn_chitiet")) {
     } catch (Exception $exc) {
         $MESSAGE = "Xóa thất bại!";
     }
-} else {
+} elseif(exit_param("btn_update")){
+    $VIEW_NAME = "update.php";
+}
+ else {
     // $items = thong_ke_binh_luan();
     $VIEW_NAME = "list.php";
 }

@@ -27,23 +27,29 @@ function bl_delete($ma_bl)
         pdo_execute($sql, $ma_bl);
     }
 }
-
+// cập nhật trạng thái bình luận
+function update_trang_thai_bl($trang_thai,$ma_bl){
+$sql = "UPDATE binh_luan SET trang_thai = ? WHERE ma_bl = ?";
+pdo_execute($sql,$trang_thai,$ma_bl);
+}
 function bl_exits($ma_bl)
 {
     $sql = "SELECT COUNT(*) FROM binh_luan WHERE ma_bl=?";
     return pdo_query_value($sql,$ma_bl) > 0;
 }
 function bl_select_by_san_pham($ma_sp){
-    $sp_tung_trang = 9;
-    if (!isset($_GET['page'])) {
-        $trang = 1;
-    } else {
-        $trang = $_GET['page'];
-    }
-    $tung_trang =  ($trang - 1) * $sp_tung_trang;
+    // $sp_tung_trang = 9;
+    // if (!isset($_GET['page'])) {
+    //     $trang = 1;
+    // } else {
+    //     $trang = $_GET['page'];
+    // }
+    // $tung_trang =  ($trang - 1) * $sp_tung_trang;
 
     $sql = "SELECT b.*,h.ten_sp FROM binh_luan b JOIN san_pham h ON h.ma_sp = b.ma_sp
-    WHERE b.ma_sp=? ORDER BY ma_bl DESC LIMIT $tung_trang,$sp_tung_trang";
+    WHERE b.ma_sp=? ORDER BY ma_bl DESC";
+    // $sql = "SELECT b.*,h.ten_sp FROM binh_luan b JOIN san_pham h ON h.ma_sp = b.ma_sp
+    // WHERE b.ma_sp=? ORDER BY ma_bl DESC LIMIT $tung_trang,$sp_tung_trang";
     return pdo_query($sql, $ma_sp);
 }
 function bl_select_by_id($ma_bl)
@@ -56,18 +62,18 @@ function bl_select_by_id($ma_bl)
 function bl_thong_ke()
 {
 
-    $sp_tung_trang = 9;
-    if (!isset($_GET['page'])) {
-        $trang = 1;
-    } else {
-        $trang = $_GET['page'];
-    }
-    $tung_trang =  ($trang - 1) * $sp_tung_trang;
+    // $sp_tung_trang = 9;
+    // if (!isset($_GET['page'])) {
+    //     $trang = 1;
+    // } else {
+    //     $trang = $_GET['page'];
+    // }
+    // $tung_trang =  ($trang - 1) * $sp_tung_trang;
 
     $sql = "SELECT sp.ma_sp, sp.ten_sp, COUNT(*) AS so_luong, MIN(bl.ngay_bl) AS bl_cu_nhat, MAX(bl.ngay_bl) AS bl_moi_nhat
                 FROM binh_luan bl JOIN san_pham sp ON sp.ma_sp = bl.ma_sp
                 GROUP BY sp.ma_sp, sp.ten_sp 
-                HAVING so_luong > 0 ORDER BY sp.ma_sp  DESC LIMIT $tung_trang,$sp_tung_trang ";
+                HAVING so_luong > 0 ORDER BY sp.ma_sp  DESC ";
 
     return pdo_query($sql);
 }
