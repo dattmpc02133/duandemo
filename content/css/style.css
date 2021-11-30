@@ -177,6 +177,20 @@ h5 {
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
+.user_comment {
+    text-align: center;
+    padding: 0 0 0 10px !important;
+    max-width: 50px !important;
+}
+.user_comment-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    image-rendering: pixelated;
+    filter: drop-shadow(0px 0px 1px black);
+}
+.content_comment-moment {
+}
 /* end */
 /* contact */
 .contact_product {
@@ -212,7 +226,9 @@ h5 {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }
-
+.classnutdive {
+  margin-right: 10px;
+}
 /* end */
 /* footet */
 .footer_content-itemm {
@@ -414,6 +430,7 @@ h5 {
 }
 .controller {
   margin: 10px 0;
+  height: 80px !important;
 }
 /* end Liên Hệ */
 /* Giới Thiệu */
