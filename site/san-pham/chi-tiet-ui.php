@@ -106,6 +106,39 @@ if ($so_luong == 0) {
         <?= $mo_ta ?>
     </div>
 </div>
+
+</div>
+<div class="col-md-6 col-sm-12">
+    <div class="content_page-new-comment">
+
+        <div class="contact-boxt_sent_lish" style="padding-top:20px">
+            <h3 style="margin-bottom: 30px;">Viết bình luận</h3>
+            <form action="#" method="post" class="row grid">
+                <?php
+                if (isset($_SESSION['user'])) {
+                    echo '<div class="col-md-12">
+                                        <textarea class="form-control controller" id="exampleFormControlTextarea1" rows="5" placeholder="Nội dung"></textarea>
+                                    </div>';
+                    echo '<div class="col-sm-12">
+                                    <button class="btn btn-primary" style="float:right;" type="submit">Gửi bình luận</button>
+                                </div>';
+                } else {
+                    echo '<div class="col-md-12">
+                                        <textarea class="form-control controller" id="exampleFormControlTextarea1" disabled rows="5" placeholder="Đăng nhập để viết bình luận"></textarea>
+                                    </div>';
+                    echo '<div class="col-sm-12">
+                                    <button class="btn btn-primary"style="float:right; disabled type="submit">Gửi bình luận</button>
+                                </div>';
+                }
+                ?>
+            </form>
+            <div class="col-sm-12">
+                <div class="bl__kh">
+                   <?php require_once ("./bl-khach-hang.php") ?>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
 <div class="row">
@@ -260,25 +293,25 @@ if ($so_luong == 0) {
     })
     //
     // xử lý số lượng sản phẩm tồn kho
-   function sp_ton_kho(){
-    var so_luong_sp_ton_kho = document.querySelector(".so_luong_ton_kho");
-    var so_luong_max = Number(so_luong_sp_ton_kho.value);
-    var so_luong_chi_tiet = document.querySelector("#so_luong_chi_tiet");
-    so_luong_chi_tiet.setAttribute("max", so_luong_max);
-   }
-   sp_ton_kho()
-   // hiển thị thông báo khi mua vượt số lượng sản phẩm có trong kho
+    function sp_ton_kho() {
+        var so_luong_sp_ton_kho = document.querySelector(".so_luong_ton_kho");
+        var so_luong_max = Number(so_luong_sp_ton_kho.value);
+        var so_luong_chi_tiet = document.querySelector("#so_luong_chi_tiet");
+        so_luong_chi_tiet.setAttribute("max", so_luong_max);
+    }
+    sp_ton_kho()
+    // hiển thị thông báo khi mua vượt số lượng sản phẩm có trong kho
 
-   function thong_so_luong(){
+    function thong_so_luong() {
         var so_luong_ton_kho = document.querySelector('.so_luong_ton_kho').value;
-      
+
         var element_input = document.querySelector(".description__form-left-input");
-        element_input.addEventListener('invalid', function(){
-            if(element_input.value > Number( so_luong_ton_kho)){
-                element_input.setCustomValidity("Số lượng sản phẩm còn lại trong kho là " + so_luong_ton_kho + " sản phẩm" );
+        element_input.addEventListener('invalid', function() {
+            if (element_input.value > Number(so_luong_ton_kho)) {
+                element_input.setCustomValidity("Số lượng sản phẩm còn lại trong kho là " + so_luong_ton_kho + " sản phẩm");
             }
         })
-   }
+    }
 
     thong_so_luong()
 </script>
