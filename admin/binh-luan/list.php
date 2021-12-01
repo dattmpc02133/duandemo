@@ -38,7 +38,8 @@ if (isset($_POST['delete_select'])) {
                                 $list_bl_sp = bl_thong_ke();
                                 foreach($list_bl_sp as $bl){
                                     extract($bl);
-                                }
+                                    
+                                
                             ?>
                        
                         <tr>
@@ -56,7 +57,9 @@ if (isset($_POST['delete_select'])) {
                                
                             </td>
                         </tr>
-                       
+                       <?php 
+                            }
+                       ?>
                     </tbody>
                 </table>
                 <div class="row">

@@ -335,8 +335,7 @@ if ($so_luong == 0) {
                         data: new FormData(this),
                         contentType:false,
                         processData:false,
-                        success: function(respone){
-                          
+                        success: function(respone){                        
                             $("#form__gui-bl")[0].reset();
                         }
                     })

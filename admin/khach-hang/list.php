@@ -30,8 +30,8 @@
             <thead class="table-danger">
                 <tr>
                     <th class="check"><input type="checkbox"></th>
-                    <th>Mã khách hàng</th>
-                    <th>Mật khẩu</th>
+                    <th>Mã kH</th>
+                    <!-- <th>Mật khẩu</th> -->
                     <th>Họ tên</th>
                     <th style="width:275px;">Địa chỉ</th>
                     <th>Kích hoạt</th>
@@ -52,7 +52,7 @@
                 <tr>
                 <td class="check"><input type="checkbox"  name= "check[]" value = '<?=$ma_kh?>'></td>
                     <td><?=$ma_kh?></td>
-                    <td><?=$mat_khau?></td>
+                   
                     <td><?=$ho_ten?></td>
                     <td><?=$dia_chi?></td>
                     <td>
