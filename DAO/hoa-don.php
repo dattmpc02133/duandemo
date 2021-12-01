@@ -124,7 +124,7 @@
         $sql = "SELECT COUNT(*) AS so_don_huy FROM hoa_don a INNER JOIN khach_hang b ON a.ma_kh = b.ma_kh WHERE a.ma_kh = ? AND a.trang_thai = 3";
         return pdo_query_value($sql,$ma_kh);
     }
-    // kiểm tra đánh giá khách hàng
+    
 
 
 ?>
