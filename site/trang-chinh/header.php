@@ -1,18 +1,3 @@
-<?php 
-if(isset($_POST['login'])){
-    $kt_username= '';
-    $kt_password = '';
-    if(empty($_POST['username'])){
-        $kt_username= "Tên đăng nhập không được bỏ trống";
-    }
-
-    if(empty($_POST['password'])){
-        $kt_password = "Mật khẩu không được bỏ trống";
-    }
-}
-
-
-?>
 
 <section class="navbar_header-pc">
     <div class="col-sm-12" style="padding: 0;">
@@ -61,7 +46,7 @@ if(isset($_POST['login'])){
                                     Đăng nhập tài khoản
                                     <p style="color:#677297; font-size:0.9rem;margin: 0;padding-top: 5px;">Tên đăng nhập và mật khẩu:</p>
                                 </h3>
-                                <form action="../tai-khoan/dang-nhap.php" method="POST" id="form_du_an_dn" class="customer_login">
+                                <form  action="../tai-khoan/dang-nhap.php" method="POST" id="form_du_an_dn" class="customer_login">
                                     <div class="customer_account">
                                        <div class="form-group customer_account">
                                             <input type="text" placeholder="Tên đăng nhập" id="username" class="site_account-input" name="username">
@@ -79,7 +64,7 @@ if(isset($_POST['login'])){
                                             Terms of Service apply.
                                         </p> -->
                                     </span>
-                                    <button type="submit" name="login" class="btn btn-primary account-dangnhap">Đăng nhập</button>
+                                    <button type="submit" id= "login" name="login" class="btn btn-primary account-dangnhap">Đăng nhập</button>
                                     <div class="site_account-register" style="margin-top: 10px;">
                                         <span>Khách hàng mới? <a href="../tai-khoan/index.php?dang_ky" class="link">Tạo tài khoản</a></span> <br>
                                         <span>Quên mật khẩu? <a href="" class="link">Khôi phục mật khẩu</a></span>
@@ -292,3 +277,20 @@ if(isset($_POST['login'])){
     </div>
 </section>
 <!-- end menu -->
+
+<script type="text/javascript">
+    function kt_form(){
+
+            var username = document.querySelector('#username')
+            var password = document.querySelector("#username")
+            var mess = document.querySelectorAll(".mess");
+            var login = document.querySelector("#login");
+            login.onclick = function(e){
+               if(username.value == "" || password == ""){
+                   e.preventDefault();
+               } 
+            }
+    }
+    kt_form();
+
+</script>
