@@ -9,11 +9,12 @@
         $ma_kh = $_POST['ma_kh'];
         $mat_khau =$_POST['mat_khau'];
         $ho_ten=$_POST['ho_ten'];
+        $sdt_kh = $_POST['sdt_kh'];
         $dia_chi=$_POST['dia_chi'];
         $kich_hoat=$_POST['kich_hoat'];
         $email=$_POST['email'];
         $vai_tro=$_POST['vai_tro'];
-        khach_hang_insert($ma_kh,$mat_khau,$ho_ten,$dia_chi,$kich_hoat,$tenhinh,$email,$vai_tro);
+        khach_hang_insert($ma_kh,$mat_khau,$ho_ten,$dia_chi,$kich_hoat,$tenhinh,$email,$sdt_kh,$vai_tro);
         // header('location: index.php');
         echo "<script>
                 location.href = 'index.php';
@@ -63,6 +64,10 @@
             <div class="form-group">
                 <label for="">Email:</label>
                 <input type="text" class="form-control" placeholder="Nhập email" name="email" id="email">
+            </div>
+            <div class="form-group">
+                <label for="">Điện thoại:</label>
+                <input type="text" class="form-control" placeholder="Nhập số điện thoại" name="sdt_kh" id="sdt_kh">
             </div>
             <div class="form-group">
                 <label for="">Vai trò:</label>

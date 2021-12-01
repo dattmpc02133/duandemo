@@ -7,10 +7,10 @@ function khach_hang_selectAll()
 }
 
 // Thêm
-function khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email, $vai_tro)
+function khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email,$sdt, $vai_tro)
 {
-    $sql = "INSERT INTO khach_hang VALUES(?,?,?,?,?,?,?,?)";
-    pdo_execute($sql, $ma_kh, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email, $vai_tro);
+    $sql = "INSERT INTO khach_hang VALUES(?,?,?,?,?,?,?,?,?)";
+    pdo_execute($sql, $ma_kh, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email,$sdt, $vai_tro);
 }
 
 // Xóa

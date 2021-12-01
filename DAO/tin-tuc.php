@@ -25,4 +25,13 @@
         $sql = "SELECT * FROM tin_tuc ORDER BY ma_tin_tuc DESC LIMIT 0,3";
         return pdo_query($sql); 
     }
+    // thông kê bình luanạ của tin tức tin tức
+    function thong_ke_bl_tt(){
+        $sql = "SELECT tt.ma_tin_tuc, tt.tieu_de, COUNT(*) AS so_luong, MIN(bl.ngay_bl) AS bl_cu_nhat, MAX(bl.ngay_bl) AS bl_moi_nhat FROM binh_luan bl 
+        INNER JOIN tin_tuc tt ON bl.ma_tin_tuc = tt.ma_tin_tuc 
+        GROUP BY tt.ma_tin_tuc, tt.tieu_de HAVING so_luong > 0 ORDER BY tt.ma_tin_tuc DESC";
+        return pdo_query($sql);
+}
+   
+
 ?>

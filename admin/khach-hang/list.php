@@ -37,6 +37,7 @@
                     <th>Kích hoạt</th>
                     <th>Hình</th>
                     <th>Email</th>
+                    <th>SĐT</th>
                     <th>Vai trò</th>
                     <th style="width:15%"></th>
                 </tr>
@@ -67,6 +68,7 @@
                     </td>
                     <td> <img style="width:60px" src="<?= $CONTENT_URL  ?>/images/user/<?= $hinh ?>" alt=""></td>
                     <td><?=$email?></td>
+                    <td><?=$sdt_kh?></td>
                     <td>
                         <?php 
                             if($vai_tro==0){

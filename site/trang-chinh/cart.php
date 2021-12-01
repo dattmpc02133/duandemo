@@ -43,12 +43,13 @@ if (isset($_POST['dat_hang'])) {
     $dia_chi_giao_hang = $_POST['dia_chi_giao_hang'];
     $ngay_dat = date_format(date_create(), "Y-m-d");
     $trang_thai = 1;
+    $so_luong_input_data = $_POST['so_luong_input_data'];
     hoa_don_insert($ma_kh, $tong_tien, $dia_chi_giao_hang, $ngay_dat, $trang_thai);
     $ma_hd2 = get_ma_hd();
     $list_sp_ght = get_ma_sp_gio_hang_tam($ma_kh);
     foreach ($list_sp_ght as $sp) {
         extract($sp);
-        hoa_don_chi_tiet_insert($ma_hd2, $ma_sp_tam, $don_gia_tam, $so_luong_tam);
+        hoa_don_chi_tiet_insert($ma_hd2, $ma_sp_tam, $don_gia_tam, $so_luong_input_data);
         // tăng số lượt mua hàng của sản phẩm
         so_luot_mua_sp($so_luong_tam, $ma_sp_tam);
         // trừ đi số lượng sản phẩm trong kho khi khách hàng mua.
@@ -71,7 +72,7 @@ if (isset($_POST['dat_hang'])) {
                     <table class="form__content-table table">
                         <thead class="table-danger">
                             <tr>
-                                <th class="check"><input type="checkbox"> </th>
+                               
                                 <th>STT</th>
                                 <th style="text-align:center;width: 10%;"> Hình </th>
                                 <th> Tên sản phẩm </th>
@@ -96,14 +97,14 @@ if (isset($_POST['dat_hang'])) {
                                     $delete_link = "index.php?addcart&id=$id";
                             ?>
                                     <tr>
-                                        <td class="check"><input type="checkbox"> </td>
+                                     
                                         <td><?= $stt ?></td>
                                         <td style="text-align:center;"><img src="<?= $CONTENT_URL ?>/images/products/<?= $hinh_tam ?>" alt=""></td>
                                         <td><?= $ten_sp_tam ?></td>
                                         <td> <input class="don_gia" type="hidden" value="<?= $don_gia_tam ?>">
                                             <?= number_format($don_gia_tam) ?><sup>đ</sup>
                                         </td>
-                                        <td><input style="width:65px" oninput="thanh_tien()" class="form-control so_luong" type="number" min=1 value="<?= $so_luong_tam ?>"></td>
+                                        <td><input style="width:65px" oninput="thanh_tien()" name="so_luong_input_data" class="form-control so_luong" type="number" min=1 value="<?= $so_luong_tam ?>"></td>
                                         <td class="tt">
                                             <input class="thanhtien" type="hidden" value="<?= $tong ?>">
                                             <span class="thanh_tien_show">thành tiền</span><sup>đ</sup>

@@ -39,7 +39,7 @@ if (isset($_POST['delete_select'])) {
                                 foreach($list_bl_sp as $bl){
                                     extract($bl);
                                     
-                                
+                              
                             ?>
                        
                         <tr>

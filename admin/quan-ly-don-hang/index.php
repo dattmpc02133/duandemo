@@ -18,7 +18,9 @@
     elseif(exit_param("btn_delete_ct")){
         if(isset($_GET['id'])){
             $hdct_update = get_info_id_hdct($_GET['id']);
-            $tien_tru = $hdct_update['gia_ban'] * $hdct_update['so_luong'];
+            $gia_ban0 = $hdct_update['gia_ban'];
+            $so_luong0 = $hdct_update['so_luong'];
+            $tien_tru = $gia_ban0 * $so_luong0;
             update_tong_tien_delete_hdct($tien_tru, $hdct_update['ma_hd']);
             hoa_don_chi_tiet_delete($_GET['id']);
             echo '<script>

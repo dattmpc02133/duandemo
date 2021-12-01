@@ -34,6 +34,11 @@
                 <input type="text" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="Nhập địa chỉ email khách hàng">
                 <span class="mess"></span>
             </div>
+            <div class="form-group">
+                <label for=""><b>Điện thoại *</b></label>
+                <input type="text" class="form-control" name="sdt_kh" id="sdt" aria-describedby="helpId" placeholder="Nhập số điện thoại">
+                <span class="mess"></span>
+            </div>
             <div hidden class="form-group">
                 <label for=""><b>Vai trò *</b></label>
                 <div class="form-control-radio">

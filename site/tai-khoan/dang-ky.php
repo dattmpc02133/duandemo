@@ -13,7 +13,18 @@ if (empty($_POST['ma_kh'])) {
 } else {
     $ma_kh = $_POST['ma_kh'];
 }
-
+if(empty($_POST['sdt_kh'])){
+    $kt_loi['sdt_kh'] = "Số điện thoại không được bỏ trống";
+    $test = false;
+} else{
+    $sdt_kh = $_POST['sdt_kh'];
+}
+if(empty($_POST['xac_nhan_mat_khau'])){
+    $kt_loi['xac_nhan_mat_khau'] = "Mật khẩu xác nhận không được bỏ trống";
+    $test = false;
+} else{
+    $xac_nhan_mat_khau = $_POST['xac_nhan_mat_khau'];
+}
 if (empty($_POST['mat_khau'])) {
     $kt_loi['mat_khau'] = "Mật khẩu không được bỏ trống !";
     $test = false;
@@ -54,21 +65,30 @@ if (empty($_POST['email'])) {
 
 if($test){
     if (isset($_POST['add_kh'])) {
-        $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL;
-        $ma_kh = $_POST['ma_kh'];
-        $mat_khau = md5($_POST['mat_khau']);
-        $ho_ten = $_POST['ho_ten'];
-        $dia_chi = $_POST['dia_chi'];
-        $hinh = $_FILES['hinh']['name'];
-        $email = $_POST['email'];
-        $vai_tro = $_POST['vai_tro'];
-        $kich_hoat = $_POST['kich_hoat'];
-        move_uploaded_file($_FILES['hinh']['tmp_name'], "$path./images/user/$hinh");
-        khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email, $vai_tro);
-        $_SESSION['alert'] = 'Đã thêm khách hàng !';
-        echo "<script>
-                location.href = '../../index.php';
-              </script>";
+        if($xac_nhan_mat_khau == $mat_khau){
+
+            $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL;
+            $ma_kh = $_POST['ma_kh'];
+            $mat_khau = md5($_POST['mat_khau']);
+            $ho_ten = $_POST['ho_ten'];
+            $dia_chi = $_POST['dia_chi'];
+            $hinh = $_FILES['hinh']['name'];
+            $email = $_POST['email'];
+            $sdt_kh = $_POST['sdt_kh'];
+            $vai_tro = $_POST['vai_tro'];
+            $kich_hoat = $_POST['kich_hoat'];
+            move_uploaded_file($_FILES['hinh']['tmp_name'], "$path./images/user/$hinh");
+            khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email,$sdt_kh, $vai_tro);
+            echo "<script>
+                    alert('Đăng ký tài khoảng thành công');
+                    location.href = '../../index.php';
+                  </script>";
+        } else{
+            echo "<script>
+                     alert('Nhập lại mật khẩu không trùng khớp');
+                 </script>";
+        }
+
     }else{
         echo "<script>
                 location.href = '../../index.php';
@@ -103,6 +123,13 @@ if($test){
                     <?php } ?>
             </div>
             <div class="form-group">
+                <label for=""><b>Xác nhân mật khẩu *</b></label>
+                <input type="password" class="form-control" name="xac_nhan_mat_khau" id="xac_nhan_mat_khau" aria-describedby="helpId" placeholder="Xác nhận lại mật khẩu">
+                <?php if (isset($kt_loi['xac_nhan_mat_khau'])) { ?>
+                        <span class="err"> <?php echo $kt_loi['xac_nhan_mat_khau'] ?> </span>
+                    <?php } ?>
+            </div>
+            <div class="form-group">
                 <label for=""><b>Họ tên *</b></label>
                 <input type="text" class="form-control" name="ho_ten" id="ho_ten" aria-describedby="helpId" placeholder="Nhập họ tên khách hàng">
                 <?php if (isset($kt_loi['ho_ten'])) { ?>
@@ -127,6 +154,14 @@ if($test){
                 <input type="text" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="Nhập địa chỉ email khách hàng">
                 <?php if (isset($kt_loi['email'])) { ?>
                         <span class="err"> <?php echo $kt_loi['email'] ?> </span>
+                    <?php } ?>
+                    <span class="mess"></span>
+            </div>
+            <div class="form-group">
+                <label for=""><b>Điện thoại *</b></label>
+                <input type="text" class="form-control" name="sdt_kh" id="sdt_kh" aria-describedby="helpId" placeholder="Nhập số điện thoại">
+                <?php if (isset($kt_loi['sdt_kh'])) { ?>
+                        <span class="err"> <?php echo $kt_loi['sdt_kh'] ?> </span>
                     <?php } ?>
                     <span class="mess"></span>
             </div>
