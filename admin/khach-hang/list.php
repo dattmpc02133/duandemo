@@ -39,7 +39,8 @@
                     <th>Email</th>
                     <th>SĐT</th>
                     <th>Vai trò</th>
-                    <th style="width:15%"></th>
+                    <th>Đánh giá</th>
+                    <th ></th>
                 </tr>
             </thead>
             <tbody>
@@ -78,6 +79,14 @@
                                 echo 'Admin';
                             }
                         ?>
+                    </td>
+                    <td><?php if($danh_gia == 1){
+                        echo "Tốt";
+                    }  else{
+                        echo "Xấu";
+                    }
+                    
+                    ?>
                     </td>
                     <td class="update__delete" >
                     <a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a>

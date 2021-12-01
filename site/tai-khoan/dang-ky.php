@@ -77,8 +77,9 @@ if($test){
             $sdt_kh = $_POST['sdt_kh'];
             $vai_tro = $_POST['vai_tro'];
             $kich_hoat = $_POST['kich_hoat'];
+            $danh_gia = 1 ;
             move_uploaded_file($_FILES['hinh']['tmp_name'], "$path./images/user/$hinh");
-            khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email,$sdt_kh, $vai_tro);
+            khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email,$sdt_kh, $vai_tro,$danh_gia);
             echo "<script>
                     alert('Đăng ký tài khoảng thành công');
                     location.href = '../../index.php';

@@ -5,12 +5,23 @@ require_once("../../DAO/khach-hang.php");
 require_once("../../DAO/loai.php");
 extract($_REQUEST);
 if (isset($_POST['login'])) {
+    
     $ma_kh = $_POST['username'];
+
     $mat_khau = md5($_POST['password']);
     if (exit_param('login')) {
         $user =  get_info_kh($ma_kh);
+
         if ($user) {         
             if ($user['mat_khau'] == $mat_khau) {
+
+                if($user['kich_hoat'] == 0){
+                    echo '<script> 
+                             alert("Tài khoảng của bạn đã bị khóa");
+                             location.href = "../../index.php";
+                          </script>';
+                } else{
+                    
                 $_SESSION['thong_bao'] = "Đăng nhập thành công";
                 $_SESSION['user'] = $ma_kh;
                 if (exit_param('save_account')) {
@@ -26,7 +37,10 @@ if (isset($_POST['login'])) {
                 }
 
                 header("location:../../index.php");
-            } else {
+                }
+
+            } 
+            else {
                 $_SESSION['thong_bao'] = "Sai mật khẩu";
                 header("location: ../../index.php");
             }

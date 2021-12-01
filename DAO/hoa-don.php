@@ -113,4 +113,18 @@
         $sql = 'SELECT * FROM trang_thai_hoa_don WHERE ma_trang_thai NOT IN (?)';
         return pdo_query($sql, $trang_thai);
     }
+
+    // select hoa_don_huy_by_kh
+    function hoa_don_huy_by_kh($ma_kh){
+        $sql = "SELECT COUNT(*) AS so_don_huy FROM hoa_don a INNER JOIN khach_hang b ON a.ma_kh = b.ma_kh WHERE a.ma_kh = ? AND a.trang_thai = 4" ;
+        return pdo_query_value($sql,$ma_kh);
+    }
+    // select hoa_don_thanh_cong
+    function hoa_don_thanh_cong($ma_kh){
+        $sql = "SELECT COUNT(*) AS so_don_huy FROM hoa_don a INNER JOIN khach_hang b ON a.ma_kh = b.ma_kh WHERE a.ma_kh = ? AND a.trang_thai = 3";
+        return pdo_query_value($sql,$ma_kh);
+    }
+    // kiểm tra đánh giá khách hàng
+
+
 ?>

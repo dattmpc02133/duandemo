@@ -51,7 +51,7 @@
                     ?>
                     <tr>
                         <td class="check"><input type="checkbox"> </td>
-                        <td><?=$ma_sp?></td>
+                        <td class="ma_sp" ><?=$ma_sp?></td>
                         <td><?=$ten_sp?></td>
                         <td><?=number_format($don_gia)?><sup>đ</sup></td>
                         <td class=""><?php
@@ -81,7 +81,7 @@
                         ?></td>
                         <td><?=$so_luot_mua?></td>
                         <td><?=$ma_loai?></td>
-                        <td class="update__delete"><a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a> <a class="btn btn-danger" href="<?=$delete_link?>"><i class="fas fa-trash-alt"></a></td>
+                        <td class="update__delete"><a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a> <a class="btn btn-danger xoa_sp"  href="<?=$delete_link?>"><i class="fas fa-trash-alt"></a></td>
                     </tr>
                     <?php
                         }
@@ -105,3 +105,21 @@
       
     </div>
 </div>
+<script type="text/javascript">
+    function xoa_sp(){
+        var btn_xoa_sp = document.querySelectorAll(".xoa_sp");
+        var ma_sp = document.querySelectorAll('.ma_sp');       
+        btn_xoa_sp.forEach(function(xoa_sp,index){
+            xoa_sp.onclick = function(e){
+                    e.preventDefault();
+                    var choice = confirm("bạn có muốn xóa không");
+                   if(choice){
+                       location.href = "list.php?btn-delete&ma_sp=" + ma_sp[index].innerHTML;
+                   }
+            }  
+
+        })
+    }
+    xoa_sp()
+
+</script>

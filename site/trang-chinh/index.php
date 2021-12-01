@@ -6,6 +6,23 @@ require_once("../../DAO/khach-hang.php");
 require_once("../../DAO/loai.php");
 require_once("../../DAO/cart.php");
 require_once("../../DAO/tin-tuc.php");
+require_once("../../DAO/hoa-don.php");
+
+// quét đánh giá kh
+    $kh_select_all = khach_hang_selectAll();
+    foreach($kh_select_all as $kh){  
+        $so_dh_huy = hoa_don_huy_by_kh($kh['ma_kh']) ;
+        $so_don_thanh_cong = hoa_don_thanh_cong($kh['ma_kh']);
+        if($so_dh_huy  > 2){
+            $tong_hd = $so_dh_huy + $so_don_thanh_cong;
+            $phan_tram_hoa_don = ($so_dh_huy * 100)/$tong_hd;   
+            if($phan_tram_hoa_don >= 25){
+                update_danh_gia_kh($kh['ma_kh']);
+            } 
+        }       
+    }
+// kiểm tra và cập nhật kích hoạt tài khoản
+update_kich_hoat_kh();
 extract($_REQUEST);
 if (exit_param("dang_ky", $_REQUEST)) {
     $VIEW_NAME = "dang-ky.php";

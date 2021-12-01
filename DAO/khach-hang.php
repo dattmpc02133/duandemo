@@ -7,10 +7,10 @@ function khach_hang_selectAll()
 }
 
 // Thêm
-function khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email,$sdt, $vai_tro)
+function khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email,$sdt, $vai_tro,$danh_gia)
 {
-    $sql = "INSERT INTO khach_hang VALUES(?,?,?,?,?,?,?,?,?)";
-    pdo_execute($sql, $ma_kh, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email,$sdt, $vai_tro);
+    $sql = "INSERT INTO khach_hang VALUES(?,?,?,?,?,?,?,?,?,?)";
+    pdo_execute($sql, $ma_kh, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email,$sdt, $vai_tro,$danh_gia);
 }
 
 // Xóa
@@ -66,4 +66,17 @@ function khach_hang_select_by_role($vai_tro)
 {
     $sql = "SELECT * FROM khach_hang WHERE vai_tro=?";
     return pdo_query($sql, $vai_tro);
+}
+// cập nhật đánh giá khách hàng  
+
+function update_kich_hoat_kh(){
+    $sql = "UPDATE khach_hang SET kich_hoat = 0 WHERE danh_gia = 0 AND vai_tro = 0";
+    pdo_execute($sql);
+}
+
+// kiểm tra đánh giá khách hàng
+
+function update_danh_gia_kh($ma_kh){
+    $sql = "UPDATE khach_hang SET danh_gia = 0 WHERE ma_kh = ?";
+    pdo_execute($sql,$ma_kh);
 }
