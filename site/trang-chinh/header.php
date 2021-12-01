@@ -45,10 +45,17 @@
                                     Đăng nhập tài khoản
                                     <p style="color:#677297; font-size:0.9rem;margin: 0;padding-top: 5px;">Tên đăng nhập và mật khẩu:</p>
                                 </h3>
-                                <form action="../tai-khoan/dang-nhap.php" method="post" class="customer_login">
+                                <form action="../tai-khoan/dang-nhap.php" method="post" id="form_du_an_dn" class="customer_login">
+                                   
                                     <div class="customer_account">
-                                        <input type="text" placeholder="Tên đăng nhập" class="site_account-input" name="username">
-                                        <input type="password" placeholder="Mật khẩu" class="site_account-input" name="password">
+                                       <div class="form-group customer_account">
+                                            <input type="text" placeholder="Tên đăng nhập" id="username" class="site_account-input" name="username">
+                                            <span align="left" class="mess"></span>
+                                       </div>
+                                       <div class="form-group customer_account">
+                                            <input type="password" placeholder="Mật khẩu" class="site_account-input" id="password" name="password">
+                                            <span align="left" class="mess"></span>
+                                       </div>
                                     </div>
                                     <span>
                                         <!-- <p style="font-size: 0.9rem;text-align: justify; color: #677297;">This site is protected by reCAPTCHA and the Google Privacy Policy and

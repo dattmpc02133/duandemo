@@ -4,7 +4,7 @@ if(isset($_POST['add_kh'])){
     $ma_kh = "";
     $mat_khau = "";
     $ho_ten = "";
-    $check_email = '/^[A-Za-z0-9_.]{6,32}@([a-zA-Z0-9]{2,12})(.[a-zA-Z]{2,12})+$/';
+    $check_email = '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';
     $test = true;
     $kt_loi = array();
 if (empty($_POST['ma_kh'])) {
@@ -107,7 +107,7 @@ if($test){
         <div class="header_dangky">
             <h3 style="text-align: center;">Tạo tài khoản</h3>
         </div>
-        <form action="#" method="post" id="form_du_an" enctype="multipart/form-data">
+        <form action="#" method="POST" id="form_du_an" enctype="multipart/form-data">
             <div class="form-group">
                 <label for=""><b>Tên đăng nhập *</b></label>
                 <input type="text" class="form-control" name="ma_kh" id="ma_kh" aria-describedby="helpId" placeholder="Nhập tên đăng nhập">
@@ -122,6 +122,7 @@ if($test){
                 <?php if (isset($kt_loi['mat_khau'])) { ?>
                         <span class="err"> <?php echo $kt_loi['mat_khau'] ?> </span>
                     <?php } ?>
+                    <span class="mess"></span>
             </div>
             <div class="form-group">
                 <label for=""><b>Xác nhân mật khẩu *</b></label>
@@ -129,6 +130,7 @@ if($test){
                 <?php if (isset($kt_loi['xac_nhan_mat_khau'])) { ?>
                         <span class="err"> <?php echo $kt_loi['xac_nhan_mat_khau'] ?> </span>
                     <?php } ?>
+                    <span class="mess"></span>
             </div>
             <div class="form-group">
                 <label for=""><b>Họ tên *</b></label>
@@ -136,6 +138,7 @@ if($test){
                 <?php if (isset($kt_loi['ho_ten'])) { ?>
                         <span class="err"> <?php echo $kt_loi['ho_ten'] ?> </span>
                     <?php } ?>
+                    <span class="mess"></span>
             </div>
             <div class="form-group">
                 <label for=""><b>Địa chỉ *</b></label>

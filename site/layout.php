@@ -44,18 +44,40 @@
       form: '#form_du_an',
       rules: [
         // kiem_loi_form.isRequiRed('#username'),
+        kiem_loi_form.isRequiRed('#mat_khau'),
         kiem_loi_form.minLength('#mat_khau', 6),
-        kiem_loi_form.isRequiRed('#ho_ten'),
+        kiem_loi_form.confirm('#xac_nhan_mat_khau', function() {
+          return document.querySelector("#form_du_an #mat_khau").value;
+        }, 'Mật khẩu xác nhận không trùng khớp'),
+        kiem_loi_form.isRequiRed('#ho_ten'),       
         kiem_loi_form.isRequiRed('#dia_chi'),
         kiem_loi_form.isRequiRed('#ma_kh'),
-        kiem_loi_form.minLength('#mat_khau', 6),
         kiem_loi_form.isEmail('#email'),
+        // đổi mật mẩu
         kiem_loi_form.minLength('#mat_khau_moi', 6),
         kiem_loi_form.confirm('#xac_nhan_mat_khau_moi', function() {
           return document.querySelector("#form_du_an #mat_khau_moi").value;
         }, 'Mật khẩu xác nhận không trùng khớp'),
+       // đăng nhập
       ]
     })
+
+    kiem_loi_form({
+      form: '#form_du_an_dn',
+      rules: [
+        // kiem_loi_form.isRequiRed('#username'),
+       
+        kiem_loi_form.isRequiRed('#username'),       
+        kiem_loi_form.minLength('#username', 6),
+        kiem_loi_form.isRequiRed('#password'),
+       
+        // đổi mật mẩu
+      
+       // đăng nhập
+      ]
+    })
+
+
   </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

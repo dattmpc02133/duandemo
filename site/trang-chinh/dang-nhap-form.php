@@ -3,7 +3,7 @@
         <h3>Đăng nhập</h3>
     </div>
     <div class="card-body" style="padding: 0px 5px;">
-        <form action="<?= $SITE_URL ?>/tai-khoan/dang-nhap.php" id="form_du_an" method="post">
+        <form action="<?= $SITE_URL ?>/tai-khoan/dang-nhap.php" id="form_du_an" method="POST">
             <div class="form-group">
                 <label for="">Tên đăng nhập</label>
                 <input type="text" class="form-control" name="username" id="username" aria-describedby="helpId" placeholder="Nhập tài khoản">
