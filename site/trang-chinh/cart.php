@@ -42,7 +42,7 @@ if (isset($_POST['dat_hang'])) {
     $tong_tien = $_POST['tong_tien'];
     $dia_chi_giao_hang = $_POST['dia_chi_giao_hang'];
     $ngay_dat = date_format(date_create(), "Y-m-d");
-    $trang_thai = "Chờ xử lý";
+    $trang_thai = 1;
     hoa_don_insert($ma_kh, $tong_tien, $dia_chi_giao_hang, $ngay_dat, $trang_thai);
     $ma_hd2 = get_ma_hd();
     $list_sp_ght = get_ma_sp_gio_hang_tam($ma_kh);

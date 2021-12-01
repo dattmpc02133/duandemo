@@ -107,8 +107,10 @@
         $sql = "SELECT ma_hd,tong_tien,dia_chi_giao_hang,ngay_dat,trang_thai FROM hoa_don WHERE ma_kh = ?";
         return pdo_query($sql,$ma_kh);
     }
-
-    
-   
-
+    // Chọn các trạng thái hóa đơn not in
+    function hoa_don_get_trang_thai($trang_thai)
+    {
+        $sql = 'SELECT * FROM trang_thai_hoa_don WHERE ma_trang_thai NOT IN (?)';
+        return pdo_query($sql, $trang_thai);
+    }
 ?>

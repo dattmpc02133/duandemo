@@ -35,7 +35,20 @@
                 <td><?php echo number_format($tong_tien) ?><sup>đ</sup></td>
                 <td><?=$dia_chi_giao_hang?></td>
                 <td><?=$ngay_dat?></td>
-                <td><?=$trang_thai?></td>
+                <td><?php 
+                    if($trang_thai == 1){
+                        echo 'Chờ xác nhận';
+                    }
+                    else if($trang_thai == 2){
+                        echo 'Đang giao hàng';
+                    }
+                    else if($trang_thai == 3){
+                        echo 'Đã giao hàng';
+                    }
+                    else{
+                        echo 'Đã hủy';
+                    }
+                ?></td>
                 <td class="update__delete">
                     <a class="btn btn-info" href="index.php?btn-details&ma_hd=<?=$ma_hd?>"><i class="fas fa-info-circle"></i></a>
                     <a class="btn btn-info" href="<?=$btn_update_hd?>"><i class="fas fa-edit"></i></a> 
