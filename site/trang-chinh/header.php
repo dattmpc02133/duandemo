@@ -280,15 +280,19 @@
 
 <script type="text/javascript">
     function kt_form(){
-
             var username = document.querySelector('#username')
-            var password = document.querySelector("#username")
+            var password = document.querySelector("#password")
             var mess = document.querySelectorAll(".mess");
             var login = document.querySelector("#login");
             login.onclick = function(e){
-               if(username.value == "" || password == ""){
-                   e.preventDefault();
+               if(username.value == "" ){                 
+                   mess[0].innerHTML = "Tên đăng nhập không được bỏ trống";      
+                   e.preventDefault();          
                } 
+               if(password.value == ""){
+                   mess[1].innerHTML = "Mật khẩu không được bỏ trống";
+                   e.preventDefault();
+               }
             }
     }
     kt_form();
