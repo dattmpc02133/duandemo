@@ -10,7 +10,7 @@
             </div>
             <div class="col-sm-5">
                 <div class="search">
-                    <form class="form-inline my-2 my-lg-0 header_seachr">
+                    <form action="../san-pham/liet-ke.php" class="form-inline my-2 my-lg-0 header_seachr">
                         <input class="form-control mr-sm-2 header_seachr" name="search" type="search" placeholder="Tìm kiếm sản phẩm" aria-label="Search">
                         <button class="btn btn-primary my-2 my-sm-0 btn_seachr" type="submit"><i class="fas fa-search"></i></button>
                     </form>
