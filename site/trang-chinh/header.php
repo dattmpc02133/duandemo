@@ -1,4 +1,3 @@
-
 <section class="navbar_header-pc">
     <div class="col-sm-12" style="padding: 0;">
         <h3 style="background: #1fb5d4; color: white; text-align: center; padding: 10px; font-size: 1.2rem;">
@@ -46,25 +45,29 @@
                                     Đăng nhập tài khoản
                                     <p style="color:#677297; font-size:0.9rem;margin: 0;padding-top: 5px;">Tên đăng nhập và mật khẩu:</p>
                                 </h3>
-                                <form  action="../tai-khoan/dang-nhap.php" method="POST" id="form_du_an_dn" class="customer_login">
+                                <form action="../tai-khoan/dang-nhap.php" method="POST" id="form_du_an_dn" class="customer_login">
                                     <div class="customer_account">
-                                       <div class="form-group customer_account">
+                                        <div class="form-group customer_account">
                                             <input type="text" placeholder="Tên đăng nhập" id="username" class="site_account-input" name="username">
                                             <span align="left" class="mess"></span>
-                                            <span><?php if(isset($kt_username)){ echo "$kt_username";} ?></span>
-                                       </div>
-                                       <div class="form-group customer_account">
+                                            <span><?php if (isset($kt_username)) {
+                                                        echo "$kt_username";
+                                                    } ?></span>
+                                        </div>
+                                        <div class="form-group customer_account">
                                             <input type="password" placeholder="Mật khẩu" class="site_account-input" id="password" name="password">
                                             <span align="left" class="mess"></span>
-                                            <span><?php if(isset($kt_password)){echo $kt_password;} ?></span>
-                                       </div>
+                                            <span><?php if (isset($kt_password)) {
+                                                        echo $kt_password;
+                                                    } ?></span>
+                                        </div>
                                     </div>
                                     <span>
                                         <!-- <p style="font-size: 0.9rem;text-align: justify; color: #677297;">This site is protected by reCAPTCHA and the Google Privacy Policy and
                                             Terms of Service apply.
                                         </p> -->
                                     </span>
-                                    <button type="submit" id= "login" name="login" class="btn btn-primary account-dangnhap">Đăng nhập</button>
+                                    <button type="submit" id="login" name="login" class="btn btn-primary account-dangnhap">Đăng nhập</button>
                                     <div class="site_account-register" style="margin-top: 10px;">
                                         <span>Khách hàng mới? <a href="../tai-khoan/index.php?dang_ky" class="link">Tạo tài khoản</a></span> <br>
                                         <span>Quên mật khẩu? <a href="" class="link">Khôi phục mật khẩu</a></span>
@@ -76,28 +79,16 @@
                     <div class="cart riverdungchung" id="cart">
                         <div class="cart_gio">
                             <i class="incon_size fas fa-shopping-cart"></i>
-                            <?php 
-                        // đếm số lượng sản phẩm trong giỏ hàng
-                        if(isset($_SESSION['user'])){
-                            $ma_kh = $_SESSION['user'];
-                                $count_cart_pro =  cart_count_ma_kh($ma_kh);
-                                foreach( $count_cart_pro as $pro_mums){
-                                    extract($pro_mums);
-                                
-                            ?>
-                            <span class="header_cart-notice"><?= $total ?></span>
-                            <?php 
-                                } 
-                        } else{
-                            echo '  <span class="header_cart-notice">0</span>';
-                        }
-                            ?>
+
+                            <span class="header_cart-notice"></span>
+                            <span class="header_cart-notice numbers_by_cart">0</span>
+
                         </div>
                         <span style="cursor: pointer;">Giỏ Hàng</span>
-                       
-                      <?php
-                            require_once("../trang-chinh/header-cart-list.php");
-                      ?>
+
+                        <?php
+                        require_once("../trang-chinh/header-cart-list.php");
+                        ?>
                     </div>
                 </div>
             </div>
@@ -279,22 +270,29 @@
 <!-- end menu -->
 
 <script type="text/javascript">
-    function kt_form(){
-            var username = document.querySelector('#username')
-            var password = document.querySelector("#password")
-            var mess = document.querySelectorAll(".mess");
-            var login = document.querySelector("#login");
-            login.onclick = function(e){
-               if(username.value == "" ){                 
-                   mess[0].innerHTML = "Tên đăng nhập không được bỏ trống";      
-                   e.preventDefault();          
-               } 
-               if(password.value == ""){
-                   mess[1].innerHTML = "Mật khẩu không được bỏ trống";
-                   e.preventDefault();
-               }
+    function kt_form() {
+        var username = document.querySelector('#username')
+        var password = document.querySelector("#password")
+        var mess = document.querySelectorAll(".mess");
+        var login = document.querySelector("#login");
+        login.onclick = function(e) {
+            if (username.value == "") {
+                mess[0].innerHTML = "Tên đăng nhập không được bỏ trống";
+                e.preventDefault();
             }
+            if (password.value == "") {
+                mess[1].innerHTML = "Mật khẩu không được bỏ trống";
+                e.preventDefault();
+            }
+        }
     }
     kt_form();
 
+    function numbers_by_cart() {
+
+        var numbers_by_cart = document.querySelector(".numbers_by_cart");
+        var header_cart_products = document.querySelectorAll(".header_cart-products");
+        numbers_by_cart.innerHTML = header_cart_products.length;
+    }
+    numbers_by_cart()
 </script>

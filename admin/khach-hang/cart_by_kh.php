@@ -20,7 +20,7 @@
 
                
                     <?php
-                   
+                 
                       $tong = 0;
                      $list_hd = cart_by_kh($_GET['ma_kh']);
                        foreach($list_hd as $hd){
