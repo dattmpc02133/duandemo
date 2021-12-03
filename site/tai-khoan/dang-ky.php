@@ -34,6 +34,10 @@ else if(!preg_match($check_sdt_kh, $_POST['sdt_kh'], $matches)){
     $kt_loi['sdt_kh'] = "Số điện thoại phải bắt đầu bằng 0, không chứa ký tự khác chữ số";
     $test = false;
 }
+else if(sdt_kh_exist($_POST['sdt_kh'])){
+    $kt_loi['sdt_kh'] = "Số điện thoại đã được sử dụng";
+    $test = false;
+}
 else{
     $sdt_kh = $_POST['sdt_kh'];
 }
@@ -78,7 +82,10 @@ if (empty($_POST['email'])) {
     $kt_loi['email'] = "Vui lòng nhập đúng định dạng Email !";
     $test = false;
 } 
-
+else if(email_kh_exist($_POST['email'])){
+    $kt_loi['email'] = "Email đã được sử dụng";
+    $test = false;
+}
 else {
     $email = $_POST['email'];
 }
