@@ -80,6 +80,13 @@ function update_danh_gia_kh($ma_kh){
     $sql = "UPDATE khach_hang SET danh_gia = 0 WHERE ma_kh = ?";
     pdo_execute($sql,$ma_kh);
 }
+
+
+// cart by kh
+function cart_by_kh($ma_kh){
+    $sql = "SELECT a.ma_hd,a.tong_tien,a.ngay_dat,a.trang_thai,a.dia_chi_giao_hang,b.ma_kh FROM hoa_don a INNER JOIN khach_hang b ON a.ma_kh = b.ma_kh WHERE b.ma_kh = ?";
+    return pdo_query($sql,$ma_kh);
+}
 // gữi email khách hàng
 function email_gui_kh($email){
     $sql = "SELECT * FROM khach_hang WHERE email=?";

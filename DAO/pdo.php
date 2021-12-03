@@ -16,7 +16,7 @@ function pdo_get_connection()
     }
 }
 
-// thực thi cơ sở dữ liệu không trả về kết quả
+// thực thi cơ sở dữ liệu 
 function pdo_execute($sql)
 {
     $sql_args = array_slice(func_get_args(), 1);
@@ -26,19 +26,19 @@ function pdo_execute($sql)
         $stmt = $conn->prepare($sql);
         $stmt -> execute($sql_args);
     } catch (PDOException $e) {
-        throw $e;
         // echo "Lỗi truy vấn ";
+        throw $e;
     } finally {
         unset($conn);
     }
 }
 
 
-// truy vấn nhiều dữ liệu
+// truy vấn 
 function pdo_query($sql)
 {
+    // tách tham số truyền vào
     $sql_args = array_slice(func_get_args(), 1);
-    // tách chuổi tham số slice
     try {
         $conn = pdo_get_connection();
         $stmt = $conn->prepare($sql);
@@ -104,6 +104,3 @@ function pdo_query_value($sql)
         unset($conn);
     }
 }
-
-
-?>

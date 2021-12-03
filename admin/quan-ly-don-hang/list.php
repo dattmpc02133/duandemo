@@ -1,6 +1,4 @@
-<?php 
 
-?>
 <div class="title">
     <h3>QUẢN LÝ ĐƠN HÀNG</h3>
 </div>

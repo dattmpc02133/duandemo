@@ -50,6 +50,7 @@
                     extract($kh);
                     $delete_link = "list.php?ma_kh=$ma_kh";
                     $btn_update = "index.php?btn-update&ma_kh=$ma_kh";
+                    $btn_cart = "index.php?btn_cart&ma_kh=$ma_kh";
                 ?>
                 <tr>
                 <td class="check"><input type="checkbox"  name= "check[]" value = '<?=$ma_kh?>'></td>
@@ -88,9 +89,10 @@
                     
                     ?>
                     </td>
-                    <td class="update__delete" >
-                    <a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a>
-                    <a class="btn btn-danger" href="<?=$delete_link?>"><i class="fas fa-trash-alt"></i></a> 
+                        <td class="update__delete" >
+                        <a class="btn btn-success" href="<?=$btn_cart?>"><i class="fas fa-shopping-cart"></i></a>
+                        <a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a>
+                        <a class="btn btn-danger" href="<?=$delete_link?>"><i class="fas fa-trash-alt"></i></a> 
                     </td>
                     </tr>
                     <?php

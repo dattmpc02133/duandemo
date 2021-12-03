@@ -107,10 +107,8 @@ hr{
     vertical-align: middle !important;
    
 }
-.update__delete .btn-info .fas{
+.update__delete .btn i{
     margin-right: 0px;
 }
-.update__delete .btn-danger .fas{
-    margin-right: 0px;
-}
+
 /*end table*/
