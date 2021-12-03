@@ -11,10 +11,10 @@
         $sql = "SELECT * FROM khuyen_mai_ct WHERE ma_km = ?";
         return pdo_query($sql, $ma_km);
     }
-    function ma_km_update($ma_km, $mo_ta_km, $ngay_bat_dau, $ngay_ket_thuc, $ma_km_old)
+    function ma_km_update($ma_km, $so_phan_tram_giam, $ngay_bat_dau, $ngay_ket_thuc, $ma_km_old)
     {
-        $sql = "UPDATE khuyen_mai SET ma_km = ?, mo_ta_km = ?, ngay_bat_dau = ?, ngay_ket_thuc = ? WHERE ma_km = ?";
-        pdo_execute($sql, $ma_km, $mo_ta_km, $ngay_bat_dau, $ngay_ket_thuc, $ma_km_old);
+        $sql = "UPDATE khuyen_mai SET ma_km = ?, so_phan_tram_giam = ?, ngay_bat_dau = ?, ngay_ket_thuc = ? WHERE ma_km = ?";
+        pdo_execute($sql, $ma_km, $so_phan_tram_giam, $ngay_bat_dau, $ngay_ket_thuc, $ma_km_old);
     }
     function ma_km_get_info($ma_km)
     {
@@ -22,10 +22,10 @@
         return pdo_query_one($sql, $ma_km);
     }
     // Thêm mã khuyến mãi
-    function ma_km_insert($ma_km, $mo_ta_km, $ngay_bat_dau, $ngay_ket_thuc)
+    function ma_km_insert($ma_km, $so_phan_tram_giam, $ngay_bat_dau, $ngay_ket_thuc)
     {
-        $sql = "INSERT INTO khuyen_mai (ma_km, mo_ta_km, ngay_bat_dau, ngay_ket_thuc) VALUES (?, ?, ? ,?)";
-        pdo_execute($sql, $ma_km, $mo_ta_km, $ngay_bat_dau, $ngay_ket_thuc);
+        $sql = "INSERT INTO khuyen_mai (ma_km, so_phan_tram_giam, ngay_bat_dau, ngay_ket_thuc) VALUES (?, ?, ? ,?)";
+        pdo_execute($sql, $ma_km, $so_phan_tram_giam, $ngay_bat_dau, $ngay_ket_thuc);
     }
     // Thêm chi tiết khuyến mãi
     function ma_km_ct_insert($ma_km, $ma_sp)

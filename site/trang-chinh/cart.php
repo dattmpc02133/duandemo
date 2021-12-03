@@ -1,6 +1,7 @@
 <?php
 require_once("../../global.php");
 require_once '../../DAO/hoa-don.php';
+require_once '../../DAO/khuyen-mai.php';
 if (!isset($_SESSION['user'])) {
 
     echo '<script>
@@ -36,7 +37,6 @@ if (isset($_POST['addcart'])) {
         }
     }
 }
-
 if (isset($_POST['dat_hang'])) {
     $ma_kh = $_SESSION['user'];
     $tong_tien = $_POST['tong_tien'];
@@ -44,6 +44,16 @@ if (isset($_POST['dat_hang'])) {
     $ngay_dat = date_format(date_create(), "Y-m-d");
     $trang_thai = 1;
     $so_luong_input_data = $_POST['so_luong_input_data'];
+    if(isset($_POST['ma_km'])){
+        $ma_km = $_POST['ma_km'];
+        $ma_km_in4 = ma_km_get_info($ma_km);
+        if($ma_km_in4 == true && $ma_km_in4['ma_kh_ap_dung'] == $ma_kh){
+            $tong_tien = $tong_tien - ($tong_tien * ($ma_km_in4['so_phan_tram_giam']/100));
+        }
+        else{
+            echo '<script>alert("Mã khuyến mãi không tồn tại");</script>';
+        }
+    }
     hoa_don_insert($ma_kh, $tong_tien, $dia_chi_giao_hang, $ngay_dat, $trang_thai);
     $ma_hd2 = get_ma_hd();
     $list_sp_ght = get_ma_sp_gio_hang_tam($ma_kh);
@@ -72,7 +82,6 @@ if (isset($_POST['dat_hang'])) {
                     <table class="form__content-table table">
                         <thead class="table-danger">
                             <tr>
-                               
                                 <th>STT</th>
                                 <th style="text-align:center;width: 10%;"> Hình </th>
                                 <th> Tên sản phẩm </th>
@@ -134,10 +143,10 @@ if (isset($_POST['dat_hang'])) {
                             extract($kh);
                             ?>
                             <textarea name="dia_chi_giao_hang" class="form-control" style="font-size: 0.9rem; line-height:35px;" maxlength="255"><?= $dia_chi ?></textarea>
-                                <div class="form-group">
+                            <div class="form-group">
                                 <label for="">Mã khuyến mãi</label>
-                                <input class="form-control" type="text" name="ma_km">
-                                </div>
+                                <input class="form-control" type="text" name="ma_km" id="ma_km"><br>
+                            </div>
                             <p class="order_total_dix" style="padding: 0 8px; color: rgba(0, 0, 0, 0.3); font-size: 1rem"><strong>Tổng Tiền:</strong>
                                 <span id="tong_tien" style="color: red; margin-left: 8px; ">0</span> <sup style="color:red">đ</sup>
                                 <input type="hidden" id="tong_tien2" name="tong_tien">

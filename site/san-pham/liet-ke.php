@@ -5,13 +5,13 @@ require_once("../../DAO/san-pham.php");
 require_once("../../DAO/loai.php");
 require_once("../../global.php");
 require_once("../../DAO/cart.php");
-$_SESSION['sp_da_xem'] =[];
-if(isset($_GET['ma_sp'])){
-    array_push($_SESSION['sp_da_xem'],$_GET['ma_sp']);
-}
-echo "<pre>";
-print_r($_SESSION['sp_da_xem']);
-echo "</pre>";
+// $_SESSION['sp_da_xem'] =[];
+// if(isset($_GET['ma_sp'])){
+//     array_push($_SESSION['sp_da_xem'],$_GET['ma_sp']);
+// }
+// echo "<pre>";
+// print_r($_SESSION['sp_da_xem']);
+// echo "</pre>";
 extract($_REQUEST);
 if (exit_param("ma_loai")) {
     $products = san_pham_select_by_loai($ma_loai);
