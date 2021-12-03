@@ -1,3 +1,7 @@
+<?php 
+require_once("../../DAO/pdo.php");
+require_once("../../DAO/khach-hang.php");
+?>
 <section class="navbar_header-pc">
     <div class="col-sm-12" style="padding: 0;">
         <h3 style="background: #1fb5d4; color: white; text-align: center; padding: 10px; font-size: 1.2rem;">
@@ -24,16 +28,28 @@
                     </div>
                     <div class="account riverdungchung">
                         <div class="user__active" id="account_dangnhap">
-                            <i class="incon_size fas fa-user-circle"></i>
-                            <div class="account_dangnhap">
+                            <?php 
+                                if(isset($_SESSION['user'])){
+                                    $info_img = get_info_kh($_SESSION['user']) ;
+                                    if($info_img == null){
+                                        echo '<img  src="'.$CONTENT_URL.'/images/user/user.jpg" alt="">';
+                                    }
+                                    echo '<img class="avt__user" src="'.$CONTENT_URL.'/images/user/'.$info_img['hinh'].'" alt="">';
+                                } else{
+
+                                    echo "<i class='incon_size fas fa-user-circle'></i>";
+                                }
+                            ?>
+                            
+                            <div style="margin-left: 10px;" class="account_dangnhap">
                                 <?php
                                 if (isset($_SESSION['user'])) {
                                     echo $_SESSION['user'] . ' /';
                                     echo ' <a href="../tai-khoan/dang-nhap.php?logout">Đăng Xuất</a><br>';
                                     echo '<a href="../tai-khoan/index.php?btn-thong-tin" style="margin: 0; text-align: center;">Tài Khoản Của Tôi</a>';
                                 } else {
-                                    echo ' <a href="#">Đăng Nhập /</a>
-                                        <a href="../tai-khoan/index.php?dang_ky">Đăng Ký</a><br>';
+                                    echo ' <a id="dang_nhap" href="#">Đăng Nhập /</a>
+                                        <a id="dang_ky" href="../tai-khoan/index.php?dang_ky">Đăng Ký</a><br>';
                                 }
                                 ?>
                                 <!-- <a href="#" style="margin: 0; text-align: center;">Tài Khoản Của Tôi</a> -->

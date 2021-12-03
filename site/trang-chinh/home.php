@@ -130,7 +130,7 @@
         <div class="news_content">
             <div class="col-md-6">
                 <?php
-
+                // loại sản phẩm mới
                 $list_cats = loai_mk_moi();
                 foreach ($list_cats as $list_cat) {
                     extract($list_cat);
@@ -151,6 +151,7 @@
 
             <div class="col-md-6">
                 <?php
+                // nhà bếp
                 $nha_bep = loai_getinfo(10);
                 extract($nha_bep);
 
@@ -165,9 +166,11 @@
 <section class="container-fluid" style="padding: 0 80px;">
     <div class="grid row">
         <?php
+        // phòng khách, trong trí, ghế phụ, phòng làm việc;
         $loai_not_ins = loai_not_in();
         foreach ($loai_not_ins as $loai_not_in) {
             extract($loai_not_in);
+            $count_products = count_products_by_catagory($ma_loai);
 
         ?>
             <div class="col-sm-3">
@@ -176,7 +179,7 @@
                     <div class="collect_content-group">
                         <h4 class="collect-title">
                             <a href="" class="collect-title_link"><?= $ten_loai ?></a>
-                            <p class="collect_coult">11 sản phẩm</p>
+                            <p class="collect_coult">Còn lại <?= $count_products ?> sản phẩm</p>
                         </h4>
                     </div>
                 </div>

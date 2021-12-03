@@ -274,6 +274,7 @@ h5 {
   padding: 15px 0;
 }
 .user__active {
+  align-items: center;
   display: flex;
 }
 .cart_pay {
@@ -336,6 +337,12 @@ h5 {
 .header_cart-money-item {
   color: red;
   font-size: 0.9rem;
+}
+.avt__user{
+  max-width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  image-rendering: pixelated;
 }
 .header_cart-money-mutify {
   margin: 0px 5px;
@@ -729,6 +736,10 @@ overflow: hidden;
   width: 100%;
   border-radius: 50%;
 }
+.hoa__don_background{
+  background-color: #283059;
+  color: white;
+}
 .account_manage-links,
 .sidebar_menu-links {
   padding: 10px 20px;
@@ -882,8 +893,11 @@ tbody td {
 
 
 /* table cart */
+.table td{
+  border-top: none !important;
+}
 .table-in{
- 
+  
   margin: 0 auto;
  
 } 

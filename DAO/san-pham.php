@@ -10,6 +10,11 @@ function sp_select_not_in($ma_sp)
     $sql = "SELECT * FROM san_pham WHERE ma_sp NOT IN (?) ORDER BY ma_sp DESC";
     return pdo_query($sql, $ma_sp);
 }
+// count products by category
+function count_products_by_catagory($ma_loai){
+    $sql = "SELECT COUNT(*) FROM san_pham a INNER JOIN loai b ON a.ma_loai = b.ma_loai WHERE b.ma_loai = ? AND a.trang_thai = 1 ";
+    return pdo_query_value($sql,$ma_loai);
+}
 
 // lấy thông tin 1 mã sản phẩm
 function san_pham_getinfo($ma_sp)

@@ -19,11 +19,11 @@
                                 Chờ xác nhận
                             </span>
                         </a>
-                        <a href="" class="oder_invoice-links">
+                        <!-- <a href="" class="oder_invoice-links">
                             <span class="oder_invoice-text">
                                 Chờ lấy hàng
                             </span>
-                        </a>
+                        </a> -->
                         <a href="" class="oder_invoice-links">
                             <span class="oder_invoice-text">
                                 Đang giao
@@ -58,7 +58,7 @@
                                     <th>Tổng tiền</th>
                                     <th>Địa chỉ</th>
                                     <th>Trạng thái</th>
-                                    <th></th>
+                                    <!-- <th></th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -70,12 +70,22 @@
                                 ?>
 
                                     <tr>
-                                        <td><?= $ma_hd ?></td>
-                                        <td><?= $ngay_dat ?></td>
-                                        <td><?= $tong_tien ?></td>
-                                        <td><?= $dia_chi_giao_hang ?></td>
-                                        <td><?= $trang_thai ?></td>
-                                        <td><button>Chi tiết</button></td>
+                                        <td class="hoa__don_background" ><?= $ma_hd ?></td>
+                                        <td class="hoa__don_background"  ><?= $ngay_dat ?></td>
+                                        <td class="hoa__don_background" ><?= number_format($tong_tien) ?><sup>đ</sup></td>
+                                        <td class="hoa__don_background" ><?= $dia_chi_giao_hang ?></td>
+                                        <td class="hoa__don_background" ><?php if($trang_thai == 1){
+                                            echo "Chờ xác nhận";
+                                        } elseif( $trang_thai == 2){
+                                            echo "Đang giao hàng";                                                                      
+                                        }  elseif( $trang_thai == 3){
+                                            echo "Đã thanh toán";
+                                        } else{
+                                            echo "Đã hủy";
+                                        }
+                                        ?></td>
+                                        
+                                     
                                     </tr>
                                     <tr>
                                         <td style="border-top:none" colspan="6">
@@ -94,11 +104,11 @@
                                                 extract($hd_kh);
                                             ?>
                                                 <tr class="tr_child" >
-                                                    <th style="border-left:2px dashed #ccc ;">  </th>
-                                                    <td><?= $ma_sp ?></td>
+                                                   
+                                                    <td  style="border-left:2px dashed #ccc ;" ><?= $ten_sp ?></td>
                                                     <td><img style="width:60px" src="../../content//images/products/<?= $hinh ?>" alt=""></td>
                                                     <td><?= $gia_ban ?></td>
-                                                    <td><?= $so_luong ?></td>
+                                                    <td>x <?= $so_luong ?></td>
                                                 </tr>
                                             <?php
 
@@ -120,115 +130,161 @@
 
                     <!-- chờ xác nhận -->
 
-                    <div class="oder_invoice-products">
-                        <h4>chờ xác nhận</h4>
-                        <div class="row">
-                            <div class="col-10">
-                                <div class="oder_invoice-picture_area">
-                                    <img src="../../content/images/products/banbep.jpg" alt="" class="invoice_img">
-                                    <div class="oder_invoice-text-product">
-                                        <h6 class="oder_invoice-title">[Shop siêu saLe] [TẶNG KÈM PHỤ KIỆN] Lều cho bé, Lều công chúa lều hoàng tử - Hàng loại 1</h6>
-                                        <div class="oder_invoice-number">
-                                            x1
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="oder_invoice-product-price">
-                                    <div class="oder_price">
-                                        <span style="color:#333;"><del>840,000</del><sup>đ</sup></span>
-                                        <span style="color:red">420,000<sup>đ</sup></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="oder_invoice-total-money-product">
-                            <div class="money-tile" style="margin-right:5px;">
-                                Tổng số tiền:
-                            </div>
-                            <div class="money-tile_proview">
-                                420,000<sup>đ</sup>
-                            </div>
-                        </div>
-                        <div class="button_riseve">
-                            <button class="btn btn-info">Đã nhận hàng</button>
-                            <button class="btn btn-info">Yêu cầu hủy đơn hàng</button>
-                        </div>
+                    <div class="oder_invoice-products active">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Mã HD</th>
+                                    <th>Ngày đặt</th>
+                                    <th>Tổng tiền</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Trạng thái</th>
+                                    <!-- <th></th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $hoa_don_cho_xac_nhan = hoa_don_cho_xac_nhan($ma_kh);
+                                foreach ($hoa_don_cho_xac_nhan as $hd_xac_nhan) {
+                                    extract($hd_xac_nhan);
+                                ?>
+                                    <tr>
+                                        <td class="hoa__don_background" ><?= $ma_hd ?></td>
+                                        <td class="hoa__don_background"  ><?= $ngay_dat ?></td>
+                                        <td class="hoa__don_background" ><?= number_format($tong_tien) ?><sup>đ</sup></td>
+                                        <td class="hoa__don_background" ><?= $dia_chi_giao_hang ?></td>
+                                        <td class="hoa__don_background" ><?php if($trang_thai == 1){
+                                            echo "Chờ xác nhận";
+                                        } elseif( $trang_thai == 2){
+                                            echo "Đang giao hàng";                                                                      
+                                        }  elseif( $trang_thai == 3){
+                                            echo "Đã thanh toán";
+                                        } else{
+                                            echo "Đã hủy";
+                                        }
+                                        ?></td>
+                                        
+                                     
+                                    </tr>
+                                    <tr>
+                                        <td style="border-top:none" colspan="6">
+                                        <table  class="table table-in">
+                                            <!-- <tr>
+                                                <th>*</th>
+                                                <th>Mã SP</th>
+                                                <th>Hình</th>
+                                                <th>Giá bán</th>
+                                                <th>Số lượng</th>
+                                            </tr> -->
+                                            <?php
+                                            $hoa_don_kh =  hoa_don_kh($ma_hd);
+
+                                            foreach ($hoa_don_kh as $hd_kh) {
+                                                extract($hd_kh);
+                                            ?>
+                                                <tr class="tr_child" >
+                                                   
+                                                    <td  style="border-left:2px dashed #ccc;" ><?= $ten_sp ?></td>
+                                                    <td><img style="width:60px" src="../../content//images/products/<?= $hinh ?>" alt=""></td>
+                                                    <td><?= $gia_ban ?></td>
+                                                    <td>x <?= $so_luong ?></td>
+                                                </tr>
+                                            <?php
+
+                                            }
+
+                                            ?>
+                                        </table>
+                                        </td>
+                                    </tr>
+
+
+
+                                <?php
+                                }
+                                ?>
+                            </tbody>
+                        </table>
                     </div>
-                    <!-- Chờ lấy hàng -->
-                    <div class="oder_invoice-products">
-                        <h4>chờ lấy hàng</h4>
-                        <div class="row">
-                            <div class="col-10">
-                                <div class="oder_invoice-picture_area">
-                                    <img src="../../content/images/products/banbep.jpg" alt="" class="invoice_img">
-                                    <div class="oder_invoice-text-product">
-                                        <h6 class="oder_invoice-title">[Shop siêu saLe] [TẶNG KÈM PHỤ KIỆN] Lều cho bé, Lều công chúa lều hoàng tử - Hàng loại 1</h6>
-                                        <div class="oder_invoice-number">
-                                            x1
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="oder_invoice-product-price">
-                                    <div class="oder_price">
-                                        <span style="color:#333;"><del>840,000</del><sup>đ</sup></span>
-                                        <span style="color:red">420,000<sup>đ</sup></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="oder_invoice-total-money-product">
-                            <div class="money-tile" style="margin-right:5px;">
-                                Tổng số tiền:
-                            </div>
-                            <div class="money-tile_proview">
-                                420,000<sup>đ</sup>
-                            </div>
-                        </div>
-                        <div class="button_riseve">
-                            <button class="btn btn-info">Đã nhận hàng</button>
-                            <button class="btn btn-info">Yêu cầu hủy đơn hàng</button>
-                        </div>
-                    </div>
+
+                 
+                  
                     <!-- đang giao -->
-                    <div class="oder_invoice-products">
-                        <h4>Đang giao</h4>
-                        <div class="row">
-                            <div class="col-10">
-                                <div class="oder_invoice-picture_area">
-                                    <img src="../../content/images/products/banbep.jpg" alt="" class="invoice_img">
-                                    <div class="oder_invoice-text-product">
-                                        <h6 class="oder_invoice-title">[Shop siêu saLe] [TẶNG KÈM PHỤ KIỆN] Lều cho bé, Lều công chúa lều hoàng tử - Hàng loại 1</h6>
-                                        <div class="oder_invoice-number">
-                                            x1
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="oder_invoice-product-price">
-                                    <div class="oder_price">
-                                        <span style="color:#333;"><del>840,000</del><sup>đ</sup></span>
-                                        <span style="color:red">420,000<sup>đ</sup></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="oder_invoice-total-money-product">
-                            <div class="money-tile" style="margin-right:5px;">
-                                Tổng số tiền:
-                            </div>
-                            <div class="money-tile_proview">
-                                420,000<sup>đ</sup>
-                            </div>
-                        </div>
-                        <div class="button_riseve">
-                            <button class="btn btn-info">Đã nhận hàng</button>
-                            <button class="btn btn-info">Yêu cầu hủy đơn hàng</button>
-                        </div>
+                    <div class="oder_invoice-products active">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Mã HD</th>
+                                    <th>Ngày đặt</th>
+                                    <th>Tổng tiền</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Trạng thái</th>
+                                    <!-- <th></th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $hoa_don_cho_xac_nhan = hoa_don_dang_giao($ma_kh);
+                                foreach ($hoa_don_cho_xac_nhan as $hd_xac_nhan) {
+                                    extract($hd_xac_nhan);
+                                ?>
+                                    <tr>
+                                        <td class="hoa__don_background" ><?= $ma_hd ?></td>
+                                        <td class="hoa__don_background"  ><?= $ngay_dat ?></td>
+                                        <td class="hoa__don_background" ><?= number_format($tong_tien) ?><sup>đ</sup></td>
+                                        <td class="hoa__don_background" ><?= $dia_chi_giao_hang ?></td>
+                                        <td class="hoa__don_background" ><?php if($trang_thai == 1){
+                                            echo "Chờ xác nhận";
+                                        } elseif( $trang_thai == 2){
+                                            echo "Đang giao hàng";                                                                      
+                                        }  elseif( $trang_thai == 3){
+                                            echo "Đã thanh toán";
+                                        } else{
+                                            echo "Đã hủy";
+                                        }
+                                        ?></td>
+                                        
+                                     
+                                    </tr>
+                                    <tr>
+                                        <td style="border-top:none" colspan="6">
+                                        <table  class="table table-in">
+                                            <!-- <tr>
+                                                <th>*</th>
+                                                <th>Mã SP</th>
+                                                <th>Hình</th>
+                                                <th>Giá bán</th>
+                                                <th>Số lượng</th>
+                                            </tr> -->
+                                            <?php
+                                            $hoa_don_dang_giao = hoa_don_dang_giao($ma_kh);
+
+                                            foreach ( $hoa_don_dang_giao as $dang_giao) {
+                                                extract($dang_giao);
+                                            ?>
+                                                <tr class="tr_child" >
+                                                   
+                                                    <td  style="border-left:2px dashed #ccc;" ><?= $ten_sp ?></td>
+                                                    <td><img style="width:60px" src="../../content//images/products/<?= $hinh ?>" alt=""></td>
+                                                    <td><?= $gia_ban ?></td>
+                                                    <td>x <?= $so_luong ?></td>
+                                                </tr>
+                                            <?php
+
+                                            }
+
+                                            ?>
+                                        </table>
+                                        </td>
+                                    </tr>
+
+
+
+                                <?php
+                                }
+                                ?>
+                            </tbody>
+                        </table>
                     </div>
                     <!--  đã giao-->
                     <div class="oder_invoice-products">

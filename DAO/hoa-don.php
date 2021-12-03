@@ -125,6 +125,25 @@
         return pdo_query_value($sql,$ma_kh);
     }
     
-
+    // select hd cho xac nhan
+    function hoa_don_cho_xac_nhan($ma_kh){
+        $sql = "SELECT * FROM hoa_don WHERE ma_kh = ?  AND trang_thai = 1";
+        return pdo_query($sql,$ma_kh);
+    }
+    // select hd dang giao
+    function hoa_don_dang_giao($ma_kh){
+        $sql = "SELECT * FROM hoa_don WHERE ma_kh = ?  AND trang_thai = 2";
+        return pdo_query($sql,$ma_kh);
+    }
+    // select hd da huy
+    function hoa_don_da_huy($ma_kh){
+        $sql = "SELECT * FROM hoa_don WHERE ma_kh = ?  AND trang_thai = 3";
+        return pdo_query($sql,$ma_kh);
+    }
+    // select hd giao thanh cong
+    function hoa_don_giao_thanh_cong($ma_kh){
+        $sql = "SELECT * FROM hoa_don WHERE ma_kh = ?  AND trang_thai = 4";
+        return pdo_query($sql,$ma_kh);
+    }
 
 ?>

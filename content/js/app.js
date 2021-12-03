@@ -1,11 +1,12 @@
 const app = {
     hien_thi_account(){
-        var account_click = document.getElementById('account_dangnhap');
+        var account_click = document.getElementById('dang_nhap');
         var account_on = document.getElementById('header-dropdown_content');
-        account_click.onclick = function(){
+        account_click.onclick = function(e){
             var cart_on = document.getElementById("header_cart-list");
             account_on.classList.toggle('active');
             cart_on.classList.remove('active');
+            e.stopPropagation();
         }
     },
     hien_thi_gio_hang(){
