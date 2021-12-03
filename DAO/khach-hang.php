@@ -80,3 +80,8 @@ function update_danh_gia_kh($ma_kh){
     $sql = "UPDATE khach_hang SET danh_gia = 0 WHERE ma_kh = ?";
     pdo_execute($sql,$ma_kh);
 }
+// gữi email khách hàng
+function email_gui_kh($email){
+    $sql = "SELECT * FROM khach_hang WHERE email=?";
+    return pdo_query_one($sql,$email);
+}

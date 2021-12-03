@@ -67,7 +67,7 @@
                                     <button type="submit" id= "login" name="login" class="btn btn-primary account-dangnhap">Đăng nhập</button>
                                     <div class="site_account-register" style="margin-top: 10px;">
                                         <span>Khách hàng mới? <a href="../tai-khoan/index.php?dang_ky" class="link">Tạo tài khoản</a></span> <br>
-                                        <span>Quên mật khẩu? <a href="" class="link">Khôi phục mật khẩu</a></span>
+                                        <span>Quên mật khẩu? <a href="../tai-khoan/index.php?quen-mk" class="link">Khôi phục mật khẩu</a></span>
                                     </div>
                                 </form>
                             </div>
