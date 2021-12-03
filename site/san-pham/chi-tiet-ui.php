@@ -6,6 +6,8 @@ if ($so_luong == 0) {
 } else {
     trang_thai_sp_con_hang($ma_sp);
 }
+
+
 ?>
 
 <div class="container__chi-tiet">
@@ -182,7 +184,7 @@ if ($so_luong == 0) {
                 </div>
             </div>
         </div>
-        <div class="san__pham-daxem">
+        <!-- <div class="san__pham-daxem">
             <div class="row-products">
                 <h3 class="san_pham__lienquan-title">sản phẩm đã xem</h3>
                 <div class="row">
@@ -281,7 +283,7 @@ if ($so_luong == 0) {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 </div>

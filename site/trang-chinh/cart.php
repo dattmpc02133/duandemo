@@ -134,7 +134,10 @@ if (isset($_POST['dat_hang'])) {
                             extract($kh);
                             ?>
                             <textarea name="dia_chi_giao_hang" class="form-control" style="font-size: 0.9rem; line-height:35px;" maxlength="255"><?= $dia_chi ?></textarea>
-                            <p></p>
+                                <div class="form-group">
+                                <label for="">Mã khuyến mãi</label>
+                                <input class="form-control" type="text" name="ma_km">
+                                </div>
                             <p class="order_total_dix" style="padding: 0 8px; color: rgba(0, 0, 0, 0.3); font-size: 1rem"><strong>Tổng Tiền:</strong>
                                 <span id="tong_tien" style="color: red; margin-left: 8px; ">0</span> <sup style="color:red">đ</sup>
                                 <input type="hidden" id="tong_tien2" name="tong_tien">

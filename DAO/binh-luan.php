@@ -1,10 +1,11 @@
 <?php
 //    thêm mới  
-function bl_insert($ma_kh,$ma_sp,$noi_dung,$ngay_bl,$trang_thai)
+function bl_insert($ma_kh,$ma_sp,$ma_tin_tuc,$noi_dung,$ngay_bl,$trang_thai)
 {
-    $sql = "INSERT INTO binh_luan(ma_kh,ma_sp,noi_dung,ngay_bl,trang_thai) VALUES(?,?,?,?,?)";
-    pdo_execute($sql,$ma_kh,$ma_sp,$noi_dung,$ngay_bl,$trang_thai);
+    $sql = "INSERT INTO binh_luan(ma_kh,ma_sp,ma_tin_tuc,noi_dung,ngay_bl,trang_thai) VALUES(?,?,?,?,?,?)";
+    pdo_execute($sql,$ma_kh,$ma_sp,$ma_tin_tuc,$noi_dung,$ngay_bl,$trang_thai);
 }
+
 // function bl_update($ma_bl,$noi_dung,$ma_sp,$ma_kh,$ngay_bl,$trang_thai)
 // {
 //     $sql = "UPDATE binh_luan SET noi_dung=?,ma_sp=?,ma_kh=?,ngay_bl=?,trang_thai=?";
@@ -21,6 +22,10 @@ function bl_select_by_kh_va_sp_trang_thai1($ma_sp){
     return pdo_query($sql,$ma_sp);
 }
 
+function bl_select_by_kh_va_tt_trang_thai1($ma_tin_tuc){
+    $sql = "SELECT a.noi_dung,a.ngay_bl, b.ma_kh, b.hinh FROM binh_luan a INNER JOIN khach_hang b ON a.ma_kh = b.ma_kh WHERE a.trang_thai = 1 AND ma_tin_tuc = ? ORDER BY a.ma_bl DESC";
+    return pdo_query($sql,$ma_tin_tuc);
+}
 
 
 

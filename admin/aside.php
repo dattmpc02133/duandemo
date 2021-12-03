@@ -56,8 +56,13 @@
                         <a class="nav-link tin-tuc" href="<?=$ADMIN_URL?>/tin-tuc"><i class="far fa-newspaper"></i> Tin tức</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link binh-luan" href="<?=$ADMIN_URL?>/binh-luan"><i class="fas fa-comments"></i>Bình luận</a>
+                        <a class="nav-link binh-luan" href="<?=$ADMIN_URL?>/binh-luan"><i class="fas fa-comments"></i>Bình luận sản phẩm</a>
                     </li>
+                    <li class="nav-item">
+                    <a class="nav-link binh-luan-tin-tuc" href="<?=$ADMIN_URL?>/binh-luan-tin-tuc"><i class="fas fa-comments"></i>Bình luận tin tức</a>
+                       
+                    </li>
+                   
                     <li class="nav-item">
                         <a class="nav-link thong-ke" href="<?=$ADMIN_URL?>/thong-ke"><i class="fas fa-chart-line"></i>Thống kê</a>
                     </li>

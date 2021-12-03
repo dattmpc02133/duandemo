@@ -35,23 +35,23 @@ if (isset($_POST['delete_select'])) {
                     </thead>
                     <tbody>
                             <?php 
-                                $list_bl_sp = bl_thong_ke();
-                                foreach($list_bl_sp as $bl){
-                                    extract($bl);
+                                $list_bl_tt =thong_ke_bl_tt();
+                                foreach($list_bl_tt as $bl_tt){
+                                    extract($bl_tt);
                                     
                               
                             ?>
                        
                         <tr>
-                           <?php if(isset($ma_sp)){ echo ' <td><input type="checkbox" name="check[]" value=" '.$ma_sp.'"></td>';} ?>
-                            <td><?php if(isset($ten_sp)){echo $ten_sp;} else{echo "";} ?></td>
+                           <?php if(isset($ma_tin_tuc)){ echo ' <td><input type="checkbox" name="check[]" value=" '.$ma_tin_tuc.'"></td>';} ?>
+                            <td><?php if(isset($tieu_de)){echo $tieu_de;} else{echo "";} ?></td>
                             <td><?php if(isset($so_luong)){echo $so_luong;} else{echo "";} ?></td>
                             <td> <?php if(isset($bl_moi_nhat)){echo $bl_moi_nhat;} else{echo "";} ?> </td>
                             <td>  <?php if(isset($bl_cu_nhat)){echo $bl_cu_nhat;} else{echo "";} ?> </td>
                             <td>
-                                <?php if(isset($ma_sp)){
+                                <?php if(isset($ma_tin_tuc)){
                                     echo '
-                                    <a href="index.php?btn_chitiet&ma_sp='.$ma_sp.'" class="btn btn-info"><i class="fas fa-info-circle"></i></a>
+                                    <a href="index.php?btn_chitiet&ma_tin_tuc='.$ma_tin_tuc.'" class="btn btn-info"><i class="fas fa-info-circle"></i></a>
                                     ';
                                 } else{ echo "";} ?>
                                

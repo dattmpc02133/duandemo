@@ -1,23 +1,22 @@
 <?php
+require_once("../../global.php");
 require_once("../../DAO/pdo.php");
 require_once("../../DAO/binh-luan.php");
-require_once("../../global.php");
+require_once("../../DAO/tin-tuc.php");
 
-if(isset($_POST['noi_dung_gui_bl'])){
-    
+if(isset($_POST['noi_dung_gui_bl'])){  
     $ma_kh = $_POST['ma_kh'];
-    $ma_sp = $_POST['ma_sp'];
+    $ma_tin_tuc = $_POST['ma_tin_tuc'];
     $noi_dung_bl = $_POST['noi_dung_gui_bl'];
     $ngay_bl = date_format(date_create(), 'Y-m-d');
     $trang_thai = "chưa kích hoạt";
-    $ma_tin_tuc = null;
-    // bl_insert($ma_kh,$ma_sp,$noi_dung_bl,$ngay_bl,$trang_thai);
-    bl_insert($ma_kh,$ma_sp,$ma_tin_tuc,$noi_dung,$ngay_bl,$trang_thai);
+    $ma_sp = null;
+    bl_insert($ma_kh,$ma_sp,$ma_tin_tuc,$noi_dung_bl,$ngay_bl,$trang_thai);
 }
 
-if (isset($_POST['ma_sp'])) {
-    $ma_sp = $_POST['ma_sp'];
-    $bl_all_kich_hoat = bl_select_by_kh_va_sp_trang_thai1($ma_sp);
+if (isset($_POST['ma_tin_tuc'])) {
+    $ma_tin_tuc = $_POST['ma_tin_tuc'];
+    $bl_all_kich_hoat = bl_select_by_kh_va_tt_trang_thai1($ma_tin_tuc);
 
     foreach ($bl_all_kich_hoat as $bl_1) {
         extract($bl_1);

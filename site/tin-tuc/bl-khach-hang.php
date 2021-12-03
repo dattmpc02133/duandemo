@@ -2,7 +2,6 @@
     Bình Luận
 </h5>
 <hr>
-
 <div class="comment_news-wrap">
     <div class="row comment_news-container" id="output__data_bl">
         <!-- <div class="col-1 user_comment">
@@ -29,13 +28,13 @@
 
 <script type="text/javascript">
     // lấy dữ liệu
-     function fetch_data($ma_sp){
+     function fetch_data($ma_tin_tuc){
         
         $.ajax({
               url:'ajax_action.php',
               method: "POST",
               data:{
-                ma_sp:ma_sp
+                ma_tin_tuc:ma_tin_tuc
               },
               success: function(respone){
                 //   alert(respone)
@@ -43,10 +42,10 @@
               }
           })
       }
-      var ma_sp = $('.ma_sp').val();
-     
+      var ma_tin_tuc = $('.ma_tin_tuc').val();
+    
       setInterval(() => {
-        fetch_data(ma_sp);
+        fetch_data(ma_tin_tuc);
       }, 2000);
 </script>
 

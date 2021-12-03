@@ -21,6 +21,22 @@
         $sql = "SELECT * FROM tin_tuc WHERE ma_tin_tuc = ?";
         return pdo_query_one($sql,$ma_tin_tuc);
     }
+    // select by tin tuc
+    function bl_select_by_tin_tuc($ma_tin_tuc){
+        // $sp_tung_trang = 9;
+        // if (!isset($_GET['page'])) {
+        //     $trang = 1;
+        // } else {
+        //     $trang = $_GET['page'];
+        // }
+        // $tung_trang =  ($trang - 1) * $sp_tung_trang;
+    
+        $sql = "SELECT b.*,t.* FROM binh_luan b JOIN tin_tuc t ON b.ma_tin_tuc = t.ma_tin_tuc
+        WHERE b.ma_tin_tuc=? ORDER BY ma_bl DESC";
+        // $sql = "SELECT b.*,t.tin_tuc FROM binh_luan b JOIN tin_tuc t ON h.ma_sp = b.ma_sp
+        // WHERE b.ma_sp=? ORDER BY ma_bl DESC LIMIT $tung_trang,$sp_tung_trang";
+        return pdo_query($sql, $ma_tin_tuc);
+    }
     function tin_tuc_selectlimit(){
         $sql = "SELECT * FROM tin_tuc ORDER BY ma_tin_tuc DESC LIMIT 0,3";
         return pdo_query($sql); 

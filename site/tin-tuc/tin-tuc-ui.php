@@ -9,6 +9,7 @@
                 <div class="content_page-new">
                     <div class="content_page-new-lish">
                         <div class="content_page-images">
+                            <input type="hidden" name="ma_tin_tuc" class="ma_tin_tuc" value="<?= $ma_tin_tuc ?>">
                             <img src="<?= $CONTENT_URL  ?>/images/news/<?= $hinh_tin_tuc ?>" alt="hình tin tức" class="img_content-page">
                         </div>
                         <h3 class="page_news-title">
@@ -33,14 +34,16 @@
                     <div class="content_page-new-comment">
                         <h3 style="margin-bottom: 30px;">Viết bình luận</h3>
                         <div class="contact-boxt_sent_lish">
-                            <form action="#" method="post" class="row grid">
+                            <form method="POST" id="form__gui-bl" class="row grid">
                                 <?php
                                 if (isset($_SESSION['user'])) {
                                     echo '<div class="col-md-12">
-                                        <textarea class="form-control controller" id="exampleFormControlTextarea1" rows="5" placeholder="Nội dung"></textarea>
+                                    <input type="hidden" name="ma_tin_tuc" id="ma_tin_tuc" value="' . $ma_tin_tuc . '" >
+                                    <input type="hidden" id= "ma_kh" name="ma_kh" value="' . $_SESSION['user'] . '" >
+                                        <textarea class="form-control controller" name="noi_dung_gui_bl" id="exampleFormControlTextarea1" rows="5" placeholder="Nội dung"></textarea>
                                     </div>';
                                     echo '<div class="col-sm-12">
-                                    <button class="btn btn-primary" style="float:right;" type="submit">Gửi bình luận</button>
+                                    <button class="btn btn-primary" name= "btn_gui_bl" style="float:right;" type="submit">Gửi bình luận</button>
                                 </div>';
                                 } else {
                                     echo '<div class="col-md-12">
@@ -51,12 +54,10 @@
                                 </div>';
                                 }
                                 ?>
-                               <div class="col-sm-12">
-                                   <a href="" class="comment_news">
-                                       Bình Luận
-                                   </a>
-                                   <hr>
-                                   <div class="comment_news-wrap">
+                                <div class="col-sm-12">
+                                   
+                                  
+                                    <!-- <div class="comment_news-wrap">
                                       <div class="row comment_news-container">
                                       <div class="col-1 user_comment">
                                            <img src="../../content/images/user/z2975563806417_87be175912960c0cbea56f10736a3cab.jpg" alt="" class="user_comment-img">
@@ -76,10 +77,15 @@
                                             </p>
                                        </div>
                                       </div>
-                                   </div>
-                               </div>
+                                   </div> -->
+                                </div>
 
                             </form>
+                            <div class="col-sm-12">
+                                <div class="bl__kh">
+                                    <?php require_once("./bl-khach-hang.php") ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -89,3 +95,26 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $("#form__gui-bl").on("submit", function(e) {
+
+                e.preventDefault();
+                // var ma_kh = $('#ma_kh').val();
+                // var ma_sp = $("#ma_sp").val();
+                // alert(ma_sp);
+                $.ajax({
+                    url: "ajax_action.php",
+                    method: "POST",
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function(respone) {
+                        $("#form__gui-bl")[0].reset();
+                    }
+                })
+            })
+        })
+    </script>
