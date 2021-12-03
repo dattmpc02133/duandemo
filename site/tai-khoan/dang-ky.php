@@ -2,7 +2,7 @@
 require_once("../../global.php");
 require_once '../../DAO/pdo.php';
 require_once '../../DAO/khach-hang.php';
-if(isset($_POST['add_kh'])){
+if (isset($_POST['add_kh'])) {
     $ma_kh = "";
     $check_ma_kh = '/^\D[A-Za-z0-9_\.]{6,16}$/';
     $mat_khau = "";
@@ -11,118 +11,113 @@ if(isset($_POST['add_kh'])){
     $check_sdt_kh = '/^(0)([2-9])([0-9]+){8}$/';
     $test = true;
     $kt_loi = array();
-if (empty($_POST['ma_kh'])) {
-    $kt_loi['ma_kh'] = "Tên đăng nhập không được bỏ trống !";
-    $test = false;
-} 
-else if(!preg_match($check_ma_kh, $_POST['ma_kh'], $matches)){
-    $kt_loi['ma_kh'] = "Tên đăng nhập không được bắt đầu bằng số và phải từ 6 - 16 ký tự !";
-    $test = false;
-}
-else if(get_info_kh($_POST['ma_kh'])){
-    $kt_loi['ma_kh'] = "Tên đăng nhập đã tồn tại";
-    $test = false;
-}
-else {
-    $ma_kh = $_POST['ma_kh'];
-}
-if(empty($_POST['sdt_kh'])){
-    $kt_loi['sdt_kh'] = "Số điện thoại không được bỏ trống";
-    $test = false;
-} 
-else if(!preg_match($check_sdt_kh, $_POST['sdt_kh'], $matches)){
-    $kt_loi['sdt_kh'] = "Số điện thoại phải bắt đầu bằng 0, không chứa ký tự khác chữ số";
-    $test = false;
-}
-else if(sdt_kh_exist($_POST['sdt_kh'])){
-    $kt_loi['sdt_kh'] = "Số điện thoại đã được sử dụng";
-    $test = false;
-}
-else{
-    $sdt_kh = $_POST['sdt_kh'];
-}
-if(empty($_POST['xac_nhan_mat_khau'])){
-    $kt_loi['xac_nhan_mat_khau'] = "Mật khẩu xác nhận không được bỏ trống";
-    $test = false;
-} else{
-    $xac_nhan_mat_khau = $_POST['xac_nhan_mat_khau'];
-}
-if (empty($_POST['mat_khau'])) {
-    $kt_loi['mat_khau'] = "Mật khẩu không được bỏ trống !";
-    $test = false;
-} else {
-    $mat_khau = $_POST['mat_khau'];
-}
+    if (empty($_POST['ma_kh'])) {
+        $kt_loi['ma_kh'] = "Tên đăng nhập không được bỏ trống !";
+        $test = false;
+    } else if (!preg_match($check_ma_kh, $_POST['ma_kh'], $matches)) {
+        $kt_loi['ma_kh'] = "Tên đăng nhập không được bắt đầu bằng số và phải từ 6 - 16 ký tự !";
+        $test = false;
+    } else if (get_info_kh($_POST['ma_kh'])) {
+        $kt_loi['ma_kh'] = "Tên đăng nhập đã tồn tại";
+        $test = false;
+    } else {
+        $ma_kh = $_POST['ma_kh'];
+    }
+    if (empty($_POST['sdt_kh'])) {
+        $kt_loi['sdt_kh'] = "Số điện thoại không được bỏ trống";
+        $test = false;
+    } else if (!preg_match($check_sdt_kh, $_POST['sdt_kh'], $matches)) {
+        $kt_loi['sdt_kh'] = "Số điện thoại phải bắt đầu bằng 0, không chứa ký tự khác chữ số";
+        $test = false;
+    } else if (sdt_kh_exist($_POST['sdt_kh'])) {
+        $kt_loi['sdt_kh'] = "Số điện thoại đã được sử dụng";
+        $test = false;
+    } else {
+        $sdt_kh = $_POST['sdt_kh'];
+    }
+    if (empty($_POST['xac_nhan_mat_khau'])) {
+        $kt_loi['xac_nhan_mat_khau'] = "Mật khẩu xác nhận không được bỏ trống";
+        $test = false;
+    } else {
+        $xac_nhan_mat_khau = $_POST['xac_nhan_mat_khau'];
+    }
+    if (empty($_POST['mat_khau'])) {
+        $kt_loi['mat_khau'] = "Mật khẩu không được bỏ trống !";
+        $test = false;
+    } else {
+        $mat_khau = $_POST['mat_khau'];
+    }
 
-if (empty($_POST['ho_ten'])) {
-    $kt_loi['ho_ten'] = "Họ Tên không được bỏ trống !";
-    $test = false;
-} else {
-    $ho_ten = $_POST['ho_ten'];
-}
+    if (empty($_POST['ho_ten'])) {
+        $kt_loi['ho_ten'] = "Họ Tên không được bỏ trống !";
+        $test = false;
+    } else {
+        $ho_ten = $_POST['ho_ten'];
+    }
 
-if (empty($_POST['dia_chi'])) {
-    $kt_loi['dia_chi'] = "Địa chỉ không được bỏ trống !";
-    $test = false;
-} else {
-    $dia_chi = $_POST['dia_chi'];
-}
+    if (empty($_POST['dia_chi'])) {
+        $kt_loi['dia_chi'] = "Địa chỉ không được bỏ trống !";
+        $test = false;
+    } else {
+        $dia_chi = $_POST['dia_chi'];
+    }
 
-if (empty($_FILES['hinh']['name'])) {
-    $kt_loi['hinh'] = "Hình không được bỏ trống !";
-    $test = false;
-} else {
-    $hinh = $_FILES['hinh']['name'];
-}
+    if (empty($_FILES['hinh']['name'])) {
+        $kt_loi['hinh'] = "Hình không được bỏ trống !";
+        $test = false;
+    } else {
+        $hinh = $_FILES['hinh']['name'];
+    }
 
-if (empty($_POST['email'])) {
-    $kt_loi['email'] = "Email không được để trống !";
-    $test = false;
-} elseif (!preg_match($check_email, $_POST['email'], $matchs)) {
-    $kt_loi['email'] = "Vui lòng nhập đúng định dạng Email !";
-    $test = false;
-} 
-else if(email_kh_exist($_POST['email'])){
-    $kt_loi['email'] = "Email đã được sử dụng";
-    $test = false;
-}
-else {
-    $email = $_POST['email'];
-}
+    if (empty($_POST['email'])) {
+        $kt_loi['email'] = "Email không được để trống !";
+        $test = false;
+    } elseif (!preg_match($check_email, $_POST['email'], $matchs)) {
+        $kt_loi['email'] = "Vui lòng nhập đúng định dạng Email !";
+        $test = false;
+    } else if (email_kh_exist($_POST['email'])) {
+        $kt_loi['email'] = "Email đã được sử dụng";
+        $test = false;
+    } else {
+        $email = $_POST['email'];
+    }
 
-if($test){
-    if (isset($_POST['add_kh'])) {
-        if($xac_nhan_mat_khau == $mat_khau){
+    if ($test) {
+        if (isset($_POST['add_kh'])) {
+            if ($xac_nhan_mat_khau == $mat_khau) {
 
-            $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL;
-            $ma_kh = $_POST['ma_kh'];
-            $mat_khau = md5($_POST['mat_khau']);
-            $ho_ten = $_POST['ho_ten'];
-            $dia_chi = $_POST['dia_chi'];
-            $hinh = $_FILES['hinh']['name'];
-            $email = $_POST['email'];
-            $sdt_kh = $_POST['sdt_kh'];
-            $vai_tro = $_POST['vai_tro'];
-            $kich_hoat = $_POST['kich_hoat'];
-            $danh_gia = 1 ;
-            move_uploaded_file($_FILES['hinh']['tmp_name'], "$path./images/user/$hinh");
-            khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email,$sdt_kh, $vai_tro,$danh_gia);
-            echo "<script>
+                $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL;
+                $ma_kh = $_POST['ma_kh'];
+                $mat_khau = md5($_POST['mat_khau']);
+                $ho_ten = $_POST['ho_ten'];
+                $dia_chi = $_POST['dia_chi'];
+                if (strlen($_FILES['hinh']['name']) > 0) {
+                    $hinh = $_FILES['hinh']['name'];
+                    move_uploaded_file($_FILES['hinh']['tmp_name'], "$path./images/user/$hinh");
+                } else {
+                    $hinh = 'user.jpg';
+                }
+                $email = $_POST['email'];
+                $sdt_kh = $_POST['sdt_kh'];
+                $vai_tro = $_POST['vai_tro'];
+                $kich_hoat = $_POST['kich_hoat'];
+                $danh_gia = 1;
+                khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email, $sdt_kh, $vai_tro, $danh_gia);
+                echo "<script>
                     alert('Đăng ký tài khoảng thành công');
                     location.href = '../../index.php';
                   </script>";
-        } else{
-            echo "<script>
+            } else {
+                echo "<script>
                      alert('Nhập lại mật khẩu không trùng khớp');
                  </script>";
-        }
-
-    }else{
-        echo "<script>
+            }
+        } else {
+            echo "<script>
                 location.href = '../../index.php';
               </script>";
+        }
     }
-}
 }
 
 // else {
@@ -139,41 +134,41 @@ if($test){
                 <label for=""><b>Tên đăng nhập *</b></label>
                 <input type="text" class="form-control" name="ma_kh" id="ma_kh" aria-describedby="helpId" placeholder="Nhập tên đăng nhập">
                 <?php if (isset($kt_loi['ma_kh'])) { ?>
-                        <span class="err"> <?php echo $kt_loi['ma_kh'] ?> </span>
-                    <?php } ?>
-                    <span class="mess"></span>
+                    <span class="err"> <?php echo $kt_loi['ma_kh'] ?> </span>
+                <?php } ?>
+                <span class="mess"></span>
             </div>
             <div class="form-group">
                 <label for=""><b>Mật khẩu *</b></label>
                 <input type="password" class="form-control" name="mat_khau" id="mat_khau" aria-describedby="helpId" placeholder="Nhập mật khẩu">
                 <?php if (isset($kt_loi['mat_khau'])) { ?>
-                        <span class="err"> <?php echo $kt_loi['mat_khau'] ?> </span>
-                    <?php } ?>
-                    <span class="mess"></span>
+                    <span class="err"> <?php echo $kt_loi['mat_khau'] ?> </span>
+                <?php } ?>
+                <span class="mess"></span>
             </div>
             <div class="form-group">
                 <label for=""><b>Xác nhận mật khẩu *</b></label>
                 <input type="password" class="form-control" name="xac_nhan_mat_khau" id="xac_nhan_mat_khau" aria-describedby="helpId" placeholder="Xác nhận lại mật khẩu">
                 <?php if (isset($kt_loi['xac_nhan_mat_khau'])) { ?>
-                        <span class="err"> <?php echo $kt_loi['xac_nhan_mat_khau'] ?> </span>
-                    <?php } ?>
-                    <span class="mess"></span>
+                    <span class="err"> <?php echo $kt_loi['xac_nhan_mat_khau'] ?> </span>
+                <?php } ?>
+                <span class="mess"></span>
             </div>
             <div class="form-group">
                 <label for=""><b>Họ tên *</b></label>
                 <input type="text" class="form-control" name="ho_ten" id="ho_ten" aria-describedby="helpId" placeholder="Nhập họ tên khách hàng">
                 <?php if (isset($kt_loi['ho_ten'])) { ?>
-                        <span class="err"> <?php echo $kt_loi['ho_ten'] ?> </span>
-                    <?php } ?>
-                    <span class="mess"></span>
+                    <span class="err"> <?php echo $kt_loi['ho_ten'] ?> </span>
+                <?php } ?>
+                <span class="mess"></span>
             </div>
             <div class="form-group">
                 <label for=""><b>Địa chỉ *</b></label>
                 <input type="text" class="form-control" name="dia_chi" id="dia_chi" aria-describedby="helpId" placeholder="Nhập Địa chỉ">
                 <?php if (isset($kt_loi['dia_chi'])) { ?>
-                        <span class="err"> <?php echo $kt_loi['dia_chi'] ?> </span>
-                    <?php } ?>
-                    <span class="mess "></span>
+                    <span class="err"> <?php echo $kt_loi['dia_chi'] ?> </span>
+                <?php } ?>
+                <span class="mess "></span>
             </div>
             <div class="form-group">
                 <label for=""><b>Ảnh *</b></label>
@@ -184,17 +179,17 @@ if($test){
                 <label for=""><b>Email *</b></label>
                 <input type="text" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="Nhập địa chỉ email khách hàng">
                 <?php if (isset($kt_loi['email'])) { ?>
-                        <span class="err"> <?php echo $kt_loi['email'] ?> </span>
-                    <?php } ?>
-                    <span class="mess"></span>
+                    <span class="err"> <?php echo $kt_loi['email'] ?> </span>
+                <?php } ?>
+                <span class="mess"></span>
             </div>
             <div class="form-group">
                 <label for=""><b>Điện thoại *</b></label>
                 <input type="text" class="form-control" name="sdt_kh" id="sdt_kh" aria-describedby="helpId" placeholder="Nhập số điện thoại">
                 <?php if (isset($kt_loi['sdt_kh'])) { ?>
-                        <span class="err"> <?php echo $kt_loi['sdt_kh'] ?> </span>
-                    <?php } ?>
-                    <span class="mess"></span>
+                    <span class="err"> <?php echo $kt_loi['sdt_kh'] ?> </span>
+                <?php } ?>
+                <span class="mess"></span>
             </div>
             <div hidden class="form-group">
                 <label for=""><b>Vai trò *</b></label>
