@@ -25,7 +25,7 @@ if (isset($_POST['delete_select'])) {
                 <table class="table">
                     <thead class="table-danger">
                         <tr>
-                            <th class="check"><input type="checkbox"> </th>
+                            <!-- <th class="check"><input type="checkbox"> </th> -->
                             <th class="ten_hinh">HÀNG HÓA</th>
                             <th class="don_gia">SỐ BL</th>
                             <th class="gia_giam">MỚI NHẤT</th>
@@ -43,7 +43,7 @@ if (isset($_POST['delete_select'])) {
                             ?>
                        
                         <tr>
-                           <?php if(isset($ma_tin_tuc)){ echo ' <td><input type="checkbox" name="check[]" value=" '.$ma_tin_tuc.'"></td>';} ?>
+                  
                             <td><?php if(isset($tieu_de)){echo $tieu_de;} else{echo "";} ?></td>
                             <td><?php if(isset($so_luong)){echo $so_luong;} else{echo "";} ?></td>
                             <td> <?php if(isset($bl_moi_nhat)){echo $bl_moi_nhat;} else{echo "";} ?> </td>
@@ -68,18 +68,18 @@ if (isset($_POST['delete_select'])) {
 
                     </tbody>
                 </table>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col p-12 t-12 m-12">
                         <div class="button__group">
-                            <!-- <button class="button__group-item button__group-checkAll">Chọn tất cả</button>
+                            <button class="button__group-item button__group-checkAll">Chọn tất cả</button>
                             <button class="button__group-item button__group-unCheckAll">Bỏ chọn tất
-                                cả</button> -->
+                                cả</button>
                             <button class="btn btn-danger button__group-item button__group-Delete" name="delete_select">Xóa các mục
                                 chọn</button>
-                            <!-- <a href="index.php?btn_add" class="button__group-item button__group-input">Nhập thêm</a> -->
+                            <a href="index.php?btn_add" class="button__group-item button__group-input">Nhập thêm</a>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </form>
 
         </div>
