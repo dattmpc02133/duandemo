@@ -137,13 +137,18 @@
     }
     // select hd da huy
     function hoa_don_da_huy($ma_kh){
-        $sql = "SELECT * FROM hoa_don WHERE ma_kh = ?  AND trang_thai = 3";
+        $sql = "SELECT * FROM hoa_don WHERE ma_kh = ?  AND trang_thai = 4";
         return pdo_query($sql,$ma_kh);
     }
     // select hd giao thanh cong
     function hoa_don_giao_thanh_cong($ma_kh){
-        $sql = "SELECT * FROM hoa_don WHERE ma_kh = ?  AND trang_thai = 4";
+        $sql = "SELECT * FROM hoa_don WHERE ma_kh = ?  AND trang_thai = 3";
         return pdo_query($sql,$ma_kh);
     }
 
+    // Đếm số đơn theo khách hàng và trạng thái
+    function count_hoa_don_by_kh_and_trang_thai($ma_kh, $trang_thai){
+        $sql = "SELECT COUNT(*) FROM hoa_don WHERE ma_kh = ? AND trang_thai = ?";
+        return pdo_query_value($sql, $ma_kh, $trang_thai);
+    }
 ?>
