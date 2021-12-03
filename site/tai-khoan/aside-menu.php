@@ -15,7 +15,7 @@
                                 echo $hinh;
                             } ?>"  alt="<?= $hinh ?>" class="avt">
                             <label for="hinh_new" class="change_picture">
-                                <i class="fas fa-camera change_picture-icon"></i>
+                                <!-- <i class="fas fa-camera change_picture-icon"></i> -->
                             </label>
                            <form action="" method="post" enctype="multipart/form-data">
                            <div class="form-group" hidden>
