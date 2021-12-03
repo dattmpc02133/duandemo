@@ -1,21 +1,4 @@
-<?php
-    require_once("../../content/library_email/index.php");
-    $ma_so = '';
-    if(isset($_POST['btn-quen-mk'])){
-        $email = $_POST['email'];
-       $kt =  email_gui_kh($email);
-        if($kt){
-            $ma_so = rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
-            $_SESSION['ma_xac_nhan']=$ma_so;     
-            $_SESSION['ma_kh_update']=$kt['ma_kh'];   
-            echo "<script>location.href = 'index.php?xac-nhan-mk'</script>";
 
-        }else{
-            echo "<script>alert('Email không tồn tại')</script>";
-        }
-        
-    }
-?>
 <div class="container-fluid" style="padding: 0 80px;">
 <div class="row">
     <div class="container">
@@ -23,7 +6,8 @@
             <div class="header_dangky" role="alert">
                 <h3 style="text-align: center;color:#fff;">Quên mật khẩu</h3>
             </div>
-            <form action="" method="POST" >
+           
+            <form action="./xu_form_gui_mail.php" method="POST" >
             <!-- <div class="form-group">
                     <label for=""><b>Tên tài khoản</b></label>
                     <input type="text" placeholder="Tên tài khoản" class="form-control" name="ma_kh" id="" aria-describedby="helpId" value="">
