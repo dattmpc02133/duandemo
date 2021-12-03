@@ -47,6 +47,7 @@
         kiem_loi_form.isUsername('#ma_kh'),
         kiem_loi_form.isRequiRed('#mat_khau'),
         kiem_loi_form.minLength('#mat_khau', 6),
+        kiem_loi_form.isRequiRed('#xac_nhan_mat_khau'),
         kiem_loi_form.confirm('#xac_nhan_mat_khau', function() {
           return document.querySelector("#form_du_an #mat_khau").value;
         }, 'Mật khẩu xác nhận không trùng khớp'),
