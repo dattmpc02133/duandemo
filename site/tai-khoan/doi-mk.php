@@ -13,7 +13,7 @@ if (empty($_POST['mat_khau_moi'])) {
     $mat_khau_moi = $_POST['mat_khau_moi'];
 }
 if (empty($_POST['mat_khau_moi_xac_nhan'])) {
-    $kt_loi['mat_khau_moi_xac_nhan'] = 'Xác nhận không được để trống !';
+    $kt_loi['mat_khau_moi_xac_nhan'] = 'Xác nhận mật khẩu không được để trống !';
     $test = false;
 } else {
     $mat_khau_moi_xac_nhan = $_POST['mat_khau_moi_xac_nhan'];

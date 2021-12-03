@@ -40,13 +40,35 @@ kiem_loi_form.isRequiRed = function (selector) {
         }
     }
 }
+// Kiểm lỗi tài khoản không bắt đầu bằng số
+kiem_loi_form.isUsername = function (selector) {
+
+    return {
+        selector: selector,
+        test: function (value) {
+            var regex = /^\D[A-Za-z0-9_\.]{6,16}$/;
+            return regex.test(value) ? undefined : "Tài khoản không được để trống, không bắt đầu bằng số và phải từ 6 - 16 ký tự";
+        }
+    }
+}
 kiem_loi_form.isEmail = function (selector) {
 
     return {
         selector: selector,
         test: function (value) {
             var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            return regex.test(value) ? undefined : "Trường này phải đúng định dạng email, ví dụ: duanmau@gmail.com";
+            return regex.test(value) ? undefined : "Trường này phải đúng định dạng email, ví dụ: duanmau123@gmail.com";
+        }
+    }
+}
+// Kiểm lỗi số điện thoại
+kiem_loi_form.isPhoneNumber = function (selector) {
+
+    return {
+        selector: selector,
+        test: function (value) {
+            var regex = /^(0)([2-9])([0-9]+){8}$/;
+            return regex.test(value) ? undefined : "Số điện thoại phải bắt đầu bằng 0, không chứa ký tự khác chữ số";
         }
     }
 }

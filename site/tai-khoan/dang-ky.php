@@ -1,22 +1,40 @@
 <?php
 require_once("../../global.php");
+require_once '../../DAO/pdo.php';
+require_once '../../DAO/khach-hang.php';
 if(isset($_POST['add_kh'])){
     $ma_kh = "";
+    $check_ma_kh = '/^\D[A-Za-z0-9_\.]{6,16}$/';
     $mat_khau = "";
     $ho_ten = "";
     $check_email = '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';
+    $check_sdt_kh = '/^(0)([2-9])([0-9]+){8}$/';
     $test = true;
     $kt_loi = array();
 if (empty($_POST['ma_kh'])) {
     $kt_loi['ma_kh'] = "Tên đăng nhập không được bỏ trống !";
     $test = false;
-} else {
+} 
+else if(!preg_match($check_ma_kh, $_POST['ma_kh'], $matches)){
+    $kt_loi['ma_kh'] = "Tên đăng nhập không được bắt đầu bằng số và phải từ 6 - 16 ký tự !";
+    $test = false;
+}
+else if(get_info_kh($_POST['ma_kh'])){
+    $kt_loi['ma_kh'] = "Tên đăng nhập đã tồn tại";
+    $test = false;
+}
+else {
     $ma_kh = $_POST['ma_kh'];
 }
 if(empty($_POST['sdt_kh'])){
     $kt_loi['sdt_kh'] = "Số điện thoại không được bỏ trống";
     $test = false;
-} else{
+} 
+else if(!preg_match($check_sdt_kh, $_POST['sdt_kh'], $matches)){
+    $kt_loi['sdt_kh'] = "Số điện thoại phải bắt đầu bằng 0, không chứa ký tự khác chữ số";
+    $test = false;
+}
+else{
     $sdt_kh = $_POST['sdt_kh'];
 }
 if(empty($_POST['xac_nhan_mat_khau'])){
@@ -59,7 +77,9 @@ if (empty($_POST['email'])) {
 } elseif (!preg_match($check_email, $_POST['email'], $matchs)) {
     $kt_loi['email'] = "Vui lòng nhập đúng định dạng Email !";
     $test = false;
-} else {
+} 
+
+else {
     $email = $_POST['email'];
 }
 
@@ -125,7 +145,7 @@ if($test){
                     <span class="mess"></span>
             </div>
             <div class="form-group">
-                <label for=""><b>Xác nhân mật khẩu *</b></label>
+                <label for=""><b>Xác nhận mật khẩu *</b></label>
                 <input type="password" class="form-control" name="xac_nhan_mat_khau" id="xac_nhan_mat_khau" aria-describedby="helpId" placeholder="Xác nhận lại mật khẩu">
                 <?php if (isset($kt_loi['xac_nhan_mat_khau'])) { ?>
                         <span class="err"> <?php echo $kt_loi['xac_nhan_mat_khau'] ?> </span>
