@@ -8,7 +8,12 @@
                 <div class="top">
                     <div class="accountt">
                         <div class="change_img">
-                            <img  src="<?= $CONTENT_URL ?>/images/user/<?= $hinh ?>"  alt="<?= $hinh ?>" class="avt">
+                            <img  src="<?= $CONTENT_URL ?>/images/user/<?php if($hinh == null){
+                                echo 'user.jpg';
+                            }
+                            else{
+                                echo $hinh;
+                            } ?>"  alt="<?= $hinh ?>" class="avt">
                             <label for="hinh_new" class="change_picture">
                                 <i class="fas fa-camera change_picture-icon"></i>
                             </label>

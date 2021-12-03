@@ -61,14 +61,6 @@ if (isset($_POST['add_kh'])) {
     } else {
         $dia_chi = $_POST['dia_chi'];
     }
-
-    if (empty($_FILES['hinh']['name'])) {
-        $kt_loi['hinh'] = "Hình không được bỏ trống !";
-        $test = false;
-    } else {
-        $hinh = $_FILES['hinh']['name'];
-    }
-
     if (empty($_POST['email'])) {
         $kt_loi['email'] = "Email không được để trống !";
         $test = false;
@@ -91,16 +83,16 @@ if (isset($_POST['add_kh'])) {
                 $mat_khau = md5($_POST['mat_khau']);
                 $ho_ten = $_POST['ho_ten'];
                 $dia_chi = $_POST['dia_chi'];
-                if (strlen($_FILES['hinh']['name']) > 0) {
+                if (isset($_FILES['hinh'])) {
                     $hinh = $_FILES['hinh']['name'];
                     move_uploaded_file($_FILES['hinh']['tmp_name'], "$path./images/user/$hinh");
                 } else {
-                    $hinh = 'user.jpg';
+                    $hinh = null;
                 }
                 $email = $_POST['email'];
                 $sdt_kh = $_POST['sdt_kh'];
-                $vai_tro = $_POST['vai_tro'];
-                $kich_hoat = $_POST['kich_hoat'];
+                $vai_tro = 0;
+                $kich_hoat = 1;
                 $danh_gia = 1;
                 khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email, $sdt_kh, $vai_tro, $danh_gia);
                 echo "<script>
@@ -190,36 +182,6 @@ if (isset($_POST['add_kh'])) {
                     <span class="err"> <?php echo $kt_loi['sdt_kh'] ?> </span>
                 <?php } ?>
                 <span class="mess"></span>
-            </div>
-            <div hidden class="form-group">
-                <label for=""><b>Vai trò *</b></label>
-                <div class="form-control-radio">
-                    <div class="form-check form-check-inline">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="vai_tro" id="vai_tro" value="0" checked>Khách
-                        </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="vai_tro" id="vai_tro" value="1">Quản trị
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div hidden class="form-group">
-                <label for=""><b>Kích hoạt *</b></label>
-                <div class="form-control-radio">
-                    <div class="form-check form-check-inline">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="kich_hoat" id="kich_hoat" value="1" checked>Kích hoạt
-                        </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="kich_hoat" id="kich_hoat" value="0">Chưa kích hoạt
-                        </label>
-                    </div>
-                </div>
             </div>
             <div class="form-group">
                 <button type="submit" name="add_kh" class="btn btn-primary">Đăng ký</button>
