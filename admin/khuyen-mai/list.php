@@ -17,10 +17,10 @@
                         <tr>
                             <th class="check"><input type="checkbox"> </th>
                             <th>Mã khuyến mãi</th>
-                            <th>Mô tả khuyến mãi</th>
+                            <th>Mã kháchh hàng áp dụng</th>
+                            <th>Phẩn trăm giảm giá (hóa đơn)</th>
                             <th>Ngày bắt đầu</th>
                             <th>Ngày kết thúc</th>
-                            <th>Sản phẩm áp dụng</th>
                             <th style="width:15%"></th>
                         </tr>
                     </thead>
@@ -38,10 +38,10 @@
                         <tr>
                         <td class="check"><input type="checkbox"  name= "check[]" value = ' . $ma_km . '  ></td>
                             <td><?=$ma_km?></td>
-                            <td><?=$mo_ta_km?></td>
+                            <td><?=$ma_kh_ap_dung?></td>
+                            <td><?=$so_phan_tram_giam?></td>
                             <td><?=$ngay_bat_dau?></td>
                             <td><?=$ngay_ket_thuc?></td>
-                            <td><a class="btn btn-info" href="<?=$btn_detail?>">Xem</a></td>
                             <td class="update__delete" >
                             <a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a>
                             <a class="btn btn-danger" href="<?=$delete_link?>"> <i class="fas fa-trash-alt"></i></a> 
