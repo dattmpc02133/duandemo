@@ -11,9 +11,10 @@ function sp_select_not_in($ma_sp)
     return pdo_query($sql, $ma_sp);
 }
 // count products by category
-function count_products_by_catagory($ma_loai){
+function count_products_by_catagory($ma_loai)
+{
     $sql = "SELECT COUNT(*) FROM san_pham a INNER JOIN loai b ON a.ma_loai = b.ma_loai WHERE b.ma_loai = ? AND a.trang_thai = 1 ";
-    return pdo_query_value($sql,$ma_loai);
+    return pdo_query_value($sql, $ma_loai);
 }
 
 // lấy thông tin 1 mã sản phẩm
@@ -143,14 +144,16 @@ function sp_update_so_luong_nhap($so_luong, $ma_sp)
     pdo_execute($sql, $so_luong, $ma_sp);
 }
 // cập nhật số lượt mua 
-function so_luot_mua_sp($so_luong,$ma_sp){
+function so_luot_mua_sp($so_luong, $ma_sp)
+{
     $sql = "UPDATE san_pham SET so_luot_mua = so_luot_mua + ? WHERE ma_sp = ?";
     pdo_execute($sql, $so_luong, $ma_sp);
 }
 // cập nhật số lượng sản phẩm còn lại trong kho khi khách hàng mua.
-function giam_sp_ton_kho_khi_mua($so_luong,$ma_sp){
+function giam_sp_ton_kho_khi_mua($so_luong, $ma_sp)
+{
     $sql = "UPDATE san_pham SET so_luong = so_luong - ? WHERE ma_sp = ?";
-    pdo_execute($sql, $so_luong, $ma_sp);   
+    pdo_execute($sql, $so_luong, $ma_sp);
 }
 function sp_update_so_luong_nhap_fix($so_luong_nhap_old, $so_luong_nhap, $ma_sp)
 {
@@ -158,14 +161,16 @@ function sp_update_so_luong_nhap_fix($so_luong_nhap_old, $so_luong_nhap, $ma_sp)
     pdo_execute($sql, $so_luong_nhap_old, $so_luong_nhap, $ma_sp);
 }
 // cập nhật trạng thái về 0 "hết hàng";
-function trang_thai_sp_het_hang($ma_sp){
+function trang_thai_sp_het_hang($ma_sp)
+{
     $sql = "UPDATE san_pham SET trang_thai = 0 WHERE ma_sp = ?";
-    pdo_execute($sql,$ma_sp);
+    pdo_execute($sql, $ma_sp);
 }
 // cập nhật trạng thái về 1 "còn hàng";
-function trang_thai_sp_con_hang($ma_sp){
+function trang_thai_sp_con_hang($ma_sp)
+{
     $sql = "UPDATE san_pham SET trang_thai = 1 WHERE ma_sp = ?";
-    pdo_execute($sql,$ma_sp);
+    pdo_execute($sql, $ma_sp);
 }
 // số lượt lượt xem
 function san_pham_so_luot_luot_xem($ma_sp)
@@ -236,7 +241,13 @@ function select_hinh_phu($ma_sp)
 function hinh_phu_delete($ma_sp)
 {
     $sql = "DELETE FROM hinh WHERE $ma_sp = ? ";
-    pdo_query($sql,$ma_sp);
+    pdo_query($sql, $ma_sp);
 }
 
 
+// sản phẩm đã xem
+function sp_da_xem($ma_sp)
+{
+    $sql = "SELECT * FROM san_pham WHERE ma_sp = ?";
+    return pdo_query($sql, $ma_sp);
+}

@@ -7,7 +7,6 @@ if ($so_luong == 0) {
     trang_thai_sp_con_hang($ma_sp);
 }
 
-
 ?>
 
 <div class="container__chi-tiet">
@@ -22,8 +21,8 @@ if ($so_luong == 0) {
 
                             foreach ($hinh_phu as $key) {
                                 extract($key);
-                            ?>  
-                                <input type="hidden" name="ma_sp" class="ma_sp" value="<?= $ma_sp ?>" >
+                            ?>
+                                <input type="hidden" name="ma_sp" class="ma_sp" value="<?= $ma_sp ?>">
                                 <img style="padding-bottom: 10px;" class="wrap_img" src="<?= $CONTENT_URL ?>/images/products/<?= $hinh_phu ?>" alt="">
                             <?php
                             }
@@ -113,22 +112,21 @@ if ($so_luong == 0) {
 </div>
 <div class="col-md-6 col-sm-12">
     <div class="content_page-new-comment">
-          
+
         <div class="contact-boxt_sent_lish" style="padding-top:20px">
             <h3 style="margin-bottom: 30px;">Viết bình luận</h3>
-            <form  method="post" id="form__gui-bl" class="row grid">
+            <form method="post" id="form__gui-bl" class="row grid">
                 <?php
                 if (isset($_SESSION['user'])) {
                     echo '<div class="col-md-12">
-                         <input type="hidden" name="ma_sp" id="ma_sp" value="'.$ma_sp.'" >
-                         <input type="hidden" id= "ma_kh" name="ma_kh" value="'.$_SESSION['user'].'" >
+                         <input type="hidden" name="ma_sp" id="ma_sp" value="' . $ma_sp . '" >
+                         <input type="hidden" id= "ma_kh" name="ma_kh" value="' . $_SESSION['user'] . '" >
                               <textarea class="form-control controller" name ="noi_dung_gui_bl" id="exampleFormControlTextarea1" rows="5" placeholder="Nội dung"></textarea>
                          </div>
                          <div class="col-sm-12">
                              <button class="btn btn-primary" style="float:right;" name = "btn_gui_bl" type="submit">Gửi bình luận</button>
                          </div>
                          ';
-                   
                 } else {
                     echo '<div class="col-md-12">
                                <textarea class="form-control controller" id="exampleFormControlTextarea1" disabled rows="5" placeholder="Đăng nhập để viết bình luận"></textarea>
@@ -141,7 +139,7 @@ if ($so_luong == 0) {
             </form>
             <div class="col-sm-12">
                 <div class="bl__kh">
-                   <?php require_once ("./bl-khach-hang.php") ?>
+                    <?php require_once("./bl-khach-hang.php") ?>
                 </div>
             </div>
         </div>
@@ -184,12 +182,81 @@ if ($so_luong == 0) {
                 </div>
             </div>
         </div>
-        <!-- <div class="san__pham-daxem">
+        <div class="san__pham-daxem">
             <div class="row-products">
                 <h3 class="san_pham__lienquan-title">sản phẩm đã xem</h3>
                 <div class="row">
 
-                    <div class="col-default">
+                    <?php
+                  
+                    $_SESSION['sp_da_xem'][] = $_GET['ma_sp'];
+                    array_unique($_SESSION['sp_da_xem']);
+                    $length = count($_SESSION['sp_da_xem']);
+                    if ($length >= 6) {
+                        array_shift($_SESSION['sp_da_xem']);
+                        foreach ( array_unique($_SESSION['sp_da_xem']) as $show1) {
+                            $sp_dx1 =  san_pham_getinfo($show1);
+                            echo '
+                            <div class="col-default">
+                            <div class="block-products">
+                                <a href="'.$SITE_URL.'/san-pham/chi-tiet.php?ma_sp='.$sp_dx1['ma_sp'].'">
+                                    <div class="block-image">
+                                        <img src="../../content/images/products/'.$sp_dx1['hinh'].'" alt="sofa-giuong-keo">
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="product-name">
+                                            <p>' .$sp_dx1['ten_sp'] . '<span></span></p>
+                                        </div>
+                                        <div class="product-price">
+                                        <p><span>' . number_format($sp_dx1['don_gia'] - ($sp_dx1['giam_gia'] * $sp_dx1['don_gia'] / 100)) . '<sup>đ</sup></span> <del>' . $sp_dx1['don_gia'] . '<sup>đ</sup></del></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                            ';
+                        }
+                    } else {
+                        foreach ( array_unique($_SESSION['sp_da_xem']) as $show2) {
+                            $sp_dx2 =  san_pham_getinfo($show2);
+                            echo '
+                            <div class="col-default">
+                            <div class="block-products">
+                                <a href="'.$SITE_URL.'/san-pham/chi-tiet.php?ma_sp='.$sp_dx2['ma_sp'].'">
+                                    <div class="block-image">
+                                        <img src="../../content/images/products/'.$sp_dx2['hinh'].'" alt="sofa-giuong-keo">
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="product-name">
+                                            <p>' .$sp_dx2['ten_sp'] . '<span></span></p>
+                                        </div>
+                                        <div class="product-price">
+                                        <p><span>' . number_format($sp_dx2['don_gia'] - ($sp_dx2['giam_gia'] * $sp_dx2['don_gia'] / 100)) . '<sup>đ</sup></span> <del>' . $sp_dx2['don_gia'] . '<sup>đ</sup></del></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                            ';
+
+                            // echo "<pre>";
+                            // print_r($sp_dx2);
+                            // echo "</pre>";
+                          
+                        }
+                    }
+
+                  
+
+
+                    //  unset($_SESSION['sp_da_xem']);
+
+
+
+                    ?>
+
+
+                    <!-- <div class="col-default">
                         <div class="block-products">
                             <a href="#">
                                 <div class="block-image">
@@ -280,10 +347,10 @@ if ($so_luong == 0) {
                                 </div>
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
 </div>
 </div>
@@ -323,29 +390,28 @@ if ($so_luong == 0) {
     thong_so_luong()
     // xử lý gửi bình luận bằng ajax
 
-        $(document).ready(function(){
+    $(document).ready(function() {
 
-            $("#form__gui-bl").on("submit",function(e){
-                
-                    e.preventDefault();
-                    // var ma_kh = $('#ma_kh').val();
-                    // var ma_sp = $("#ma_sp").val();
-                    // alert(ma_sp);
-                    $.ajax({
-                        url: "ajax_action.php",
-                        method: "POST",
-                        data: new FormData(this),
-                        contentType:false,
-                        processData:false,
-                        success: function(respone){                        
-                            $("#form__gui-bl")[0].reset();
-                        }
-                    })
+        $("#form__gui-bl").on("submit", function(e) {
+
+            e.preventDefault();
+            // var ma_kh = $('#ma_kh').val();
+            // var ma_sp = $("#ma_sp").val();
+            // alert(ma_sp);
+            $.ajax({
+                url: "ajax_action.php",
+                method: "POST",
+                data: new FormData(this),
+                contentType: false,
+                processData: false,
+                success: function(respone) {
+                    $("#form__gui-bl")[0].reset();
+                }
             })
-
-
         })
 
+
+    })
 </script>
 
 
