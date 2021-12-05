@@ -10,8 +10,8 @@ if ($so_luong == 0) {
 ?>
 
 <div class="container__chi-tiet">
-    <div class="row">
-        <div class="col-6 col-md-6">
+    <div class="row rowresponsive">
+        <div class="col-6 col-md-6 colresponsive">
             <div class="view__product">
                 <div class="row">
                     <div class="col-3">
@@ -110,7 +110,7 @@ if ($so_luong == 0) {
 </div>
 
 </div>
-<div class="col-md-6 col-sm-12">
+<div class="col-12 col-lg-6 col-md-12 col-sm-12 ">
     <div class="content_page-new-comment">
 
         <div class="contact-boxt_sent_lish" style="padding-top:20px">
@@ -185,7 +185,7 @@ if ($so_luong == 0) {
         <div class="san__pham-daxem">
             <div class="row-products">
                 <h3 class="san_pham__lienquan-title">sản phẩm đã xem</h3>
-                <div class="row">
+                <div class="row spdaxem_reponsive">
 
                     <?php
                   

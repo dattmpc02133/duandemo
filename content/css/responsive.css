@@ -128,3 +128,48 @@
         }
     }
     /* end tin túc */
+    /* Mobie Sản phẩm chi tiết */
+    @media only screen and (max-width:46.1875em){
+        .container__chi-tiet{
+            padding: 0;
+        }
+        
+        .rowresponsive {
+            display: block;
+        }
+        .colresponsive {
+            max-width: 100%;
+        }
+        .san_pham__lienquan,.spdaxem_reponsive  {
+            padding: 0 10px;
+        }
+        .table-danger tr th{
+            font-size: 2.7vmin;
+            padding: 0;
+        }
+        tbody tr td {
+            font-size: 2.7vmin;
+            padding: 0.9vmin !important;
+        }
+        tbody tr td>input {
+            max-width: 20px !important;
+            padding: 1vmin !important;
+            font-size: 0 !important;
+        }
+        tbody tr td a {
+            font-size: 2vmin !important;
+        }
+        
+    }
+    @media only screen and (min-width:46.25em) and (max-width: 63.9375em){
+        .container__chi-tiet {
+            padding: 0;
+        }
+        .san_pham__lienquan {
+            padding: 0 20px;
+        }
+        .spdaxem_reponsive {
+            padding: 0 10px;
+        }
+    }
+    /* end */
