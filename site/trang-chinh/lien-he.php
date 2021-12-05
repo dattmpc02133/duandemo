@@ -40,7 +40,7 @@
                             <input type="email" class="form-control controller" placeholder="Email của bạn">
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control controller" placeholder="Số điện tthoại của bạn">
+                            <input type="text" class="form-control controller" placeholder="Số điện thoại của bạn">
                         </div>
                         <div class="col-md-12">
                             <textarea class="form-control controller" id="exampleFormControlTextarea1" rows="5" placeholder="Nội dung"></textarea>

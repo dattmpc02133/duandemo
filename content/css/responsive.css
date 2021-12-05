@@ -60,3 +60,26 @@
             border: 1px solid gray;
         }
     }
+    @media  (max-width:1024px) {
+        .header_box-right {
+            margin-right: -20px;
+        }
+        .incon_size {
+            font-size: 25px;
+            padding: 0 5px;
+        }
+        .hotline span p a {
+            font-size: small;
+        }
+        .avt__user {
+            max-width: 30px;
+            max-height: 30px;
+        }
+        .account_dangnhap, a {
+           
+            font-size: small;
+        }
+        .cart_gio, span {
+            font-size: small;
+        }
+    }
