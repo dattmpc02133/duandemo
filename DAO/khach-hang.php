@@ -28,10 +28,10 @@ function get_info_kh($ma_kh)
 }
 
 // Cập nhật admin
-function khach_hang_update($mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email, $vai_tro, $ma_kh)
+function khach_hang_update($mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email, $sdt, $vai_tro, $ma_kh)
 {
-    $sql = "UPDATE khach_hang SET mat_khau=?,ho_ten=?,dia_chi=?,kich_hoat=?,hinh=?,email=?,vai_tro=? WHERE ma_kh=?";
-    pdo_execute($sql, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email, $vai_tro, $ma_kh);
+    $sql = "UPDATE khach_hang SET mat_khau=?,ho_ten=?,dia_chi=?,kich_hoat=?,hinh=?,email=?, sdt_kh=?,vai_tro=? WHERE ma_kh=?";
+    pdo_execute($sql, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email, $sdt, $vai_tro, $ma_kh);
 }
 
 // cập nhật vai trò khách

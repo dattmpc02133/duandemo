@@ -6,7 +6,7 @@ if (isset($_POST['btn_update1'])) {
         if (isset($_POST['btn_update1'])) {
             $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL . '/images/products/';
             $ma_kh = $_POST['ma_kh'];
-            $mat_khau = $_POST['mat_khau'];
+            $mat_khau = md5($_POST['mat_khau']);
             $ho_ten = $_POST['ho_ten'];
             $dia_chi=$_POST['dia_chi'];
             $kich_hoat=$_POST['kich_hoat'];
@@ -18,8 +18,9 @@ if (isset($_POST['btn_update1'])) {
                 $tenhinh = $_POST['hinh'];
             }
             $email=$_POST['email'];
+            $sdt_kh = $_POST['sdt_kh'];
             $vai_tro=$_POST['vai_tro'];
-            khach_hang_update($mat_khau, $ho_ten, $dia_chi, $kich_hoat, $tenhinh, $email, $vai_tro, $ma_kh);
+            khach_hang_update($mat_khau, $ho_ten, $dia_chi, $kich_hoat, $tenhinh, $email, $sdt, $vai_tro, $ma_kh);
             unset($_SESSION['ma_kh']);
            echo "<script> location.href = 'index.php'; </script>";
         } else {
@@ -86,6 +87,10 @@ if (isset($_GET['ma_kh'])) {
     <div class="form-group">
         <label for="">Email:</label>
         <input type="text" class="form-control" value="<?= $dia_chi ?>" name="email" id="email">
+    </div>
+    <div class="form-group">
+        <label for="">Số điện thoại:</label>
+        <input type="text" class="form-control" value="<?= $sdt_kh ?>" name="sdt_kh" id="sdt_kh">
     </div>
     <div class="form-group">
         <label for="">Vai trò:</label>

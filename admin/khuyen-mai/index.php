@@ -3,7 +3,7 @@
     require_once '../../DAO/pdo.php';
     require_once '../../DAO/khuyen-mai.php';
     require_once '../../DAO/san-pham.php';
-
+    require_once '../../DAO/loai.php';
     if(!isset($_SESSION['admin'])){
         header('location: ../../site/trang-chinh');
     }

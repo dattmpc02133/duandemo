@@ -7,14 +7,15 @@
         $hinh = $_FILES['hinh'];
         $tenhinh = save_file($hinh, $path);
         $ma_kh = $_POST['ma_kh'];
-        $mat_khau =$_POST['mat_khau'];
+        $mat_khau = md5($_POST['mat_khau']);
         $ho_ten=$_POST['ho_ten'];
         $sdt_kh = $_POST['sdt_kh'];
         $dia_chi=$_POST['dia_chi'];
         $kich_hoat=$_POST['kich_hoat'];
         $email=$_POST['email'];
         $vai_tro=$_POST['vai_tro'];
-        khach_hang_insert($ma_kh,$mat_khau,$ho_ten,$dia_chi,$kich_hoat,$tenhinh,$email,$sdt_kh,$vai_tro);
+        $danh_gia = 1;
+        khach_hang_insert($ma_kh,$mat_khau,$ho_ten,$dia_chi,$kich_hoat,$tenhinh,$email,$sdt_kh,$vai_tro, $danh_gia);
         // header('location: index.php');
         echo "<script>
                 location.href = 'index.php';

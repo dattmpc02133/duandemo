@@ -44,16 +44,6 @@ if (isset($_POST['dat_hang'])) {
     $ngay_dat = date_format(date_create(), "Y-m-d");
     $trang_thai = 1;
     $so_luong_input_data = $_POST['so_luong_input_data'];
-    if(isset($_POST['ma_km'])){
-        $ma_km = $_POST['ma_km'];
-        $ma_km_in4 = ma_km_get_info($ma_km);
-        if($ma_km_in4 == true && $ma_km_in4['ma_kh_ap_dung'] == $ma_kh){
-            $tong_tien = $tong_tien - ($tong_tien * ($ma_km_in4['so_phan_tram_giam']/100));
-        }
-        else{
-            echo '<script>alert("Mã khuyến mãi không tồn tại");</script>';
-        }
-    }
     hoa_don_insert($ma_kh, $tong_tien, $dia_chi_giao_hang, $ngay_dat, $trang_thai);
     $ma_hd2 = get_ma_hd();
     $list_sp_ght = get_ma_sp_gio_hang_tam($ma_kh);
@@ -63,14 +53,16 @@ if (isset($_POST['dat_hang'])) {
         // tăng số lượt mua hàng của sản phẩm
         so_luot_mua_sp($so_luong_tam, $ma_sp_tam);
         // trừ đi số lượng sản phẩm trong kho khi khách hàng mua.
-        giam_sp_ton_kho_khi_mua($so_luong_tam,$ma_sp_tam);
-
+        giam_sp_ton_kho_khi_mua($so_luong_tam, $ma_sp_tam);
+    }
+    if(isset($_POST['ma_km'])){
+        khach_hang_da_dung_insert($_POST['ma_km_ap_dung'], $_SESSION['user']);
     }
     delete_all_gio_hang_tam();
     echo '<script>
-        location.href = "index.php";
         alert("Đặt hàng thành công !");
     </script>';
+    // location.href = "index.php";
 }
 ?>
 <section class="mainn">
@@ -106,7 +98,7 @@ if (isset($_POST['dat_hang'])) {
                                     $delete_link = "index.php?addcart&id=$id";
                             ?>
                                     <tr>
-                                     
+
                                         <td><?= $stt ?></td>
                                         <td style="text-align:center;"><img src="<?= $CONTENT_URL ?>/images/products/<?= $hinh_tam ?>" alt=""></td>
                                         <td><?= $ten_sp_tam ?></td>
@@ -145,8 +137,10 @@ if (isset($_POST['dat_hang'])) {
                             <textarea name="dia_chi_giao_hang" class="form-control" style="font-size: 0.9rem; line-height:35px;" maxlength="255"><?= $dia_chi ?></textarea>
                             <div class="form-group">
                                 <label for="">Mã khuyến mãi</label>
-                                <input class="form-control" type="text" name="ma_km" id="ma_km"><br>
+                                <input class="form-control" type="text" name="ma_km_ap_dung" id="ma_km_ap_dung">
+                                <input type="button" class="btn btn-danger" id="ap_dung" value="Áp dụng">
                             </div>
+                            <p id="result_ap_dung_km_action"></p>
                             <p class="order_total_dix" style="padding: 0 8px; color: rgba(0, 0, 0, 0.3); font-size: 1rem"><strong>Tổng Tiền:</strong>
                                 <span id="tong_tien" style="color: red; margin-left: 8px; ">0</span> <sup style="color:red">đ</sup>
                                 <input type="hidden" id="tong_tien2" name="tong_tien">
@@ -181,7 +175,7 @@ if (isset($_POST['dat_hang'])) {
         })
         tong_tien_html.innerHTML = tong_tien_nums.toLocaleString("en");
         tong_tien2.value = tong_tien_nums;
-        console.log(tong_tien2.value)
+        console.log(tong_tien2.value);
     }
 
     // kết thúc tính tổng tiền của giỏ hàng
@@ -205,3 +199,70 @@ if (isset($_POST['dat_hang'])) {
 
     thanh_tien();
 </script>
+<script>
+    function cat_chuoi(str) {
+        var a = str;
+        var b = a.split('');
+        var c = '';
+        for (var i = 1; i < a.length; i++) {
+            console.log(a[i]);
+            c += a[i];
+            if (a[i] == 'đ' || a[i] == '%') {
+                break;
+            }
+        }
+        var d = c.substr(0, c.length - 1);
+        var e = d.split(',');
+        var f = '';
+        for (var j = 0; j < e.length; j++) {
+            f += e[j];
+        }
+        return f;
+    }
+
+    function tinh_tong_tien(){
+        var tong_tien2 = document.getElementById('tong_tien2');
+        var tong_tien = document.getElementById('tong_tien');
+        var result_ap_dung_km_action = document.getElementById('result_ap_dung_km_action');
+        var muc_giam = cat_chuoi(result_ap_dung_km_action.innerHTML);
+        var tong_tien3 = Number(tong_tien2.value) - Number(muc_giam);
+        tong_tien.innerHTML = tong_tien3.toLocaleString('en');
+        tong_tien2.value = tong_tien3;
+    }
+    
+    function show_km(ma_km) {
+        $.ajax({
+            url: "ap_dung_km_action.php",
+            method: "post",
+            data: {
+                ma_km: ma_km
+            },
+            success: function(respone) {
+                // alert('Thành công');
+                $('#result_ap_dung_km_action').html(respone);
+                tinh_tong_tien();
+            }
+        });
+        
+    }
+    
+    // function fetch_data(){
+    //     $.ajax({
+    //         url: "ap_dung_km_action.php",
+    //         method: "POST",
+    //         success: function(respone){
+    //             $('#result_ap_dung_km_action').html(respone);
+    //         }
+    //     })
+    // }
+    $(document).ready(function() {
+        $('#ap_dung').on("click", function() {
+            var ma_km = $('#ma_km_ap_dung').val();
+            show_km(ma_km);
+        })
+        // fetch_data();
+    });
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>

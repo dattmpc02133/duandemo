@@ -29,7 +29,11 @@ function loai_update($ten_loai, $hinh, $ma_loai)
     $sql = "UPDATE loai SET ten_loai= ?, hinh_loai_sp = ? WHERE ma_loai=?";
     pdo_execute($sql, $ten_loai, $hinh , $ma_loai);
 }
-
+// loại not in update khuyến mãi
+function loai_sp_not_in_upkm($not_in){
+    $sql = "SELECT * FROM loai WHERE ma_loai NOT IN (?)";
+    return pdo_query($sql, $not_in);
+}
 
 // loại khuyễn mãi và sản phẩm mới
 

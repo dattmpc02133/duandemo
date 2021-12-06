@@ -1,7 +1,7 @@
 <?php 
     require_once '../../DAO/pdo.php';
     require_once '../../DAO/khuyen-mai.php';
-
+    require_once '../../DAO/loai.php';
     if(isset($_GET['ma_km'])){
         ma_km_delete($_GET['ma_km']);
     }
@@ -17,10 +17,12 @@
                         <tr>
                             <th class="check"><input type="checkbox"> </th>
                             <th>Mã khuyến mãi</th>
-                            <th>Mã kháchh hàng áp dụng</th>
-                            <th>Phẩn trăm giảm giá (hóa đơn)</th>
+                            <th>Loại khuyến mãi</th>
+                            <th>Mức giảm<br>(% hoặc số tiền)</th>
+                            <th>Loại sản phẩm</th>
                             <th>Ngày bắt đầu</th>
                             <th>Ngày kết thúc</th>
+                            <th>Khách hàng đã dùng</th>
                             <th style="width:15%"></th>
                         </tr>
                     </thead>
@@ -38,10 +40,19 @@
                         <tr>
                         <td class="check"><input type="checkbox"  name= "check[]" value = ' . $ma_km . '  ></td>
                             <td><?=$ma_km?></td>
-                            <td><?=$ma_kh_ap_dung?></td>
-                            <td><?=$so_phan_tram_giam?></td>
+                            <td><?php $ten_loai_km = loai_km_get_in4($loai_km); echo $ten_loai_km['ten_loai_km'];?></td>
+                            <td><?=$muc_giam?><?php 
+                                if($loai_km == 1){
+                                    echo '<sup>đ</sup>';
+                                }
+                                else{
+                                    echo '%';
+                                }
+                            ?></td>
+                            <td><?php $loai_ap_dung = loai_getinfo($ma_loai_ap_dung); echo $loai_ap_dung['ten_loai'];?></td>
                             <td><?=$ngay_bat_dau?></td>
                             <td><?=$ngay_ket_thuc?></td>
+                            <td><a class="btn btn-info" href="index.php?btn_detail&ma_km=<?=$ma_km?>" role="button">Xem</a></td>
                             <td class="update__delete" >
                             <a class="btn btn-info" href="<?=$btn_update?>"><i class="fas fa-edit"></i></a>
                             <a class="btn btn-danger" href="<?=$delete_link?>"> <i class="fas fa-trash-alt"></i></a> 

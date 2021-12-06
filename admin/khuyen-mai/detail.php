@@ -3,9 +3,6 @@ if (isset($_GET['ma_km'])) {
     $ma_km = $_GET['ma_km'];
 }
 
-if (isset($_GET['id'])) {
-    ct_km_delete($_GET['id']);
-}
 ?>
 <div class="title">
     <h3>CHI TIẾT KHUYẾN MÃI: <?= $ma_km ?></h3>
@@ -18,25 +15,22 @@ if (isset($_GET['id'])) {
                 <tr>
                     <th class="check"><input type="checkbox"> </th>
                     <th>ID</th>
-                    <th>Mã sản phẩm</th>
-                    <th>Tên sản phẩm</th>
+                    <th>Mã khuyến mãi</th>
+                    <th>Mã khách hàng đã dùng</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                $in4_ct_km = ma_km_ct_selectAll($ma_km);
+                $in4_ct_km = kh_da_dung_get($ma_km);
                 foreach ($in4_ct_km as $ct_km) {
                     extract($ct_km);
                 ?>
                     <tr>
                         <td class="check"><input type="checkbox"> </td>
                         <td><?= $id ?></td>
-                        <td><?= $ma_sp ?></td>
-                        <td><?php
-                            $ten_sp_selected = ten_sp_select_in($ma_sp);
-                            echo $ten_sp_selected;
-                            ?></td>
+                        <td><?= $ma_km ?></td>
+                        <td><?=$ma_kh_da_dung?></td>
                         <td class="update__delete">
                             <!-- <a class="btn btn-info" href="index.php?btn_update_ct&id=<?= $id ?>"><i class="fas fa-edit"></i></a> -->
                             <a class="btn btn-danger" href="index.php?btn_detail&ma_km=<?= $ma_km ?>&id=<?= $id ?>"><i class="fas fa-trash-alt"></i></a>
