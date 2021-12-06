@@ -11,7 +11,7 @@ if ($so_luong == 0) {
 
 <div class="container__chi-tiet">
     <div class="row">
-        <div class="col-6 col-md-6">
+        <div class="ccol-12 col-md-6">
             <div class="view__product">
                 <div class="row">
                     <div class="col-3">

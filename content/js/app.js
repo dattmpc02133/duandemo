@@ -1,7 +1,7 @@
 const app = {
     hien_thi_gio_hang(){
         var cart_click = document.getElementById('cart');
-        console.log(cart_click);
+        // console.log(cart_click);
         var cart_on = document.getElementById("header_cart-list");
         cart_click.onclick = function(){
             var account_on = document.getElementById('header-dropdown_content');

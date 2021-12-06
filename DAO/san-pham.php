@@ -1,7 +1,7 @@
 <?php
 function san_pham_selectall()
 {
-    $sql = "SELECT * FROM san_pham ORDER BY ma_sp DESC ";
+    $sql = "SELECT * FROM san_pham WHERE dac_biet = 0  ORDER BY ma_sp DESC ";
     return pdo_query($sql);
 }
 //san pham select not in
@@ -250,4 +250,9 @@ function sp_da_xem($ma_sp)
 {
     $sql = "SELECT * FROM san_pham WHERE ma_sp = ?";
     return pdo_query($sql, $ma_sp);
+}
+// slideshow 
+function slideshow(){
+    $sql = "SELECT * FROM san_pham WHERE dac_biet = 1 ";
+    return pdo_query($sql);
 }

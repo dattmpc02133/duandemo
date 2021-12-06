@@ -635,7 +635,7 @@ overflow: hidden;
 }
 .navbar_overplay-list {
   position: fixed;
-  top: 170px;
+  top: 0px;
   right: 0;
   left: 0;
   bottom: 0;
@@ -647,6 +647,7 @@ overflow: hidden;
   transform: translateX(-100%);
   opacity: 0;
   transition: transform linear 0.2s, opacity linear 0.2s;
+
 }
 .navbar_bar-lish {
   margin-top: 24px;
@@ -708,6 +709,7 @@ overflow: hidden;
     display: block;
   }
 }
+
 /* end */
 /* dangky */
 .dangky-product {

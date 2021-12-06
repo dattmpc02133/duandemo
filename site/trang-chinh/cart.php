@@ -5,7 +5,7 @@ require_once '../../DAO/khuyen-mai.php';
 if (!isset($_SESSION['user'])) {
 
     echo '<script>
-    alert("bạn cần đăng nhập để xem giỏ hàng");
+    alert("Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng");
     location.href = "' . $ROOT_URL . '";
 </script>';
 }
