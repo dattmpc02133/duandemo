@@ -2,6 +2,10 @@
 require_once("../../global.php");
 require_once("../../DAO/pdo.php");
 require_once("../../DAO/tin-tuc.php");
+if(!isset($_SESSION['admin'])){
+    header('location: ../../site/trang-chinh');
+}
+
 extract($_REQUEST);
 if (exit_param("btn-add")) {
     // trang danh sach loai hang

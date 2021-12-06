@@ -2,6 +2,12 @@
     require_once ("../../global.php");
     require_once("../../DAO/khach-hang.php");
     require_once("../../DAO/hoa-don.php");
+
+    if(!isset($_SESSION['admin'])){
+        header('location: ../../site/trang-chinh');
+    }
+    
+
     extract($_REQUEST);
     if(exit_param("btn-add")){
         $VIEW_NAME = "add.php";

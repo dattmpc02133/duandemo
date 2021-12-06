@@ -3,6 +3,12 @@ require ("../../global.php");
 require ("../../DAO/binh-luan.php");
 require ("../../DAO/san-pham.php");
 require ("../../DAO/pdo.php");
+
+if(!isset($_SESSION['admin'])){
+    header('location: ../../site/trang-chinh');
+}
+
+
 // 
 extract($_REQUEST);
 if(exit_param("chart")){

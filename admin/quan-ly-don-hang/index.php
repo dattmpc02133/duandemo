@@ -3,6 +3,10 @@
     require_once '../../DAO/pdo.php';
     require_once '../../DAO/hoa-don.php';
     require_once '../../DAO/san-pham.php';
+    if(!isset($_SESSION['admin'])){
+        header('location: ../../site/trang-chinh');
+    }
+    
     extract($_REQUEST);
     if (exit_param("btn-list")) {
         $VIEW_NAME = "list.php";

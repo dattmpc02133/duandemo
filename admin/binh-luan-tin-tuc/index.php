@@ -4,6 +4,12 @@ require_once("../../DAO/pdo.php");
 require_once("../../DAO/binh-luan.php");
 require_once("../../DAO/san-pham.php");
 require_once("../../DAO/tin-tuc.php");
+
+if(!isset($_SESSION['admin'])){
+    header('location: ../../site/trang-chinh');
+}
+
+
 // require_once("../../DAO/thong_ke_binh_luan.php");
 extract($_REQUEST);
 if (exit_param("btn_chitiet")) {
