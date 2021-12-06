@@ -77,7 +77,7 @@ if (isset($_POST['dat_hang'])) {
     <div class="container-fluid" style="padding: 0 80px;">
         <form action="" method="post">
             <div class="row">
-                <div class="col-9">
+                <div class="col-xs-12 col-sm-12 col-lg-9 col-xs-12">
                     <h3 style="text-align: center;">Giỏ hàng của bạn</h3>
                     <table class="form__content-table table">
                         <thead class="table-danger">
@@ -130,7 +130,7 @@ if (isset($_POST['dat_hang'])) {
                         </tbody>
                     </table>
                 </div>
-                <div class="col-3">
+                <div class="col-xs-12 col-sm-12 col-lg-3 col-xs-12">
                     <div class="waxbox_odercart">
                         <div class="order_title">
                             <h3>Thông tin đơn hàng</h3>

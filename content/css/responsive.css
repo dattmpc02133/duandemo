@@ -53,10 +53,123 @@
             text-align: center;
         }
     }
-    
+    /* table tất cả sp */
+    @media only screen and (min-width:46.25em) and (max-width: 63.9375em){
+        .container-allproducts {
+            max-width: 100%;
+            padding: 10px 85px 0px 85px;
+        }
+        .main-title h1 {
+            font-size: 24px;
+        }
+    }
+    /* end */
+    /* mobie tất cả sp */
+    @media only screen and (max-width:46.1875em){
+        .container-allproducts {
+            padding: 5px 10px 0px 10px;
+            max-width: 100%;
+        }
+        .fill2 {
+            padding-top: 10px;
+        }
+    }
+    /* end */
     /* PC */
     @media only screen and (min-width:64em) {
         .home_product-item{
             border: 1px solid gray;
         }
     }
+    @media  (max-width:1024px) {
+        .header_box-right {
+            margin-right: -20px;
+        }
+        .incon_size {
+            font-size: 25px;
+            padding: 0 5px;
+        }
+        .hotline span p a {
+            font-size: small;
+        }
+        .avt__user {
+            max-width: 30px;
+            max-height: 30px;
+        }
+        .account_dangnhap, a {
+           
+            font-size: small;
+        }
+        .cart_gio, span {
+            font-size: small;
+        }
+    }
+
+
+    /* Tin Tức + liên hệResonpsive */
+    /* mobie */
+    @media only screen and (max-width:46.1875em){
+        .map-box iframe {
+            height: 355px;
+        }
+    }
+    /* end */
+    /* table */
+    @media only screen and (min-width:46.25em) and (max-width: 63.9375em){
+        
+    }
+    /* PC */
+    @media  (max-width:1024px) {
+        h4 {
+            font-size: smaller;
+        }
+        p>strong {
+            font-size: 0.9rem;
+        }
+    }
+    /* end tin túc */
+    /* Mobie Sản phẩm chi tiết */
+    @media only screen and (max-width:46.1875em){
+        .container__chi-tiet{
+            padding: 0;
+        }
+        
+        .rowresponsive {
+            display: block;
+        }
+        .colresponsive {
+            max-width: 100%;
+        }
+        .san_pham__lienquan,.spdaxem_reponsive  {
+            padding: 0 10px;
+        }
+        .table-danger tr th{
+            font-size: 2.7vmin;
+            padding: 0;
+        }
+        tbody tr td {
+            font-size: 2.7vmin;
+            padding: 0.9vmin !important;
+        }
+        tbody tr td>input {
+            max-width: 20px !important;
+            padding: 1vmin !important;
+            font-size: 0 !important;
+        }
+        tbody tr td a {
+            font-size: 2vmin !important;
+        }
+        
+    }
+    @media only screen and (min-width:46.25em) and (max-width: 63.9375em){
+        .container__chi-tiet {
+            padding: 0;
+        }
+        .san_pham__lienquan {
+            padding: 0 20px;
+        }
+        .spdaxem_reponsive {
+            padding: 0 10px;
+        }
+    }
+    /* end */
