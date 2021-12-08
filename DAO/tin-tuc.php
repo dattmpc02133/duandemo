@@ -48,6 +48,4 @@
         GROUP BY tt.ma_tin_tuc, tt.tieu_de HAVING so_luong > 0 ORDER BY tt.ma_tin_tuc DESC";
         return pdo_query($sql);
 }
-   
-
 ?>
