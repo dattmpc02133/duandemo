@@ -19,7 +19,6 @@
                             <th>Mã khuyến mãi</th>
                             <th>Loại khuyến mãi</th>
                             <th>Mức giảm<br>(% hoặc số tiền)</th>
-                            <th>Loại sản phẩm</th>
                             <th>Ngày bắt đầu</th>
                             <th>Ngày kết thúc</th>
                             <th>Khách hàng đã dùng</th>
@@ -49,7 +48,6 @@
                                     echo '%';
                                 }
                             ?></td>
-                            <td><?php $loai_ap_dung = loai_getinfo($ma_loai_ap_dung); echo $loai_ap_dung['ten_loai'];?></td>
                             <td><?=$ngay_bat_dau?></td>
                             <td><?=$ngay_ket_thuc?></td>
                             <td><a class="btn btn-info" href="index.php?btn_detail&ma_km=<?=$ma_km?>" role="button">Xem</a></td>

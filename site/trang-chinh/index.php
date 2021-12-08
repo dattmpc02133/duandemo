@@ -44,4 +44,4 @@ if (exit_param("dang_ky", $_REQUEST)) {
     // $VIEW_NAME = "../trang-chinh/cart.php";
     $VIEW_NAME = "../trang-chinh/home.php";
 }
-require("../layout.php");
+require_once("../layout.php");
