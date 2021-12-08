@@ -27,7 +27,7 @@ extract($in4_hd);
             </thead>
             <tbody>
                 <?php
-                $list_detail = hoa_don_chi_tiet_select_by_ma_hd($hoa_don);
+                $list_detail = phan_trang_hdct($ma_hd);
                 foreach ($list_detail as $chi_tiet) {
                     extract($chi_tiet);
                     $btn_update = "index.php?btn_update_ct&id=$id";
@@ -51,7 +51,17 @@ extract($in4_hd);
                 ?>
             </tbody>
         </table>
-
+        <div class=" col-sm-12 phan_trang" style="display:flex; justify-content:center">
+            <?php 
+                $count_hdct = count_hdct($ma_hd);
+                $trang = ceil($count_hdct/10);
+                for($i = 1; $i <= $trang; $i++){
+            ?>
+                <a name="phan_trang" id="phan_trang" class="btn btn-light" href="index.php?btn-details&ma_hd=<?=$ma_hd?>&page=<?=$i?>" role="button"><?=$i?></a>
+            <?php
+                }
+            ?>
+        </div>
         <div class="button__group">
             <!-- <button class=" btn btn-info button__group-item button__group-Delete" name="delete_select">Xóa các mục chọn</button> -->
             <a href="index.php?btn-list" class="btn btn-info button__group-item button__group-input">Danh sách đơn hàng</a>

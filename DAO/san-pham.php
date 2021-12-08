@@ -77,14 +77,14 @@ function phan_trang_count()
 // sản phẩm phân trang
 function phan_trang_sp()
 {
-    $sp_tung_trang = 9;
+    $sp_tung_trang = 10;
     if (!isset($_GET['page'])) {
         $trang = 1;
     } else {
         $trang = $_GET['page'];
     }
     $tung_trang =  ($trang - 1) * $sp_tung_trang;
-    $sql = "SELECT * FROM san_pham  ORDER BY ma_sp  DESC LIMIT $tung_trang,$sp_tung_trang";
+    $sql = "SELECT * FROM san_pham  ORDER BY ma_sp DESC LIMIT $tung_trang,$sp_tung_trang";
     return pdo_query($sql);
 }
 // sản phẩm đặc biệt 
@@ -256,3 +256,4 @@ function slideshow(){
     $sql = "SELECT * FROM san_pham WHERE dac_biet = 1 ";
     return pdo_query($sql);
 }
+?>

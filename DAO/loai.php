@@ -53,4 +53,23 @@ function sp_p_km_tt(){
     $sql = "SELECT * FROM loai WHERE ma_loai IN(15,8,3) ";
     return pdo_query($sql);
 }
+
+// Đếm loại sản phẩm
+function count_loai(){
+    $sql = "SELECT COUNT(*) FROM loai";
+    return pdo_query_value($sql);
+}
+
+// Phân trang loại sản phẩm
+function phan_trang_loai(){
+    $loai_tung_trang = 10;
+    if (!isset($_GET['page'])) {
+        $trang = 1;
+    } else {
+        $trang = $_GET['page'];
+    }
+    $tung_trang =  ($trang - 1) * $loai_tung_trang;
+    $sql = "SELECT * FROM loai  ORDER BY ma_loai DESC LIMIT $tung_trang,$loai_tung_trang";
+    return pdo_query($sql);
+}
 ?>

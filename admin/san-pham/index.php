@@ -10,7 +10,10 @@ if (exit_param("btn-add")) {
     $VIEW_NAME = "add.php";
 } elseif (exit_param("btn-update")) {
     $VIEW_NAME = "update.php";
-} else {
+} else if(exit_param("btn-list")){
+    $VIEW_NAME = "list.php";
+}
+else{
     $VIEW_NAME = "list.php";
 }
 require_once("../layout.php");

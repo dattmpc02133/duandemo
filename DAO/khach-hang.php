@@ -102,3 +102,22 @@ function email_gui_kh($email){
     $sql = "SELECT * FROM khach_hang WHERE email=?";
     return pdo_query_one($sql,$email);
 }
+
+// Đếm số khách hàng
+function count_kh(){
+    $sql = "SELECT COUNT(*) FROM khach_hang";
+    return pdo_query_value($sql);
+}
+
+// Phân trang khách hàng
+function phan_trang_kh(){
+    $kh_tung_trang = 10;
+    if (!isset($_GET['page'])) {
+        $trang = 1;
+    } else {
+        $trang = $_GET['page'];
+    }
+    $tung_trang =  ($trang - 1) * $kh_tung_trang;
+    $sql = "SELECT * FROM khach_hang  ORDER BY ma_kh DESC LIMIT $tung_trang,$kh_tung_trang";
+    return pdo_query($sql);
+}

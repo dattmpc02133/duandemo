@@ -68,11 +68,41 @@
         pdo_execute($sql, $ma_sp, $so_luong_nhap, $gia, $ma_ct_pn);
     }
 
-    // đếm số lượng phiếu nhập
-    function phieu_nhap_count()
-    {
-        $sql = "SELECT COUNT(*) as total  FROM phieu_nhap WHERE ma_pn";
+    // Đếm phiếu nhập
+    function count_pn(){
+        $sql = "SELECT COUNT(*) FROM phieu_nhap";
+        return pdo_query_value($sql);
+    }
+
+    // Phân trang phiếu nhập
+    function phan_trang_pn(){
+        $pn_tung_trang = 10;
+        if (!isset($_GET['page'])) {
+            $trang = 1;
+        } else {
+            $trang = $_GET['page'];
+        }
+        $tung_trang =  ($trang - 1) * $pn_tung_trang;
+        $sql = "SELECT * FROM phieu_nhap  ORDER BY ma_pn DESC LIMIT $tung_trang,$pn_tung_trang";
         return pdo_query($sql);
     }
 
+    // Đếm phiếu nhập chi tiết
+    function count_pnct($ma_pn){
+        $sql = "SELECT COUNT(*) FROM chi_tiet_phieu_nhap WHERE ma_pn = ?";
+        return pdo_query_value($sql, $ma_pn);
+    }
+
+    // Phân trang phiếu nhập chi tiết
+    function phan_trang_pnct($ma_pn){
+        $pnct_tung_trang = 10;
+        if (!isset($_GET['page'])) {
+            $trang = 1;
+        } else {
+            $trang = $_GET['page'];
+        }
+        $tung_trang =  ($trang - 1) * $pnct_tung_trang;
+        $sql = "SELECT * FROM chi_tiet_phieu_nhap WHERE ma_pn = ? ORDER BY ma_ct_pn DESC LIMIT $tung_trang,$pnct_tung_trang";
+        return pdo_query($sql, $ma_pn);
+    }
 ?>

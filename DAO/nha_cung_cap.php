@@ -33,4 +33,21 @@ function nha_cung_cap_getinfo($ma_ncc)
     $sql = "SELECT * FROM nha_cung_cap WHERE ma_ncc=?";
     return pdo_query_one($sql, $ma_ncc);
 }
+// Đếm nhà cung cấp
+function count_ncc(){
+    $sql = "SELECT COUNT(*) FROM nha_cung_cap";
+    return pdo_query_value($sql);
+}
+// Phân trang nhà cung cấp
+function phan_trang_ncc(){
+    $ncc_tung_trang = 10;
+    if (!isset($_GET['page'])) {
+        $trang = 1;
+    } else {
+        $trang = $_GET['page'];
+    }
+    $tung_trang =  ($trang - 1) * $ncc_tung_trang;
+    $sql = "SELECT * FROM nha_cung_cap  ORDER BY ma_ncc DESC LIMIT $tung_trang,$ncc_tung_trang";
+    return pdo_query($sql);
+}
 ?>

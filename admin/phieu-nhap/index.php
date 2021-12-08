@@ -24,7 +24,10 @@ else if(exit_param("btn_update")){
 else if(exit_param("btn_update_ct")){
     $VIEW_NAME = "update_ct.php";
 }
-else {
+else if(exit_param("btn_list")){
+    $VIEW_NAME = "list.php";
+}
+else{
     $VIEW_NAME = "list.php";
 }
 require "../layout.php";

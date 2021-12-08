@@ -27,7 +27,7 @@
             </thead>
             <tbody>
                 <?php 
-                    $in4_pn = get_ct_1_pn($ma_pn);
+                    $in4_pn = phan_trang_pnct($ma_pn);
                     foreach ($in4_pn as $ct) {
                         extract($ct);
                 ?>
@@ -51,6 +51,17 @@
                 ?>
                 </tbody>
         </table>
+        <div class=" col-sm-12 phan_trang" style="display:flex; justify-content:center">
+            <?php 
+                $count_pnct = count_pnct($ma_pn);
+                $trang = ceil($count_pnct/10);
+                for($i = 1; $i <= $trang; $i++){
+            ?>
+                <a name="phan_trang" id="phan_trang" class="btn btn-light" href="index.php?btn_detail&ma_pn=<?=$ma_pn?>&page=<?=$i?>" role="button"><?=$i?></a>
+            <?php
+                }
+            ?>
+        </div>
         <div class="row">
             <div class="col p-12 t-12 m-12">
                 <div class="button__group">

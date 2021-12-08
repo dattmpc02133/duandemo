@@ -9,7 +9,7 @@ function phan_trang_count($ten_bang)
 // sản phẩm phân trang
 function phan_trang($ten_bang, $cot)
 {
-    $sp_tung_trang = 9;
+    $sp_tung_trang = 10;
     if (!isset($_GET['page'])) {
         $trang = 1;
     } else {

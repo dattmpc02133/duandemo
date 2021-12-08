@@ -151,4 +151,46 @@
         $sql = "SELECT COUNT(*) FROM hoa_don WHERE ma_kh = ? AND trang_thai = ?";
         return pdo_query_value($sql, $ma_kh, $trang_thai);
     }
+
+    // Đếm số hóa đơn
+    function count_hd(){
+        $sql = "SELECT COUNT(*) FROM hoa_don";
+        return pdo_query_value($sql);
+        
+    }
+    // Phân trang hóa đơn
+    function phan_trang_hd(){
+        $hd_tung_trang = 10;
+        if (!isset($_GET['page'])) {
+            $trang = 1;
+        } else {
+            $trang = $_GET['page'];
+        }
+        $tung_trang =  ($trang - 1) * $hd_tung_trang;
+        $sql = "SELECT * FROM hoa_don  ORDER BY ma_hd DESC LIMIT $tung_trang, $hd_tung_trang";
+        return pdo_query($sql);
+    }
+
+    // Đếm hóa đơn chi tiết
+    function count_hdct($ma_hd){
+        $sql = "SELECT COUNT(*) FROM hoa_don_chi_tiet WHERE ma_hd = ?";
+        return pdo_query_value($sql, $ma_hd);
+    }
+
+    // Phân trang hóa đơn chi tiết
+    function phan_trang_hdct($ma_hd){
+        $sp_tung_trang = 10;
+        if (!isset($_GET['page'])) {
+            $trang = 1;
+        } else {
+            $trang = $_GET['page'];
+        }
+        $tung_trang =  ($trang - 1) * $sp_tung_trang;
+        $sql = "SELECT hd.*,hdct.*, sp.ten_sp FROM hoa_don_chi_tiet hdct INNER JOIN hoa_don hd ON hd.ma_hd = hdct.ma_hd 
+                INNER JOIN san_pham sp ON hdct.ma_sp = sp.ma_sp 
+                WHERE hdct.ma_hd = ? 
+                ORDER BY id DESC 
+                LIMIT $tung_trang,$sp_tung_trang";
+        return pdo_query($sql, $ma_hd);
+    }
 ?>

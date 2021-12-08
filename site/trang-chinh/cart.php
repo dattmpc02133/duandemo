@@ -45,6 +45,9 @@ if (isset($_POST['dat_hang'])) {
     $trang_thai = 1;
     $so_luong_input_data = $_POST['so_luong_input_data'];
     hoa_don_insert($ma_kh, $tong_tien, $dia_chi_giao_hang, $ngay_dat, $trang_thai);
+    if(isset($_POST['ma_km'])){
+        khach_hang_da_dung_insert($_POST['ma_km'], $_SESSION['user']);
+    }
     $ma_hd2 = get_ma_hd();
     $list_sp_ght = get_ma_sp_gio_hang_tam($ma_kh);
     foreach ($list_sp_ght as $sp) {
@@ -54,9 +57,6 @@ if (isset($_POST['dat_hang'])) {
         so_luot_mua_sp($so_luong_tam, $ma_sp_tam);
         // trừ đi số lượng sản phẩm trong kho khi khách hàng mua.
         giam_sp_ton_kho_khi_mua($so_luong_tam, $ma_sp_tam);
-    }
-    if(isset($_POST['ma_km'])){
-        khach_hang_da_dung_insert($_POST['ma_km_ap_dung'], $_SESSION['user']);
     }
     delete_all_gio_hang_tam();
     echo '<script>
@@ -137,7 +137,7 @@ if (isset($_POST['dat_hang'])) {
                             <textarea name="dia_chi_giao_hang" class="form-control" style="font-size: 0.9rem; line-height:35px;" maxlength="255"><?= $dia_chi ?></textarea>
                             <div class="form-group">
                                 <label for="">Mã khuyến mãi</label>
-                                <input class="form-control" type="text" name="ma_km_ap_dung" id="ma_km_ap_dung">
+                                <input class="form-control" type="text" name="ma_km" id="ma_km_ap_dung">
                                 <input type="button" class="btn btn-danger" id="ap_dung" value="Áp dụng">
                             </div>
                             <p id="result_ap_dung_km_action"></p>
@@ -224,9 +224,29 @@ if (isset($_POST['dat_hang'])) {
         var tong_tien2 = document.getElementById('tong_tien2');
         var tong_tien = document.getElementById('tong_tien');
         var result_ap_dung_km_action = document.getElementById('result_ap_dung_km_action');
+        var kt_loai_km = result_ap_dung_km_action.innerHTML.split('');
+        var loai_km = '';
+        for (var i = 1; i < kt_loai_km.length; i++){
+            if(kt_loai_km[i] == 'đ'){
+                loai_km = 1;
+                break;
+            }
+            else {
+                loai_km = 2;
+                break;
+            }
+        }
         var muc_giam = cat_chuoi(result_ap_dung_km_action.innerHTML);
+        console.log(muc_giam);
+        var tong_tien3 = 0;
         if(Number(muc_giam) > 0){
-            var tong_tien3 = Number(tong_tien2.value) - Number(muc_giam);
+            if(loai_km == 1){
+                tong_tien3 = Number(tong_tien2.value) - Number(muc_giam);
+            }
+            else{
+                tong_tien3 = Number(tong_tien2.value) - (Number(tong_tien2.value) * (Number(muc_giam)/100));
+            }
+            console.log(tong_tien3);
             tong_tien.innerHTML = tong_tien3.toLocaleString('en');
             tong_tien2.value = tong_tien3;
         }

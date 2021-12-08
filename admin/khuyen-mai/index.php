@@ -21,6 +21,9 @@
     }
     else if(exit_param("btn_detail"))
         $VIEW_NAME = 'detail.php';
+    else if(exit_param("btn_list")){
+        $VIEW_NAME = 'list.php';
+    }
     else{
         $VIEW_NAME = 'list.php';
     }

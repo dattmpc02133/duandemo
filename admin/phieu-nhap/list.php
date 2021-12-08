@@ -23,7 +23,7 @@ if (isset($_GET['ma_pn'])) {
             <tbody>
 
                 <?php
-                $list = phieu_nhap_selectall();
+                $list = phan_trang_pn();
                 foreach ($list as $pn) {
                     extract($pn);
                 ?>
@@ -78,6 +78,17 @@ if (isset($_GET['ma_pn'])) {
                 </tr> -->
             </tbody>
         </table>
+        <div class=" col-sm-12 phan_trang" style="display:flex; justify-content:center">
+            <?php 
+                $count_pn = count_pn();
+                $trang = ceil($count_pn/10);
+                for($i = 1; $i <= $trang; $i++){
+            ?>
+                <a name="phan_trang" id="phan_trang" class="btn btn-light" href="index.php?btn_list&page=<?=$i?>" role="button"><?=$i?></a>
+            <?php
+                }
+            ?>
+        </div>
         <div class="row">
             <div class="col p-12 t-12 m-12">
                 <div class="button__group">

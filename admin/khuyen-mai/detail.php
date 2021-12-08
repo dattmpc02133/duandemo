@@ -22,7 +22,7 @@ if (isset($_GET['ma_km'])) {
             </thead>
             <tbody>
                 <?php
-                $in4_ct_km = kh_da_dung_get($ma_km);
+                $in4_ct_km = phan_trang_kh_da_dung($ma_km);
                 foreach ($in4_ct_km as $ct_km) {
                     extract($ct_km);
                 ?>
@@ -41,6 +41,17 @@ if (isset($_GET['ma_km'])) {
                 ?>
             </tbody>
         </table>
+        <div class=" col-sm-12 phan_trang" style="display:flex; justify-content:center">
+            <?php
+            $count_kmct = count_kh_da_dung($ma_km);
+            $trang = ceil($count_kmct / 10);
+            for ($i = 1; $i <= $trang; $i++) {
+            ?>
+                <a name="phan_trang" id="phan_trang" class="btn btn-light" href="index.php?btn_detail&ma_km=<?=$ma_km?>&page=<?= $i ?>" role="button"><?= $i ?></a>
+            <?php
+            }
+            ?>
+        </div>
         <div class="row">
             <div class="col p-12 t-12 m-12">
                 <div class="button__group">

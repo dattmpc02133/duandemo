@@ -16,9 +16,12 @@
     }elseif(exit_param("btn_cart")){
         $VIEW_NAME = "cart_by_kh.php";
     }
-    else {
+    else if(exit_param("btn_list")){
         $VIEW_NAME = "list.php";
     } 
+    else{
+        $VIEW_NAME = "list.php";
+    }
     require_once "../layout.php";  
 ?>
 
