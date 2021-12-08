@@ -46,7 +46,7 @@
                     <th>Mã kH</th>
                     <!-- <th>Mật khẩu</th> -->
                     <th>Họ tên</th>
-                    <th style="width:275px;">Địa chỉ</th>
+                    <th>Địa chỉ</th>
                     <th>Kích hoạt</th>
                     <th>Hình</th>
                     <th>Email</th>
