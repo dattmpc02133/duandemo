@@ -52,6 +52,9 @@ if (isset($_POST['login'])) {
 } else {
     if (exit_param("logout")) {
         unset($_SESSION['user']);
+        if(isset($_SESSION['admin'])){
+            unset($_SESSION['admin']);
+        }
         header("location: ../../index.php");
     }
 }

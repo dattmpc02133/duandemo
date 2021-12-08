@@ -22,7 +22,7 @@
                                 <a class="dropdown-item" href="<?=$SITE_URL?>/tai-khoan/index.php?doi_mk">Đổi mật khẩu</a>
                                 <a class="dropdown-item" href="../../cap_nhat_tk.html">Cập nhật thông tin</a>
                                 <a class="dropdown-item" href="../../index.php">Giao diện khách hàng</a>
-                                <a class="dropdown-item" href="#">Đăng xuất</a>
+                                <a class="dropdown-item" href="<?=$SITE_URL?>/tai-khoan/dang-nhap.php?logout">Đăng xuất</a>
                               </div>
                             </div>
                            </div>
