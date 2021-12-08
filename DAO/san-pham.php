@@ -75,7 +75,7 @@ function phan_trang_count()
 }
 
 // sản phẩm phân trang
-function phan_trang()
+function phan_trang_sp()
 {
     $sp_tung_trang = 9;
     if (!isset($_GET['page'])) {

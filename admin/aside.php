@@ -1,4 +1,5 @@
 <?php
+    require_once '../../global.php';
     require_once '../../DAO/pdo.php';
     require_once '../../DAO/khach-hang.php';
     if(isset($_SESSION['admin'])){
@@ -18,7 +19,7 @@
                                 <span class="sr-only">Toggle Dropdown</span>
                               </button>
                               <div class="dropdown-menu">
-                                <a class="dropdown-item" href="../../doi-mk.html">Đổi mật khẩu</a>
+                                <a class="dropdown-item" href="<?=$SITE_URL?>/tai-khoan/index.php?doi_mk">Đổi mật khẩu</a>
                                 <a class="dropdown-item" href="../../cap_nhat_tk.html">Cập nhật thông tin</a>
                                 <a class="dropdown-item" href="../../index.php">Giao diện khách hàng</a>
                                 <a class="dropdown-item" href="#">Đăng xuất</a>

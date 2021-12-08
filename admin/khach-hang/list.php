@@ -3,8 +3,14 @@
     require_once '../../DAO/khach-hang.php';
 
     if (isset($_GET['ma_kh'])) {
-        khach_hang_delete($_GET['ma_kh']);
-        header("Location: ../khach-hang/");
+        $kh_del = $_SESSION['admin'];
+        if($kh_del == $_GET['ma_kh']){
+            echo '<script> alert("Bạn không thể xóa chính mình !"); </script>';
+        }
+        else {
+            khach_hang_delete($_GET['ma_kh']);
+            echo '<script> location.href = "index.php"; </script>';
+        }
     }
     
     // xóa
@@ -14,7 +20,14 @@
             echo '<script> alert("Chưa có khách hàng nào được chọn") </script>';
         } else {
             foreach ($_POST['check'] as $value_check) {
-                khach_hang_delete($value_check);
+                $me = $_SESSION['admin'];
+                if($value_check == $me){
+                    echo '<script> alert("Bạn không thể xóa chính mình !"); </script>';
+                }
+                else{
+                    khach_hang_delete($value_check);
+                }
+                
             }
         }
     }
@@ -33,7 +46,7 @@
                     <th>Mã kH</th>
                     <!-- <th>Mật khẩu</th> -->
                     <th>Họ tên</th>
-                    <th style="width:275px;">Địa chỉ</th>
+                    <th>Địa chỉ</th>
                     <th>Kích hoạt</th>
                     <th>Hình</th>
                     <th>Email</th>
@@ -48,7 +61,7 @@
                 $list_kh = khach_hang_selectAll();
                 foreach ($list_kh as $kh) {
                     extract($kh);
-                    $delete_link = "list.php?ma_kh=$ma_kh";
+                    $delete_link = "index.php?ma_kh=$ma_kh";
                     $btn_update = "index.php?btn-update&ma_kh=$ma_kh";
                     $btn_cart = "index.php?btn_cart&ma_kh=$ma_kh";
                 ?>

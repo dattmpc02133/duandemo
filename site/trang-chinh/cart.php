@@ -225,9 +225,11 @@ if (isset($_POST['dat_hang'])) {
         var tong_tien = document.getElementById('tong_tien');
         var result_ap_dung_km_action = document.getElementById('result_ap_dung_km_action');
         var muc_giam = cat_chuoi(result_ap_dung_km_action.innerHTML);
-        var tong_tien3 = Number(tong_tien2.value) - Number(muc_giam);
-        tong_tien.innerHTML = tong_tien3.toLocaleString('en');
-        tong_tien2.value = tong_tien3;
+        if(Number(muc_giam) > 0){
+            var tong_tien3 = Number(tong_tien2.value) - Number(muc_giam);
+            tong_tien.innerHTML = tong_tien3.toLocaleString('en');
+            tong_tien2.value = tong_tien3;
+        }
     }
     
     function show_km(ma_km) {

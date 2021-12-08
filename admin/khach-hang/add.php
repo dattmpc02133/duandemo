@@ -3,7 +3,7 @@
     require_once '../../DAO/khach-hang.php';
 
     if(isset($_POST['btn_add'])){
-        $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL . '/images/products/';
+        $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL . '/images/user/';
         $hinh = $_FILES['hinh'];
         $tenhinh = save_file($hinh, $path);
         $ma_kh = $_POST['ma_kh'];
