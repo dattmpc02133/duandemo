@@ -6,7 +6,7 @@
                 <!-- <div class="fillter">
                     <a href="#"><i class="bi bi-sliders"></i> Bộ lọc</a>
                 </div> -->
-               
+
             </div>
             <div class="col-sm-4">
                 <div class="main-title">
@@ -16,9 +16,13 @@
             <div class="col-sm-4">
                 <div class="fill2">
                     <select class="form-control" name="" onchange="SelecterOption(this)" id="lister">
-                        <option value="" >Lọc sản phẩm theo giá</option>
-                        <option value="1" >Giá < 500.000<sup>đ</sup></option>
-                        <option value="2" >Giá từ 600000<sup>đ</sup> đến 1000000<sup>đ</sup></option>
+                        <option value="0">Lọc sản phẩm</option>
+                        <option value="1">Giá từ 0<sup>đ</sup> - dưới 500.000<sup>đ</sup></option>
+                        <option value="2">Giá từ 500.000<sup>đ</sup> - dưới 1.000.000<sup>đ</sup></option>
+                        <option value="3">Giá từ 1.000.000<sup>đ</sup> - dưới 5.000.000<sup>đ</sup></option>
+                        <option value="4">Giá từ 5.000.000<sup>đ</sup> - dưới 10.000.000<sup>đ</sup></option>
+                        <option value="5">Giá từ 10.000.000<sup>đ</sup> - dưới 20.000.000<sup>đ</sup></option>
+                        <option value="6">Giá trên 20.000.000<sup>đ</sup></option>
                     </select>
                 </div>
             </div>
@@ -74,14 +78,14 @@
                                 </div>
                                 <div class="product-price">
                                     <p class="giasp"><span><?= number_format($don_gia - ($giam_gia * $don_gia / 100)) ?><sup>đ</sup></span><?php
-                                                                                                                                if ($giam_gia != 0 && $giam_gia != null) {
-                                                                                                                                    echo '<del>' . number_format($don_gia) . '<sup>đ</sup></del>';
-                                                                                                                                }
-                                                                                                                                ?></p>
-                                    <p hidden class="giasp2">
-                                        <?= $don_gia - ($giam_gia * $don_gia / 100)?>
+                                                                                                                                            if ($giam_gia != 0 && $giam_gia != null) {
+                                                                                                                                                echo '<del>' . number_format($don_gia) . '<sup>đ</sup></del>';
+                                                                                                                                            }
+                                                                                                                                            ?></p>
+                                    <p style="display:none;" class="giasp2">
+                                        <?= $don_gia - ($giam_gia * $don_gia / 100) ?>
                                     </p>
-                                    
+
                                 </div>
                             </div>
                         </a>
@@ -100,39 +104,85 @@
     <!-- end button page -->
 </div>
 <script>
-                    function SelecterOption(fill) {
-                        var defau = document.querySelectorAll('.col-default');
-                        var gia = document.querySelectorAll('.giasp2');
-                        console.log(defau,gia);
-
-                        switch(fill.value){
-                            case "1":
-                                for (var i = 0; i < defau.length; i++) {
-                                    if(Number(gia[i].innerHTML)>500000){
-                                        defau[i].style.display = "none";
-                                    }                        
-                                }
-                                break;
-                                case "2":
-                                for (var i = 0; i < defau.length; i++) {
-                                    if(Number(gia[i].innerHTML)<500000 && Number(gia[i].innerHTML)>1000000) {
-                                        defau[i].style.display = "none";
-                                    }                        
-                                }
-                                break;
-                        }
-                        // var selecter = document.getElementById('lister').value;
-                        // var oplist = document.getElementsByClassName('giasp');
-                        // // console.log(selecter);
-                        // for (i = 0; i < oplist.length; i++) {
-                        //     gia = parseFloat(oplist[i].innerText);
-                        //     if (gia < selecter) {
-                        //         oplist[i].parentNode.style.display = "block";
-                        //     } else {
-                        //         oplist[i].parentNode.style.display = "none";
-                        //     }
-                        // }
-                        // console.log(selecterList());
-                        
+    function SelecterOption(fill) {
+        var defau = document.querySelectorAll('.col-default');
+        switch (fill.value) {
+            case "0":
+                for (var i = 0; i < defau.length; i++) {
+                    defau[i].style.display = 'inline-block';
+                }
+                break;
+            case "1":
+                for (var i = 0; i < defau.length; i++) {
+                    var dongia = defau[i].children[0].children[0].children[1].children[1].children[1].innerHTML;
+                    if (Number(dongia) < 500000) {
+                        defau[i].style.display = "inline-block";
+                    } else {
+                        defau[i].style.display = "none";
                     }
-                </script>
+                }
+                break;
+
+            case "2":
+                for (var i = 0; i < defau.length; i++) {
+                    var dongia = defau[i].children[0].children[0].children[1].children[1].children[1].innerHTML;
+                    if (Number(dongia) >= 500000 && Number(dongia) < 1000000) {
+                        defau[i].style.display = "inline-block";
+                    } else {
+                        defau[i].style.display = "none";
+                    }
+                }
+                break;
+
+            case "3":
+                for (var i = 0; i < defau.length; i++) {
+                    var dongia = defau[i].children[0].children[0].children[1].children[1].children[1].innerHTML;
+                    if (Number(dongia) >= 1000000 && Number(dongia) < 5000000) {
+                        defau[i].style.display = "inline-block";
+                    } else {
+                        defau[i].style.display = "none";
+                    }
+                }
+                break;
+
+            case "4":
+                for (var i = 0; i < defau.length; i++) {
+                    var dongia = defau[i].children[0].children[0].children[1].children[1].children[1].innerHTML;
+                    if (Number(dongia) >= 5000000 && Number(dongia) < 10000000) {
+                        defau[i].style.display = "inline-block";
+                    } else {
+                        defau[i].style.display = "none";
+                    }
+                }
+                break;
+
+            case "5":
+                for (var i = 0; i < defau.length; i++) {
+                    var dongia = defau[i].children[0].children[0].children[1].children[1].children[1].innerHTML;
+                    if (Number(dongia) >= 10000000 && Number(dongia) < 20000000) {
+                        defau[i].style.display = "inline-block";
+                    } else {
+                        defau[i].style.display = "none";
+                    }
+                }
+                break;
+
+            case "6":
+                for (var i = 0; i < defau.length; i++) {
+                    var dongia = defau[i].children[0].children[0].children[1].children[1].children[1].innerHTML;
+                    if (Number(dongia) > 20000000) {
+                        defau[i].style.display = "inline-block";
+                    } else {
+                        defau[i].style.display = "none";
+                    }
+                }
+                break;
+
+            default:
+                for (var i = 0; i < defau.length; i++) {
+                    defau.style.display = "inline-block";
+                }
+                break;
+        }
+    }
+</script>
