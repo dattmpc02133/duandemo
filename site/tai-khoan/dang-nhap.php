@@ -22,7 +22,7 @@ if (isset($_POST['login'])) {
                           </script>';
                 } else{
                     
-                $_SESSION['thong_bao'] = "Đăng nhập thành công";
+                $_SESSION['thong_bao'] = "<script> alert('Đăng nhập thành công'); </script>";
                 $_SESSION['user'] = $ma_kh;
                 if (exit_param('save_account')) {
                     setcookie('ma_kh', $_POST['username'], strtotime("+1 week"), '/');
@@ -41,11 +41,11 @@ if (isset($_POST['login'])) {
 
             } 
             else {
-                $_SESSION['thong_bao'] = "Sai mật khẩu";
+                $_SESSION['thong_bao'] = "<script> alert('Sai tài mật khẩu'); </script>";
                 header("location: ../../index.php");
             }
         } else {
-            $_SESSION['thong_bao'] = "Sai tên tài khoảng";
+            $_SESSION['thong_bao'] = "<script> alert('Sai tên tài khoản'); </script>";
             header("location: ../../index.php");
         }
     }
