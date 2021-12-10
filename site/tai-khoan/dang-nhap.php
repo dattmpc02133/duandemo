@@ -45,16 +45,13 @@ if (isset($_POST['login'])) {
                 header("location: ../../index.php");
             }
         } else {
-<<<<<<< HEAD
+
             echo '<script> 
                     alert("Sai tên đăng nhập");    
                     location.href = "../../index.php";              
                  </script>';
            
-=======
-            $_SESSION['thong_bao'] = "<script> alert('Sai tên tài khoản'); </script>";
-            header("location: ../../index.php");
->>>>>>> 02435f4751a070c1c55410c7aa129b0c34023cad
+
         }
     }
 } else {
