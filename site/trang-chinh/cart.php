@@ -37,6 +37,7 @@ if (isset($_POST['addcart'])) {
         }
     }
 }
+
 if (isset($_POST['dat_hang'])) {
     $ma_kh = $_SESSION['user'];
     $tong_tien = $_POST['tong_tien'];
@@ -45,9 +46,12 @@ if (isset($_POST['dat_hang'])) {
     $trang_thai = 1;
     $so_luong_input_data = $_POST['so_luong_input_data'];
     hoa_don_insert($ma_kh, $tong_tien, $dia_chi_giao_hang, $ngay_dat, $trang_thai);
-    if($_POST['ma_km'] != null){
+
+    if($_SESSION['kq'] == 0){
         khach_hang_da_dung_insert($_POST['ma_km'], $_SESSION['user']);
+        unset($_SESSION['kq']);
     }
+
     $ma_hd2 = get_ma_hd();
     $list_sp_ght = get_ma_sp_gio_hang_tam($ma_kh);
     foreach ($list_sp_ght as $sp) {
@@ -287,6 +291,7 @@ if (isset($_POST['dat_hang'])) {
         $('#ap_dung').on("click", function() {
             var ma_km = $('#ma_km_ap_dung').val();
             show_km(ma_km);
+            
         })
         // fetch_data();
     });

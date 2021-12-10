@@ -5,6 +5,7 @@
     require_once '../../DAO/khach-hang.php';
     $result = '';
     if(isset($_POST['ma_km'])){
+        $_SESSION['kq'] = 0;
         $today = date('Y-m-d');
         $ma_km_ap_dung = $_POST['ma_km'];
         $ma_kh_ap_dung = $_SESSION['user'];
@@ -22,14 +23,17 @@
                 }
                 else{
                     echo '<script> alert("Khuyến mãi chưa bắt đầu hoặc đã kết thúc !"); </script>';
+                    $_SESSION['kq'] = 1;
                 }
             }
             else{
                 echo '<script> alert("Mã khuyến mãi không tồn tại !"); </script>';
+                $_SESSION['kq'] = 1;
             }
         }
         else{
             echo '<script> alert("Bạn đã sử dụng mã này rồi, vui lòng chọn mã khác !"); </script>';
+            $_SESSION['kq'] = 1;
         }
     }
     // $ma_km2 = ma_km_get_info($_POST['ma_km']);
