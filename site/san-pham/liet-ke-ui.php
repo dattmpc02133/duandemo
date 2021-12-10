@@ -17,7 +17,7 @@
                 <div class="fill2">
                     <select class="form-control" name="" onchange="SelecterOption(this)" id="lister">
                         <option value="0">Lọc sản phẩm</option>
-                        <option value="1">Giá từ 0<sup>đ</sup> - dưới 500.000<sup>đ</sup></option>
+                        <option value="1">Giá dưới 500.000<sup>đ</sup></option>
                         <option value="2">Giá từ 500.000<sup>đ</sup> - dưới 1.000.000<sup>đ</sup></option>
                         <option value="3">Giá từ 1.000.000<sup>đ</sup> - dưới 5.000.000<sup>đ</sup></option>
                         <option value="4">Giá từ 5.000.000<sup>đ</sup> - dưới 10.000.000<sup>đ</sup></option>
