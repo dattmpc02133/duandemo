@@ -5,7 +5,7 @@ require_once("../../DAO/khach-hang.php");
 require_once("../../DAO/loai.php");
 extract($_REQUEST);
 if (isset($_POST['login'])) {
-    
+
     $ma_kh = $_POST['username'];
 
     $mat_khau = md5($_POST['password']);
@@ -45,8 +45,13 @@ if (isset($_POST['login'])) {
                 header("location: ../../index.php");
             }
         } else {
-            $_SESSION['thong_bao'] = "<script> alert('Sai tên tài khoản'); </script>";
-            header("location: ../../index.php");
+
+            echo '<script> 
+                    alert("Sai tên đăng nhập");    
+                    location.href = "../../index.php";              
+                 </script>';
+           
+
         }
     }
 } else {
@@ -58,4 +63,3 @@ if (isset($_POST['login'])) {
         header("location: ../../index.php");
     }
 }
-?>
