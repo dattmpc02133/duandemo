@@ -19,6 +19,12 @@
 </head>
 
 <body>
+    <?php 
+      if(isset($_SESSION['thong_bao'])){
+        echo $_SESSION['thong_bao'];
+        unset($_SESSION['thong_bao']);
+      }
+    ?>
     <div class="containermax-width">
         <section class="headerrr">
             <?php require_once("../trang-chinh/header.php")  ?>
