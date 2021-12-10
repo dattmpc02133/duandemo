@@ -65,14 +65,14 @@ require_once("../../DAO/khach-hang.php");
                                     <div class="customer_account">
                                         <div class="form-group customer_account">
                                             <input type="text" placeholder="Tên đăng nhập" id="username" class="site_account-input" name="username">
-                                            <span align="left" class="mess"></span>
+                                            <span align="left" style="color:red;font-style:oblique;font: size 14px;" class="mess"></span>
                                             <span><?php if (isset($kt_username)) {
                                                         echo "$kt_username";
                                                     } ?></span>
                                         </div>
                                         <div class="form-group customer_account">
                                             <input type="password" placeholder="Mật khẩu" class="site_account-input" id="password" name="password">
-                                            <span align="left" class="mess"></span>
+                                            <span align="left" style="color:red;font-style:oblique;font: size 14px;" class="mess"></span>
                                             <span><?php if (isset($kt_password)) {
                                                         echo $kt_password;
                                                     } ?></span>
@@ -248,7 +248,7 @@ require_once("../../DAO/khach-hang.php");
                             </div>
                             <div class="cart_pay">
                                 <a href="trang-chinh/index.php?addcart" class="PayPay">Xem Giỏ Hàng</a>
-                                <a href="" class="PayPay">Thanh Toán</a>
+                                <!-- <a href="" class="PayPay">Thanh Toán</a> -->
 
                             </div>
                         </div>

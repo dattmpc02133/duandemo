@@ -54,9 +54,9 @@
             </span>
         </div>
         <div class="cart_pay">
-            <a href="index.php?addcart" class="PayPay">Xem giỏ hàng</a>
+            <a href="index.php?addcart"  class="PayPay">Xem giỏ hàng</a>
             <!-- <a href="./cart.html" class="PayPay">Thanh toán</a> -->
-            <button type="submit" style="outline: none; border:none" class="PayPay" name="dat_hang">Thanh Toán</button>
+            <!-- <button type="submit" style="outline: none; border:none" class="PayPay" name="dat_hang">Thanh Toán</button> -->
 
         </div>
     </div>

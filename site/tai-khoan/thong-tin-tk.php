@@ -44,7 +44,7 @@ if (isset($_POST['update_account'])) {
         }
         $email = $_POST['email'];
         $vai_tro = $_POST['vai_tro'];
-        khach_hang_update($mat_khau, $ho_ten, $dia_chi, $kich_hoat, $tenhinh, $email, $vai_tro, $ma_kh);
+        khach_hang_update($mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email, $sdt, $vai_tro, $ma_kh);
         echo '<script> location.href = "index.php?btn-thong-tin"; </script>';
     }else {
         echo "<script> alert('thất bại'); </script>";

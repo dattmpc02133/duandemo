@@ -279,7 +279,7 @@ h5 {
 }
 .cart_pay {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 .PayPay {
   padding: 14px;
