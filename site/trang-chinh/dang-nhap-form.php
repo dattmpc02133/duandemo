@@ -1,37 +1,17 @@
-<?php 
-    $kt_loi = array();
-    $test = true;
-    if(empty($_POST['password'])){
-        $kt_loi['password'] = 'Mật khẩu không được bỏ trống !';
-        $test = false;
-    }
-    else{
-        $test = true;
-    }
-    if($test){
-        
-    }
-?>
 <div class="card">
     <div class="card-header">
         <h3>Đăng nhập</h3>
     </div>
     <div class="card-body" style="padding: 0px 5px;">
-        <form action="<?= $SITE_URL ?>/tai-khoan/dang-nhap.php" id="form_du_an" method="POST">
+        <form action="<?=$SITE_URL?>/tai-khoan/dang-nhap.php" id="form_du_an" method="POST">
             <div class="form-group">
                 <label for="">Tên đăng nhập</label>
                 <input type="text" class="form-control" name="username" id="username" aria-describedby="helpId" placeholder="Nhập tài khoản">
-                <?php if (isset($kt_loi['username'])) { ?>
-                    <span class="err"> <?php echo $kt_loi['ma_kh'] ?> </span>
-                <?php } ?>
                 <span class="mess"></span>
             </div>
             <div class="form-group">
                 <label for="">Mật khẩu</label>
                 <input type="password" class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="Nhập mật khẩu">
-                <?php if (isset($kt_loi['password'])) { ?>
-                    <span class="err"> <?php echo $kt_loi['ma_kh'] ?> </span>
-                <?php } ?>
                 <span class="mess"></span>
             </div>
             <div class="form-group">
