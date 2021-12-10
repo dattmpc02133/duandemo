@@ -4,7 +4,7 @@ require_once("../../DAO/khach-hang.php");
 $_SESSION['ma_kh'] = $_GET['ma_kh'];
 if (isset($_POST['btn_update1'])) {  
         if (isset($_POST['btn_update1'])) {
-            $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL . '/images/products/';
+            $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL . '/images/user/';
             $ma_kh = $_POST['ma_kh'];
             $mat_khau = md5($_POST['mat_khau']);
             $ho_ten = $_POST['ho_ten'];
