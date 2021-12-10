@@ -10,7 +10,7 @@
     </div>
     <div class="cart_pay">
         <a href="<?=$SITE_URL?>/trang-chinh/index.php?addcart" class="PayPay">Xem giỏ hàng</a>
-        <a href="./cart.html" class="PayPay">Thanh toán</a>
+        <!-- <a href="./cart.html" class="PayPay">Thanh toán</a> -->
 
     </div>
 </div>
