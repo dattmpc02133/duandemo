@@ -228,23 +228,29 @@ if (isset($_POST['dat_hang'])) {
         var loai_km = '';
         for (var i = 1; i < kt_loai_km.length; i++){
             if(kt_loai_km[i] == 'đ'){
+                console.log(1 +kt_loai_km[i]);
                 loai_km = 1;
                 break;
             }
-            else {
+            else if(kt_loai_km[i] == '%'){
+                console.log(2 +kt_loai_km[i]);
                 loai_km = 2;
                 break;
             }
         }
         var muc_giam = cat_chuoi(result_ap_dung_km_action.innerHTML);
         console.log(muc_giam);
+        var tt_ban_dau = tong_tien2.value;
+        console.log(tt_ban_dau);
         var tong_tien3 = 0;
         if(Number(muc_giam) > 0){
             if(loai_km == 1){
-                tong_tien3 = Number(tong_tien2.value) - Number(muc_giam);
+                tong_tien3 = Number(tt_ban_dau) - Number(muc_giam);
+                console.log(1);
             }
-            else{
-                tong_tien3 = Number(tong_tien2.value) - (Number(tong_tien2.value) * (Number(muc_giam)/100));
+            else if(loai_km == 2){
+                tong_tien3 = Number(tt_ban_dau) - (Number(tt_ban_dau) * (Number(muc_giam)/100));
+                console.log(2);
             }
             console.log(tong_tien3);
             tong_tien.innerHTML = tong_tien3.toLocaleString('en');
