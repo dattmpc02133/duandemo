@@ -47,5 +47,22 @@
         INNER JOIN tin_tuc tt ON bl.ma_tin_tuc = tt.ma_tin_tuc 
         GROUP BY tt.ma_tin_tuc, tt.tieu_de HAVING so_luong > 0 ORDER BY tt.ma_tin_tuc DESC";
         return pdo_query($sql);
-}
+    }
+    // Đếm bình luận
+    function count_tin_tuc(){
+        $sql = "SELECT COUNT(*) FROM tin_tuc";
+        return pdo_query_value($sql); 
+    }
+    // Phân trang bình luận
+    function phan_trang_tin_tuc(){
+        $tin_tuc_tung_trang = 10;
+        if (!isset($_GET['page'])) {
+            $trang = 1;
+        } else {
+            $trang = $_GET['page'];
+        }
+        $tung_trang =  ($trang - 1) * $tin_tuc_tung_trang;
+        $sql = "SELECT * FROM tin_tuc  ORDER BY ma_tin_tuc DESC LIMIT $tung_trang,$tin_tuc_tung_trang";
+        return pdo_query($sql);
+    }
 ?>

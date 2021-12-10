@@ -7,11 +7,11 @@
     if(isset($_POST['ma_km'])){
         $today = date('Y-m-d');
         $ma_km_ap_dung = $_POST['ma_km'];
-        $get_in4_ma_km = ma_km_get_info($ma_km_ap_dung);
         $ma_kh_ap_dung = $_SESSION['user'];
         $get_ma_kh_ap_dung = kh_da_dung_km($ma_kh_ap_dung, $ma_km_ap_dung);
-        if($get_ma_kh_ap_dung == false){
-            if($get_in4_ma_km){
+        $get_ma_km = ma_km_get_info($_POST['ma_km']);
+        if(!$get_ma_kh_ap_dung){
+            if($get_ma_km){
                 if(strtotime($today) >= strtotime($get_in4_ma_km['ngay_bat_dau']) && strtotime($today) <= strtotime($get_in4_ma_km['ngay_ket_thuc'])){
                     if($get_in4_ma_km['loai_km'] == 1){
                         $result = '-'.number_format($get_in4_ma_km['muc_giam']).'đ ['.$get_in4_ma_km['ma_km'].']';

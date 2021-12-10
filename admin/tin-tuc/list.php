@@ -24,7 +24,7 @@ require_once('../../DAO/tin-tuc.php');
             </thead>
             <tbody>
                 <?php
-                $tin_tuc = tin_tuc_selectall();
+                $tin_tuc = phan_trang_tin_tuc();
 
                 foreach ($tin_tuc as $tin_tuc_news) {
                     extract($tin_tuc_news);
@@ -45,6 +45,17 @@ require_once('../../DAO/tin-tuc.php');
 
             </tbody>
         </table>
+        <div class=" col-sm-12 phan_trang" style="display:flex; justify-content:center">
+            <?php 
+                $count_bl = count_tin_tuc();
+                $trang = ceil($count_bl/10);
+                for($i = 1; $i <= $trang; $i++){
+            ?>
+                <a name="phan_trang" id="phan_trang" class="btn btn-light" href="index.php?btn-list&page=<?=$i?>" role="button"><?=$i?></a>
+            <?php
+                }
+            ?>
+        </div>
         <div class="button__group">
             <!-- <button class="button__group-item button__group-checkAll">Chọn tất cả</button>
                             <button class="button__group-item button__group-unCheckAll">Bỏ chọn tất
