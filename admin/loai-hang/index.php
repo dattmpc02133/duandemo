@@ -1,6 +1,5 @@
 <?php
     require_once ("../../global.php");
-
     if(!isset($_SESSION['admin'])){
         header('location: ../../site/trang-chinh');
     }

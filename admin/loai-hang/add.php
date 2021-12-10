@@ -1,6 +1,6 @@
 <?php
-require("../../DAO/pdo.php");
-require("../../DAO/loai.php");
+require_once("../../DAO/pdo.php");
+require_once("../../DAO/loai.php");
 if (isset($_POST['btn_add'])) {
     $ten_loai = "";
     $test = true;
