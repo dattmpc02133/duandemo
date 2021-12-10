@@ -36,7 +36,7 @@ if (isset($_POST['login'])) {
                     $_SESSION['admin'] = $ma_kh;
                 }
 
-                header("location:../../index.php");
+                header("location: ../../index.php");
                 }
 
             } 
