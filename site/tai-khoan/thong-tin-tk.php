@@ -3,6 +3,7 @@ if (isset($_POST['update_account'])) {
     $mat_khau = "";
     $ho_ten = "";
     $check_email = '/^[A-Za-z0-9_.]{6,32}@([a-zA-Z0-9]{2,12})(.[a-zA-Z]{2,12})+$/';
+    $check_sdt_kh = '/^(0)([2-9])([0-9]+){8}$/';
     $test = true;
     $kt_loi = array();
     if (empty($_POST['ho_ten'])) {
@@ -27,6 +28,18 @@ if (isset($_POST['update_account'])) {
     } else {
         $email = $_POST['email'];
     }
+
+    if(empty($_POST['sdt_kh'])){
+        $kt_loi['sdt_kh'] = "Số điện thoại không được để trống !";
+        $test = false;
+    }
+    else if(!preg_match($check_sdt_kh, $_POST['sdt_kh'], $matchs)){
+        $kt_loi['sdt_kh'] = "Số điện thoại không đúng định dạng !";
+        $test = false;
+    }
+    else{
+        $sdt = $_POST['sdt_kh'];
+    }
     if($test){  
     if(isset($_POST['update_account'])){
         $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL . '/images/user/';
@@ -43,6 +56,7 @@ if (isset($_POST['update_account'])) {
             $tenhinh = $_POST['hinh'];
         }
         $email = $_POST['email'];
+        $sdt = $_POST['sdt_kh'];
         $vai_tro = $_POST['vai_tro'];
         khach_hang_update($mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email, $sdt, $vai_tro, $ma_kh);
         echo '<script> location.href = "index.php?btn-thong-tin"; </script>';
@@ -109,6 +123,14 @@ if (isset($_POST['update_account'])) {
                         <input type="text" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="Nhập địa chỉ email khách hàng" value="<?=$email?>">
                         <?php if (isset($kt_loi['email'])) { ?>
                         <span class="err"> <?php echo $kt_loi['email'] ?> </span>
+                    <?php } ?>
+                    <span class="mess"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for=""><b>Số điện thoại *</b></label>
+                        <input type="text" class="form-control" name="sdt_kh" id="sdt_kh" aria-describedby="helpId" placeholder="Nhập họ tên khách hàng" value="<?=$sdt_kh?>">
+                        <?php if (isset($kt_loi['sdt_kh'])) { ?>
+                        <span class="err"> <?php echo $kt_loi['sdt_kh'] ?> </span>
                     <?php } ?>
                     <span class="mess"></span>
                     </div>
