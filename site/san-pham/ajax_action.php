@@ -12,7 +12,7 @@ if(isset($_POST['noi_dung_gui_bl'])){
     $trang_thai = "chưa kích hoạt";
     $ma_tin_tuc = null;
     // bl_insert($ma_kh,$ma_sp,$noi_dung_bl,$ngay_bl,$trang_thai);
-    bl_insert($ma_kh,$ma_sp,$ma_tin_tuc,$noi_dung,$ngay_bl,$trang_thai);
+    bl_insert($ma_kh,$ma_sp,$ma_tin_tuc,$noi_dung_bl,$ngay_bl,$trang_thai);
 }
 
 if (isset($_POST['ma_sp'])) {

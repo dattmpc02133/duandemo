@@ -34,7 +34,7 @@ if (isset($_POST['delete_select'])) {
     <h3>QUẢN LÝ KHÁCH HÀNG</h3>
 </div>
 
-<div class="form__content">
+<div class="form__content"> 
     <form accept="#" method="POST">
         <table class="table">
             <thead class="table-danger">
@@ -125,6 +125,4 @@ if (isset($_POST['delete_select'])) {
             <!-- <a href="./insert_hang_hoa.php" class="button__group-item button__group-input">Nhập thêm</a> -->
         </div>
     </form>
-</div>
-</div>
 </div>
