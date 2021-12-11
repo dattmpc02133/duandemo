@@ -69,8 +69,8 @@ if (isset($_POST['dat_hang'])) {
    
     <script>
         alert('Đặt hàng thành công !');
+        location.href = 'index.php;
     </script>";
-    // location.href = "index.php";
 }
 ?>
 <section class="mainn">
