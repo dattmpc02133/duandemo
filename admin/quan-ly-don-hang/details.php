@@ -65,7 +65,7 @@ extract($in4_hd);
         <div class="button__group">
             <!-- <button class=" btn btn-info button__group-item button__group-Delete" name="delete_select">Xóa các mục chọn</button> -->
             <a href="index.php?btn-list" class="btn btn-info button__group-item button__group-input">Danh sách đơn hàng</a>
-            <a href="index.php?btn_add_sp_hdct&ma_hd=<?= $ma_hd ?>" class="btn btn-info button__group-item button__group-input">Nhập thêm</a>
+            <!-- <a href="index.php?btn_add_sp_hdct&ma_hd=<?= $ma_hd ?>" class="btn btn-info button__group-item button__group-input">Nhập thêm</a> -->
             <!-- </div>
            </form>
         </div>

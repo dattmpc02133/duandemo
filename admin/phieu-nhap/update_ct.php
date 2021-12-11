@@ -8,16 +8,39 @@
     $so_luong_nhap_old = $so_luong_nhap;
 
     if(isset($_POST['update_pn_ct'])){
-        $ma_pn_ct = $_POST['ma_ct_pn'];
-        // $ma_pn = $_POST['ma_pn'];
-        $ma_sp = $_POST['ma_sp'];
-        $so_luong_nhap = $_POST['so_luong_nhap'];
-        $gia = $_POST['gia'];
-        chi_tiet_pn_update($ma_sp, $so_luong_nhap, $gia, $ma_ct_pn);
-        sp_update_so_luong_nhap_fix($so_luong_nhap_old, $so_luong_nhap, $ma_sp);
-        echo '<script>
-            location.href = "index.php";
-        </script>';
+        $test = true;
+        $kt_loi = array();
+        if(empty($_POST['so_luong_nhap'])){
+            $kt_loi['so_luong_nhap'] = 'Số lượng nhập không được bỏ trống';
+            $test = false;
+        }
+        else if($_POST['so_luong_nhap'] < 0){
+            $kt_loi['so_luong_nhap'] = 'Số lượng nhập phải là số dương';
+            $test = false;
+        }
+        else if(empty($_POST['gia'])){
+            $kt_loi['gia'] = 'Giá không được bỏ trống';
+            $test = false;
+        }
+        else if($_POST['gia'] < 0){
+            $kt_loi['gia'] = 'Giá phải là số dương';
+            $test = false;
+        }
+        else{
+            $test = true;
+        }
+        if($test){
+            $ma_pn_ct = $_POST['ma_ct_pn'];
+            // $ma_pn = $_POST['ma_pn'];
+            $ma_sp = $_POST['ma_sp'];
+            $so_luong_nhap = $_POST['so_luong_nhap'];
+            $gia = $_POST['gia'];
+            chi_tiet_pn_update($ma_sp, $so_luong_nhap, $gia, $ma_ct_pn);
+            sp_update_so_luong_nhap_fix($so_luong_nhap_old, $so_luong_nhap, $ma_sp);
+            echo '<script>
+                location.href = "index.php";
+            </script>';
+        }
     }
 ?>
 <div class="title">
@@ -53,10 +76,24 @@
             <div class="form-group">
               <label for="">Số lượng:</label>
               <input type="number" class="form-control" name="so_luong_nhap" id="so_luong_nhap" placeholder="Nhập số lượng" min=1 value="<?=$so_luong_nhap?>">
+              <span class="errs">
+                    <?php 
+                        if(isset($kt_loi['so_luong_nhap'])){
+                            echo $kt_loi['so_luong_nhap'];
+                        }
+                    ?>
+                </span>
             </div>
             <div class="form-group">
               <label for="">Giá:</label>
               <input type="number" class="form-control" name="gia" id="gia" placeholder="Nhập giá" min=1 value="<?=$gia?>">
+              <span class="errs">
+                    <?php 
+                        if(isset($kt_loi['gia'])){
+                            echo $kt_loi['gia'];
+                        }
+                    ?>
+                </span>
             </div>
 
             <div class="btn__group">

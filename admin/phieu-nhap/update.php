@@ -1,12 +1,23 @@
 <?php 
     if(isset($_POST['update_pn'])){
-        $ma_pn = $_POST['ma_pn'];
-        $ngay_nhap = $_POST['ngay_nhap'];
-        $ma_ncc = $_POST['ma_ncc'];
-        phieu_nhap_update($ngay_nhap, $ma_ncc, $ma_pn);
-        echo '<script>
-            location.href = "index.php";
-        </script>';
+        $test = true;
+        $kt_loi = array();
+        if(empty($_POST['ngay_nhap'])){
+            $kt_loi['ngay_nhap'] = 'Ngày nhập không được để trống';
+            $test = false;
+        }
+        else{
+            $test = true;
+        }
+        if($test){
+            $ma_pn = $_POST['ma_pn'];
+            $ngay_nhap = $_POST['ngay_nhap'];
+            $ma_ncc = $_POST['ma_ncc'];
+            phieu_nhap_update($ngay_nhap, $ma_ncc, $ma_pn);
+            echo '<script>
+                location.href = "index.php";
+            </script>';
+        }
     }
 
     if(isset($_GET['ma_pn'])){
@@ -27,6 +38,13 @@
             <div class="form-group">
                 <label for="">Ngày nhập:</label>
                 <input type="date" class="form-control" name="ngay_nhap" value="<?=$ngay_nhap?>">
+                <span class="errs">
+                    <?php 
+                        if(isset($kt_loi['ngay_nhap'])){
+                            echo $kt_loi['ngay_nhap'];
+                        }
+                    ?>
+                </span>
             </div>
             <div class="form-group">
                 <label for="">Mã nhà cung cấp:</label>

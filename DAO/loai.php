@@ -72,4 +72,10 @@ function phan_trang_loai(){
     $sql = "SELECT * FROM loai  ORDER BY ma_loai DESC LIMIT $tung_trang,$loai_tung_trang";
     return pdo_query($sql);
 }
+
+// Tìm kiếm loại hàng theo tên
+function ten_loai_exist($ten_loai){
+    $sql = "SELECT * FROM loai WHERE ten_loai = ?";
+    return pdo_query_one($sql, $ten_loai);
+}
 ?>

@@ -4,25 +4,30 @@ require_once("../../DAO/pdo.php");
 require_once("../../DAO/loai.php");
 require_once("../../global.php");
 $_SESSION['ma_sp'] = $_GET['ma_sp'];
-if (isset($_POST['btn_update1'])) {
-    $ten_sp = "";
-    $don_gia = "";
-    $test = true;
-    $kt_loi = array();
+$test = true;
+$kt_loi = array();
 
-    if (empty($_POST['ten_sp'])) {
-        $kt_loi['ten_sp'] = "Tên hàng hóa không được bỏ trống !";
-        $test =  false;
-    } else {
-        $ten_sp = $_POST['ten_sp'];
-    }
-    if (empty($_POST['don_gia'])) {
-        $kt_loi['don_gia'] = "Đơn giá không được bỏ trống !";
+if (isset($_POST['btn_update1'])) {
+    if(empty($_POST['ten_sp'])){
+        $kt_loi['ten_sp'] = 'Tên sản phẩm không được để trống';
         $test = false;
-    } else {
-        $don_gia = $_POST['don_gia'];
     }
-   
+    else if(empty($_POST['don_gia'])){
+        $kt_loi['don_gia'] = 'Đơn giá không được để trống';
+        $test = false;
+    }
+    else if($_POST['don_gia'] < 0){
+        $kt_loi['don_gia'] = 'Đơn giá phải là số dương';
+        $test = false;
+    }
+    else if($_POST['giam_gia'] < 0){
+        $kt_loi['giam_gia'] = 'Giảm giá phải là số dương';
+        $test = false;
+    }
+    else if($_POST['so_luong'] < 0){
+        $kt_loi['so_luong'] = 'Số lượng phải là số dương';
+        $test = false;
+    }
     if ($test) {
         if (isset($_POST['ma_sp'])) {
             $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL . '/images/products/';

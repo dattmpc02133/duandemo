@@ -4,12 +4,10 @@ require_once("../../global.php");
 require_once '../../DAO/pdo.php';
 require_once '../../DAO/khach-hang.php';
 if (isset($_POST['add_kh'])) {
-    $ma_kh = "";
     $check_ma_kh = '/^\D[A-Za-z0-9_\.]{6,16}$/';
-    $mat_khau = "";
-    $ho_ten = "";
     $check_email = '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';
     $check_sdt_kh = '/^(0)([2-9])([0-9]+){8}$/';
+    $check_hoten = '/^[\D\s]+$/';
     $test = true;
     $kt_loi = array();
     if (empty($_POST['ma_kh'])) {
@@ -21,60 +19,42 @@ if (isset($_POST['add_kh'])) {
     } else if (get_info_kh($_POST['ma_kh'])) {
         $kt_loi['ma_kh'] = "Tên đăng nhập đã tồn tại";
         $test = false;
-    } else {
-        $ma_kh = $_POST['ma_kh'];
-    }
-    if (empty($_POST['sdt_kh'])) {
+    } else if (empty($_POST['sdt_kh'])) {
         $kt_loi['sdt_kh'] = "Số điện thoại không được bỏ trống";
         $test = false;
     } else if (!preg_match($check_sdt_kh, $_POST['sdt_kh'], $matches)) {
-        $kt_loi['sdt_kh'] = "Số điện thoại phải bắt đầu bằng 0, không chứa ký tự khác chữ số";
+        $kt_loi['sdt_kh'] = 'Số điện thoại không đúng định dạng, ví dụ: 0946636844';
         $test = false;
     } else if (sdt_kh_exist($_POST['sdt_kh'])) {
         $kt_loi['sdt_kh'] = "Số điện thoại đã được sử dụng";
         $test = false;
-    } else {
-        $sdt_kh = $_POST['sdt_kh'];
-    }
-    if (empty($_POST['xac_nhan_mat_khau'])) {
+    } else if (empty($_POST['xac_nhan_mat_khau'])) {
         $kt_loi['xac_nhan_mat_khau'] = "Mật khẩu xác nhận không được bỏ trống";
         $test = false;
-    } else {
-        $xac_nhan_mat_khau = $_POST['xac_nhan_mat_khau'];
-    }
-    if (empty($_POST['mat_khau'])) {
+    } else if (empty($_POST['mat_khau'])) {
         $kt_loi['mat_khau'] = "Mật khẩu không được bỏ trống !";
         $test = false;
-    } else {
-        $mat_khau = $_POST['mat_khau'];
-    }
-
-    if (empty($_POST['ho_ten'])) {
+    } else if (empty($_POST['ho_ten'])) {
         $kt_loi['ho_ten'] = "Họ Tên không được bỏ trống !";
         $test = false;
-    } else {
-        $ho_ten = $_POST['ho_ten'];
-    }
-
-    if (empty($_POST['dia_chi'])) {
+    } else if(!preg_match($check_hoten, $_POST['ho_ten'], $matches)){
+        $kt_loi['ho_ten'] = "Họ tên chỉ chứa chữ và khoảng trắng";
+        $test = false;
+    }else if (empty($_POST['dia_chi'])) {
         $kt_loi['dia_chi'] = "Địa chỉ không được bỏ trống !";
         $test = false;
-    } else {
-        $dia_chi = $_POST['dia_chi'];
-    }
-    if (empty($_POST['email'])) {
+    } else if (empty($_POST['email'])) {
         $kt_loi['email'] = "Email không được để trống !";
         $test = false;
     } elseif (!preg_match($check_email, $_POST['email'], $matchs)) {
-        $kt_loi['email'] = "Vui lòng nhập đúng định dạng Email !";
+        $kt_loi['email'] = "Email không đúng định dạng ! Ví dụ: duandemo123@gmail.com";
         $test = false;
     } else if (email_kh_exist($_POST['email'])) {
         $kt_loi['email'] = "Email đã được sử dụng";
         $test = false;
     } else {
-        $email = $_POST['email'];
+        $test = true;
     }
-
     if ($test) {
         if (isset($_POST['add_kh'])) {
             if ($xac_nhan_mat_khau == $mat_khau) {

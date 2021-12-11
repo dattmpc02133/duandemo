@@ -6,13 +6,19 @@ if (isset($_POST['btn_add'])) {
     $test = true;
     $kt_loi = array();
     if (empty($_POST['ten_loai'])) {
-        $kt_loi['ten_loai'] = "Không được bỏ trống tên !!";
-        $kt_loi['hinh'] = "Không được bỏ trống hình của loại !!";
+        $kt_loi['ten_loai'] = "Tên loại không được để trống";
         $test = false;
-    } else {
-            $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL . '/images/products/';
-            $ten_loai = $_POST['ten_loai'];
-            $hinh = $_FILES['hinh'];
+    } 
+    else if(ten_loai_exist($_POST['ten_loai'])){
+        $kt_loi['ten_loai'] = "Tên loại đã được sử dụng";
+        $test = false;
+    }
+    else if(!isset($_FILES['hinh'])){
+        $kt_loi['hinh'] = "Vui lòng chọn hình";
+        $test = false;
+    }
+    else {
+        $test = true;
     }
     if ($test) {
         if (isset($_POST['btn_add'])) {
@@ -44,14 +50,14 @@ if (isset($_POST['btn_add'])) {
             <label for="">Tên loại:</label>
             <input type="text" class="form-control" placeholder="Nhập tên loại" name="ten_loai" id="ten_loai">
             <?php if (isset($kt_loi['ten_loai'])) { ?>
-                    <span class="err"> <?php echo $kt_loi['ten_loai'] ?> </span>
+                    <span class="errs"> <?php echo $kt_loi['ten_loai'] ?> </span>
                 <?php } ?>
         </div>
         <div class="form-group">
             <label for="">Ảnh:</label>
             <input type="file" class="form-control-file" name="hinh" id="hinh" aria-describedby="fileHelpId">
             <?php if (isset($kt_loi['hinh'])) { ?>
-                    <span class="err"> <?php echo $kt_loi['hinh'] ?> </span>
+                    <span class="errs"> <?php echo $kt_loi['hinh'] ?> </span>
                 <?php } ?>
         </div>
         <div class="btn__group">

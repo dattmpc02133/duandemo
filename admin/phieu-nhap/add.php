@@ -1,20 +1,29 @@
 <?php 
     if(isset($_POST['add_pn'])){
-        $ngay_nhap = $_POST['ngay_nhap'];
-        $ma_ncc = $_POST['ma_ncc'];
-        phieu_nhap_insert($ngay_nhap, $ma_ncc);
-
-        $list_pn0 = phieu_nhap_selectall();
-        foreach ($list_pn0 as $pn0) {
-            extract($pn0);
-            // $_SESSION['ma_pn'] = $ma_pn;
-            echo '<script>
-                    location.href = "index.php?btn_add_pn_ct&ma_pn='.$ma_pn.'";
-                </script>';
-            break;
+        $test = true;
+        $kt_loi = array();
+        if(empty($_POST['ngay_nhap'])){
+            $kt_loi['ngay_nhap'] = 'Ngày nhập không được để trống';
+            $test = false;
         }
+        else{
+            $test = true;
+        }
+        if($test){
+            $ngay_nhap = $_POST['ngay_nhap'];
+            $ma_ncc = $_POST['ma_ncc'];
+            phieu_nhap_insert($ngay_nhap, $ma_ncc);
 
-        
+            $list_pn0 = phieu_nhap_selectall();
+            foreach ($list_pn0 as $pn0) {
+                extract($pn0);
+                // $_SESSION['ma_pn'] = $ma_pn;
+                echo '<script>
+                        location.href = "index.php?btn_add_pn_ct&ma_pn='.$ma_pn.'";
+                    </script>';
+                break;
+            }
+        }
     }
 ?>
 <div class="title">
@@ -25,6 +34,13 @@
             <div class="form-group">
                 <label for="">Ngày nhập:</label>
                 <input type="date" class="form-control" name="ngay_nhap" >
+                <span class="errs">
+                    <?php 
+                        if(isset($kt_loi['ngay_nhap'])){
+                            echo $kt_loi['ngay_nhap'];
+                        }
+                    ?>
+                </span>
             </div>
             <div class="form-group">
                 <label for="">Mã nhà cung cấp:</label>

@@ -3,16 +3,18 @@ require_once("../../DAO/pdo.php");
 require_once("../../DAO/loai.php");
 $_SESSION['ma_loai'] = $_GET['ma_loai'];
 if (isset($_POST['btn_update1'])) {
-        $ten_loai = "";
-        $test = true;
-        $kt_loi = array();
+    $test = true;
+    $kt_loi = array();
     if (empty($_POST['ten_loai'])) {
-        $kt_loi['ten_loai'] = "Không được bỏ trống tên";
-        $kt_loi['hinh1'] = "Không được bỏ trống hình";
+        $kt_loi['ten_loai'] = "Tên loại không được để trống";
         $test = false;
-    }else{
-        $ten_loai = $_POST['ten_loai'];
-        $hinh1 = $_FILES['hinh'];
+    } 
+    else if(ten_loai_exist($_POST['ten_loai'])){
+        $kt_loi['ten_loai'] = "Tên loại đã được sử dụng";
+        $test = false;
+    }
+    else {
+        $test = true;
     }
     if($test){
         if (isset($_POST['btn_update1'])) {
@@ -62,9 +64,6 @@ if (isset($_GET['ma_loai'])) {
         <label for="">Ảnh:</label>
         <input type="file" class="form-control" value="<?= $hinh_loai_sp ?>" name="hinh1">
         <input type="text" class="form-control" readonly value="<?= $hinh_loai_sp ?>" name="hinh">
-        <?php if (isset($kt_loi['hinh1'])) { ?>
-            <span class="err"> <?php echo $kt_loi['hinh1'] ?> </span>
-        <?php } ?>
     </div>
     <button class="btn btn-primary" type="submit" name="btn_update1">Cập Nhật</button>
     <a class="btn btn-primary" href="index.php?btn_list">Danh sách loại</a>
