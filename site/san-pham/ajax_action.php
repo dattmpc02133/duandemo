@@ -23,7 +23,12 @@ if (isset($_POST['ma_sp'])) {
         extract($bl_1);
 ?>
         <div class="col-1 user_comment">
-            <img src="../../content/images/user/<?= $hinh ?>" alt="" class="user_comment-img">
+            <img src="../../content/images/user/<?php if($hinh == null){
+                                echo 'user.jpg';
+                            }
+                            else{
+                                echo $hinh;
+                            } ?>" alt="" class="user_comment-img">
         </div>
         <div class="col-11 content_comment-moment">
             <p class="full_comment">

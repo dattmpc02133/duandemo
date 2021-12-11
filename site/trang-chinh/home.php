@@ -8,27 +8,20 @@
             <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
+            <?php 
+             $item_slideshows =   slideshow();
+             foreach($item_slideshows as $slide){
+            ?>
             <div class="carousel-item active">
-                <img src="<?= $CONTENT_URL  ?>/images/slideshow_1.jpg" class="d-block w-100" alt="...">
+                <img src="<?= $CONTENT_URL  ?>/images/products/<?=$slide['hinh']?>" class="d-block w-100" alt="...">
                 <!-- <div class="carousel-caption d-none d-md-block">
                     <h5>First slide label</h5>
                     <p>Some representative placeholder content for the first slide.</p>
                 </div> -->
             </div>
-            <div class="carousel-item">
-                <img src="<?= $CONTENT_URL  ?>/images/slideshow_2.jpg" class="d-block w-100" alt="...">
-                <!-- <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
-                </div> -->
-            </div>
-            <div class="carousel-item">
-                <img src="<?= $CONTENT_URL  ?>/images/slideshow_3.jpg" class="d-block w-100" alt="...">
-                <!-- <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Some representative placeholder content for the third slide.</p>
-                </div> -->
-            </div>
+           <?php 
+             }
+           ?>
         </div>
         <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -78,6 +71,7 @@
                                   foreach($hinh_hover as $hover){
                                       extract($hover);
                                   }
+                                 
                                  ?>
                                 <img class="hinh_chinh" src="<?= $CONTENT_URL  ?>/images/products/<?= $hinh ?>">
                                 <img hidden class="onmouseout" src="<?= $CONTENT_URL  ?>/images/products/<?= $hinh ?>">
@@ -304,4 +298,18 @@
        
     }
     hover_img();
+    // handler slieshow 
+    function handeler_slide(){
+        var carousel_items = document.querySelectorAll('.carousel-item');
+        var item_actives = document.querySelectorAll('.carousel-item.active');
+        item_actives.forEach(function($item_active){
+                $item_active.classList.remove('active');
+        })
+    }
+    handeler_slide()
+    function active_slide(){
+        var carousel_items = document.querySelector('.carousel-item');
+        carousel_items.classList.add("active");
+    }
+    active_slide()
 </script>

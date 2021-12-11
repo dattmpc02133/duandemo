@@ -1,4 +1,5 @@
 <?php
+
 require_once("../../global.php");
 require_once '../../DAO/pdo.php';
 require_once '../../DAO/khach-hang.php';
@@ -95,9 +96,27 @@ if (isset($_POST['add_kh'])) {
                 $kich_hoat = 1;
                 $danh_gia = 1;
                 khach_hang_insert($ma_kh, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email, $sdt_kh, $vai_tro, $danh_gia);
-                echo "<script>
-                    alert('Đăng ký tài khoảng thành công');
-                    location.href = '../../index.php';
+                echo "
+                <div id='toast'>
+                <div class='toast toast--success'>
+                    <div class='toast__icon'>
+                      <i class='far fa-check-circle'></i>
+                    </div>
+                    <div class='toast__body'>
+                    <h3 class='toast__title'> Đăng ký tài khoản</h3>
+                      <p class='toast__msg'>Chúc mừng bạn đã đăng ký tài khoản thành công</p>
+                    </div>
+                    <div class='toast__close'>
+                      <i class='fas fa-times'></i>
+                    </div>
+                  </div>
+                 </div>
+
+                    <script>
+                   
+                    setTimeout(function(){
+                        location.href = '../../index.php';
+                    },3000)
                   </script>";
             } else {
                 echo "<script>
