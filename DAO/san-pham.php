@@ -202,13 +202,13 @@ function sp_thong_ke()
 // khuyến mãi
 function san_pham_khuyen_mai()
 {
-    $sql = "SELECT * FROM san_pham WHERE giam_gia > 0 ORDER BY ma_sp DESC LIMIT 0,10";
+    $sql = "SELECT * FROM san_pham WHERE giam_gia > 0 AND dac_biet = 0  ORDER BY ma_sp DESC LIMIT 0,10";
     return pdo_query($sql);
 }
 // sản phẩm mới
 function select_product_new()
 {
-    $sql = "SELECT * FROM san_pham ORDER BY ma_sp DESC LIMIT 0,10";
+    $sql = "SELECT * FROM san_pham WHERE dac_biet = 0 ORDER BY ma_sp DESC LIMIT 0,10";
     return pdo_query($sql);
 }
 

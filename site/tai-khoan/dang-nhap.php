@@ -35,7 +35,7 @@ if (isset($_POST['login'])) {
                 if($user['vai_tro'] == 1){
                     $_SESSION['admin'] = $ma_kh;
                 }
-
+               
                 header("location: ../../index.php");
                 }
 

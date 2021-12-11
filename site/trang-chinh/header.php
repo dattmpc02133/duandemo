@@ -239,7 +239,8 @@ require_once("../../DAO/khach-hang.php");
                         <div class="header_cart-list">
                             <h3 class="header_cart-textt">Giỏ Hàng</h3>
                             <div class="header_cart-hanghoa">
-                             
+                                <i class="header_cart-no-cart-img fab fa-shopify"></i>
+                                <span class="header_cart-list-no-cart-msg">Chưa có sản phẩm nào..!!</span>
                             </div>
                             <div class="header_cart-price">
                                 <span class="cart-text_left">Tổng Tiền: </span>

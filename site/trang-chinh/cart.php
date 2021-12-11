@@ -63,9 +63,11 @@ if (isset($_POST['dat_hang'])) {
         giam_sp_ton_kho_khi_mua($so_luong_tam, $ma_sp_tam);
     }
     delete_all_gio_hang_tam();
-    echo '<script>
-        alert("Đặt hàng thành công !");
-    </script>';
+    echo "
+   
+    <script>
+        alert('Đặt hàng thành công !');
+    </script>";
     // location.href = "index.php";
 }
 ?>
