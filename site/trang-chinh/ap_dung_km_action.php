@@ -5,7 +5,6 @@
     require_once '../../DAO/khach-hang.php';
     $result = '';
     if(isset($_POST['ma_km'])){
-        $_SESSION['kq'] = 0;
         $today = date('Y-m-d');
         $ma_km_ap_dung = $_POST['ma_km'];
         $ma_kh_ap_dung = $_SESSION['user'];

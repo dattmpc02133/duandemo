@@ -2,6 +2,8 @@
 require_once("../../global.php");
 require_once '../../DAO/hoa-don.php';
 require_once '../../DAO/khuyen-mai.php';
+
+$_SESSION['kq'] = 0;
 if (!isset($_SESSION['user'])) {
 
     echo '<script>
@@ -315,8 +317,11 @@ if (isset($_POST['dat_hang'])) {
     $(document).ready(function() {
         $('#ap_dung').on("click", function() {
             var ma_km = $('#ma_km_ap_dung').val();
-            show_km(ma_km);
-
+            var btn_ap_dung = $('#ap_dung');
+            if(ma_km.length > 0){
+                show_km(ma_km);
+                btn_ap_dung.attr('disabled', 'true');
+            }
         })
         // fetch_data();
     });
