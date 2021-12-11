@@ -71,6 +71,7 @@
                                   foreach($hinh_hover as $hover){
                                       extract($hover);
                                   }
+                                 
                                  ?>
                                 <img class="hinh_chinh" src="<?= $CONTENT_URL  ?>/images/products/<?= $hinh ?>">
                                 <img hidden class="onmouseout" src="<?= $CONTENT_URL  ?>/images/products/<?= $hinh ?>">
