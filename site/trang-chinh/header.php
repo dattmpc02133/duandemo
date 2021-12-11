@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once("../../DAO/pdo.php");
 require_once("../../DAO/khach-hang.php");
 ?>
@@ -28,11 +28,11 @@ require_once("../../DAO/khach-hang.php");
                     </div>
                     <div class="account riverdungchung">
                         <div class="user__active" id="account_dangnhap">
-                            <?php 
+                        <?php 
                                 if(isset($_SESSION['user'])){
                                     $info_img = get_info_kh($_SESSION['user']) ;
-                                    if($info_img == null){
-                                        echo '<img  src="'.$CONTENT_URL.'/images/user/user.jpg" alt="">';
+                                    if($info_img['hinh'] == null){
+                                        echo '<img class="avt__user"  src="'.$CONTENT_URL.'/images/user/user.jpg" alt="">';
                                     }
                                     echo '<img class="avt__user" src="'.$CONTENT_URL.'/images/user/'.$info_img['hinh'].'" alt="">';
                                 } else{
@@ -40,7 +40,7 @@ require_once("../../DAO/khach-hang.php");
                                     echo "<i class='incon_size fas fa-user-circle'></i>";
                                 }
                             ?>
-                            
+
                             <div style="margin-left: 10px;" class="account_dangnhap">
                                 <?php
                                 if (isset($_SESSION['user'])) {
@@ -164,17 +164,11 @@ require_once("../../DAO/khach-hang.php");
                     </div>
                     <li class="navbar_bar-lish"><a href="<?= $ROOT_URL ?>" class="header-linkk_items">TRANG CHỦ</a></li>
                     <li class="navbar_bar-lish header--ative">
-                        <a href="<?= $SITE_URL ?>/san-pham/" class="header-linkk_items">SẢN PHẨM</a>
-                        <!-- <ul class="header_chill-product">
-                            <li class="header_chill-link">
-                                <a href="san-pham-khuyen-mai.html" class="header-link_chilll">Sản Phẩm Khuyến Mãi</a>
-                                <a href="san-pham-phong-khach.html" class="header-link_chilll">Nội Thất Phòng Khách</a>
-                                <a href="san-pham-phong-ngu.html" class="header-link_chilll">Nội Thất Phòng Ngủ</a>
-                                <a href="phu-kien-trang-tri.html" class="header-link_chilll">Phụ Kiện Trang Trí</a>
-                            </li>
-                        </ul> -->
-                        <ul class="header_chill-product">
-                            <li class="header_chill-link">
+                        <!-- <a href="<?= $SITE_URL ?>/san-pham/" id="spmobie" class="header-linkk_items">SẢN PHẨM</a> -->
+                        <span id="spmobie" class="header-linkk_items">SẢN PHẨM</span>
+                        <ul class="header_chill-productt">
+                                <li id="header_chill-linked">
+                                <a class="header-link_chilll" href="<?= $SITE_URL ?>/san-pham/liet-ke.php">Tất cả sản phẩm</a>
                                 <?php
                                 $list_ds = loai_selectall();
                                 foreach ($list_ds as $ds_loai) {
@@ -239,8 +233,12 @@ require_once("../../DAO/khach-hang.php");
                         <div class="header_cart-list">
                             <h3 class="header_cart-textt">Giỏ Hàng</h3>
                             <div class="header_cart-hanghoa">
+<<<<<<< HEAD
+
+=======
                                 <i class="header_cart-no-cart-img fab fa-shopify"></i>
-                                <span class="header_cart-list-no-cart-msg">Chưa Có Sản Phẩm Nào..!!</span>
+                                <span class="header_cart-list-no-cart-msg">Chưa có sản phẩm nào..!!</span>
+>>>>>>> 0f2a1e6b8e3d86817bdf96d12c432c16fb3fb33b
                             </div>
                             <div class="header_cart-price">
                                 <span class="cart-text_left">Tổng Tiền: </span>
@@ -262,25 +260,6 @@ require_once("../../DAO/khach-hang.php");
                 <button class="btn btn-outline-success my-2 my-sm-0 btn__responsive" type="submit">Search</button>
             </form>
         </nav>
-        <!-- <nav class="navbar_header">
-            <ul class="navbar_header-product">
-                <li class="navbar_header-link"><a href="<?= $ROOT_URL ?>" class="header-linkk">TRANG CHỦ</a></li>
-                <li class="navbar_header-link header--ative">
-                    <a href="<?= $SITE_URL ?>/san-pham/" class="header-linkk">SẢN PHẨM</a>
-                    <ul class="header_chill-product">
-                        <li class="header_chill-link">
-                            <a href="san-pham-khuyen-mai.html" class="header-link_chilll">Sản Phẩm Khuyến Mãi</a>
-                            <a href="san-pham-phong-khach.html" class="header-link_chilll">Nội Thất Phòng Khách</a>
-                            <a href="san-pham-phong-ngu.html" class="header-link_chilll">Nội Thất Phòng Ngủ</a>
-                            <a href="phu-kien-trang-tri.html" class="header-link_chilll">Phụ Kiện Trang Trí</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="navbar_header-link"><a href="./tin-tuc.html" class="header-linkk">TIN TỨC</a></li>
-                <li class="navbar_header-link"><a href="./gioi-thieu.html" class="header-linkk">GIỚI THIỆU</a></li>
-                <li class="navbar_header-link"><a href="./lien-he.html" class="header-linkk">LIÊN HỆ</a></li>
-            </ul>
-        </nav> -->
     </div>
 </section>
 <!-- end menu -->
@@ -311,4 +290,21 @@ require_once("../../DAO/khach-hang.php");
         numbers_by_cart.innerHTML = header_cart_products.length;
     }
     numbers_by_cart()
+
+    function spmobie() {
+        var spmobie = document.querySelector("#spmobie");
+        console.log([spmobie]);
+        var limobie = document.querySelector("#header_chill-linked");
+        spmobie.addEventListener('click', () => {
+
+            if (limobie.style.display == "none") {
+                limobie.style.display = 'block';
+                limobie.style.animation = `mobiedifile ease-in 2s`;
+            } else {
+                limobie.style.display = 'none';
+            }
+        });
+        
+    }
+    spmobie();
 </script>

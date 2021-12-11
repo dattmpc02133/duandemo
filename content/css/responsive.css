@@ -24,6 +24,23 @@
         .policy_content-items, .footer_content, .footer_content-2, .footer_content-title{
             text-align: center;
         }
+        .header_chill-product {
+            position: relative;
+            animation: mobiedifile ease-in 2s;
+        }
+        @keyframes mobiedifile {
+            from {
+                position: relative;
+                opacity: 0;
+                transform: translateY(-10%);
+
+            }
+            to {
+                transform: translateY(0px);
+                transition: transform linear 0.2s;
+                opacity: 1;
+            }
+        }
     }
     
     /* tablet */
@@ -51,6 +68,23 @@
         }
         .policy_content-items, .footer_content, .footer_content-2, .footer_content-title{
             text-align: center;
+        }
+        .header_chill-productt {
+            position: relative;
+            animation: mobiedifile ease-in 2s;
+        }
+        @keyframes mobiedifile {
+            from {
+                position: relative;
+                opacity: 0;
+                transform: translateY(-10%);
+
+            }
+            to {
+                transform: translateY(0px);
+                transition: transform linear 0.2s;
+                opacity: 1;
+            }
         }
     }
     /* table tất cả sp */

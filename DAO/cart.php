@@ -41,4 +41,8 @@ function hoa_don_kh($ma_hd){
     return pdo_query($sql,$ma_hd);
 }
 //  
+function count_cart_temp($ma_kh){
+    $sql = "SELECT COUNT(*) FROM gio_hang_tam WHERE ma_kh = ?";
+    return pdo_query_value($sql, $ma_kh);
+}
 ?>
