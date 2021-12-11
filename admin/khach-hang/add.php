@@ -1,25 +1,44 @@
 <?php 
     require_once '../../DAO/pdo.php';
     require_once '../../DAO/khach-hang.php';
+    $test = true;
+    $kt_loi = array();
 
     if(isset($_POST['btn_add'])){
-        $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL . '/images/user/';
-        $hinh = $_FILES['hinh'];
-        $tenhinh = save_file($hinh, $path);
-        $ma_kh = $_POST['ma_kh'];
-        $mat_khau = md5($_POST['mat_khau']);
-        $ho_ten=$_POST['ho_ten'];
-        $sdt_kh = $_POST['sdt_kh'];
-        $dia_chi=$_POST['dia_chi'];
-        $kich_hoat=$_POST['kich_hoat'];
-        $email=$_POST['email'];
-        $vai_tro=$_POST['vai_tro'];
-        $danh_gia = 1;
-        khach_hang_insert($ma_kh,$mat_khau,$ho_ten,$dia_chi,$kich_hoat,$tenhinh,$email,$sdt_kh,$vai_tro, $danh_gia);
-        // header('location: index.php');
-        echo "<script>
-                location.href = 'index.php';
-              </script>";
+        if(empty($_POST['ma_kh'])){
+            $kt_loi['ma_kh'] = 'Mã khách hàng không được để trống';
+            $test = false;
+        }
+        else if(strlen($_POST['ma_kh']) < 6){
+            $kt_loi['ma_kh'] = 'Mã khách hàng tối thiểu 6 ký tự';
+            $test = false;
+        }
+        else if(empty($_POST['mat_khau'])){
+            $kt_loi['mat_khau'] = 'Mã khách hàng tối thiểu 6 ký tự';
+            $test = false;
+        }
+        else{
+            $test = true;
+        }
+        if($test){
+            $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL . '/images/user/';
+            $hinh = $_FILES['hinh'];
+            $tenhinh = save_file($hinh, $path);
+            $ma_kh = $_POST['ma_kh'];
+            $mat_khau = md5($_POST['mat_khau']);
+            $ho_ten=$_POST['ho_ten'];
+            $sdt_kh = $_POST['sdt_kh'];
+            $dia_chi=$_POST['dia_chi'];
+            $kich_hoat=$_POST['kich_hoat'];
+            $email=$_POST['email'];
+            $vai_tro=$_POST['vai_tro'];
+            $danh_gia = 1;
+            khach_hang_insert($ma_kh,$mat_khau,$ho_ten,$dia_chi,$kich_hoat,$tenhinh,$email,$sdt_kh,$vai_tro, $danh_gia);
+            // header('location: index.php');
+            echo "<script>
+                    location.href = 'index.php';
+                </script>";
+            }
     }
 ?>
 <div class="title">
@@ -30,10 +49,24 @@
             <div class="form-group">
                 <label for="">Mã khách hàng:</label>
                 <input type="text" class="form-control" placeholder="Nhập mã khách hàng" name="ma_kh" id="ma_kh">
+                <span class="errs">
+                    <?php 
+                        if(isset($kt_loi['ma_kh'])){
+                            echo $kt_loi['ma_kh'];
+                        }
+                    ?>
+                </span>
             </div>
             <div class="form-group">
                 <label for="">Mật khẩu:</label>
                 <input type="password" class="form-control" placeholder="Nhập mật khẩu" name="mat_khau" id="mat_khau">
+                <span class="errs">
+                    <?php 
+                        if(isset($kt_loi['mat_khau'])){
+                            echo $kt_loi['mat_khau'];
+                        }
+                    ?>
+                </span>
             </div>
             <div class="form-group">
                 <label for="">Họ tên:</label>

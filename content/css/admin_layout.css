@@ -110,5 +110,12 @@ hr{
 .update__delete .btn i{
     margin-right: 0px;
 }
-
 /*end table*/
+
+/* Kiểm lỗi */
+.errs{
+    color: red;
+    font-style: oblique;
+    font-size: 14px;
+}
+/* end kiểm lỗi */
