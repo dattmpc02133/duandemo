@@ -7,7 +7,7 @@
         <table class="table">
             <thead class="table-danger">
                 <tr>
-                    <th class="check"><input type="checkbox"></th>
+                    <!-- <th class="check"><input type="checkbox"></th> -->
                     <th>Mã hóa đơn</th>
                     <th>Mã khách hàng</th>
                     <th>Tổng tiền</th>
@@ -26,7 +26,7 @@
                         extract($hoa_don);
                         $btn_update_hd = "index.php?btn_update_hd&ma_hd=$ma_hd";
                     ?>
-                        <td class="check"><input type="checkbox"></td>
+                        <!-- <td class="check"><input type="checkbox"></td> -->
                         <td><?= $ma_hd ?></td>
                         <td><?= $ma_kh ?></td>
                         <td><?php echo number_format($tong_tien) ?><sup>đ</sup></td>

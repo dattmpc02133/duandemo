@@ -11,7 +11,12 @@
                 <nav class="nav flex-column side-bar">
                     <div class="top">
                         <div class="account">
-                            <img src="<?=$CONTENT_URL?>/images/user/<?=$hinh?>" alt="<?=$hinh?>" class="avt">
+                            <img src="<?=$CONTENT_URL?>/images/user/<?php if($hinh == null){
+                                echo 'user.jpg';
+                            }
+                            else{
+                                echo $hinh;
+                            } ?>" alt="<?=$hinh?>" class="avt">
                            <div class="account-text">
                              <h5 style="word-wrap: break-word;"><?=$user?></h5>
                             <div class="btn-group drop-button">

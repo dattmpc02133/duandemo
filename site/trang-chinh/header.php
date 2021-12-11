@@ -31,8 +31,8 @@ require_once("../../DAO/khach-hang.php");
                             <?php 
                                 if(isset($_SESSION['user'])){
                                     $info_img = get_info_kh($_SESSION['user']) ;
-                                    if($info_img == null){
-                                        echo '<img  src="'.$CONTENT_URL.'/images/user/user.jpg" alt="">';
+                                    if($info_img['hinh'] == null){
+                                        echo '<img class="avt__user"  src="'.$CONTENT_URL.'/images/user/user.jpg" alt="">';
                                     }
                                     echo '<img class="avt__user" src="'.$CONTENT_URL.'/images/user/'.$info_img['hinh'].'" alt="">';
                                 } else{

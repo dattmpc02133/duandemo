@@ -47,7 +47,7 @@ if (isset($_POST['dat_hang'])) {
     $so_luong_input_data = $_POST['so_luong_input_data'];
     hoa_don_insert($ma_kh, $tong_tien, $dia_chi_giao_hang, $ngay_dat, $trang_thai);
 
-    if ($_SESSION['kq'] == 0) {
+    if (isset($_SESSION['kq']) && $_SESSION['kq'] == 0 ) {
         khach_hang_da_dung_insert($_POST['ma_km'], $_SESSION['user']);
         unset($_SESSION['kq']);
     }

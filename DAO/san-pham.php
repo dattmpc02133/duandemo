@@ -63,7 +63,7 @@ function san_pham_insert(
 // hàng hóa theo loại
 function san_pham_select_by_loai($ma_loai)
 {
-    $sql = "SELECT * FROM san_pham  WHERE ma_loai = ? LIMIT 0,5 ";
+    $sql = "SELECT * FROM san_pham  WHERE ma_loai = ? AND dac_biet = 0 LIMIT 0,5 ";
     return  pdo_query($sql, $ma_loai);
 }
 
