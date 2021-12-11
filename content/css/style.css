@@ -62,11 +62,17 @@ h5 {
   margin: 0;
 }
 .header_chill-product {
-  position: absolute;
-  z-index: 1;
-  left: 206px;
   margin-top: 12px;
   box-shadow: 0 0 5px 0 #eee;
+  position: absolute;
+  z-index: 1;
+}
+#header_chill-linked {
+  display: none;
+}
+
+.header_chill-linked a{
+  text-align: left;
 }
 .header_chill-link {
   list-style: none;
@@ -76,11 +82,12 @@ h5 {
   min-width: 200px;
 }
 .header-link_chilll {
-  padding: 10px;
+  padding: 10px 50px;
   text-decoration: none;
   color: #333;
   display: block;
   font-size: 0.9rem;
+  text-align: left;
 }
 .navbar_header-link > a {
   text-decoration: none;
@@ -159,6 +166,10 @@ h5 {
 /* tin tức news */
 .news_tintuc {
   width: 100%;
+}
+.news_tintuc:hover{
+  transition: transform linear 1s;
+  transform: scale(1.2);
 }
 .box_hinh {
   max-height: 327px;
