@@ -253,6 +253,17 @@ h5 {
   padding: 10px;
   box-shadow: 0 0 5px #ccc;
 }
+.box__cart-exist{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart_exist{
+  font-size: 150px !important;
+}
+.text__cart-exist{
+  font-size: 2rem;
+}
 .header_cart-textt {
   font-size: 1.2rem;
   text-align: left;
