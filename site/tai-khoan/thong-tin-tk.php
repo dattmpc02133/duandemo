@@ -113,7 +113,7 @@ if (isset($_POST['update_account'])) {
                     <?php } ?>
                         <span class="mess"></span>
                     </div>
-                    <div class="form-group" hidden>
+                    <div class="form-group">
                         <label for=""><b>Ảnh đại diện *</b></label>
                         <input type="file" class="form-control-file" name="hinh_new" id="hinh_new" aria-describedby="fileHelpId">
                         <input class="form-control" type="text" name="hinh" id="hinh" value="<?=$hinh?>" readonly style="border: none; outline:none;">

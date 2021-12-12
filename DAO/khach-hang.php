@@ -33,7 +33,11 @@ function khach_hang_update($mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $ema
     $sql = "UPDATE khach_hang SET mat_khau=?,ho_ten=?,dia_chi=?,kich_hoat=?,hinh=?,email=?, sdt_kh=?,vai_tro=? WHERE ma_kh=?";
     pdo_execute($sql, $mat_khau, $ho_ten, $dia_chi, $kich_hoat, $hinh, $email, $sdt, $vai_tro, $ma_kh);
 }
-
+// cập nhật ảnh đại diện
+function avt_user_update($hinh,$ma_kh){
+    $sql = "UPDATE khach_hang SET hinh = ? WHERE ma_kh=?";
+    pdo_execute($sql,$hinh,$ma_kh);
+}
 // cập nhật vai trò khách
 function cap_nhat_tai_khoang_vai_tro_khach($ho_ten, $dia_chi, $hinh, $email, $ma_kh)
 {

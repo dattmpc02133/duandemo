@@ -233,12 +233,10 @@ require_once("../../DAO/khach-hang.php");
                         <div class="header_cart-list">
                             <h3 class="header_cart-textt">Giỏ Hàng</h3>
                             <div class="header_cart-hanghoa">
-<<<<<<< HEAD
 
-=======
                                 <i class="header_cart-no-cart-img fab fa-shopify"></i>
                                 <span class="header_cart-list-no-cart-msg">Chưa có sản phẩm nào..!!</span>
->>>>>>> 0f2a1e6b8e3d86817bdf96d12c432c16fb3fb33b
+
                             </div>
                             <div class="header_cart-price">
                                 <span class="cart-text_left">Tổng Tiền: </span>
