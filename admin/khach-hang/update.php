@@ -4,6 +4,10 @@ require_once("../../DAO/khach-hang.php");
 $_SESSION['ma_kh'] = $_GET['ma_kh'];
 $test = true;
 $kt_loi = array();
+$check_ma_kh = '/^\D[a-zA-Z0-9_\.]{5,15}$/';
+$check_hoten = '/^[\D\s]+$/';
+$check_email = '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';
+$check_sdt = '/^(0)([2-9])([0-9]+){8}$/';
 if (isset($_POST['btn_update1'])) {
     if(empty($_POST['mat_khau'])){
         $kt_loi['mat_khau'] = 'Mật khẩu không được để trống';
@@ -29,9 +33,14 @@ if (isset($_POST['btn_update1'])) {
         $kt_loi['email'] = 'Email không được để trống';
         $test = false;
     }
-    else if(email_kh_exist($_POST['email'])){
-        $kt_loi['email'] = 'Email đã được sử dụng';
-        $test = false;
+    else if(isset($_POST['email'])){
+        $email_old = email_kh_exist($_POST['email']);
+        if($_POST['email'] != $email_old['email']){
+            if(email_kh_exist($_POST['email'])){
+                $kt_loi['email'] = 'Email đã được sử dụng';
+                $test = false;
+            }
+        }
     }
     else if(!preg_match($check_email, $_POST['email'], $matches)){
         $kt_loi['email'] = 'Email không đúng định dạng, ví dụ: duandemo123@gmail.com';
@@ -45,9 +54,14 @@ if (isset($_POST['btn_update1'])) {
         $kt_loi['sdt_kh'] = 'Số điện thoại không đúng định dạng, ví dụ: 0946636844';
         $test = false;
     }
-    else if(sdt_kh_exist($_POST['sdt_kh'])){
-        $kt_loi['sdt_kh'] = 'Số điện thoại đã được sử dụng';
-        $test = false;
+    else if(isset($_POST['sdt_kh'])){
+        $sdt_kh_old = sdt_kh_exist($_POST['sdt_kh']);
+        if($_POST['sdt_kh'] != $sdt_kh_old['sdt_kh']){
+            if(sdt_kh_exist($_POST['sdt_kh'])){
+                $kt_loi['sdt_kh'] = 'Số điện thoại đã được sử dụng';
+                $test = false;
+            }
+        }
     }
     else{
         $test = true;
@@ -155,7 +169,7 @@ if (isset($_GET['ma_kh'])) {
     </div>
     <div class="form-group">
         <label for="">Email:</label>
-        <input type="text" class="form-control" value="<?= $dia_chi ?>" name="email" id="email">
+        <input type="text" class="form-control" value="<?= $email ?>" name="email" id="email">
         <span class="errs">
             <?php 
                 if(isset($kt_loi['email'])){

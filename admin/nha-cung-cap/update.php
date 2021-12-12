@@ -22,12 +22,28 @@
         } else if (!preg_match($check_sdt, $_POST['sdt'], $matches)) {
             $kt_loi['sdt'] = 'Số điện thoại không đúng định dạng, ví dụ: 0946636844';
             $test = false;
+        } else if(isset($_POST['sdt'])){
+            $sdt_ncc_old = sdt_ncc_exist($_POST['sdt']);
+            if($_POST['sdt'] != $sdt_ncc_old['sdt']){
+                if(sdt_ncc_exist($_POST['sdt'])){
+                    $kt_loi['sdt'] = 'Số điện đã được sử dụng';
+                    $test = false;
+                }
+            }
         } else if (empty($_POST['email'])) {
             $kt_loi['email'] = 'Số điện thoại không được để trống';
             $test = false;
         } else if (!preg_match($check_email, $_POST['email'], $matches)) {
             $kt_loi['email'] = 'Email không đúng định dạng, ví dụ: duandemo123@gmail.com';
             $test = false;
+        } else if(isset($_POST['email'])){
+            $email_ncc_old = email_ncc_exist($_POST['email']);
+            if($_POST['email'] != $email_ncc_old['email']){
+                if(email_ncc_exist($_POST['email'])){
+                    $kt_loi['email'] = 'Email đã được sử dụng';
+                    $test = false;
+                }
+            }
         } else {
             $test = true;
         }
