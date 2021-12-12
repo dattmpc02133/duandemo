@@ -1,4 +1,4 @@
-<section class="container contact_product-LH">
+<!-- <section class="container contact_product-LH">
     <div class="contact_product">
         <h2 style="color: #0975f5;">HÃY LIÊN HỆ VỚI CHÚNG TÔI!</h2>
         <p>Luôn sẵn sáng hỗ trợ và tư vấn cho bạn để có sản phẩm tốt nhất.</p>
@@ -9,7 +9,8 @@
             </form>
         </div>
     </div>
-</section>
+</section> -->
+<br>
 <section class="policy_content">
     <div class="container-fluid" style="padding: 0 80px;">
         <div class="policy_content-lish">

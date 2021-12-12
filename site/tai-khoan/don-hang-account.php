@@ -111,7 +111,7 @@
                                                    
                                                     <td  style="border-left:2px dashed #ccc ;" ><?= $ten_sp ?></td>
                                                     <td><img style="width:60px" src="../../content//images/products/<?= $hinh ?>" alt=""></td>
-                                                    <td><?= $gia_ban ?></td>
+                                                    <td><?=  number_format( $gia_ban) ?> <sup>đ</sup></td>
                                                     <td>x <?= $so_luong ?></td>
                                                 </tr>
                                             <?php
@@ -191,7 +191,7 @@
                                                    
                                                     <td  style="border-left:2px dashed #ccc;" ><?= $ten_sp ?></td>
                                                     <td><img style="width:60px" src="../../content//images/products/<?= $hinh ?>" alt=""></td>
-                                                    <td><?= $gia_ban ?></td>
+                                                    <td><?=  number_format( $gia_ban) ?> <sup>đ</sup></td>
                                                     <td>x <?= $so_luong ?></td>
                                                 </tr>
                                             <?php
@@ -271,7 +271,7 @@
                                                    
                                                     <td  style="border-left:2px dashed #ccc;" ><?= $ten_sp ?></td>
                                                     <td><img style="width:60px" src="../../content//images/products/<?= $hinh ?>" alt=""></td>
-                                                    <td><?= $gia_ban ?></td>
+                                                    <td><?=  number_format( $gia_ban) ?> <sup>đ</sup></td>
                                                     <td>x <?= $so_luong ?></td>
                                                 </tr>
                                             <?php
@@ -351,7 +351,7 @@
                                                    
                                                     <td  style="border-left:2px dashed #ccc;" ><?= $ten_sp ?></td>
                                                     <td><img style="width:60px" src="../../content//images/products/<?= $hinh ?>" alt=""></td>
-                                                    <td><?= $gia_ban ?></td>
+                                                    <td><?=  number_format( $gia_ban) ?> <sup>đ</sup></td>
                                                     <td>x <?= $so_luong ?></td>
                                                 </tr>
                                             <?php
@@ -431,7 +431,7 @@
                                                    
                                                     <td  style="border-left:2px dashed #ccc;" ><?= $ten_sp ?></td>
                                                     <td><img style="width:60px" src="../../content//images/products/<?= $hinh ?>" alt=""></td>
-                                                    <td><?= $gia_ban ?></td>
+                                                    <td><?=  number_format( $gia_ban) ?> <sup>đ</sup></td>
                                                     <td>x <?= $so_luong ?></td>
                                                 </tr>
                                             <?php
