@@ -13,7 +13,7 @@ if (isset($_GET['ma_pn'])) {
         <table class="table">
             <thead class="table-danger">
                 <tr>
-                    <th class="check"><input type="checkbox"> </th>
+                    <!-- <th class="check"><input type="checkbox"> </th> -->
                     <th>Mã phiếu nhập</th>
                     <th>Ngày nhập</th>
                     <th>Mã nhà cung cấp</th>
@@ -28,7 +28,7 @@ if (isset($_GET['ma_pn'])) {
                     extract($pn);
                 ?>
                     <tr>
-                        <td class="check"><input type="checkbox"> </td>
+                        <!-- <td class="check"><input type="checkbox"> </td> -->
                         <td><?= $ma_pn ?></td>
                         <td><?= $ngay_nhap ?></td>
                         <td><?php

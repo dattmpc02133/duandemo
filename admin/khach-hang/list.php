@@ -39,7 +39,7 @@ if (isset($_POST['delete_select'])) {
         <table class="table">
             <thead class="table-danger">
                 <tr>
-                    <th class="check"><input type="checkbox"></th>
+                    <!-- <th class="check"><input type="checkbox"></th> -->
                     <th>Mã kH</th>
                     <!-- <th>Mật khẩu</th> -->
                     <th>Họ tên</th>
@@ -63,7 +63,7 @@ if (isset($_POST['delete_select'])) {
                     $btn_cart = "index.php?btn_cart&ma_kh=$ma_kh";
                 ?>
                     <tr>
-                        <td class="check"><input type="checkbox" name="check[]" value='<?= $ma_kh ?>'></td>
+                       
                         <td><?= $ma_kh ?></td>
 
                         <td><?= $ho_ten ?></td>

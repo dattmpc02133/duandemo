@@ -31,7 +31,7 @@ if (isset($_POST['delete_select'])) {
         <table class="table">
             <thead class="table-danger">
                 <tr>
-                    <th class="check"><input type="checkbox"> </th>
+                    <!-- <th class="check"><input type="checkbox"> </th> -->
                     <th>Mã loại</th>
                     <th>Tên loại</th>
                     <th>Hình</th>
@@ -49,7 +49,7 @@ if (isset($_POST['delete_select'])) {
                     $btn_update = "index.php?btn-update&ma_loai=$ma_loai";
                     echo '
                         <tr>
-                        <td class="check"><input type="checkbox"  name= "check[]" value = ' . $ma_loai . '  ></td>
+                      
                             <td>' . $ma_loai . '</td>
                             <td>' . $ten_loai . '</td>
                             <td>

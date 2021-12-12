@@ -27,7 +27,7 @@ if (isset($_POST['delete_select'])) {
         <table class="form__content-table table">
             <thead class="table-danger">
                 <tr>
-                    <th class="check"><input type="checkbox"> </th>
+                    <!-- <th class="check"><input type="checkbox"> </th> -->
                     <th>Mã SP</th>
                     <th> Tên SP </th>
                     <th>Đơn giá</th>
@@ -50,7 +50,7 @@ if (isset($_POST['delete_select'])) {
                     $btn_update = "index.php?btn-update&ma_sp=$ma_sp";
                 ?>
                     <tr>
-                        <td class="check"><input type="checkbox"> </td>
+                        <!-- <td class="check"><input type="checkbox"> </td> -->
                         <td class="ma_sp"><?= $ma_sp ?></td>
                         <td><?= $ten_sp ?></td>
                         <td><?= number_format($don_gia) ?><sup>đ</sup></td>

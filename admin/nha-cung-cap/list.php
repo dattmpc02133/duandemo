@@ -17,7 +17,7 @@ if (isset($_GET['ma_ncc'])) {
                 <table class="table">
                     <thead class="table-danger">
                         <tr>
-                            <th class="check"><input type="checkbox"> </th>
+                            <!-- <th class="check"><input type="checkbox"> </th> -->
                             <th class="">Mã NCC</th>
                             <th class="">Tên nhà cung cấp</th>
                             <th class="">Địa chỉ</th>
@@ -35,7 +35,7 @@ if (isset($_GET['ma_ncc'])) {
                             $delete_link = "index.php?ma_ncc=$ma_ncc";
                         ?>
                             <tr>
-                                <td class="check"><input type="checkbox"> </td>
+                                <!-- <td class="check"><input type="checkbox"> </td> -->
                                 <td class=""><?= $ma_ncc ?></td>
                                 <td class=""><?= $ten_ncc ?></td>
                                 <td class=""><?= $dia_chi ?></td>

@@ -13,7 +13,7 @@ if (isset($_GET['ma_km'])) {
         <table class="table">
             <thead class="table-danger">
                 <tr>
-                    <th class="check"><input type="checkbox"> </th>
+                    <!-- <th class="check"><input type="checkbox"> </th> -->
                     <th>ID</th>
                     <th>Mã khuyến mãi</th>
                     <th>Mã khách hàng đã dùng</th>
@@ -27,7 +27,7 @@ if (isset($_GET['ma_km'])) {
                     extract($ct_km);
                 ?>
                     <tr>
-                        <td class="check"><input type="checkbox"> </td>
+                        <!-- <td class="check"><input type="checkbox"> </td> -->
                         <td><?= $id ?></td>
                         <td><?= $ma_km ?></td>
                         <td><?=$ma_kh_da_dung?></td>

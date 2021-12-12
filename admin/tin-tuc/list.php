@@ -15,7 +15,7 @@ require_once('../../DAO/tin-tuc.php');
         <table class="form__content-table table">
             <thead class="table-danger">
                 <tr>
-                    <th class="check"><input type="checkbox"> </th>
+                    <!-- <th class="check"><input type="checkbox"> </th> -->
                     <th>Mã tin tức</th>
                     <th>Tiêu đề</th>
                     <th>Hình</th>
@@ -32,7 +32,7 @@ require_once('../../DAO/tin-tuc.php');
                     $link_delete_new = "../tin-tuc/list.php?btn-delete&ma-tin-tuc=$ma_tin_tuc";
                 ?>
                     <tr>
-                        <td class="check"><input type="checkbox"> </td>
+                        <!-- <td class="check"><input type="checkbox"> </td> -->
                         <td><?= $ma_tin_tuc ?></td>
                         <td><?= $tieu_de ?></td>
                         <td><img style="width:100px;" src="<?=$CONTENT_URL?>/images/news/<?=$hinh_tin_tuc?>" alt=""></td>

@@ -25,7 +25,7 @@ if (isset($_POST['delete_select'])) {
                 <table class="table">
                     <thead class="table-danger">
                         <tr>
-                            <th class="check"><input type="checkbox"> </th>
+                            <!-- <th class="check"><input type="checkbox"> </th> -->
                             <th class="ten_hinh">HÀNG HÓA</th>
                             <th class="don_gia">SỐ BL</th>
                             <th class="gia_giam">MỚI NHẤT</th>
@@ -43,7 +43,7 @@ if (isset($_POST['delete_select'])) {
                             ?>
                        
                         <tr>
-                           <?php if(isset($ma_sp)){ echo ' <td><input type="checkbox" name="check[]" value=" '.$ma_sp.'"></td>';} ?>
+                          
                             <td><?php if(isset($ten_sp)){echo $ten_sp;} else{echo "";} ?></td>
                             <td><?php if(isset($so_luong)){echo $so_luong;} else{echo "";} ?></td>
                             <td> <?php if(isset($bl_moi_nhat)){echo $bl_moi_nhat;} else{echo "";} ?> </td>

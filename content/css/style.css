@@ -1002,6 +1002,10 @@ tbody td {
 .dropdown-item {
   color: #b8c1ec !important;
 }
+.dropdown-item:hover{
+  background-color: #066cda !important;
+    color: #ffffff !important;
+}
 /* e  d */
 /* tin tuc chi tiết */
 .content_page-new {

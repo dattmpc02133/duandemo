@@ -8,13 +8,13 @@ require_once("../../DAO/khach-hang.php");
             Tô thêm vẻ đẹp tâm hồn bên trong ngôi nhà của bạn !</h3>
     </div>
     <div class="grid">
-        <div class="row" style="padding: 0 25px; text-align: center; align-items: center;">
+        <div class="row" style="padding: 0 25px; text-align: center; align-items: center; margin:0 !important" >
             <div class="col-sm-2">
                 <a href="<?= $ROOT_URL ?>"> <img src="<?= $CONTENT_URL  ?>/images/Removal-195.png" style="width:70%" alt="Hình" class="header_img"></a>
             </div>
             <div class="col-sm-5">
                 <div class="search">
-                    <form action="../san-pham/liet-ke.php" class="form-inline my-2 my-lg-0 header_seachr">
+                    <form  action="../san-pham/liet-ke.php" class="form-inline my-2 my-lg-0 header_seachr">
                         <input class="form-control mr-sm-2 header_seachr" name="search" type="search" placeholder="Tìm kiếm sản phẩm" aria-label="Search">
                         <button class="btn btn-primary my-2 my-sm-0 btn_seachr" type="submit"><i class="fas fa-search"></i></button>
                     </form>

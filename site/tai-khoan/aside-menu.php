@@ -16,9 +16,9 @@
                                                                             } ?>" alt="<?= $hinh ?>" class="avt">
 
                             </div>
-                            <label for="hinh_new" class="change_picture">
+                            <!-- <label for="hinh_new" class="change_picture">
                                 <i class="fas fa-camera change_picture-icon"></i>
-                            </label>
+                            </label> -->
                             <form method="post" id="avt_update_form" enctype="multipart/form-data">
                                 <div class="form-group" hidden>
                                     <label for=""><b>Ảnh đại diện *</b></label>

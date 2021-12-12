@@ -15,7 +15,7 @@ extract($in4_hd);
         <table class="table">
             <thead class="table-danger">
                 <tr>
-                    <th class="check"><input type="checkbox"></th>
+                    <!-- <th class="check"><input type="checkbox"></th> -->
                     <th>ID</th>
                     <th>Mã hóa đơn</th>
                     <th>Mã sản phẩm</th>
@@ -33,7 +33,7 @@ extract($in4_hd);
                     $btn_update = "index.php?btn_update_ct&id=$id";
                 ?>
                     <tr>
-                        <td class="check"><input type="checkbox"></td>
+                        <!-- <td class="check"><input type="checkbox"></td> -->
                         <td><?= $id ?></td>
                         <td><?= $ma_hd ?></td>
                         <td><?= $ma_sp ?></td>

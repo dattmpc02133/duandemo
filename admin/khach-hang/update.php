@@ -82,7 +82,7 @@ if (isset($_POST['btn_update1'])) {
         $email = $_POST['email'];
         $sdt_kh = $_POST['sdt_kh'];
         $vai_tro = $_POST['vai_tro'];
-        khach_hang_update($mat_khau, $ho_ten, $dia_chi, $kich_hoat, $tenhinh, $email, $sdt, $vai_tro, $ma_kh);
+        khach_hang_update($mat_khau, $ho_ten, $dia_chi, $kich_hoat, $tenhinh, $email, $sdt_kh, $vai_tro, $ma_kh);
         unset($_SESSION['ma_kh']);
         echo "<script> location.href = 'index.php'; </script>";
     } else {

@@ -15,7 +15,7 @@ if (isset($_GET['ma_km'])) {
         <table class="table">
             <thead class="table-danger">
                 <tr>
-                    <th class="check"><input type="checkbox"> </th>
+                 
                     <th>Mã khuyến mãi</th>
                     <th>Loại khuyến mãi</th>
                     <th>Mức giảm<br>(% hoặc số tiền)</th>
@@ -37,7 +37,7 @@ if (isset($_GET['ma_km'])) {
                     $btn_detail = "index.php?btn_detail&ma_km=$ma_km";
                 ?>
                     <tr>
-                        <td class="check"><input type="checkbox" name="check[]" value=' . $ma_km . '></td>
+                        <!-- <td class="check"><input type="checkbox" name="check[]" value=' . $ma_km . '></td> -->
                         <td><?= $ma_km ?></td>
                         <td><?php $ten_loai_km = loai_km_get_in4($loai_km);
                             echo $ten_loai_km['ten_loai_km']; ?></td>
