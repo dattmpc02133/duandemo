@@ -2,10 +2,7 @@
 require_once("../../global.php");
 require_once '../../DAO/hoa-don.php';
 require_once '../../DAO/khuyen-mai.php';
-
-$_SESSION['kq'] = 0;
 if (!isset($_SESSION['user'])) {
-
     echo '<script>
     alert("Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng");
     location.href = "' . $ROOT_URL . '";
@@ -49,9 +46,8 @@ if (isset($_POST['dat_hang'])) {
     $so_luong_input_data = $_POST['so_luong_input_data'];
     hoa_don_insert($ma_kh, $tong_tien, $dia_chi_giao_hang, $ngay_dat, $trang_thai);
 
-    if (isset($_SESSION['kq']) && $_SESSION['kq'] == 0 ) {
-        khach_hang_da_dung_insert($_POST['ma_km'], $_SESSION['user']);
-        unset($_SESSION['kq']);
+    if(!empty($_POST['ma_km'])){
+        khach_hang_da_dung_insert(strtoupper($_POST['ma_km']), $_SESSION['user']);
     }
 
     $ma_hd2 = get_ma_hd();
@@ -257,6 +253,15 @@ if (isset($_POST['dat_hang'])) {
         var tong_tien2 = document.getElementById('tong_tien2');
         var tong_tien = document.getElementById('tong_tien');
         var result_ap_dung_km_action = document.getElementById('result_ap_dung_km_action');
+        var inp_ma_km = document.getElementById('ma_km_ap_dung');
+        var btn_ap_dung = document.getElementById('ap_dung');
+        var check_re = /-[0-9]+/;
+        if(result_ap_dung_km_action.innerHTML.match(check_re)){
+            btn_ap_dung.disabled = 'true';
+        }
+        else{
+            inp_ma_km.value = '';
+        }
         var kt_loai_km = result_ap_dung_km_action.innerHTML.split('');
         var loai_km = '';
         for (var i = 1; i < kt_loai_km.length; i++) {
@@ -302,7 +307,6 @@ if (isset($_POST['dat_hang'])) {
                 tinh_tong_tien();
             }
         });
-
     }
 
     // function fetch_data(){
@@ -320,9 +324,8 @@ if (isset($_POST['dat_hang'])) {
             var btn_ap_dung = $('#ap_dung');
             if(ma_km.length > 0){
                 show_km(ma_km);
-                btn_ap_dung.attr('disabled', 'true');
             }
-        })
+        });
         // fetch_data();
     });
 </script>

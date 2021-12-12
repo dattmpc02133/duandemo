@@ -6,7 +6,7 @@
     $result = '';
     if(isset($_POST['ma_km'])){
         $today = date('Y-m-d');
-        $ma_km_ap_dung = $_POST['ma_km'];
+        $ma_km_ap_dung = strtoupper($_POST['ma_km']);
         $ma_kh_ap_dung = $_SESSION['user'];
         $get_ma_kh_ap_dung = kh_da_dung_km($ma_kh_ap_dung, $ma_km_ap_dung);
         $get_ma_km = ma_km_get_info($_POST['ma_km']);
@@ -22,17 +22,16 @@
                 }
                 else{
                     echo '<script> alert("Khuyến mãi chưa bắt đầu hoặc đã kết thúc !"); </script>';
-                    $_SESSION['kq'] = 1;
+        
                 }
             }
             else{
                 echo '<script> alert("Mã khuyến mãi không tồn tại !"); </script>';
-                $_SESSION['kq'] = 1;
+                
             }
         }
         else{
             echo '<script> alert("Bạn đã sử dụng mã này rồi, vui lòng chọn mã khác !"); </script>';
-            $_SESSION['kq'] = 1;
         }
     }
     // $ma_km2 = ma_km_get_info($_POST['ma_km']);
