@@ -2,6 +2,7 @@
 
 <div class="slider_show">
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <script> </script>
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
