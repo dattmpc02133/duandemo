@@ -387,6 +387,7 @@ h5 {
   justify-content: space-between;
   margin-right: 10px;
 }
+
 .header_drop-dow {
   height: 40vh;
   overflow-x: hidden;
@@ -549,11 +550,13 @@ h5 {
 }
 .main-title {
   text-align: center;
+  
 }
 .main-title h1 {
   font-size: 27px;
   margin: 0;
   font-weight: 600;
+  margin-left: 34%;
 }
 .fill2 {
   text-align: right;
@@ -562,8 +565,10 @@ h5 {
 }
 .fill2 select {
   font-size: 14px;
-  width: 200px;
+  /* width: 200px; */
+  width: 100%;
 }
+
 .row-products {
   padding-top: 50px;
 }

@@ -45,7 +45,7 @@ hr{
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    image-rendering:pixelated;
+    image-rendering:-webkit-optimize-contrast;
     
 }
 .top h5{

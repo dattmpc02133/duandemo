@@ -8,6 +8,11 @@
             text-align: center;
            
         }
+        
+        .select_fillter{
+            width: 100% !important;
+        }
+       
         .search__mobile{
            flex: 1;
         }
@@ -56,6 +61,9 @@
             width: 70px !important;
             text-align: center;
            
+        }
+        .select_fillter{
+            width: 100% !important;
         }
         .search__mobile{
            flex: 1;

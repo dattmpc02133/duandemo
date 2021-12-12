@@ -2,27 +2,22 @@
     <!-- row title -->
     <div class="row_title">
         <div class="row">
-            <div class="col-sm-4">
-                <!-- <div class="fillter">
-                    <a href="#"><i class="bi bi-sliders"></i> Bộ lọc</a>
-                </div> -->
-
-            </div>
-            <div class="col-sm-4">
+          
+            <div class="col-12 col-lg-9">
                 <div class="main-title">
                     <h1>Tất cả sản phẩm</h1>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <div class="fill2">
-                    <select class="form-control"  name="" onchange="SelecterOption(this)" id="lister">
-                        <option value="0">Lọc sản phẩm</option>
-                        <option value="1">Giá dưới 500.000<sup>đ</sup></option>
-                        <option value="2">Giá từ 500.000<sup>đ</sup> - dưới 1.000.000<sup>đ</sup></option>
-                        <option value="3">Giá từ 1.000.000<sup>đ</sup> - dưới 5.000.000<sup>đ</sup></option>
-                        <option value="4">Giá từ 5.000.000<sup>đ</sup> - dưới 10.000.000<sup>đ</sup></option>
-                        <option value="5">Giá từ 10.000.000<sup>đ</sup> - dưới 20.000.000<sup>đ</sup></option>
-                        <option value="6">Giá trên 20.000.000<sup>đ</sup></option>
+            <div class="col-12 col-lg-3">
+                <div class="fill2" >
+                    <select class="form-control select_fillter"  name="" onchange="SelecterOption(this)" id="lister">
+                        <option class="fillter__price-products" value="0">Lọc sản phẩm</option>
+                        <option class="fillter__price-products" value="1">Giá dưới 500.000<sup>đ</sup></option>
+                        <option class="fillter__price-products" value="2">Giá từ 500.000<sup>đ</sup> - dưới 1.000.000<sup>đ</sup></option>
+                        <option class="fillter__price-products" value="3">Giá từ 1.000.000<sup>đ</sup> - dưới 5.000.000<sup>đ</sup></option>
+                        <option class="fillter__price-products" value="4">Giá từ 5.000.000<sup>đ</sup> - dưới 10.000.000<sup>đ</sup></option>
+                        <option class="fillter__price-products" value="5">Giá từ 10.000.000<sup>đ</sup> - dưới 20.000.000<sup>đ</sup></option>
+                        <option class="fillter__price-products" value="6">Giá trên 20.000.000<sup>đ</sup></option>
                     </select>
                 </div>
             </div>
