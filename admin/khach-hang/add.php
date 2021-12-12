@@ -3,7 +3,7 @@
     require_once '../../DAO/khach-hang.php';
     $test = true;
     $kt_loi = array();
-    $check_ma_kh = '/^\D[A-Za-z0-9_\.]{6,16}$/';
+    $check_ma_kh = '/^\D[a-zA-Z0-9_\.]{5,15}$/';
     $check_hoten = '/^[\D\s]+$/';
     $check_email = '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';
     $check_sdt = '/^(0)([2-9])([0-9]+){8}$/';
@@ -21,7 +21,7 @@
             $kt_loi['ma_kh'] = 'Mã khách hàng chưa đúng định dạng, ví dụ: hoangduytp1';
             $test = false;
         }
-        else if(get_info_kh($ma_kh)){
+        else if(get_info_kh($_POST['ma_kh'])){
             $kt_loi['ma_kh'] = 'Mã khách hàng đã được sử dụng';
             $test = false;
         }
