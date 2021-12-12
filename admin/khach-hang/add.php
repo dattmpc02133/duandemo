@@ -74,7 +74,7 @@
         }
         if($test){
             $path = $_SERVER['DOCUMENT_ROOT'] . $CONTENT_URL . '/images/user/';
-            if(isset($_FILES['hinh'])){
+            if($_FILES['hinh']['name'] > 0){
                 $hinh = $_FILES['hinh'];
                 $tenhinh = save_file($hinh, $path);
             }

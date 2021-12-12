@@ -50,4 +50,13 @@ function phan_trang_ncc(){
     $sql = "SELECT * FROM nha_cung_cap  ORDER BY ma_ncc DESC LIMIT $tung_trang,$ncc_tung_trang";
     return pdo_query($sql);
 }
+
+function sdt_ncc_exist($sdt){
+    $sql = "SELECT * FROM nha_cung_cap WHERE sdt = ?";
+    return pdo_query_one($sql, $sdt);
+}
+function email_ncc_exist($email){
+    $sql = "SELECT * FROM nha_cung_cap WHERE email = ?";
+    return pdo_query_one($sql, $email);
+}
 ?>
