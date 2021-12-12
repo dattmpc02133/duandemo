@@ -197,7 +197,18 @@ require_once("../../DAO/khach-hang.php");
                         <span>Hotline:<p style="margin: 0;">1900.1500.63</p></span>
                     </div>
                     <div class="account riverdungchung">
-                        <i class="incon_size fas fa-user-circle"></i>
+                    <?php 
+                                if(isset($_SESSION['user'])){
+                                    $info_img = get_info_kh($_SESSION['user']) ;
+                                    if($info_img['hinh'] == null){
+                                        echo '<img class="avt__user"  src="'.$CONTENT_URL.'/images/user/user.jpg" alt="">';
+                                    }
+                                    echo '<img class="avt__user" src="'.$CONTENT_URL.'/images/user/'.$info_img['hinh'].'" alt="">';
+                                } else{
+
+                                    echo "<i class='incon_size fas fa-user-circle'></i>";
+                                }
+                            ?>
                         <div class="account_dangnhap">
                             <a href="#">Đăng Nhập /</a>
                             <a href="../tai-khoan/index.php?dang_ky">Đăng Ký</a><br>
@@ -226,8 +237,9 @@ require_once("../../DAO/khach-hang.php");
                     </div>
                     <div class="cart riverdungchung">
                         <div class="cart_gio">
-                            <i class="incon_size fas fa-shopping-cart"></i>
-                            <span class="header_cart-notice">3</span>
+                           <a href="<?= $SITE_URL?>/trang-chinh/index.php?addcart"> <i class="incon_size fas fa-shopping-cart"></i></a>
+                          
+                            <!-- <span class="header_cart-notice">3</span> -->
                         </div>
                         <span class="header_cart-mobie" style="cursor: pointer;">Giỏ Hàng</span>
                         <div class="header_cart-list">
@@ -282,10 +294,11 @@ require_once("../../DAO/khach-hang.php");
     kt_form();
 
     function numbers_by_cart() {
-
+    
         var numbers_by_cart = document.querySelector(".numbers_by_cart");
         var header_cart_products = document.querySelectorAll(".header_cart-products");
         numbers_by_cart.innerHTML = header_cart_products.length;
+        
     }
     numbers_by_cart()
 

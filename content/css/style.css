@@ -558,7 +558,7 @@ h5 {
 .fill2 {
   text-align: right;
   display: flex;
-  justify-content: flex-end;
+  justify-content:center;
 }
 .fill2 select {
   font-size: 14px;

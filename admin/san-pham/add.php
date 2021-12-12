@@ -115,7 +115,7 @@ if (isset($_POST['add'])) {
     </div>
     <div class="form-group">
         <label for="">Giảm giá (%):</label>
-        <input type="number" min="0" max="100" class="form-control" placeholder="Nhập đơn giá giảm" name="giam_gia" id="giam_gia">
+        <input type="number" value="0" min="0" max="100" class="form-control" placeholder="Nhập đơn giá giảm" name="giam_gia" id="giam_gia">
         <span class="errs">
             <?php 
                 if(isset($kt_loi['giam_gia'])){

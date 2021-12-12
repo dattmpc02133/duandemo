@@ -15,7 +15,7 @@
             </div>
             <div class="col-sm-4">
                 <div class="fill2">
-                    <select class="form-control" name="" onchange="SelecterOption(this)" id="lister">
+                    <select class="form-control"  name="" onchange="SelecterOption(this)" id="lister">
                         <option value="0">Lọc sản phẩm</option>
                         <option value="1">Giá dưới 500.000<sup>đ</sup></option>
                         <option value="2">Giá từ 500.000<sup>đ</sup> - dưới 1.000.000<sup>đ</sup></option>
