@@ -122,6 +122,9 @@
         .home_product-item{
             border: 1px solid gray;
         }
+        .main-title h1{
+            margin-left: 34%;
+        }
     }
     @media  (max-width:1024px) {
         .header_box-right {
@@ -131,6 +134,7 @@
             font-size: 25px;
             padding: 0 5px;
         }
+       
         .hotline span p a {
             font-size: small;
         }
