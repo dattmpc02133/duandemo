@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['btn-doi-mk'])){
-    $mat_khau = "";
+    $mat_khau = get_info_kh($_SESSION['user']);
     $mat_khau_moi = "";
     $mat_khau_moi_xac_nhan = "";
     $test = true;
@@ -22,7 +22,7 @@ if ($mat_khau_moi_xac_nhan != $mat_khau_moi) {
     $kt_loi['mat_khau_moi_xac_nhan'] = "Mật khẩu không khớp, vui lòng kiểm tra lại !";
     $test = false;
 }
-if (empty($_POST['mat_khau1'])) {
+if (empty($_POST['mat_khau_1'])) {
     $kt_loi['mat_khau1'] = "Mật khẩu không được bỏ trống !";
     $test = false;
 } else {
@@ -31,12 +31,12 @@ if (empty($_POST['mat_khau1'])) {
     if($test){
         if (isset($_POST['btn-doi-mk'])) {
             $ma_kh = $_POST['ma_kh'];
-            $mat_khau = $_POST['mat_khau'];
+           
             $mat_khau_1 = $_POST['mat_khau_1'];
             $mat_khau_moi = $_POST['mat_khau_moi'];
     
-            if($mat_khau_1 == $mat_khau){
-                kh_update_mat_khau($mat_khau_moi, $ma_kh);
+            if(md5($mat_khau_1) == $mat_khau['mat_khau']){
+                kh_update_mat_khau(md5($mat_khau_moi), $ma_kh);
                 // $_SESSION['alert'] = 'Đổi mật khẩu thành công !';
                 echo '<script> alert("Đổi mật khẩu thành công !"); </script>';
                 echo "<script> location.href = 'dang-nhap.php?logout'; </script>";

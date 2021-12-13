@@ -41,7 +41,7 @@ if (isset($_POST['login'])) {
 
             } 
             else {
-                $_SESSION['thong_bao'] = "<script> alert('Sai tài mật khẩu'); </script>";
+                $_SESSION['thong_bao'] = "<script> alert('Sai mật khẩu'); </script>";
                 header("location: ../../index.php");
             }
         } else {

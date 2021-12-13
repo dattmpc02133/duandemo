@@ -8,7 +8,7 @@ function pdo_get_connection()
     $conn = '';
     $dbName = "ql_noi_that";
     try {
-        $conn = new PDO("mysql:host=$serverName;dbname=$dbName", $userName, $password);
+        $conn = new PDO("mysql:host=$serverName;dbname=$dbName;charset=utf8", $userName, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
        return $conn;
     } catch (PDOException $e) {

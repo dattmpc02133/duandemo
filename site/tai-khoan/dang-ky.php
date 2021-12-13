@@ -64,7 +64,7 @@ if (isset($_POST['add_kh'])) {
                 $mat_khau = md5($_POST['mat_khau']);
                 $ho_ten = $_POST['ho_ten'];
                 $dia_chi = $_POST['dia_chi'];
-                if ($_FILES['hinh']['name'] > 0) {
+                if (strlen($_FILES['hinh']['name']) > 0) {
                     $hinh = $_FILES['hinh']['name'];
                     move_uploaded_file($_FILES['hinh']['tmp_name'], "$path./images/user/$hinh");
                 } else {
